@@ -60,6 +60,10 @@ def create_app(config_class=Config):
 
 	from . import models
 	
+	from main.admin import bp as admin_bp
+	app.register_blueprint(admin_bp, url_prefix=f"{admin_url_prefix}/")
+	csrf.exempt(admin_bp)
+
 	from main.web import bp as web_bp
 	app.register_blueprint(web_bp, url_prefix=f"{web_url_prefix}/")
 	csrf.exempt(web_bp)

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="robots" content="noindex" />
+		<meta charset="UTF-8" />
+		<meta
+			content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"
+			name="viewport"
+		/>
+		<title>{{ title if title else _('Admin panel') }}</title>
+
+		{% block styles %}{% endblock %}
+	</head>
+	<body>
+		<div class="main-content">
+			<section class="section">
+				{% with messages = get_flashed_messages(with_categories=true) %} {% if
+				messages %} {% for category, message in messages %}
+				<div class="p-3 alert alert-{{ category }}" role="alert">
+					{{ message }}
+				</div>
+				{% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
+			</section>
+		</div>
+
+		<script>
+			var url_prefix = "{{url_prefix if url_prefix else ''}}";
+		</script>
+		{% block scripts %}{% endblock %}
+	</body>
+</html>

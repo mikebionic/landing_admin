@@ -11,7 +11,7 @@ from main.config import Config
 
 @login_manager.user_loader
 def load_user(id):
-	return Resident.query.get(int(id))
+	return User.query.get(int(id))
 
 class User(db.Model, UserMixin):
 	__tablename__ = "tbl_user"
@@ -28,7 +28,7 @@ class User(db.Model, UserMixin):
 		return self.type_id == 1
 
 	def get_id(self):
-		return (self.UId)
+		return (self.id)
 
 	def to_json_api(self):
 		return {
