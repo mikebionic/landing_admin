@@ -76,3 +76,4 @@ class Config:
 	WEB_CONFIG_DIRECTORY = path.join("web_config")
 	GOOGLE_ANALYTICS_TAG = environ.get('GOOGLE_ANALYTICS_TAG') or ''
 	HOME_PAGE_TITLE = environ.get('HOME_PAGE_TITLE') or "Welcome!"
+	WEB_TEMPLATE_FOLDER = environ.get('WEB_TEMPLATE_FOLDER') or 'web/index.html'

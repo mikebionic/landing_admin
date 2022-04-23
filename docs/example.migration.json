@@ -15,8 +15,19 @@
 			"id": 1,
 			"name": "home_page",
 			"label": "Home",
-			"title": "",
-			"desc": ""
+			"title": "We're building the roads to the future",
+			"desc": "Working on whole preparation work course",
+			"html": "",
+			"text_data_id": 1
+		},
+		{
+			"id": 2,
+			"name": "advantages",
+			"label": "Advantages",
+			"title": "Лучшее для лучших",
+			"desc": "Все компании группы следуют высоким образцам производства работ, безопасности охраны природы, а структура ХО «Ugurly Yol» позволяет оптимизировать клиентам до 20% расходов. \n Следуем и повышаем стандарты качества, а также экономим бюджеты заказчиков",
+			"html": "<div class='section-title'> <h6 class='dsn-up line-shap line-shap-after' style='opacity: 1; transform: translate(0px, 0px);'> Генеральный директор ХО «Ugurly Yol» </h6> <p class='sub-heading line-bg-left mt-20 dsn-up' style='opacity: 1; transform: translate(0px, 0px);'> Мухиев Сапармухамед </p> </div>",
+			"text_data_id": 1
 		}
 	],
 
@@ -57,16 +68,23 @@
 			"id": 1,
 			"file_path": "/static/1.png",
 			"title": "We're building the roads to the future",
-			"desc": "Working on whole preparation work course"
+			"desc": "Working on whole preparation work course",
+			"text_data_id": 2
 		}
 	],
 
 	"text_data": [
 		{
 			"id": 1,
-			"page_id": 1,
-			"image_id": null,
-			"collection_id": null,
+			"title_en": "We're building the roads to the future",
+			"title_ru": "Мы строим дороги в будущее",
+			"title_tk": "Biz gelejege ýol gurýaryn",
+			"desc_en": "Working on whole preparation work course",
+			"desc_ru": "Выполняем полный комплекс работ по подготовке",
+			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris"
+		},
+		{
+			"id": 2,
 			"label_en": "Home",
 			"label_ru": "Home",
 			"label_tk": "Home",
@@ -76,18 +94,6 @@
 			"desc_en": "",
 			"desc_ru": "",
 			"desc_tk": ""
-		},
-		{
-			"id": 2,
-			"page_id": null,
-			"image_id": 1,
-			"collection_id": null,
-			"title_en": "We're building the roads to the future",
-			"title_ru": "Мы строим дороги в будущее",
-			"title_tk": "Biz gelejege ýol gurýaryn",
-			"desc_en": "Working on whole preparation work course",
-			"desc_ru": "Выполняем полный комплекс работ по подготовке",
-			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris"
 		}
 	]
 }

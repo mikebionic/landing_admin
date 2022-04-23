@@ -1,7 +1,13 @@
+from flask import render_template
 
-from main.web import bp
+from . import bp
+from main.config import Config
+
+from .utils import get_all_data
 
 @bp.route("/")
 @bp.route("/home")
 def home():
-	return "home world"
+	data = get_all_data()
+	print(data)
+	return render_template(Config.WEB_TEMPLATE_FOLDER, data=data)
