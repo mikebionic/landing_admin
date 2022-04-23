@@ -26,6 +26,10 @@ class Text_data(db.Model):
 	html_ru = db.Column("html_ru",db.String)
 	html_tk = db.Column("html_tk",db.String)
 	created_date = db.Column("created_date",db.DateTime,default=datetime.now())
+	Category = db.relationship("Category",backref='text_data',lazy=True)
+	Collection = db.relationship("Collection",backref='text_data',lazy=True)
+	Contact = db.relationship("Contact",backref='text_data',lazy=True)
+	Page = db.relationship("Page",backref='text_data',lazy=True)
 	Image = db.relationship("Image",backref='text_data',lazy=True)
 
 	def to_json_api(self):

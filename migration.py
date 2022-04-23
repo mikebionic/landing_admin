@@ -1,10 +1,16 @@
+import json, uuid
 from main import db, create_app
-import json
+from main.models import (
+	User,
+	Page,
+	Category,
+	Collection,
+	Image,
+	Text_data
+)
 
 f = open('docs/app.migration.json')
-data = json.load(f)
-
-#print(data)
+migration_data = json.load(f)
 
 app = create_app()
 app.app_context().push()
@@ -12,3 +18,35 @@ app.app_context().push()
 
 db.drop_all()
 db.create_all()
+
+for item in migration_data["user"]:
+	item['guid'] = uuid.uuid4()
+	this_model = User(**item)
+	db.session.add(this_model)
+
+for item in migration_data["page"]:
+	item['guid'] = uuid.uuid4()
+	this_model = Page(**item)
+	db.session.add(this_model)
+
+for item in migration_data["category"]:
+	item['guid'] = uuid.uuid4()
+	this_model = Category(**item)
+	db.session.add(this_model)
+
+for item in migration_data["collection"]:
+	item['guid'] = uuid.uuid4()
+	this_model = Collection(**item)
+	db.session.add(this_model)
+
+for item in migration_data["text_data"]:
+	item['guid'] = uuid.uuid4()
+	this_model = Text_data(**item)
+	db.session.add(this_model)
+
+for item in migration_data["image"]:
+	item['guid'] = uuid.uuid4()
+	this_model = Image(**item)
+	db.session.add(this_model)
+
+db.session.commit()

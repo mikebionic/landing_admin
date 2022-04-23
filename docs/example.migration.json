@@ -1,0 +1,93 @@
+{
+	"user": [
+		{
+			"id": 1,
+			"name": "Plan Planyyew",
+			"username": "admin",
+			"password": "123456",
+			"email": "",
+			"type_id": 1
+		}
+	],
+
+	"page": [
+		{
+			"id": 1,
+			"name": "home_page",
+			"label": "Home",
+			"title": "",
+			"desc": ""
+		}
+	],
+
+	"category": [
+		{
+			"id": 1,
+			"page_id": null,
+			"name": "Production",
+			"label": "",
+			"title": "",
+			"desc": ""
+		}
+	],
+
+	"collection": [
+		{
+			"id": 1,
+			"page_id": null,
+			"name": "Production project 1",
+			"label": "",
+			"title": "",
+			"desc": ""
+		}
+	],
+
+	"contact": {
+		"id": 1,
+		"page_id": 1,
+		"name": "Phone number",
+		"label": "",
+		"title": "",
+		"desc": "+99361234567",
+		"link": ""
+	},
+
+	"image": [
+		{
+			"id": 1,
+			"file_path": "/static/1.png",
+			"title": "We're building the roads to the future",
+			"desc": "Working on whole preparation work course"
+		}
+	],
+
+	"text_data": [
+		{
+			"id": 1,
+			"page_id": 1,
+			"image_id": null,
+			"collection_id": null,
+			"label_en": "Home",
+			"label_ru": "Home",
+			"label_tk": "Home",
+			"title_en": "Best for the best",
+			"title_ru": "",
+			"title_tk": "",
+			"desc_en": "",
+			"desc_ru": "",
+			"desc_tk": ""
+		},
+		{
+			"id": 2,
+			"page_id": null,
+			"image_id": 1,
+			"collection_id": null,
+			"title_en": "We're building the roads to the future",
+			"title_ru": "Мы строим дороги в будущее",
+			"title_tk": "Biz gelejege ýol gurýaryn",
+			"desc_en": "Working on whole preparation work course",
+			"desc_ru": "Выполняем полный комплекс работ по подготовке",
+			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris"
+		}
+	]
+}

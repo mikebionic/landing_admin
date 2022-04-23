@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
 	__tablename__ = "tbl_user"
 	id = db.Column("id",db.Integer,nullable=False,primary_key=True)
 	guid = db.Column("guid",UUID(as_uuid=True),unique=True,default=uuid.uuid4())
-	full_name = db.Column("full_name",db.String(100))
+	name = db.Column("name",db.String(100))
 	username = db.Column("username",db.String(60),nullable=False)
 	email = db.Column("email",db.String(100),unique=True)
 	password = db.Column("password",db.String(60),nullable=False)
@@ -34,7 +34,7 @@ class User(db.Model, UserMixin):
 		return {
 			"id": self.id,
 			"guid": self.guid,
-			"full_name": self.full_name,
+			"name": self.name,
 			"username": self.username,
 			"email": self.email,
 			"password": self.password,

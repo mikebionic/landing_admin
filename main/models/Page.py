@@ -10,6 +10,7 @@ class Page(db.Model):
 	__tablename__ = "tbl_page"
 	id = db.Column("id",db.Integer,nullable=False,primary_key=True)
 	guid = db.Column("guid",UUID(as_uuid=True),unique=True,default=uuid.uuid4())
+	text_data_id = db.Column("text_data_id",db.Integer,db.ForeignKey("tbl_text_data.id"))
 	name = db.Column("name",db.String)
 	label = db.Column("label",db.String)
 	title = db.Column("title",db.String)

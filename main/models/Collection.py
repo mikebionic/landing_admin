@@ -12,6 +12,7 @@ class Collection(db.Model):
 	guid = db.Column("guid",UUID(as_uuid=True),unique=True,default=uuid.uuid4())
 	page_id = db.Column("page_id",db.Integer,db.ForeignKey("tbl_page.id"))
 	category_id = db.Column("category_id",db.Integer,db.ForeignKey("tbl_category.id"))
+	text_data_id = db.Column("text_data_id",db.Integer,db.ForeignKey("tbl_text_data.id"))
 	name = db.Column("name",db.String)
 	label = db.Column("label",db.String)
 	title = db.Column("title",db.String)
