@@ -58,11 +58,11 @@ def create_app(config_class=Config):
 	web_url_prefix = Config.WEB_URL_PREFIX
 	admin_url_prefix = Config.ADMIN_URL_PREFIX
 
+	from . import models
+	
 	from main.web import bp as web_bp
 	app.register_blueprint(web_bp, url_prefix=f"{web_url_prefix}/")
 	csrf.exempt(web_bp)
-
-
 
 
 	@app.after_request
