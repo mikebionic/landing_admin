@@ -425,9 +425,9 @@
 						data-dsn-title="our Work">
 						<div class="container d-flex text-right flex-column align-items-center mb-70">
 							<div class="">
-								<h2 class="section-title line-bg-left">Our Portfolio</h2>
+								<h2 class="section-title line-bg-left">{{data.portfolio.title or 'Our Portfolio'}}</h2>
 								<p class="sub-heading theme-color  line-shap line-shap-before mt-15 d-inline-block">
-									<span class="background-section pt-5 pb-5 pl-10 pr-10"> Our Works</span>
+									<span class="background-section pt-5 pb-5 pl-10 pr-10">{{data.portfolio.label or 'Our Works'}}</span>
 								</p>
 							</div>
 						</div>
@@ -440,11 +440,9 @@
 										<button type="button" data-filter="*" class="active">
 											All
 										</button>
-										<button type="button" data-filter=".induction">induction</button>
-										<button type="button" data-filter=".photography">Photography</button>
-										<button type="button" data-filter=".architecture">Architecture</button>
-										<button type="button" data-filter=".Product">Product</button>
-										<button type="button" data-filter=".pen">pen</button>
+										{% for category in data.portfolio.categories %}
+											<button type="button" data-filter=".{{category.name}}">{{category.label}}</button>
+										{% endfor %}
 
 									</div>
 								</div>
@@ -453,28 +451,32 @@
 							<div
 								class="work-inner projects-list work-one-page d-grid grid-md-2  grid-lg-3 p-relative w-100 dsn-item-filter dsn-isotope">
 
-								<div class="work-item  p-relative Product">
-									<a class="effect-ajax" data-dsn-ajax="work" href="project1.html">
+								{% for collection in data.portfolio.collections %}
+								<div class="work-item  p-relative {{ collection.category_name or '' }}">
+									<a class="effect-ajax" data-dsn-ajax="work" href="">
 										<div class="work-item-inner">
-											<h5 class="cat p-absolute">Product , voice</h5>
+											<h5 class="cat p-absolute">{{ collection.label or 'collection.label' }}</h5>
 
 											<div class="line line-top"></div>
 											<div class="line line-bottom"></div>
 											<div class="line line-left"></div>
 											<div class="line line-right"></div>
 
+											{% if collection.images %}
 											<div class="box-img before-z-index" data-overlay="6">
 												<img class="cover-bg-img has-top-bottom"
 													src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-													data-dsn-src="/static/web/assets/img/project/project1/1.jpg" alt="">
+													data-dsn-src="{{collection.images[0].file_path}}" alt="{{collection.images[0].alt or collection.images[0].title}}">
 											</div>
+											{% endif %}
 										</div>
 
 										<div class="box-content">
-											<h4 class="title-block sec-title">Maybe speaker</h4>
+											<h4 class="title-block sec-title">{{ collection.title or 'collection.title' }}</h4>
 										</div>
 									</a>
 								</div>
+								{% endfor %}
 
 								<div class="work-item p-relative Product pen">
 									<a class="effect-ajax" data-dsn-ajax="work" href="project2.html">
@@ -601,12 +603,13 @@
 
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									Our Services
+									{{data.services.label or 'Our Services'}}
 								</span>
 
 							</p>
-							<h2 class="section-title  title-cap">Ценности
-															нашей компании <br>
+							<h2 class="section-title  title-cap">
+									{{data.services.title or 'services.title'}}
+								<br>
 							</h2>
 
 						</div>
@@ -887,30 +890,29 @@
 							data-dsn-responsive="tablet">
 							<div class="mb-30 d-flex text-left flex-column align-items-start">
 								<p class="sub-heading line-shap line-shap-after mb-15">
-									<span class="line-bg-right">Build perfect websites</span>
+									<span class="line-bg-right">{{data.with_banner.label or 'with_banner.label'}}</span>
 								</p>
-								<h2 class="section-title">Unlimited power</h2>
+								<h2 class="section-title">{{data.with_banner.title or 'with_banner.title'}}</h2>
 
 							</div>
 
 
 							<p class="mb-10">
-								Most of our writings have centered on implementing strategies for business
-								units, with their unique
+								{{data.with_banner.desc or 'with_banner.desc'}}	
 							</p>
-							<p>
-								geeza arse it’s your round grub sloshed burke, my good sir chancer he legged it he lost
-								his
-								bottle pear shaped bugger all mate</p>
 
-							<a href="#0" class="mt-30 dsn-button image-zoom" data-dsn="parallax">
+							{% if data.with_banner.link %}
+							<a href="{{data.with_banner.link}}" class="mt-30 dsn-button image-zoom" data-dsn="parallax">
 								<span class="dsn-border border-color-reverse-color"></span>
 								More Projects <span>⟶</span>
 							</a>
+							{% endif %}
 
+							{% if data.with_banner.note %}
 							<p class="sm-p mt-15 theme-color">
-								NOTE : Some details are very important.
+								{{data.with_banner.note}}
 							</p>
+							{% endif %}
 						</div>
 
 					</div>
@@ -924,12 +926,12 @@
 
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									Our Works
+									{{data.work.label or 'work.label'}}
 								</span>
 
 							</p>
 							<h2 class="section-title  title-cap">
-								Creative Portfolio <br>Designs
+									{{data.work.title or 'work.title'}}
 							</h2>
 
 						</div>
@@ -1089,7 +1091,7 @@
 										<div class="text-left">
 											<h2 class="section-title" data-dsn-grid="move-section" data-dsn-move="-60"
 												data-dsn-duration="100%" data-dsn-opacity="1"
-												data-dsn-responsive="tablet">Feedback from our clients.</h2>
+												data-dsn-responsive="tablet">{{data.feedback.title or 'feedback.title'}}</h2>
 										</div>
 									</div>
 
@@ -1265,14 +1267,16 @@
 										<div class="box-info-inner">
 											<div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.1"
 												data-dsn-duration="170%" data-dsn-move="0%">
-												Eremia
+												Ugry Ýol
 											</div>
 
 											<div class="mb-50 d-flex text-left flex-column align-items-start">
 												<p class="sub-heading line-shap line-shap-after mb-15">
-													<span class="line-bg-right">OUR PURPOSE</span>
+													<span class="line-bg-right">{{data.purpose.label or 'purpose.label'}}</span>
 												</p>
-												<h2 class="section-title text-transform-upper">We Plan Your Project</h2>
+												<h2 class="section-title text-transform-upper">
+													{{data.purpose.title or 'purpose.title'}}
+												</h2>
 
 											</div>
 											<div class="dsn-accordion accordion">
@@ -1335,11 +1339,11 @@
 						<div class="container mb-70 d-flex text-center flex-column align-items-center">
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									Lasts post
+									{{data.posts.label or 'posts.label'}}
 								</span>
 							</p>
 							<h2 class="section-title  title-cap">
-								Latest And Greatest <br>Post
+								{{data.posts.title or 'posts.title'}}
 							</h2>
 
 						</div>

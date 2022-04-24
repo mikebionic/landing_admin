@@ -24,6 +24,7 @@ class Image(db.Model):
 	title = db.Column("title",db.String)
 	desc = db.Column("desc",db.String)
 	html = db.Column("html",db.String)
+	alt = db.Column("alt",db.String)
 	created_date = db.Column("created_date",db.DateTime,default=datetime.now())
 
 	def to_json_api(self):
@@ -44,5 +45,6 @@ class Image(db.Model):
 			"title": self.title,
 			"desc": self.desc,
 			"html": self.html,
+			"alt": self.alt,
 			"created_date": self.created_date,
 		}

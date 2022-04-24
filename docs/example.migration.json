@@ -32,7 +32,7 @@
 		{
 			"id": 3,
 			"name": "portfolio",
-			"label": "Our Works",
+			"label": "Our Work",
 			"title": "Our Portfolio",
 			"desc": "",
 			"html": "",
@@ -60,9 +60,9 @@
 		},
 		{
 			"id": 6,
-			"name": "works",
-			"label": "Our Works",
-			"title": "Creative Portfolio Designs",
+			"name": "work",
+			"label": "Our Work",
+			"title": "Creative Portfolio \n Designs",
 			"desc": "",
 			"html": "",
 			"text_data_id": null
@@ -99,9 +99,41 @@
 	"category": [
 		{
 			"id": 1,
-			"page_id": null,
-			"name": "Production",
-			"label": "",
+			"page_id": 3,
+			"name": "induction",
+			"label": "Induction",
+			"title": "",
+			"desc": ""
+		},
+		{
+			"id": 2,
+			"page_id": 3,
+			"name": "photography",
+			"label": "Photography",
+			"title": "",
+			"desc": ""
+		},
+		{
+			"id": 3,
+			"page_id": 3,
+			"name": "architecture",
+			"label": "Architecture",
+			"title": "",
+			"desc": ""
+		},
+		{
+			"id": 4,
+			"page_id": 3,
+			"name": "product",
+			"label": "Product",
+			"title": "",
+			"desc": ""
+		},
+		{
+			"id": 5,
+			"page_id": 3,
+			"name": "pen",
+			"label": "Pen",
 			"title": "",
 			"desc": ""
 		}
@@ -111,9 +143,19 @@
 		{
 			"id": 1,
 			"page_id": null,
-			"name": "Production project 1",
-			"label": "",
-			"title": "",
+			"category_id": 4,
+			"name": "product",
+			"label": "Product",
+			"title": "Maybe speaker",
+			"desc": ""
+		},
+		{
+			"id": 2,
+			"page_id": null,
+			"category_id": 5,
+			"name": "pen",
+			"label": "Pen",
+			"title": "Yaren collection",
 			"desc": ""
 		}
 	],
@@ -135,6 +177,22 @@
 			"title": "We're building the roads to the future",
 			"desc": "Working on whole preparation work course",
 			"text_data_id": 2
+		},
+		{
+			"id": 2,
+			"collection_id": 1,
+			"file_path": "/static/web/assets/img/project/project1/1.jpg",
+			"title": "We're building the roads to the future",
+			"desc": "",
+			"text_data_id": null
+		},
+		{
+			"id": 3,
+			"collection_id": 2,
+			"file_path": "/static/web/assets/img/project/project2/1.jpg",
+			"title": "Yaren Collection",
+			"desc": "",
+			"text_data_id": null
 		}
 	],
 
