@@ -28,6 +28,71 @@
 			"desc": "Все компании группы следуют высоким образцам производства работ, безопасности охраны природы, а структура ХО «Ugurly Yol» позволяет оптимизировать клиентам до 20% расходов. \n Следуем и повышаем стандарты качества, а также экономим бюджеты заказчиков",
 			"html": "<div class='section-title'> <h6 class='dsn-up line-shap line-shap-after' style='opacity: 1; transform: translate(0px, 0px);'> Генеральный директор ХО «Ugurly Yol» </h6> <p class='sub-heading line-bg-left mt-20 dsn-up' style='opacity: 1; transform: translate(0px, 0px);'> Мухиев Сапармухамед </p> </div>",
 			"text_data_id": 1
+		},
+		{
+			"id": 3,
+			"name": "portfolio",
+			"label": "Our Works",
+			"title": "Our Portfolio",
+			"desc": "",
+			"html": "",
+			"text_data_id": null
+		},
+		{
+			"id": 4,
+			"name": "services",
+			"label": "Our Services",
+			"title": "Ценности нашей компании",
+			"desc": "",
+			"html": "",
+			"text_data_id": null
+		},
+		{
+			"id": 5,
+			"name": "with_banner",
+			"label": "Build perfect websites",
+			"title": "Unlimited power",
+			"desc": "Most of our writings have centered on implementing strategies for business units, with their unique \n geeza arse it’s your round grub sloshed burke, my good sir chancer he legged it he lost his bottle pear shaped bugger all mate",
+			"html": "",
+			"link": "http://localhost:8000/#projects",
+			"note": "NOTE : Some details are very important.",
+			"text_data_id": null
+		},
+		{
+			"id": 6,
+			"name": "works",
+			"label": "Our Works",
+			"title": "Creative Portfolio Designs",
+			"desc": "",
+			"html": "",
+			"text_data_id": null
+		},
+		{
+			"id": 7,
+			"name": "feedback",
+			"label": "Feedback",
+			"title": "Feedback from our clients.",
+			"desc": "",
+			"html": "",
+			"text_data_id": null
+		},
+		{
+			"id": 8,
+			"name": "purpose",
+			"label": "Our Purpose",
+			"title": "WE PLAN YOUR PROJECT",
+			"desc": "",
+			"html": "",
+			"text_data_id": null
+		},
+		{
+			"id": 9,
+			"name": "posts",
+			"label": "Last posts",
+			"title": "Latest And Greatest Posts",
+			"desc": "",
+			"html": "",
+			"text_data_id": null
 		}
 	],
 

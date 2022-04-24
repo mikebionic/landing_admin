@@ -16,6 +16,8 @@ class Page(db.Model):
 	title = db.Column("title",db.String)
 	desc = db.Column("desc",db.String)
 	html = db.Column("html",db.String)
+	link = db.Column("link",db.String)
+	note = db.Column("note",db.String)
 	created_date = db.Column("created_date",db.DateTime,default=datetime.now())
 	Collection = db.relationship("Collection",backref='page',lazy=True)
 	Category = db.relationship("Category",backref='page',lazy=True)
