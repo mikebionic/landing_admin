@@ -1,4 +1,83 @@
-{% extends "admin/layout.html" %} {% block styles %} {% endblock %} {% block
-content %}
-<p>Dashboard</p>
+{% extends "admin/layout.html" %}
+
+{% block styles %} {% endblock %}
+
+{% block content %}
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="page-title-box">
+			<div class="row">
+				<div class="col-xl-6">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title">Logo</h4>
+							<p class="text-muted mb-0">Upload your logo</p>
+						</div>
+						<div class="card-body">
+							<input type="file" id="input-file-now" class="dropify" />
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title">Menu</h4>
+							<p class="text-muted mb-0">Type your menu here</p>
+						</div>
+						<div class="card-body">
+							<form method="POST" class="form-horizontal well">
+								<fieldset>
+									<div class="repeater-custom-show-hide">
+										<div data-repeater-list="car">
+											<div data-repeater-item="">
+												<div class="form-group row  d-flex align-items-end">
+													<div class="col-sm-9">
+														<label class="form-label">Menu Name</label>
+														<input type="text" name="car[0][model]" value="Beetle" class="form-control">
+													</div>
+													<div class="col-sm-3">
+														<span data-repeater-delete="" class="btn btn-outline-danger">
+															<span class="far fa-trash-alt me-1"></span> Delete
+														</span>
+													</div>
+												</div>
+											</div>
+
+											<div data-repeater-item="">
+												<div class="form-group row  d-flex align-items-end">
+														<div class="col-sm-9">
+															<label class="form-label">Menu Name</label>
+																<input type="text" name="car[0][model]" value="Beetle" class="form-control">
+														</div>
+														<div class="col-sm-3">
+																<span data-repeater-delete="" class="btn btn-outline-danger">
+																		<span class="far fa-trash-alt me-1"></span> Delete
+																</span>
+														</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group row mb-0">
+											<div class="col-sm-12">
+												<span data-repeater-create="" class="btn btn-outline-secondary">
+													<span class="fa fa-plus"></span> Add
+												</span>
+												<input type="submit" value="Submit" class="btn btn-outline-primary">
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
 {% endblock %}
