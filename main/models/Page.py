@@ -35,3 +35,42 @@ class Page(db.Model):
 			"html": self.html,
 			"created_date": self.created_date,
 		}
+	
+	def get_all():
+		pages = Page.query.all()
+		return [page.to_json_api() for page in pages]
+
+		
+	def collect_page_data(db_model):
+		page_data = db_model.to_json_api()
+		page_data["images"] = [image.to_json_api() for image in db_model.Image]
+		page_data["categories"] = [category.to_json_api() for category in db_model.Category]
+
+		collections_list = []
+		for collection in db_model.Collection:
+			collection_data = collection.to_json_api()
+			collection_data["category_name"] = collection.category.name if collection.category else ''
+			collection_data["images"] = [image.to_json_api() for image in collection.Image]
+			collections_list.append(collection_data)
+		
+		page_data["collections"] = collections_list
+		return page_data
+
+	def get_related_data(id = None, data_type="list"):
+		if id:
+			page = Page.query.get(id)
+			return Page.collect_page_data(page)
+		
+		else:
+			pages = Page.query.all()
+			if data_type == "list":
+				data = []
+				for page in pages:
+					data.append(Page.collect_page_data(page))
+
+			if data_type == "object":
+				data = {}
+				for page in pages:
+					page_data = Page.collect_page_data(page)
+					data[page_data["name"]] = page_data
+			return data

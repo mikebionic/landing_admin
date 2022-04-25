@@ -41,6 +41,8 @@ def create_app(config_class=Config):
 	app.template_folder = Config.TEMPLATE_FOLDER_LOCATION
 	if Config.USE_FLASK_CORS:
 		CORS(app, supports_credentials=True)
+	
+	print(app.config['SECRET_KEY'])
 
 	db.init_app(app)
 	login_manager.init_app(app)
