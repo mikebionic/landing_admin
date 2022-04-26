@@ -1,4 +1,4 @@
-
+from .BaseModel import *
 from .Category import *
 from .Collection import *
 from .Contact import *

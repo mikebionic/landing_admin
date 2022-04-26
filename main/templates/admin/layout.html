@@ -1,30 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta name="robots" content="noindex" />
-		<meta charset="UTF-8" />
-		<meta
-			content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"
-			name="viewport"
-		/>
+		<meta charset="utf-8" />
 		<title>{{ title if title else _('Admin panel') }}</title>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<meta
+			content="Premium Multipurpose Admin & Dashboard Template"
+			name="description"
+		/>
+		<meta content="" name="author" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+		<!-- App favicon -->
+		<link rel="shortcut icon" href="/static/admin/assets/images/favicon.ico" />
+		<link
+			href="/static/admin/plugins/dropify/css/dropify.min.css"
+			rel="stylesheet"
+		/>
+
+		<!-- App css -->
+		<link
+			href="/static/admin/assets/css/bootstrap.min.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<link
+			href="/static/admin/assets/css/icons.min.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<link
+			href="/static/admin/assets/css/metisMenu.min.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<link
+			href="/static/admin/plugins/daterangepicker/daterangepicker.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<link
+			href="/static/admin/assets/css/app.min.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
 		{% block styles %}{% endblock %}
 	</head>
+
 	<body>
-		<div class="main-content">
-			<section class="section">
-				{% with messages = get_flashed_messages(with_categories=true) %} {% if
-				messages %} {% for category, message in messages %}
-				<div class="p-3 alert alert-{{ category }}" role="alert">
-					{{ message }}
+		<!-- Left Sidenav -->
+		<div class="left-sidenav">
+			<!-- LOGO -->
+			<div class="brand">
+				<a href="/admin/" class="logo">
+					<span>
+						<img
+							src="/static/admin/assets/images/logo-sm.png"
+							alt="logo-small"
+							class="logo-sm"
+						/>
+					</span>
+					<span>Landing Admin</span>
+				</a>
+			</div>
+			<!--end logo-->
+			<div class="menu-content h-100" data-simplebar>
+				<ul class="metismenu left-sidenav-menu">
+					<li class="menu-label mt-0">Main</li>
+					<li>
+						<a href="/admin/">
+							<i data-feather="home" class="align-self-center menu-icon"></i
+							><span>Pages config</span></a
+						>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- end left-sidenav-->
+
+		<div class="page-wrapper">
+			<div class="topbar">
+				<nav class="navbar-custom">
+					<ul class="list-unstyled topbar-nav float-end mb-0">
+						<li class="dropdown">
+							<a class="nav-link dropdown-toggle nav-user" href="/logout"
+								><i
+									data-feather="power"
+									class="align-self-center icon-xs icon-dual me-1"
+								></i>
+								Logout
+							</a>
+						</li>
+					</ul>
+
+					<ul class="list-unstyled topbar-nav mb-0">
+						<li>
+							<button class="nav-link button-menu-mobile">
+								<i
+									data-feather="menu"
+									class="align-self-center topbar-icon"
+								></i>
+							</button>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<!-- Page Content-->
+			<div class="page-content">
+				<div class="container-fluid">
+					<section class="section">
+						{% with messages = get_flashed_messages(with_categories=true) %} {%
+						if messages %} {% for category, message in messages %}
+						<div class="p-3 alert alert-{{ category }}" role="alert">
+							{{ message }}
+						</div>
+						{% endfor %} {% endif %} {% endwith %} {% block content %}{%
+						endblock %}
+					</section>
 				</div>
-				{% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
-			</section>
+			</div>
 		</div>
 
+		<!-- jQuery  -->
+		<script src="/static/admin/assets/js/jquery.min.js"></script>
+		<script src="/static/admin/assets/js/bootstrap.bundle.min.js"></script>
+		<script src="/static/admin/assets/js/metismenu.min.js"></script>
+		<script src="/static/admin/assets/js/waves.js"></script>
+		<script src="/static/admin/assets/js/feather.min.js"></script>
+		<script src="/static/admin/assets/js/simplebar.min.js"></script>
+		<script src="/static/admin/assets/js/moment.js"></script>
+		<script src="/static/admin/plugins/daterangepicker/daterangepicker.js"></script>
+
+		<!-- form Upload -->
+		<script src="/static/admin/plugins/dropify/js/dropify.min.js"></script>
+		<script src="/static/admin/assets/pages/jquery.form-upload.init.js"></script>
+
+		<!-- App js -->
+		<script src="/static/admin/assets/js/app.js"></script>
 		<script>
 			var url_prefix = "{{url_prefix if url_prefix else ''}}";
+		</script>
+		<script>
+			$(".toHtml").each(function () {
+				$(this).html($(this).text());
+			});
 		</script>
 		{% block scripts %}{% endblock %}
 	</body>

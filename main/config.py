@@ -12,7 +12,7 @@ class Config:
 	APP_PORT = int(environ.get('APP_PORT')) if environ.get('APP_PORT') else 5000
 	APP_HOST = environ.get('APP_HOST') or "0.0.0.0"
 
-	SECRET_KEY = environ.get('SECRET_KEY')
+	SECRET_KEY = environ.get('SECRET_KEY') or 'secret'
 	FLASK_ENV = 'development'
 	DEBUG = int(environ.get('DEBUG')) if environ.get('DEBUG') else 1
 	TESTING = int(environ.get('TESTING')) if environ.get('TESTING') else 1

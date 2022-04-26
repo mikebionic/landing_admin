@@ -1,0 +1,208 @@
+{% extends "admin/layout.html" %} {% block styles %} {% endblock %} {% block
+content %}
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="page-title-box">
+			<div class="row">
+				<div class="col-xl-6">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title">{{ data.title or '' }}</h4>
+							<p class="text-muted mb-0">{{ data.name or '' }}</p>
+						</div>
+						<div class="card-body">
+							<form method="POST" action="" class="form-horizontal well">
+								<fieldset>
+									<div class="repeater-custom-show-hide">
+										<div data-repeater-list="car">
+											<div data-repeater-item="">
+												<div class="form-group row d-flex align-items-end">
+													<div>
+														<label class="form-label">Name</label>
+														<input
+															type="text"
+															name="name"
+															value="{{ data.name or '' }}"
+															placeholder="Name"
+															class="form-control"
+														/>
+													</div>
+												</div>
+											</div>
+
+											<div data-repeater-item="">
+												<div class="form-group row d-flex align-items-end">
+													<div>
+														<label class="form-label">Title</label>
+														<input
+															type="text"
+															name="title"
+															value="{{ data.title or '' }}"
+															placeholder="Title"
+															class="form-control"
+														/>
+													</div>
+												</div>
+											</div>
+
+											<div data-repeater-item="">
+												<div class="form-group row d-flex align-items-end">
+													<div>
+														<label class="form-label">Label</label>
+														<input
+															type="text"
+															name="label"
+															value="{{ data.label or '' }}"
+															placeholder="Label"
+															class="form-control"
+														/>
+													</div>
+												</div>
+											</div>
+
+											<div class="">
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div class="col">
+															<label class="form-label">Desc</label>
+															<textarea
+																type="text"
+																name="desc"
+																class="form-control"
+																placeholder="Description"
+																rows="5"
+															>
+															{{ data.desc or '' }}
+															</textarea
+															>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div class="col">
+															<label class="form-label">HTML</label>
+															<textarea
+																type="text"
+																name="html"
+																class="form-control"
+																placeholder="Description"
+																rows="5"
+															>
+															{{ data.html or '' }}
+															</textarea
+															>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div class="col">
+															<label class="form-label">HTML output</label>
+															<div
+																class="toHtml"
+																style="
+																	border: 1px solid #7a7a7a;
+																	padding: 0.5rem;
+																	border-radius: 1rem;
+																"
+															>
+																{{ data.html or '' }}
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group row mb-0">
+											<input
+												type="submit"
+												value="Save"
+												class="btn btn-outline-primary"
+											/>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xl-6">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title">Categories</h4>
+							<p class="text-muted mb-0">Manage categories</p>
+						</div>
+						<div class="card-body">
+							{% for category in data.categories %}
+							<div class="card card-body">
+								<p><b>Title:</b>{{ category.title }}</p>
+								<p><b>Name:</b>{{ category.name }}</p>
+								<p><b>Label:</b>{{ category.label }}</p>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xl-6">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title">Collections</h4>
+							<p class="text-muted mb-0">Setup Collections</p>
+						</div>
+						<div class="card-body">
+							{% for collection in data.collections %}
+							<div class="card card-body">
+								<p><b>Title:</b>{{ collection.title }}</p>
+								<p><b>Name:</b>{{ collection.name }}</p>
+								<p><b>Label:</b>{{ collection.label }}</p>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xl-6">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title">Images</h4>
+							<p class="text-muted mb-0">Add remove update images</p>
+						</div>
+						<div class="card-body">
+							{% for image in data.images %}
+							<div class="card card-body col-6">
+								<img src="{{image.file_path}}" />
+								<div>
+									<p><b>Title:</b>{{ image.title }}</p>
+									<p><b>Name:</b>{{ image.name }}</p>
+									<p><b>Label:</b>{{ image.label }}</p>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xl-6">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title">Logo</h4>
+							<p class="text-muted mb-0">Upload your logo</p>
+						</div>
+						<div class="card-body">
+							<input type="file" id="input-file-now" class="dropify" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
