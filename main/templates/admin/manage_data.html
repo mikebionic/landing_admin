@@ -8,11 +8,11 @@ content %}
 				<div class="col-xl-6">
 					<div class="card">
 						<div class="card-header">
-							<h4 class="card-title">Menu</h4>
-							<p class="text-muted mb-0">Type your menu here</p>
+							<h4 class="card-title">{{ data.title or '' }}</h4>
+							<p class="text-muted mb-0">{{ data.name or '' }}</p>
 						</div>
 						<div class="card-body">
-							<form method="POST" class="form-horizontal well">
+							<form method="POST" action="" class="form-horizontal well">
 								<fieldset>
 									<div class="repeater-custom-show-hide">
 										<div data-repeater-list="car">
@@ -22,7 +22,7 @@ content %}
 														<label class="form-label">Name</label>
 														<input
 															type="text"
-															name="car[0][model]"
+															name="name"
 															value="{{ data.name or '' }}"
 															placeholder="Name"
 															class="form-control"
@@ -37,7 +37,7 @@ content %}
 														<label class="form-label">Title</label>
 														<input
 															type="text"
-															name="car[0][model]"
+															name="title"
 															value="{{ data.title or '' }}"
 															placeholder="Title"
 															class="form-control"
@@ -52,7 +52,7 @@ content %}
 														<label class="form-label">Label</label>
 														<input
 															type="text"
-															name="car[0][model]"
+															name="label"
 															value="{{ data.label or '' }}"
 															placeholder="Label"
 															class="form-control"
@@ -68,7 +68,7 @@ content %}
 															<label class="form-label">Desc</label>
 															<textarea
 																type="text"
-																name="car[0][model]"
+																name="desc"
 																class="form-control"
 																placeholder="Description"
 																rows="5"
@@ -86,7 +86,7 @@ content %}
 															<label class="form-label">HTML</label>
 															<textarea
 																type="text"
-																name="car[0][model]"
+																name="html"
 																class="form-control"
 																placeholder="Description"
 																rows="5"
@@ -140,7 +140,11 @@ content %}
 						</div>
 						<div class="card-body">
 							{% for category in data.categories %}
-							<div class="card">{{ category.name }}</div>
+							<div class="card card-body">
+								<p><b>Title:</b>{{ category.title }}</p>
+								<p><b>Name:</b>{{ category.name }}</p>
+								<p><b>Label:</b>{{ category.label }}</p>
+							</div>
 							{% endfor %}
 						</div>
 					</div>
@@ -153,7 +157,13 @@ content %}
 							<p class="text-muted mb-0">Setup Collections</p>
 						</div>
 						<div class="card-body">
-							<p>Daaaata</p>
+							{% for collection in data.collections %}
+							<div class="card card-body">
+								<p><b>Title:</b>{{ collection.title }}</p>
+								<p><b>Name:</b>{{ collection.name }}</p>
+								<p><b>Label:</b>{{ collection.label }}</p>
+							</div>
+							{% endfor %}
 						</div>
 					</div>
 				</div>
@@ -165,7 +175,16 @@ content %}
 							<p class="text-muted mb-0">Add remove update images</p>
 						</div>
 						<div class="card-body">
-							<p>Daaaata</p>
+							{% for image in data.images %}
+							<div class="card card-body col-6">
+								<img src="{{image.file_path}}" />
+								<div>
+									<p><b>Title:</b>{{ image.title }}</p>
+									<p><b>Name:</b>{{ image.name }}</p>
+									<p><b>Label:</b>{{ image.label }}</p>
+								</div>
+							</div>
+							{% endfor %}
 						</div>
 					</div>
 				</div>

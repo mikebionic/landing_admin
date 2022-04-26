@@ -8,7 +8,6 @@ from main import db
 from main.config import Config
 
 
-
 @login_manager.user_loader
 def load_user(id):
 	return User.query.get(int(id))
