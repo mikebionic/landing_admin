@@ -91,6 +91,51 @@
 			"label": "Last posts",
 			"title": "Latest And Greatest Posts",
 			"desc": "",
+			"html": "<div class='box-meta'><div class='entry-date'><span class='author'>Dsn Grid</span><a href='#'>March , 17th 2020</a></div></div>",
+			"text_data_id": null
+		},
+		{
+			"id": 10,
+			"name": "resume",
+			"label": "Our Resume",
+			"title": "Повышаем стандарты качества и внедряем лучшие технологии",
+			"desc": "",
+			"html": "",
+			"text_data_id": null
+		},
+		{
+			"id": 11,
+			"name": "team",
+			"label": "Team Name",
+			"title": "The Best Team Ever",
+			"desc": "",
+			"html": "",
+			"text_data_id": null
+		},
+		{
+			"id": 12,
+			"name": "footer_portfolio",
+			"label": "Small silver car ",
+			"title": "The Best footer portfolio",
+			"desc": "",
+			"html": "",
+			"text_data_id": null
+		},
+		{
+			"id": 13,
+			"name": "our_clients",
+			"label": "our_clients name",
+			"title": "Your successful, our reputation",
+			"desc": "",
+			"html": "",
+			"text_data_id": null
+		},
+		{
+			"id": 14,
+			"name": "footer",
+			"label": "footer label",
+			"title": "Would you like more information or do you have a question",
+			"desc": "",
 			"html": "",
 			"text_data_id": null
 		}
@@ -207,10 +252,10 @@
 		"id": 1,
 		"page_id": 1,
 		"name": "Phone number",
-		"label": "",
-		"title": "",
+		"label": "Address",
+		"title": "Turkmenistan, Ashgabat, \n Cehow, home Ashgabat",
 		"desc": "+99361234567",
-		"link": ""
+		"link": "info@example.com"
 	},
 
 	"image": [
