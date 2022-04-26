@@ -125,7 +125,7 @@
 			"id": 13,
 			"name": "our_clients",
 			"label": "our_clients name",
-			"title": "Your successful, our reputation",
+			"title": "Your success, our reputation",
 			"desc": "",
 			"html": "",
 			"text_data_id": null
@@ -138,6 +138,14 @@
 			"desc": "",
 			"html": "",
 			"text_data_id": null
+		},
+		{
+			"id": 15,
+			"name": "contact",
+			"label": "Address",
+			"title": "Turkmenistan, Ashgabat, \n Cehow, home Ashgabat",
+			"desc": "+99361234567",
+			"link": "info@example.com"
 		}
 	],
 
@@ -248,15 +256,17 @@
 		}
 	],
 
-	"contact": {
-		"id": 1,
-		"page_id": 1,
-		"name": "Phone number",
-		"label": "Address",
-		"title": "Turkmenistan, Ashgabat, \n Cehow, home Ashgabat",
-		"desc": "+99361234567",
-		"link": "info@example.com"
-	},
+	"contact": [
+		{
+			"id": 1,
+			"page_id": 1,
+			"name": "Phone number",
+			"label": "Address",
+			"title": "Turkmenistan, Ashgabat, \n Cehow, home Ashgabat",
+			"desc": "+99361234567",
+			"link": "info@example.com"
+		}
+	],
 
 	"image": [
 		{

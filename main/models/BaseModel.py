@@ -15,6 +15,10 @@ class BaseModel(object):
 	created_date = db.Column("created_date",db.DateTime,default=datetime.now())
 	deleted = db.Column("deleted",db.Integer,default=None)
 
+	def get_all(self):
+		db_models = self.query.order_by(self.id.asc()).all()
+		return [item.to_json_api() for item in db_models]
+
 	@property
 	def is_deleted(self):
 		return 1 if self.deleted else 0

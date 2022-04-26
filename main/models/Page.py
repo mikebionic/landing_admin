@@ -20,11 +20,6 @@ class Page(BaseModel, db.Model):
 		for key, value in BaseModel.to_json(self).items():
 			data[key] = value
 		return data
-	
-	def get_all():
-		pages = Page.query.all()
-		return [page.to_json_api() for page in pages]
-
 		
 	def collect_page_data(db_model):
 		page_data = db_model.to_json_api()
