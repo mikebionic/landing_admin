@@ -91,7 +91,6 @@
 			"label": "Last posts",
 			"title": "Latest And Greatest Posts",
 			"desc": "",
-			"html": "<div class='box-meta'><div class='entry-date'><span class='author'>Dsn Grid</span><a href='#'>March , 17th 2020</a></div></div>",
 			"text_data_id": null
 		},
 		{
@@ -106,7 +105,7 @@
 		{
 			"id": 11,
 			"name": "team",
-			"label": "Team Name",
+			"label": "Our Team",
 			"title": "The Best Team Ever",
 			"desc": "",
 			"html": "",
@@ -142,10 +141,8 @@
 		{
 			"id": 15,
 			"name": "contact",
-			"label": "Address",
-			"title": "Turkmenistan, Ashgabat, \n Cehow, home Ashgabat",
-			"desc": "+99361234567",
-			"link": "info@example.com"
+			"label": "Stay connected",
+			"title": "Get in Touch"
 		}
 	],
 
@@ -188,6 +185,21 @@
 			"name": "pen",
 			"label": "Pen",
 			"title": "",
+			"desc": ""
+		},
+
+		{
+			"id": 6,
+			"page_id": 10,
+			"name": "education",
+			"title": "Education",
+			"desc": ""
+		},
+		{
+			"id": 7,
+			"page_id": 10,
+			"name": "workshops",
+			"title": "Workshops",
 			"desc": ""
 		}
 	],
@@ -253,18 +265,145 @@
 			"category_id": null,
 			"title": "Централизованное распределение",
 			"desc": "Обустроенная  промышленная база компании, оснащенная оборудованием и  установками по производству строительных материалах"
+		},
+
+		{
+			"id": 18,
+			"page_id": 7,
+			"name": "Myrat Babamyradov",
+			"label": "Envato Customer",
+			"desc": "The designer is just amazing! Very good quality and taste. This template is incredible beautiful. The overall impression is more than good.The support cannot be better. I wish the team all success!"
+		},
+		{
+			"id": 19,
+			"page_id": 7,
+			"name": "Muhammetnur Ataniyazow",
+			"label": "Marketing Manager",
+			"desc": "First of all, I really enjoyed setting this up. What a great layout and design. The support is fast and high quality. They really made an effort to make sure I got the help I needed. keep in mind that it is not only a great design, but also it is easy to change it up with little effort. Great Job!"
+		},
+		{
+			"id": 20,
+			"page_id": 7,
+			"name": "Geldi Geldiyew",
+			"label": "Web Designer",
+			"desc": "This theme is awesome and the designer is very helpful. I had a few questions before purchase. He/She helped me with all the doubts. Also, they provide quick support. Thank you so much for a beautiful theme"
+		},
+		{
+			"id": 21,
+			"page_id": 7,
+			"name": "Myrat Babamyradov",
+			"label": "Envato Customer",
+			"desc": "Basically im using this theme as a base for my new website and i couldnt be happier. Ran into some bumps but the team who developed this theme was there to help me with any problems. Very slick nice ajax portfolio theme"
+		},
+
+		{
+			"id": 22,
+			"page_id": 8,
+			"title": "Dedicated Staff",
+			"desc": "Quisque placerat vitae lacus ut sceleris queusce luctus odio ac nibh luctus, in porttitor."
+		},
+		{
+			"id": 23,
+			"page_id": 8,
+			"title": "User Experience",
+			"desc": "Cepteur sint occaecat cupidatat proident, taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole."
+		},
+		{
+			"id": 24,
+			"page_id": 8,
+			"title": "Extensive Employment",
+			"desc": "Quisque placerat vitae lacus ut sceleris queusce luctus odio ac nibh luctus, in porttitor."
+		},
+
+		{
+			"id": 25,
+			"page_id": 9,
+			"title": "Extreme Athleticism Is the New Midlife Crisis",
+			"label": "Lifestyle",
+			"note": "Dsn Grid",
+			"desc": "Whoever said “It’s not about the destination. It’s the journey” never flew on a long .."
+		},
+		{
+			"id": 26,
+			"page_id": 9,
+			"title": "The Day I Lost My Child in Charles de Gaulle Airport",
+			"label": "Travel",
+			"note": "Dsn Grid",
+			"desc": "Whoever said “It’s not about the destination. It’s the journey” never flew on a long .."
+		},
+		{
+			"id": 27,
+			"page_id": 9,
+			"title": "Relationships Aren’t Easy, But They’re Worth It",
+			"label": "Health",
+			"note": "Dsn Grid",
+			"desc": "Whoever said “It’s not about the destination. It’s the journey” never flew on a long .."
+		},
+
+		{
+			"id": 28,
+			"category_id": 6,
+			"title": "University of Studies",
+			"desc": "Duis posuere, quam non imperdiet egestas, eros enim mattis mauris, in posuere lacus arcu quis felis. Etiam interdum erat non enim venenatis fermentum."
+		},
+		{
+			"id": 29,
+			"category_id": 6,
+			"title": "Doctoral Degree",
+			"desc": "Aliquam tincidunt malesuada tortor vitae iaculis. In eu turpis iaculis, feugiat risus quis, aliquet urna. Quisque fringilla mollis risus, eu pulvinar dolor."
+		},
+		{
+			"id": 30,
+			"category_id": 6,
+			"title": "Doctoral Degree",
+			"desc": "Maecenas finibus nec sem ut imperdiet. Ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis ante."
+		},
+		{
+			"id": 31,
+			"category_id": 7,
+			"title": "Rolling Thunder",
+			"label": "Senior UX / UI Designer",
+			"desc": "Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna."
+		},
+		{
+			"id": 32,
+			"category_id": 7,
+			"title": "Rolling Thunder",
+			"label": "DDB Athens ( Tribal )",
+			"desc": "Maecenas tempus faucibus rutrum. Duis eu aliquam urna. Proin vitae nulla tristique, ornare felis id, congue libero. Nam volutpat euismod quam."
+		},
+		{
+			"id": 33,
+			"category_id": 7,
+			"title": "Freelancer",
+			"label": "DDB Athens ( Tribal )"
 		}
 	],
 
 	"contact": [
 		{
 			"id": 1,
-			"page_id": 1,
-			"name": "Phone number",
-			"label": "Address",
-			"title": "Turkmenistan, Ashgabat, \n Cehow, home Ashgabat",
-			"desc": "+99361234567",
-			"link": "info@example.com"
+			"page_id": 15,
+			"phone_number": "+99361234567",
+			"home_phone_number": "",
+			"work_phone_number": "",
+			"phone_number_1": "",
+			"phone_number_2": "",
+			"phone_number_3": "",
+			"mail": "info@example.com",
+			"mail_1": "",
+			"mail_2": "",
+			"mail_3": "",
+			"address": "Ashgabat, Turkmenistan",
+			"address_1": "",
+			"address_2": "",
+			"address_3": "",
+			"social_1_name": "Instagram",
+			"social_1": "https://instagram.com",
+			"social_2_name": "Facebook",
+			"social_2": "https://facebook.com",
+			"social_3_name": "Twitter",
+			"social_3": "https://twitter.com"
 		}
 	],
 
@@ -291,6 +430,84 @@
 			"title": "Yaren Collection",
 			"desc": "",
 			"text_data_id": null
+		},
+		{
+			"id": 4,
+			"page_id": 6,
+			"file_path": "/static/web/assets/img/project/project5/1.jpg",
+			"title": "Small Silver Car",
+			"label": "Photography"
+		},
+		{
+			"id": 5,
+			"page_id": 6,
+			"file_path": "/static/web/assets/img/project/project3/1.jpg",
+			"title": "Huggl Power Pack",
+			"label": "induction"
+		},
+		{
+			"id": 6,
+			"page_id": 6,
+			"file_path": "/static/web/assets/img/project/project6/1.jpg",
+			"title": "Lengshuikeng",
+			"label": "Photography"
+		},
+		{
+			"id": 7,
+			"page_id": 6,
+			"file_path": "/static/web/assets/img/project/project1/1.jpg",
+			"title": "Design",
+			"label": "Product"
+		},
+		{
+			"id": 8,
+			"page_id": 6,
+			"file_path": "/static/web/assets/img/project/project4/1.jpg",
+			"title": "Principal Garden",
+			"label": "Architecture"
+		},
+
+		{
+			"id": 9,
+			"collection_id": 18,
+			"file_path": "/static/web/assets/img/team/2.jpg"
+		},
+		{
+			"id": 10,
+			"collection_id": 19,
+			"file_path": "/static/web/assets/img/team/1.jpg"
+		},
+		{
+			"id": 11,
+			"collection_id": 20,
+			"file_path": "/static/web/assets/img/team/3.jpg"
+		},
+		{
+			"id": 12,
+			"collection_id": 21,
+			"file_path": "/static/web/assets/img/team/3.jpg"
+		},
+
+		{
+			"id": 13,
+			"collection_id": 23,
+			"file_path": "/static/web/assets/img/blog/1.jpg"
+		},
+		{
+			"id": 14,
+			"collection_id": 24,
+			"file_path": "/static/web/assets/img/blog/2.jpg"
+		},
+		{
+			"id": 15,
+			"collection_id": 25,
+			"file_path": "/static/web/assets/img/blog/3.jpg"
+		},
+
+		{
+			"id": 16,
+			"collection_id": 26,
+			"file_path": "/static/web/assets/img/blog/1.jpg"
 		}
 	],
 

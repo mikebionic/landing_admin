@@ -65,7 +65,7 @@ content %}
 												<div data-repeater-item="">
 													<div class="form-group row d-flex align-items-end">
 														<div class="col">
-															<label class="form-label">Desc</label>
+															<label class="form-label">Description</label>
 															<textarea
 																type="text"
 																name="desc"
@@ -73,7 +73,7 @@ content %}
 																placeholder="Description"
 																rows="5"
 															>
-															{{ data.desc or '' }}
+{{ data.desc or '' }}
 															</textarea
 															>
 														</div>
@@ -91,7 +91,7 @@ content %}
 																placeholder="Description"
 																rows="5"
 															>
-															{{ data.html or '' }}
+{{ data.html or '' }}
 															</textarea
 															>
 														</div>
@@ -115,6 +115,182 @@ content %}
 														</div>
 													</div>
 												</div>
+
+												{% if data_type == 'contacts' %}
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Phone Number</label>
+															<input
+																type="text"
+																name="phone_number"
+																value="{{ data.phone_number or '' }}"
+																placeholder="Phone number"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="home_phone_number"
+																value="{{ data.home_phone_number or '' }}"
+																placeholder="Phone number"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="work_phone_number"
+																value="{{ data.work_phone_number or '' }}"
+																placeholder="Phone number"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="phone_number_1"
+																value="{{ data.phone_number_1 or '' }}"
+																placeholder="Phone number"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="phone_number_2"
+																value="{{ data.phone_number_2 or '' }}"
+																placeholder="Phone number"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="phone_number_3"
+																value="{{ data.phone_number_3 or '' }}"
+																placeholder="Phone number"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Mail</label>
+															<input
+																type="text"
+																name="mail"
+																value="{{ data.mail or '' }}"
+																placeholder="Mail"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="mail_1"
+																value="{{ data.mail_1 or '' }}"
+																placeholder="Mail"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="mail_2"
+																value="{{ data.mail_2 or '' }}"
+																placeholder="Mail"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="mail_3"
+																value="{{ data.mail_3 or '' }}"
+																placeholder="Mail"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Address</label>
+															<input
+																type="text"
+																name="address"
+																value="{{ data.address or '' }}"
+																placeholder="Address"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="address_1"
+																value="{{ data.address_1 or '' }}"
+																placeholder="Address"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="address_2"
+																value="{{ data.address_2 or '' }}"
+																placeholder="Address"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="address_3"
+																value="{{ data.address_3 or '' }}"
+																placeholder="Address"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Social</label>
+
+															<input
+																type="text"
+																name="social_1_name"
+																value="{{ data.social_1 or '' }}"
+																placeholder="Social"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="social_1"
+																value="{{ data.social_1 or '' }}"
+																placeholder="Social"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="social_2_name"
+																value="{{ data.social_2 or '' }}"
+																placeholder="Social"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="social_2"
+																value="{{ data.social_2 or '' }}"
+																placeholder="Social"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="social_3_name"
+																value="{{ data.social_3 or '' }}"
+																placeholder="Social"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="social_3"
+																value="{{ data.social_3 or '' }}"
+																placeholder="Social"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												{% endif %}
 											</div>
 										</div>
 

@@ -455,6 +455,9 @@
 									</a>
 								</div>
 
+
+
+								
 								<div class="work-item p-relative architecture">
 									<a class="effect-ajax" data-dsn-ajax="work" href="project4.html">
 										<div class="work-item-inner">
@@ -892,108 +895,26 @@
 						<div class="swiper-container">
 							<div class="swiper-wrapper v-dark-head">
 
+								{% for image in data.work.images %}
 								<div class="swiper-slide over-hidden work-item">
 									<div class="box-img p-relative over-hidden before-z-index" data-overlay="5"
 										data-swiper-parallax-scale="0.85">
 										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="/static/web/assets/img/project/project5/1.jpg" alt="">
+										data-dsn-src="{{image.file_path}}" alt="{{image.title or image.label}}">
 									</div>
 
 									<div class="box-content" data-swiper-parallax-opacity="0">
 										<div class="metas d-inline-block mb-15">
-											<span>Photography</span> <span> car</span>
+											<span>{{image.label}}</span>
 										</div>
 										<h4 class="sec-title">
-											<a class="effect-ajax" data-dsn-ajax="work" href="project5.html">
-												Small Silver Car
+											<a class="effect-ajax" data-dsn-ajax="work" href="">
+												{{image.title}}
 											</a>
 										</h4>
 									</div>
 								</div>
-								<div class="swiper-slide over-hidden work-item">
-									<div class="box-img p-relative over-hidden before-z-index" data-overlay="6"
-										data-swiper-parallax-scale="0.85">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="/static/web/assets/img/project/project3/1.jpg" alt="">
-									</div>
-
-									<div class="box-content" data-swiper-parallax-opacity="0">
-										<div class="metas d-inline-block mb-15">
-											<span>induction</span>
-										</div>
-										<h4 class="sec-title">
-											<a class="effect-ajax" data-dsn-ajax="work" href="project3.html">
-												{{data.work.label or 'work.label'}}</a>
-										</h4>
-									</div>
-								</div>
-								<div class="swiper-slide over-hidden work-item">
-									<div class="box-img p-relative over-hidden before-z-index" data-overlay="4"
-										data-swiper-parallax-scale="0.85">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="/static/web/assets/img/project/project6/1.jpg" alt="">
-									</div>
-
-									<div class="box-content" data-swiper-parallax-opacity="0">
-										<div class="metas d-inline-block mb-15">
-											<span>Photography</span>
-										</div>
-										<h4 class="sec-title">
-											<a class="effect-ajax" data-dsn-ajax="work"
-												href="project6.html">{{data.work.label or 'work.label'}}</a>
-										</h4>
-									</div>
-								</div>
-								<div class="swiper-slide over-hidden work-item">
-									<div class="box-img p-relative over-hidden before-z-index" data-overlay="6"
-										data-swiper-parallax-scale="0.85">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="/static/web/assets/img/project/project1/1.jpg" alt="">
-									</div>
-
-									<div class="box-content" data-swiper-parallax-opacity="0">
-										<div class="metas d-inline-block mb-15">
-											<span> Product</span> <span>voice</span>
-										</div>
-										<h4 class="sec-title">
-											<a class="effect-ajax" data-dsn-ajax="work" href="project1.html">{{data.work.label or 'work.label'}}</a>
-										</h4>
-									</div>
-								</div>
-								<div class="swiper-slide over-hidden work-item">
-									<div class="box-img p-relative over-hidden before-z-index" data-overlay="6"
-										data-swiper-parallax-scale="0.85">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="/static/web/assets/img/project/project2/1.jpg" alt="">
-									</div>
-
-									<div class="box-content" data-swiper-parallax-opacity="0">
-										<div class="metas d-inline-block mb-15">
-											<span> pen</span>
-										</div>
-										<h4 class="sec-title">
-											<a class="effect-ajax" data-dsn-ajax="work" href="project2.html">
-												{{data.work.label or 'work.label'}}</a>
-										</h4>
-									</div>
-								</div>
-								<div class="swiper-slide over-hidden work-item">
-									<div class="box-img p-relative over-hidden before-z-index" data-overlay="2"
-										data-swiper-parallax-scale="0.85">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="/static/web/assets/img/project/project4/1.jpg" alt="">
-									</div>
-
-									<div class="box-content" data-swiper-parallax-opacity="0">
-										<div class="metas d-inline-block mb-15">
-											<span> Architecture</span>
-										</div>
-										<h4 class="sec-title">
-											<a class="effect-ajax" data-dsn-ajax="work" href="project4.html">
-												{{data.work.label or 'work.label'}}</a>
-										</h4>
-									</div>
-								</div>
+								{% endfor %}
 
 							</div>
 							<div class="dsn-pagination mt-30 dsn-container d-flex justify-content-between">
@@ -1055,52 +976,23 @@
 												<div class="testimonial-nav-inner">
 													<div class="swiper-container">
 														<div class="swiper-wrapper">
-															<div class="swiper-slide d-flex align-items-center">
-																<div class="box-img mr-15"
-																	data-swiper-parallax-scale="0.7">
-																	<img  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="/static/web/assets/img/team/2.jpg" alt="">
-																</div>
-																<div class="box-text" data-swiper-parallax="30%"
-																	data-swiper-parallax-opacity="0">
-																	<h4 class="title-block mb-10">{{data.feedback.name or 'feedback.name'}}</h4>
-																	<h5 class="sm-title-block">{{data.feedback.label or 'feedback.label'}}</h5>
-																</div>
-															</div>
-															<div class="swiper-slide d-flex align-items-center">
-																<div class="box-img mr-15"
-																	data-swiper-parallax-scale="0.7">
-																	<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="/static/web/assets/img/team/1.jpg" alt="">
-																</div>
-																<div class="box-text" data-swiper-parallax="30%"
-																	data-swiper-parallax-opacity="0">
-																	<h4 class="title-{{data.feedback.name or 'feedback.name'}} mb-10">lindamiku</h4>
-																	<h5 class="sm-title-block">{{data.feedback.label or 'feedback.label'}}</h5>
-																</div>
-															</div>
 
-															<div class="swiper-slide d-flex align-items-center">
-																<div class="box-img mr-15"
-																	data-swiper-parallax-scale="0.7">
-																	<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="/static/web/assets/img/team/3.jpg" alt="">
-																</div>
-																<div class="box-text" data-swiper-parallax="30%"
-																	data-swiper-parallax-opacity="0">
-																	<h4 class="title-block mb-10">{{data.feedback.name or 'feedback.name'}}</h4>
-																	<h5 class="sm-title-block">{{data.feedback.label or 'feedback.label'}}</h5>
-																</div>
-															</div>
 
+
+															{% for collection in data.feedback.collections %}
 															<div class="swiper-slide d-flex align-items-center">
 																<div class="box-img mr-15"
 																	data-swiper-parallax-scale="0.7">
-																	<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="/static/web/assets/img/team/3.jpg" alt="">
+																	<img  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{collection.images[0].file_path if collection.images else ''}}" alt="">
 																</div>
 																<div class="box-text" data-swiper-parallax="30%"
 																	data-swiper-parallax-opacity="0">
-																	<h4 class="title-block mb-10">{{data.feedback.name or 'feedback.name'}}</h4>
-																	<h5 class="sm-title-block">{{data.feedback.label or 'feedback.label'}}</h5>
+																	<h4 class="title-block mb-10">{{collection.name or 'collection.name'}}</h4>
+																	<h5 class="sm-title-block">{{collection.label or 'collection.label'}}</h5>
 																</div>
 															</div>
+															{% endfor %}
+
 
 														</div>
 													</div>
@@ -1110,22 +1002,13 @@
 											<div class="testimonial-content ">
 												<div class="swiper-container">
 													<div class="swiper-wrapper">
+														
+														{% for collection in data.feedback.collections %}
 														<div class="swiper-slide">
-															<p>{{data.feedback.desc or 'feedback.desc'}}</p>
+															<p>{{collection.desc or 'collection.desc'}}</p>
 														</div>
+														{% endfor %}
 
-														<div class="swiper-slide">
-															<p>{{data.feedback.desc or 'feedback.desc'}}
-															</p>
-														</div>
-
-														<div class="swiper-slide">
-															<p>{{data.feedback.desc or 'feedback.desc'}}</p>
-														</div>
-
-														<div class="swiper-slide">
-															<p>{{data.feedback.desc or 'feedback.desc'}}</p>
-														</div>
 													</div>
 												</div>
 											</div>
@@ -1208,37 +1091,23 @@
 											</div>
 											<div class="dsn-accordion accordion">
 												<div class="accordion__wrapper">
+													
+													
+
+													{% set purpose_count = 0 %}
+													{% for collection in data.purpose.collections %}
+													{% set purpose_count = purpose_count + loop.index %}
 													<div class="accordion__item dsn-up">
 														<div
 															class="accordion__question expanded d-flex align-items-center p-relative">
-															<span class="number">1</span>
-															<h4 class="sm-title-block">{{data.purpose.label or 'purpose.label'}}</h4>
-														</div>
-														<div class="accordion__answer active">
-															<p>{{data.purpose.desc or 'purpose.desc'}}</p>
-														</div>
-													</div>
-													<div class="accordion__item dsn-up">
-														<div
-															class="accordion__question d-flex align-items-center p-relative">
-															<span class="number">2</span>
-															<h4 class="sm-title-block">{{data.purpose.label or 'purpose.label'}}</h4>
+															<span class="number">{{purpose_count}}</span>
+															<h4 class="sm-title-block">{{collection.title or 'purpose.label'}}</h4>
 														</div>
 														<div class="accordion__answer">
-															<p>{{data.purpose.desc or 'purpose.desc'}} </p>
+															<p>{{collection.desc or 'purpose.desc'}}</p>
 														</div>
 													</div>
-
-													<div class="accordion__item dsn-up">
-														<div
-															class="accordion__question d-flex align-items-center p-relative">
-															<span class="number">3</span>
-															<h4 class="sm-title-block">{{data.purpose.label or 'purpose.label'}}</h4>
-														</div>
-														<div class="accordion__answer">
-															<p>{{data.purpose.desc or 'purpose.desc'}}</p>
-														</div>
-													</div>
+													{% endfor %}
 												</div>
 											</div>
 
@@ -1254,7 +1123,7 @@
 
 					<!-- ========== blog Section ========== -->
 					<section class="our-blog section-margin p-relative dsn-swiper" data-dsn-animate="section"
-						data-dsn-option='{"slidesPerView":1.5  }' data-dsn-title="Lasts post">
+						data-dsn-option='{"slidesPerView":1.5  }' data-dsn-title="{{data.posts.label}}">
 						<div class="container mb-70 d-flex text-center flex-column align-items-center">
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
@@ -1272,82 +1141,36 @@
 							<div class="swiper-container">
 								<div class="swiper-wrapper">
 
+									{% for collection in data.posts.collections %}
 									<div class="swiper-slide blog-classic-item">
 										<div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
 											data-swiper-parallax-scale="0.85">
-											<div class="toHtml">
-												{{data.posts.html or 'posts.html'}}
+											<div class="box-meta">
+												<div class="entry-date">
+													<span class="author">{{collection.note}}</span>
+													<a href="#">{{collection.created_date}}</a>
+												</div>
 											</div>
+
 											<div class="box-img over-hidden">
 												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-dsn-src="/static/web/assets/img/blog/1.jpg" alt="">
+												data-dsn-src="{{collection.images[0].file_path if collection.images else ''}}" alt="">
 											</div>
 											<div class="box-content p-relative">
 
 												<div class="box-content-body">
 													<div class="metas">
-														<span class="mb-5">{{data.posts.name or 'posts.name'}}</span>
+														<span class="mb-5">{{collection.label or 'collection.label'}}</span>
 													</div>
 													<h4 class="title-block mb-20 ">
-														<a href="#">{{data.posts.label or 'posts.label'}}</a>
+														<a href="#">{{collection.title or 'collection.title'}}</a>
 													</h4>
-													<p>{{data.posts.desc or 'posts.desc'}}.</p>
+													<p>{{collection.desc or 'collection.desc'}}.</p>
 												</div>
 											</div>
 										</div>
 									</div>
-
-									<div class="swiper-slide blog-classic-item">
-										<div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
-											data-swiper-parallax-scale="0.85">
-											<div class="toHtml">
-												{{data.posts.html or 'posts.html'}}
-											</div>
-
-											<div class="box-img over-hidden">
-												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-dsn-src="/static/web/assets/img/blog/2.jpg" alt="">
-											</div>
-											<div class="box-content p-relative">
-
-												<div class="box-content-body">
-													<div class="metas">
-														<span class="mb-5">{{data.posts.name or 'posts.label'}}</span>
-													</div>
-													<h4 class="title-block mb-20 ">
-														<a href="#">{{data.posts.label or 'posts.label'}}</a>
-													</h4>
-													<p>{{data.posts.desc or 'posts.desc'}}.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide blog-classic-item">
-										<div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
-											data-swiper-parallax-scale="0.85">
-											<div class="toHtml">
-												{{data.posts.html or 'posts.html'}}
-											</div>
-
-											<div class="box-img over-hidden">
-												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-dsn-src="/static/web/assets/img/blog/3.jpg" alt="">
-											</div>
-											<div class="box-content p-relative">
-
-												<div class="box-content-body">
-													<div class="metas">
-														<span class="mb-5">{{data.posts.name or 'posts.label'}}</span>
-													</div>
-													<h4 class="title-block mb-20 ">
-														<a href="#">{{data.posts.label or 'posts.label'}}</a>
-													</h4>
-													<p>{{data.posts.desc or 'posts.desc'}}.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-
+									{% endfor %}
 
 								</div>
 								<div class="dsn-pagination mt-30 dsn-container d-flex justify-content-between">
@@ -1389,7 +1212,7 @@
 					<section class="resume section-padding background-section" data-dsn-title="Resume">
 						<div class="container section-title mb-70 p-relative dsn-z-index-2">
 							<p class="sub-heading  line-bg-left mb-15">
-								My Resume
+								{{data.resume.label or 'resume.label'}}
 							</p>
 							<h2 class="section-title title-cap">{{data.resume.title or 'resume.title'}}</h2>
 						</div>
@@ -1397,50 +1220,22 @@
 						<div class="container">
 							<div class="row">
 
+								{% for category in data.resume.categories %}
 								<div class="col-md-6 resume-box-inner">
 									<div class="resume-box p-relative pr-30">
-										<h3 class="title-block mb-30">{{data.resume.name or 'resume.name'}}</h3>
+										<h3 class="title-block mb-30">{{category.title or 'category.title'}}</h3>
 
+										{% for collection in category.collections %}
 										<div class="item-resume-box p-relative">
-											<h4 class="sm-title-block mb-15">{{data.resume.label or 'resume.label'}}</h4>
-											<p class="max-w570">{{data.resume.desc or 'resume.desc'}}</p>
+											<h4 class="sm-title-block mb-15">{{collection.title or 'collection.title'}}</h4>
+											<p class="max-w570">{{collection.desc or 'collection.desc'}}</p>
 										</div>
+										{% endfor %}
 
-										<div class="item-resume-box p-relative">
-											<h4 class="sm-title-block mb-15">{{data.resume.label or 'resume.label'}}</h4>
-											<p class="max-w570">{{data.resume.desc or 'resume.desc'}}</p>
-										</div>
-
-										<div class="item-resume-box p-relative">
-											<h4 class="sm-title-block mb-15">{{data.resume.label or 'resume.label'}}</h4>
-											<p class="max-w570">{{data.resume.desc or 'resume.desc'}}</p>
-										</div>
 									</div>
 								</div>
+								{% endfor %}
 
-								<div class="col-md-6 resume-box-inner">
-									<div class="resume-box p-relative pr-30">
-										<h3 class="title-block mb-30">{{data.resume.name or 'resume.name'}}</h3>
-
-										<div class="item-resume-box p-relative">
-											<h4 class="sm-title-block mb-15">{{data.resume.label or 'resume.label'}}</h4>
-											<h6>{{data.resume or 'resume'}}</h6>
-											<p class="max-w570 mt-10">{{data.resume.desc or 'resume.desc'}}</p>
-										</div>
-
-										<div class="item-resume-box p-relative">
-											<h4 class="sm-title-block mb-15">{{data.resume.label or 'resume.label'}}</h4>
-											<h6>{{data.resume or 'resume'}}</h6>
-											<p class="max-w570 mt-10">{{data.resume.desc or 'resume.desc'}}</p>
-										</div>t euismod quam.</p>
-										</div>
-
-										<div class="item-resume-box p-relative">
-											<h4 class="sm-title-block mb-15">{{data.resume.label or 'resume.label'}}</h4>
-											<h6>{{data.resume or 'resume'}}</h6>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</section>
@@ -1451,7 +1246,7 @@
 						<div class="container mb-70 d-flex text-center flex-column  align-items-center">
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									Our Team
+									{{data.team.label or 'team.label'}}
 								</span>
 
 							</p>
@@ -1834,14 +1629,14 @@
 
 								<div class="mb-30 d-flex text-left flex-column align-items-start">
 									<p class="sub-heading line-shap line-shap-before mb-15">
-										<span class="line-bg-right">Stay connected</span>
+										<span class="line-bg-right">{{ data.contact.label or 'contact.label' }}</span>
 									</p>
 									<h2 class="section-title  title-cap">
-										Get in Touch
+										{{ data.contact.title or 'contact.title' }}
 									</h2>
 								</div>
 
-								<form id="contact-form" class="form" method="post" action="contact.php"
+								<form id="contact-form" class="form" method="post" action="mailto:{{data.contact.mail}}"
 									data-toggle="validator">
 									<div class="messages"></div>
 									<div class="input__wrap controls">
@@ -1867,7 +1662,7 @@
 
 										<div class="form-group">
 											<div class="entry-box">
-												<label>What's up?</label>
+												<label>Message</label>
 												<textarea id="form_message" class="form-control" name="message"
 													placeholder="Tell us about you and the world" required="required"
 													data-error="Please,leave us a message."></textarea>
@@ -1890,32 +1685,39 @@
 							<div class="box-info-contact">
 								<ul>
 									<li>
-										<h5 class="title-block mb-15">{{data.contact.name or 'contact.name'}}</h5>
-										<p class="text-p">{{data.contact.desc or 'contact.desc'}}</p>
+										<h5 class="title-block mb-15">Contact</h5>
+										<p class="text-p">{{data.contact.contacts[0].phone_number or 'contact.contacts[0].phone_number'}}</p>
 										<div class="over-hidden mt-5">
-											<a class="link-hover" data-hover-text="info@example.com"
-												href="#">{{data.contact.link or 'contact.link'}}</a>
+											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].mail or 'contact.contacts[0].mail'}}"
+												href="mailto:{{data.contact.contacts[0].mail}}">{{data.contact.contacts[0].mail or 'contact.contacts[0].mail'}}</a>
 										</div>
 
 									</li>
 									<li>
-										<h5 class="title-block mb-15">{{data.contact.label or 'contact.label'}}</h5>
-										<p class="text-p">{{data.contact.desc or 'contact.desc'}}</p>
+										<h5 class="title-block mb-15">Address</h5>
+										<p class="text-p">{{data.contact.contacts[0].address or 'contact.contacts[0].address'}}</p>
 									</li>
 									<li>
 										<h5 class="title-block mb-15">Follow</h5>
+										{% if data.contact.contacts[0].social_1 %}
 										<div class="social-item over-hidden">
-											<a class="link-hover" data-hover-text="Instagram." href="#" target="_blank"
-												rel="nofollow">Instagram.</a>
+											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].social_1_name or 'social1_name'}}" href="{{data.contact.contacts[0].social_1 or 'social1'}}" target="_blank"
+												rel="nofollow">{{data.contact.contacts[0].social_1_name or 'social1_name'}}</a>
 										</div>
+										{% endif %}
+										{% if data.contact.contacts[0].social_2 %}
 										<div class="social-item over-hidden">
-											<a class="link-hover" data-hover-text="Facebook." href="#" target="_blank"
-												rel="nofollow">Facebook.</a>
+											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].social_2_name or 'social2_name'}}" href="{{data.contact.contacts[0].social_2 or 'social2'}}" target="_blank"
+												rel="nofollow">{{data.contact.contacts[0].social_2_name or 'social2_name'}}</a>
 										</div>
+										{% endif %}
+										{% if data.contact.contacts[0].social_3 %}
 										<div class="social-item over-hidden">
-											<a class="link-hover" data-hover-text="YouTube." href="#" target="_blank"
-												rel="nofollow">YouTube.</a>
+											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].social_3_name or 'social3_name'}}" href="{{data.contact.contacts[0].social_3 or 'social3'}}" target="_blank"
+												rel="nofollow">{{data.contact.contacts[0].social_3_name or 'social3_name'}}</a>
 										</div>
+										{% endif %}
+
 									</li>
 								</ul>
 							</div>
