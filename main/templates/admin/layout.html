@@ -15,35 +15,38 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 		<!-- App favicon -->
-		<link rel="shortcut icon" href="/static/admin/assets/images/favicon.ico" />
 		<link
-			href="/static/admin/plugins/dropify/css/dropify.min.css"
+			rel="shortcut icon"
+			href="{{ url_for('static', filename='/admin/assets/images/favicon.ico') }}"
+		/>
+		<link
+			href="{{ url_for('static', filename='/admin/plugins/dropify/css/dropify.min.css') }}"
 			rel="stylesheet"
 		/>
 
 		<!-- App css -->
 		<link
-			href="/static/admin/assets/css/bootstrap.min.css"
+			href="{{ url_for('static', filename='/admin/assets/css/bootstrap.min.css') }}"
 			rel="stylesheet"
 			type="text/css"
 		/>
 		<link
-			href="/static/admin/assets/css/icons.min.css"
+			href="{{ url_for('static', filename='/admin/assets/css/icons.min.css') }}"
 			rel="stylesheet"
 			type="text/css"
 		/>
 		<link
-			href="/static/admin/assets/css/metisMenu.min.css"
+			href="{{ url_for('static', filename='/admin/assets/css/metisMenu.min.css') }}"
 			rel="stylesheet"
 			type="text/css"
 		/>
 		<link
-			href="/static/admin/plugins/daterangepicker/daterangepicker.css"
+			href="{{ url_for('static', filename='/admin/plugins/daterangepicker/daterangepicker.css') }}"
 			rel="stylesheet"
 			type="text/css"
 		/>
 		<link
-			href="/static/admin/assets/css/app.min.css"
+			href="{{ url_for('static', filename='/admin/assets/css/app.min.css') }}"
 			rel="stylesheet"
 			type="text/css"
 		/>
@@ -58,7 +61,7 @@
 				<a href="/admin/" class="logo">
 					<span>
 						<img
-							src="/static/admin/assets/images/logo-sm.png"
+							src="{{ url_for('static', filename='/admin/assets/images/logo-sm.png"
 							alt="logo-small"
 							class="logo-sm"
 						/>
@@ -150,21 +153,21 @@
 		</div>
 
 		<!-- jQuery  -->
-		<script src="/static/admin/assets/js/jquery.min.js"></script>
-		<script src="/static/admin/assets/js/bootstrap.bundle.min.js"></script>
-		<script src="/static/admin/assets/js/metismenu.min.js"></script>
-		<script src="/static/admin/assets/js/waves.js"></script>
-		<script src="/static/admin/assets/js/feather.min.js"></script>
-		<script src="/static/admin/assets/js/simplebar.min.js"></script>
-		<script src="/static/admin/assets/js/moment.js"></script>
-		<script src="/static/admin/plugins/daterangepicker/daterangepicker.js"></script>
+		<script src="{{ url_for('static', filename='/admin/assets/js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='/admin/assets/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='/admin/assets/js/metismenu.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='/admin/assets/js/waves.js') }}"></script>
+		<script src="{{ url_for('static', filename='/admin/assets/js/feather.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='/admin/assets/js/simplebar.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='/admin/assets/js/moment.js') }}"></script>
+		<script src="{{ url_for('static', filename='/admin/plugins/daterangepicker/daterangepicker.js') }}"></script>
 
 		<!-- form Upload -->
-		<script src="/static/admin/plugins/dropify/js/dropify.min.js"></script>
-		<script src="/static/admin/assets/pages/jquery.form-upload.init.js"></script>
+		<script src="{{ url_for('static', filename='/admin/plugins/dropify/js/dropify.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='/admin/assets/pages/jquery.form-upload.init.js') }}"></script>
 
 		<!-- App js -->
-		<script src="/static/admin/assets/js/app.js"></script>
+		<script src="{{ url_for('static', filename='/admin/assets/js/app.js') }}"></script>
 		<script>
 			var url_prefix = "{{url_prefix if url_prefix else ''}}";
 		</script>
