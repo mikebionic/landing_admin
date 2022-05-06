@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"
-			name="viewport"
-		/>
-		<title>{{_('Login')}}</title>
-	</head>
-
-	<body>
-		<div class="loader"></div>
-		<div id="app">
-			<section class="section">
-				{% with messages = get_flashed_messages(with_categories=true) %} {% if
-				messages %} {% for category, message in messages %}
-				<div class="p-3 alert alert-{{ category }}" role="alert">
-					{{ message }}
-				</div>
-				{% endfor %} {% endif %} {% endwith %}
+{% extends "admin/layout.html" %} {% block styles %} {% endblock %} {% block
+	content %}
 
 				<div class="container mt-5">
 					<div class="row">
@@ -76,3 +57,5 @@
 		</div>
 	</body>
 </html>
+
+{% endblock %}

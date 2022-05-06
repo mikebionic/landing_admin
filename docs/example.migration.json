@@ -384,6 +384,9 @@
 		{
 			"id": 1,
 			"page_id": 15,
+			"name": "main_contact",
+			"title": "Main Contact",
+			"label": "Contact",
 			"phone_number": "+99361234567",
 			"home_phone_number": "",
 			"work_phone_number": "",

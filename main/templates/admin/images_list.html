@@ -1,0 +1,52 @@
+{% extends "admin/layout.html" %} {% block styles %} {% endblock %} {% block
+content %}
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="page-title-box">
+			<div class="form-group row mb-0" style="padding: 1rem">
+				<div class="col-sm-6">
+					<a href="/admin/{{data_type}}/add">
+						<span data-repeater-create="" class="btn btn-outline-secondary">
+							<span class="fa fa-plus"></span> Add
+						</span>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				{% for item in data %}
+				<div class="col-xl-6">
+					<div class="card">
+						<div class="card-header">
+							<div class="d-flex" style="place-content: space-between">
+								<h4 class="card-title"><b>ID: {{item.id}}</b></h4>
+								<h4 class="card-title">{{item.title}}</h4>
+								<a
+									class="btn btn-outline-primary"
+									href="/admin/{{data_type}}/{{item.id}}/manage/"
+									>Edit</a
+								>
+							</div>
+							<p class="text-muted mb-0">{{item.name}}</p>
+						</div>
+						<div class="card-body">
+							<p><b>Label: </b>{{item.label}}</p>
+							<p><b>Description: </b>{{item.desc}}</p>
+							<img src="{{item.file_path}}" style="max-width: 25rem" />
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			<div class="form-group row mb-0" style="padding: 1rem">
+				<a href="/admin/{{data_type}}/add">
+					<span data-repeater-create="" class="btn btn-outline-secondary">
+						<span class="fa fa-plus"></span> Add
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

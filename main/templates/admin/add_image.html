@@ -1,0 +1,118 @@
+{% extends "admin/layout.html" %} {% block styles %} {% endblock %} {% block
+content %}
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="page-title-box">
+			<div class="row">
+				<div class="col-xl-6">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title">Title here</h4>
+							<p class="text-muted mb-0">Name will be here</p>
+						</div>
+						<div class="card-body">
+							<form method="POST" action="" class="form-horizontal well">
+								<fieldset>
+									<div class="repeater-custom-show-hide">
+										<div data-repeater-list="car">
+											<div data-repeater-item="">
+												<div class="form-group row d-flex align-items-end">
+													<div>
+														<label class="form-label">Name</label>
+														<input
+															type="text"
+															name="name"
+															value=""
+															placeholder="Name"
+															class="form-control"
+														/>
+													</div>
+												</div>
+											</div>
+
+											<div data-repeater-item="">
+												<div class="form-group row d-flex align-items-end">
+													<div>
+														<label class="form-label">Title</label>
+														<input
+															type="text"
+															name="title"
+															value=""
+															placeholder="Title"
+															class="form-control"
+														/>
+													</div>
+												</div>
+											</div>
+
+											<div data-repeater-item="">
+												<div class="form-group row d-flex align-items-end">
+													<div>
+														<label class="form-label">Label</label>
+														<input
+															type="text"
+															name="label"
+															value=""
+															placeholder="Label"
+															class="form-control"
+														/>
+													</div>
+												</div>
+											</div>
+
+											<div class="">
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div class="col">
+															<label class="form-label">Desc</label>
+															<textarea
+																type="text"
+																name="desc"
+																class="form-control"
+																placeholder="Description"
+																rows="5"
+															>
+															</textarea>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div class="col">
+															<label class="form-label">HTML</label>
+															<textarea
+																type="text"
+																name="html"
+																class="form-control"
+																placeholder="Description"
+																rows="5"
+															>
+															</textarea>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group row mb-0">
+											<input
+												type="submit"
+												value="Save"
+												class="btn btn-outline-primary"
+											/>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+							`
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

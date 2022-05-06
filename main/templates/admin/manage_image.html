@@ -8,8 +8,8 @@ content %}
 				<div class="col-xl-12">
 					<div class="card">
 						<div class="card-header">
-							<h4 class="card-title">Title here</h4>
-							<p class="text-muted mb-0">Name will be here</p>
+							<h4 class="card-title">{{ data.title or '' }}</h4>
+							<p class="text-muted mb-0">{{ data.name or '' }}</p>
 						</div>
 						<div class="card-body">
 							<form method="POST" action="" class="form-horizontal well">
@@ -24,7 +24,7 @@ content %}
 															<input
 																type="text"
 																name="name"
-																value=""
+																value="{{ data.name or '' }}"
 																placeholder="Name"
 																class="form-control"
 															/>
@@ -39,7 +39,7 @@ content %}
 															<input
 																type="text"
 																name="title"
-																value=""
+																value="{{ data.title or '' }}"
 																placeholder="Title"
 																class="form-control"
 															/>
@@ -54,7 +54,7 @@ content %}
 															<input
 																type="text"
 																name="label"
-																value=""
+																value="{{ data.label or '' }}"
 																placeholder="Label"
 																class="form-control"
 															/>
@@ -66,7 +66,7 @@ content %}
 													<div data-repeater-item="">
 														<div class="form-group row d-flex align-items-end">
 															<div class="col">
-																<label class="form-label">Desc</label>
+																<label class="form-label">Description</label>
 																<textarea
 																	type="text"
 																	name="desc"
@@ -74,7 +74,9 @@ content %}
 																	placeholder="Description"
 																	rows="5"
 																>
-																</textarea>
+	{{ data.desc or '' }}
+																</textarea
+																>
 															</div>
 														</div>
 													</div>
@@ -90,168 +92,98 @@ content %}
 																	placeholder="Description"
 																	rows="5"
 																>
-																</textarea>
+	{{ data.html or '' }}
+																</textarea
+																>
+															</div>
+														</div>
+													</div>
+
+													<div data-repeater-item="">
+														<div class="form-group row d-flex align-items-end">
+															<div class="col">
+																<label class="form-label">HTML output</label>
+																<div
+																	class="toHtml"
+																	style="
+																		border: 1px solid #a0a0a0;
+																		padding: 0.5rem;
+																		border-radius: 1rem;
+																	"
+																>
+																	{{ data.html or '' }}
+																</div>
 															</div>
 														</div>
 													</div>
 												</div>
 											</div>
-											{% if data_type == 'contacts' %}
+
 											<div class="card-body">
 												<div data-repeater-item="">
 													<div class="form-group row d-flex align-items-end">
 														<div>
-															<label class="form-label">Phone Number</label>
+															<label class="form-label">Image config</label>
 															<input
 																type="text"
-																name="phone_number"
-																placeholder="phone_number"
+																name="page_id"
+																value="{{ data.page_id or '' }}"
+																placeholder="page_id"
 																class="form-control"
 															/>
 															<input
 																type="text"
-																name="home_phone_number"
-																placeholder="home_phone_number"
+																name="category_id"
+																value="{{ data.category_id or '' }}"
+																placeholder="category_id"
 																class="form-control"
 															/>
 															<input
 																type="text"
-																name="work_phone_number"
-																placeholder="work_phone_number"
+																name="collection_id"
+																value="{{ data.collection_id or '' }}"
+																placeholder="collection_id"
 																class="form-control"
 															/>
 															<input
 																type="text"
-																name="phone_number_1"
-																placeholder="phone_number_1"
+																name="text_data_id"
+																value="{{ data.text_data_id or '' }}"
+																placeholder="text_data_id"
 																class="form-control"
 															/>
 															<input
 																type="text"
-																name="phone_number_2"
-																placeholder="phone_number_2"
+																name="contact_id"
+																value="{{ data.contact_id or '' }}"
+																placeholder="contact_id"
 																class="form-control"
 															/>
 															<input
 																type="text"
-																name="phone_number_3"
-																placeholder="phone_number_3"
-																class="form-control"
-															/>
-														</div>
-													</div>
-												</div>
-
-												<div data-repeater-item="">
-													<div class="form-group row d-flex align-items-end">
-														<div>
-															<label class="form-label">Mail</label>
-															<input
-																type="text"
-																name="mail"
-																placeholder="mail"
+																name="file_path"
+																value="{{ data.file_path or '' }}"
+																placeholder="file_path"
 																class="form-control"
 															/>
 															<input
 																type="text"
-																name="mail_1"
-																placeholder="mail_1"
+																name="file_path_m"
+																value="{{ data.file_path_m or '' }}"
+																placeholder="file_path_m"
 																class="form-control"
 															/>
 															<input
 																type="text"
-																name="mail_2"
-																placeholder="mail_2"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="mail_3"
-																placeholder="mail_3"
-																class="form-control"
-															/>
-														</div>
-													</div>
-												</div>
-
-												<div data-repeater-item="">
-													<div class="form-group row d-flex align-items-end">
-														<div>
-															<label class="form-label">Address</label>
-															<input
-																type="text"
-																name="address"
-																placeholder="address"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="address_1"
-																placeholder="address_1"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="address_2"
-																placeholder="address_2"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="address_3"
-																placeholder="address_3"
-																class="form-control"
-															/>
-														</div>
-													</div>
-												</div>
-
-												<div data-repeater-item="">
-													<div class="form-group row d-flex align-items-end">
-														<div>
-															<label class="form-label">Social</label>
-
-															<input
-																type="text"
-																name="social_1_name"
-																placeholder="social_1_name"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="social_1"
-																placeholder="social_1"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="social_2_name"
-																placeholder="social_2_name"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="social_2"
-																placeholder="social_2"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="social_3_name"
-																placeholder="social_3_name"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="social_3"
-																placeholder="social_3"
+																name="file_path_s"
+																value="{{ data.file_path_s or '' }}"
+																placeholder="file_path_s"
 																class="form-control"
 															/>
 														</div>
 													</div>
 												</div>
 											</div>
-											{% endif %}
 										</div>
 
 										<div class="form-group row mb-0">
@@ -264,7 +196,6 @@ content %}
 									</div>
 								</fieldset>
 							</form>
-							`
 						</div>
 					</div>
 				</div>
