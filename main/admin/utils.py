@@ -1,4 +1,5 @@
-
+import os
+from main.config import Config
 
 def add_data_from_form(request, data_type=None):
 	request_data = {}
@@ -74,5 +75,13 @@ def add_data_from_form(request, data_type=None):
 		if "social_3" in request.form:
 			request_data["social_3"] = request.form["social_3"]
 
+	if data_type == "images":
+		if "image" in request.files:
+			file = request.files["image"]
+			if len(file.filename) > 2:
+				file_db_url = os.path.join(Config.UPLOAD_FOLDER, file.filename)
+				file_location = os.path.join(os.path.abspath(''), 'main/static/', file_db_url)
+				file.save(file_location)
+				request_data["file_path"] = file_db_url
 
 	return request_data

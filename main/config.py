@@ -71,6 +71,7 @@ class Config:
 	JWT_ALGORITHM = environ.get('JWT_ALGORITHM') or "HS256"
 	FILENAME_INVALID_CHARACTERS = ['/', '\\', '"', ':', '*', '?', '<', '>', '|']
 	BLOB_TO_IMAGE_SAVE_EXT = "png"
+	UPLOAD_FOLDER = "uploads"
 
 
 	WEB_CONFIG_DIRECTORY = path.join("web_config")

@@ -79,6 +79,9 @@ def manage_data_post(data_type, id):
 	if data_type == "contacts":
 		db_model = Contact.query.get_or_404(id)
 
+	if data_type == "images":
+		db_model = Image.query.get_or_404(id)
+
 	db_model.update(**request_data)
 	db.session.commit()
 	return redirect(url_for('admin.manage_data', data_type=data_type, id=id))
@@ -94,17 +97,7 @@ def add_data_get(data_type):
 @bp.route("/<data_type>/add/", methods=["POST"])
 @login_required
 def add_data_post(data_type):
-	request_data = {}
-	if "name" in request.form:
-		request_data["name"] = request.form["name"]
-	if "title" in request.form:
-		request_data["title"] = request.form["title"]
-	if "label" in request.form:
-		request_data["label"] = request.form["label"]
-	if "desc" in request.form:
-		request_data["desc"] = request.form["desc"]
-	if "html" in request.form:
-		request_data["html"] = request.form["html"]
+	request_data = add_data_from_form(request, data_type)
 
 	if data_type == 'pages':
 		DbModel = Page
@@ -114,12 +107,13 @@ def add_data_post(data_type):
 		DbModel = Category
 	if data_type == "contacts":
 		DbModel = Contact
+	if data_type == "images":
+		db_model = Image
 
 	lastId_model = DbModel.query.with_entities(DbModel.id).order_by(DbModel.id.desc()).first()
 	if lastId_model:
 		request_data['id'] = lastId_model.id + 1
 	db_model = DbModel(**request_data)
-
 	db.session.add(db_model)
 	db.session.commit()
 	return redirect(url_for('admin.dashboard', data_type=data_type))

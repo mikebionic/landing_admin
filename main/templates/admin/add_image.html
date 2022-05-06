@@ -15,81 +15,149 @@ content %}
 							<form method="POST" action="" class="form-horizontal well">
 								<fieldset>
 									<div class="repeater-custom-show-hide">
-										<div data-repeater-list="car">
-											<div data-repeater-item="">
-												<div class="form-group row d-flex align-items-end">
-													<div>
-														<label class="form-label">Name</label>
-														<input
-															type="text"
-															name="name"
-															value=""
-															placeholder="Name"
-															class="form-control"
-														/>
-													</div>
-												</div>
-											</div>
-
-											<div data-repeater-item="">
-												<div class="form-group row d-flex align-items-end">
-													<div>
-														<label class="form-label">Title</label>
-														<input
-															type="text"
-															name="title"
-															value=""
-															placeholder="Title"
-															class="form-control"
-														/>
-													</div>
-												</div>
-											</div>
-
-											<div data-repeater-item="">
-												<div class="form-group row d-flex align-items-end">
-													<div>
-														<label class="form-label">Label</label>
-														<input
-															type="text"
-															name="label"
-															value=""
-															placeholder="Label"
-															class="form-control"
-														/>
-													</div>
-												</div>
-											</div>
-
-											<div class="">
+										<div class="d-flex">
+											<div class="card-body" data-repeater-list="car">
 												<div data-repeater-item="">
 													<div class="form-group row d-flex align-items-end">
-														<div class="col">
-															<label class="form-label">Desc</label>
-															<textarea
+														<div>
+															<label class="form-label">Name</label>
+															<input
 																type="text"
-																name="desc"
+																name="name"
+																value=""
+																placeholder="Name"
 																class="form-control"
-																placeholder="Description"
-																rows="5"
-															>
-															</textarea>
+															/>
 														</div>
 													</div>
 												</div>
 
 												<div data-repeater-item="">
 													<div class="form-group row d-flex align-items-end">
-														<div class="col">
-															<label class="form-label">HTML</label>
-															<textarea
+														<div>
+															<label class="form-label">Title</label>
+															<input
 																type="text"
-																name="html"
+																name="title"
+																value=""
+																placeholder="Title"
 																class="form-control"
-																placeholder="Description"
-																rows="5"
-															>
-															</textarea>
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Label</label>
+															<input
+																type="text"
+																name="label"
+																value=""
+																placeholder="Label"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div class="">
+													<div data-repeater-item="">
+														<div class="form-group row d-flex align-items-end">
+															<div class="col">
+																<label class="form-label">Desc</label>
+																<textarea
+																	type="text"
+																	name="desc"
+																	class="form-control"
+																	placeholder="Description"
+																	rows="5"
+																>
+																</textarea>
+															</div>
+														</div>
+													</div>
+
+													<div data-repeater-item="">
+														<div class="form-group row d-flex align-items-end">
+															<div class="col">
+																<label class="form-label">HTML</label>
+																<textarea
+																	type="text"
+																	name="html"
+																	class="form-control"
+																	placeholder="Description"
+																	rows="5"
+																>
+																</textarea>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="card-body">
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Image config</label>
+															<input
+																type="text"
+																name="page_id"
+																placeholder="page_id"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="category_id"
+																placeholder="category_id"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="collection_id"
+																placeholder="collection_id"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="text_data_id"
+																placeholder="text_data_id"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="contact_id"
+																placeholder="contact_id"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="file_path"
+																placeholder="file_path"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="file_path_m"
+																placeholder="file_path_m"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="file_path_s"
+																placeholder="file_path_s"
+																class="form-control"
+															/>
+
+															<div style="padding: 1rem">
+																<input
+																	name="image"
+																	class="form-control"
+																	type="file"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
