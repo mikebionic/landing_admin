@@ -82,6 +82,6 @@ def add_data_from_form(request, data_type=None):
 				file_db_url = os.path.join(Config.UPLOAD_FOLDER, file.filename)
 				file_location = os.path.join(os.path.abspath(''), 'main/static/', file_db_url)
 				file.save(file_location)
-				request_data["file_path"] = file_db_url
+				request_data["file_path"] = os.path.join('/static',file_db_url)
 
 	return request_data
