@@ -7,7 +7,6 @@ class Category(BaseModel, db.Model):
 	__tablename__ = "tbl_category"
 	id = db.Column("id",db.Integer,nullable=False,primary_key=True)
 	page_id = db.Column("page_id",db.Integer,db.ForeignKey("tbl_page.id"))
-	text_data_id = db.Column("text_data_id",db.Integer,db.ForeignKey("tbl_text_data.id"))
 	Collection = db.relationship("Collection",backref='category',lazy=True)
 	Image = db.relationship("Image",backref='category',lazy="joined")
 

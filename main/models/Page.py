@@ -7,7 +7,6 @@ from main.models import BaseModel
 class Page(BaseModel, db.Model):
 	__tablename__ = "tbl_page"
 	id = db.Column("id",db.Integer,nullable=False,primary_key=True)
-	text_data_id = db.Column("text_data_id",db.Integer,db.ForeignKey("tbl_text_data.id"))
 	Collection = db.relationship("Collection",backref='page',lazy=True)
 	Category = db.relationship("Category",backref='page',lazy=True)
 	Contact = db.relationship("Contact",backref='page',lazy=True)

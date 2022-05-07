@@ -7,7 +7,6 @@ from main.models import (
 	Collection,
 	Image,
 	Contact,
-	Text_data,
 )
 
 f = open('docs/app.migration.json')
@@ -38,11 +37,6 @@ for item in migration_data["category"]:
 for item in migration_data["collection"]:
 	item['guid'] = uuid.uuid4()
 	this_model = Collection(**item)
-	db.session.add(this_model)
-
-for item in migration_data["text_data"]:
-	item['guid'] = uuid.uuid4()
-	this_model = Text_data(**item)
 	db.session.add(this_model)
 
 for item in migration_data["image"]:

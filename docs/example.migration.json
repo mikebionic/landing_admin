@@ -13,136 +13,126 @@
 	"page": [
 		{
 			"id": 1,
-			"name": "home_page",
-			"label": "Home",
-			"title": "We're building the roads to the future",
-			"desc": "Working on whole preparation work course",
-			"html": "",
-			"text_data_id": 1
+			"name_tk": "home_page",
+			"label_tk": "Home",
+			"title_en": "We're building the roads to the future",
+			"title_ru": "Мы строим дороги в будущее",
+			"title_tk": "Biz gelejege ýol gurýarys",
+			"desc_en": "Working on whole preparation work course",
+			"desc_ru": "Выполняем полный комплекс работ по подготовке",
+			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
+			"html_tk": ""
 		},
 		{
 			"id": 2,
-			"name": "advantages",
-			"label": "Advantages",
-			"title": "Лучшее для лучших",
-			"desc": "Все компании группы следуют высоким образцам производства работ, безопасности охраны природы, а структура ХО «Ugurly Yol» позволяет оптимизировать клиентам до 20% расходов. \n Следуем и повышаем стандарты качества, а также экономим бюджеты заказчиков",
-			"html": "<div class='section-title'> <h6 class='dsn-up line-shap line-shap-after' style='opacity: 1; transform: translate(0px, 0px);'> Генеральный директор ХО «Ugurly Yol» </h6> <p class='sub-heading line-bg-left mt-20 dsn-up' style='opacity: 1; transform: translate(0px, 0px);'> Мухиев Сапармухамед </p> </div>",
-			"text_data_id": 1
+			"name_tk": "advantages",
+			"label_tk": "Advantages",
+			"title_tk": "Лучшее для лучших",
+			"desc_tk": "Все компании группы следуют высоким образцам производства работ, безопасности охраны природы, а структура ХО «Ugurly Yol» позволяет оптимизировать клиентам до 20% расходов. \n Следуем и повышаем стандарты качества, а также экономим бюджеты заказчиков",
+			"html_tk": "<div class='section-title'> <h6 class='dsn-up line-shap line-shap-after' style='opacity: 1; transform: translate(0px, 0px);'> Генеральный директор ХО «Ugurly Yol» </h6> <p class='sub-heading line-bg-left mt-20 dsn-up' style='opacity: 1; transform: translate(0px, 0px);'> Мухиев Сапармухамед </p> </div>"
 		},
 		{
 			"id": 3,
-			"name": "portfolio",
-			"label": "Our Work",
-			"title": "Our Portfolio",
-			"desc": "",
-			"html": "",
-			"text_data_id": null
+			"name_tk": "portfolio",
+			"label_tk": "Our Work",
+			"title_tk": "Our Portfolio",
+			"desc_tk": "",
+			"html_tk": ""
 		},
 		{
 			"id": 4,
-			"name": "services",
-			"label": "Our Services",
-			"title": "Ценности нашей компании",
-			"desc": "",
-			"html": "",
-			"text_data_id": null
+			"name_tk": "services",
+			"label_tk": "Our Services",
+			"title_tk": "Ценности нашей компании",
+			"desc_tk": "",
+			"html_tk": ""
 		},
 		{
 			"id": 5,
-			"name": "with_banner",
-			"label": "Build perfect websites",
-			"title": "Unlimited power",
-			"desc": "Most of our writings have centered on implementing strategies for business units, with their unique \n geeza arse it’s your round grub sloshed burke, my good sir chancer he legged it he lost his bottle pear shaped bugger all mate",
-			"html": "",
+			"name_tk": "with_banner",
+			"label_tk": "Build perfect websites",
+			"title_tk": "Unlimited power",
+			"desc_tk": "Most of our writings have centered on implementing strategies for business units, with their unique \n geeza arse it’s your round grub sloshed burke, my good sir chancer he legged it he lost his bottle pear shaped bugger all mate",
+			"html_tk": "",
 			"link": "http://localhost:8000/#projects",
-			"note": "NOTE : Some details are very important.",
-			"text_data_id": null
+			"note_tk": "NOTE : Some details are very important."
 		},
 		{
 			"id": 6,
-			"name": "work",
-			"label": "Our Work",
-			"title": "Creative Portfolio \n Designs",
-			"desc": "",
-			"html": "",
-			"text_data_id": null
+			"name_tk": "work",
+			"label_tk": "Our Work",
+			"title_tk": "Creative Portfolio \n Designs",
+			"desc_tk": "",
+			"html_tk": ""
 		},
 		{
 			"id": 7,
-			"name": "feedback",
-			"label": "Feedback",
-			"title": "Feedback from our clients.",
-			"desc": "",
-			"html": "",
-			"text_data_id": null
+			"name_tk": "feedback",
+			"label_tk": "Feedback",
+			"title_tk": "Feedback from our clients.",
+			"desc_tk": "",
+			"html_tk": ""
 		},
 		{
 			"id": 8,
-			"name": "purpose",
-			"label": "Our Purpose",
-			"title": "WE PLAN YOUR PROJECT",
-			"desc": "",
-			"html": "",
-			"text_data_id": null
+			"name_tk": "purpose",
+			"label_tk": "Our Purpose",
+			"title_tk": "WE PLAN YOUR PROJECT",
+			"desc_tk": "",
+			"html_tk": ""
 		},
 		{
 			"id": 9,
-			"name": "posts",
-			"label": "Last posts",
-			"title": "Latest And Greatest Posts",
-			"desc": "",
-			"text_data_id": null
+			"name_tk": "posts",
+			"label_tk": "Last posts",
+			"title_tk": "Latest And Greatest Posts",
+			"desc_tk": ""
 		},
 		{
 			"id": 10,
-			"name": "resume",
-			"label": "Our Resume",
-			"title": "Повышаем стандарты качества и внедряем лучшие технологии",
-			"desc": "",
-			"html": "",
-			"text_data_id": null
+			"name_tk": "resume",
+			"label_tk": "Our Resume",
+			"title_tk": "Повышаем стандарты качества и внедряем лучшие технологии",
+			"desc_tk": "",
+			"html_tk": ""
 		},
 		{
 			"id": 11,
-			"name": "team",
-			"label": "Our Team",
-			"title": "The Best Team Ever",
-			"desc": "",
-			"html": "",
-			"text_data_id": null
+			"name_tk": "team",
+			"label_tk": "Our Team",
+			"title_tk": "The Best Team Ever",
+			"desc_tk": "",
+			"html_tk": ""
 		},
 		{
 			"id": 12,
-			"name": "footer_portfolio",
-			"label": "Small silver car ",
-			"title": "The Best footer portfolio",
-			"desc": "",
-			"html": "",
-			"text_data_id": null
+			"name_tk": "footer_portfolio",
+			"label_tk": "Small silver car ",
+			"title_tk": "The Best footer portfolio",
+			"desc_tk": "",
+			"html_tk": ""
 		},
 		{
 			"id": 13,
-			"name": "our_clients",
-			"label": "our_clients name",
-			"title": "Your success, our reputation",
-			"desc": "",
-			"html": "",
-			"text_data_id": null
+			"name_tk": "our_clients",
+			"label_tk": "our_clients name_tk",
+			"title_tk": "Your success, our reputation",
+			"desc_tk": "",
+			"html_tk": ""
 		},
 		{
 			"id": 14,
-			"name": "footer",
-			"label": "footer label",
-			"title": "Would you like more information or do you have a question",
-			"desc": "",
-			"html": "",
-			"text_data_id": null
+			"name_tk": "footer",
+			"label_tk": "footer label_tk",
+			"title_tk": "Would you like more information or do you have a question",
+			"desc_tk": "",
+			"html_tk": ""
 		},
 		{
 			"id": 15,
-			"name": "contact",
-			"label": "Stay connected",
-			"title": "Get in Touch"
+			"name_tk": "contact",
+			"label_tk": "Stay connected",
+			"title_tk": "Get in Touch"
 		}
 	],
 
@@ -150,57 +140,57 @@
 		{
 			"id": 1,
 			"page_id": 3,
-			"name": "induction",
-			"label": "Induction",
-			"title": "",
-			"desc": ""
+			"name_tk": "induction",
+			"label_tk": "Induction",
+			"title_tk": "",
+			"desc_tk": ""
 		},
 		{
 			"id": 2,
 			"page_id": 3,
-			"name": "photography",
-			"label": "Photography",
-			"title": "",
-			"desc": ""
+			"name_tk": "photography",
+			"label_tk": "Photography",
+			"title_tk": "",
+			"desc_tk": ""
 		},
 		{
 			"id": 3,
 			"page_id": 3,
-			"name": "architecture",
-			"label": "Architecture",
-			"title": "",
-			"desc": ""
+			"name_tk": "architecture",
+			"label_tk": "Architecture",
+			"title_tk": "",
+			"desc_tk": ""
 		},
 		{
 			"id": 4,
 			"page_id": 3,
-			"name": "product",
-			"label": "Product",
-			"title": "",
-			"desc": ""
+			"name_tk": "product",
+			"label_tk": "Product",
+			"title_tk": "",
+			"desc_tk": ""
 		},
 		{
 			"id": 5,
 			"page_id": 3,
-			"name": "pen",
-			"label": "Pen",
-			"title": "",
-			"desc": ""
+			"name_tk": "pen",
+			"label_tk": "Pen",
+			"title_tk": "",
+			"desc_tk": ""
 		},
 
 		{
 			"id": 6,
 			"page_id": 10,
-			"name": "education",
-			"title": "Education",
-			"desc": ""
+			"name_tk": "education",
+			"title_tk": "Education",
+			"desc_tk": ""
 		},
 		{
 			"id": 7,
 			"page_id": 10,
-			"name": "workshops",
-			"title": "Workshops",
-			"desc": ""
+			"name_tk": "workshops",
+			"title_tk": "Workshops",
+			"desc_tk": ""
 		}
 	],
 
@@ -209,174 +199,174 @@
 			"id": 1,
 			"page_id": null,
 			"category_id": 4,
-			"name": "product",
-			"label": "Product",
-			"title": "Maybe speaker",
-			"desc": ""
+			"name_tk": "product",
+			"label_tk": "Product",
+			"title_tk": "Maybe speaker",
+			"desc_tk": ""
 		},
 		{
 			"id": 2,
 			"page_id": null,
 			"category_id": 5,
-			"name": "pen",
-			"label": "Pen",
-			"title": "Yaren collection",
-			"desc": ""
+			"name_tk": "pen",
+			"label_tk": "Pen",
+			"title_tk": "Yaren collection",
+			"desc_tk": ""
 		},
 
 		{
 			"id": 12,
 			"page_id": 4,
 			"category_id": null,
-			"title": "Ценности нашей компании",
-			"desc": "Активное развитие компании, которое мы наблюдаем, стало возможным благодаря тому, что по своей сути она всегда была лидером"
+			"title_tk": "Ценности нашей компании",
+			"desc_tk": "Активное развитие компании, которое мы наблюдаем, стало возможным благодаря тому, что по своей сути она всегда была лидером"
 		},
 		{
 			"id": 13,
 			"page_id": 4,
 			"category_id": null,
-			"title": "Ориентация на эффективность",
-			"desc": "Только постоянное повышение эффективности и лидерство в управлении затратами позволят нам достигать своих целей."
+			"title_tk": "Ориентация на эффективность",
+			"desc_tk": "Только постоянное повышение эффективности и лидерство в управлении затратами позволят нам достигать своих целей."
 		},
 		{
 			"id": 14,
 			"page_id": 4,
 			"category_id": null,
-			"title": "Качество превыше всего",
-			"desc": "Мы непрерывно совершенствуем качество как менеджмента так и качество своих работ."
+			"title_tk": "Качество превыше всего",
+			"desc_tk": "Мы непрерывно совершенствуем качество как менеджмента так и качество своих работ."
 		},
 		{
 			"id": 15,
 			"page_id": 4,
 			"category_id": null,
-			"title": "Команда сильных профессионалов",
-			"desc": "Правильных подбор сотрудников ‑ залог успеха в любых делах"
+			"title_tk": "Команда сильных профессионалов",
+			"desc_tk": "Правильных подбор сотрудников ‑ залог успеха в любых делах"
 		},
 		{
 			"id": 16,
 			"page_id": 4,
 			"category_id": null,
-			"title": "Лучшее для лучших",
-			"desc": "Следуем и повышаем стандарты качества, а также экономим бюджеты заказчиков"
+			"title_tk": "Лучшее для лучших",
+			"desc_tk": "Следуем и повышаем стандарты качества, а также экономим бюджеты заказчиков"
 		},
 		{
 			"id": 17,
 			"page_id": 4,
 			"category_id": null,
-			"title": "Централизованное распределение",
-			"desc": "Обустроенная  промышленная база компании, оснащенная оборудованием и  установками по производству строительных материалах"
+			"title_tk": "Централизованное распределение",
+			"desc_tk": "Обустроенная  промышленная база компании, оснащенная оборудованием и  установками по производству строительных материалах"
 		},
 
 		{
 			"id": 18,
 			"page_id": 7,
-			"name": "Myrat Babamyradov",
-			"label": "Envato Customer",
-			"desc": "The designer is just amazing! Very good quality and taste. This template is incredible beautiful. The overall impression is more than good.The support cannot be better. I wish the team all success!"
+			"name_tk": "Myrat Babamyradov",
+			"label_tk": "Envato Customer",
+			"desc_tk": "The designer is just amazing! Very good quality and taste. This template is incredible beautiful. The overall impression is more than good.The support cannot be better. I wish the team all success!"
 		},
 		{
 			"id": 19,
 			"page_id": 7,
-			"name": "Muhammetnur Ataniyazow",
-			"label": "Marketing Manager",
-			"desc": "First of all, I really enjoyed setting this up. What a great layout and design. The support is fast and high quality. They really made an effort to make sure I got the help I needed. keep in mind that it is not only a great design, but also it is easy to change it up with little effort. Great Job!"
+			"name_tk": "Muhammetnur Ataniyazow",
+			"label_tk": "Marketing Manager",
+			"desc_tk": "First of all, I really enjoyed setting this up. What a great layout and design. The support is fast and high quality. They really made an effort to make sure I got the help I needed. keep in mind that it is not only a great design, but also it is easy to change it up with little effort. Great Job!"
 		},
 		{
 			"id": 20,
 			"page_id": 7,
-			"name": "Geldi Geldiyew",
-			"label": "Web Designer",
-			"desc": "This theme is awesome and the designer is very helpful. I had a few questions before purchase. He/She helped me with all the doubts. Also, they provide quick support. Thank you so much for a beautiful theme"
+			"name_tk": "Geldi Geldiyew",
+			"label_tk": "Web Designer",
+			"desc_tk": "This theme is awesome and the designer is very helpful. I had a few questions before purchase. He/She helped me with all the doubts. Also, they provide quick support. Thank you so much for a beautiful theme"
 		},
 		{
 			"id": 21,
 			"page_id": 7,
-			"name": "Myrat Babamyradov",
-			"label": "Envato Customer",
-			"desc": "Basically im using this theme as a base for my new website and i couldnt be happier. Ran into some bumps but the team who developed this theme was there to help me with any problems. Very slick nice ajax portfolio theme"
+			"name_tk": "Myrat Babamyradov",
+			"label_tk": "Envato Customer",
+			"desc_tk": "Basically im using this theme as a base for my new website and i couldnt be happier. Ran into some bumps but the team who developed this theme was there to help me with any problems. Very slick nice ajax portfolio theme"
 		},
 
 		{
 			"id": 22,
 			"page_id": 8,
-			"title": "Dedicated Staff",
-			"desc": "Quisque placerat vitae lacus ut sceleris queusce luctus odio ac nibh luctus, in porttitor."
+			"title_tk": "Dedicated Staff",
+			"desc_tk": "Quisque placerat vitae lacus ut sceleris queusce luctus odio ac nibh luctus, in porttitor."
 		},
 		{
 			"id": 23,
 			"page_id": 8,
-			"title": "User Experience",
-			"desc": "Cepteur sint occaecat cupidatat proident, taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole."
+			"title_tk": "User Experience",
+			"desc_tk": "Cepteur sint occaecat cupidatat proident, taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole."
 		},
 		{
 			"id": 24,
 			"page_id": 8,
-			"title": "Extensive Employment",
-			"desc": "Quisque placerat vitae lacus ut sceleris queusce luctus odio ac nibh luctus, in porttitor."
+			"title_tk": "Extensive Employment",
+			"desc_tk": "Quisque placerat vitae lacus ut sceleris queusce luctus odio ac nibh luctus, in porttitor."
 		},
 
 		{
 			"id": 25,
 			"page_id": 9,
-			"title": "Extreme Athleticism Is the New Midlife Crisis",
-			"label": "Lifestyle",
-			"note": "Dsn Grid",
-			"desc": "Whoever said “It’s not about the destination. It’s the journey” never flew on a long .."
+			"title_tk": "Extreme Athleticism Is the New Midlife Crisis",
+			"label_tk": "Lifestyle",
+			"note_tk": "Dsn Grid",
+			"desc_tk": "Whoever said “It’s not about the destination. It’s the journey” never flew on a long .."
 		},
 		{
 			"id": 26,
 			"page_id": 9,
-			"title": "The Day I Lost My Child in Charles de Gaulle Airport",
-			"label": "Travel",
-			"note": "Dsn Grid",
-			"desc": "Whoever said “It’s not about the destination. It’s the journey” never flew on a long .."
+			"title_tk": "The Day I Lost My Child in Charles de Gaulle Airport",
+			"label_tk": "Travel",
+			"note_tk": "Dsn Grid",
+			"desc_tk": "Whoever said “It’s not about the destination. It’s the journey” never flew on a long .."
 		},
 		{
 			"id": 27,
 			"page_id": 9,
-			"title": "Relationships Aren’t Easy, But They’re Worth It",
-			"label": "Health",
-			"note": "Dsn Grid",
-			"desc": "Whoever said “It’s not about the destination. It’s the journey” never flew on a long .."
+			"title_tk": "Relationships Aren’t Easy, But They’re Worth It",
+			"label_tk": "Health",
+			"note_tk": "Dsn Grid",
+			"desc_tk": "Whoever said “It’s not about the destination. It’s the journey” never flew on a long .."
 		},
 
 		{
 			"id": 28,
 			"category_id": 6,
-			"title": "University of Studies",
-			"desc": "Duis posuere, quam non imperdiet egestas, eros enim mattis mauris, in posuere lacus arcu quis felis. Etiam interdum erat non enim venenatis fermentum."
+			"title_tk": "University of Studies",
+			"desc_tk": "Duis posuere, quam non imperdiet egestas, eros enim mattis mauris, in posuere lacus arcu quis felis. Etiam interdum erat non enim venenatis fermentum."
 		},
 		{
 			"id": 29,
 			"category_id": 6,
-			"title": "Doctoral Degree",
-			"desc": "Aliquam tincidunt malesuada tortor vitae iaculis. In eu turpis iaculis, feugiat risus quis, aliquet urna. Quisque fringilla mollis risus, eu pulvinar dolor."
+			"title_tk": "Doctoral Degree",
+			"desc_tk": "Aliquam tincidunt malesuada tortor vitae iaculis. In eu turpis iaculis, feugiat risus quis, aliquet urna. Quisque fringilla mollis risus, eu pulvinar dolor."
 		},
 		{
 			"id": 30,
 			"category_id": 6,
-			"title": "Doctoral Degree",
-			"desc": "Maecenas finibus nec sem ut imperdiet. Ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis ante."
+			"title_tk": "Doctoral Degree",
+			"desc_tk": "Maecenas finibus nec sem ut imperdiet. Ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis ante."
 		},
 		{
 			"id": 31,
 			"category_id": 7,
-			"title": "Rolling Thunder",
-			"label": "Senior UX / UI Designer",
-			"desc": "Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna."
+			"title_tk": "Rolling Thunder",
+			"label_tk": "Senior UX / UI Designer",
+			"desc_tk": "Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna."
 		},
 		{
 			"id": 32,
 			"category_id": 7,
-			"title": "Rolling Thunder",
-			"label": "DDB Athens ( Tribal )",
-			"desc": "Maecenas tempus faucibus rutrum. Duis eu aliquam urna. Proin vitae nulla tristique, ornare felis id, congue libero. Nam volutpat euismod quam."
+			"title_tk": "Rolling Thunder",
+			"label_tk": "DDB Athens ( Tribal )",
+			"desc_tk": "Maecenas tempus faucibus rutrum. Duis eu aliquam urna. Proin vitae nulla tristique, ornare felis id, congue libero. Nam volutpat euismod quam."
 		},
 		{
 			"id": 33,
 			"category_id": 7,
-			"title": "Freelancer",
-			"label": "DDB Athens ( Tribal )"
+			"title_tk": "Freelancer",
+			"label_tk": "DDB Athens ( Tribal )"
 		}
 	],
 
@@ -384,9 +374,9 @@
 		{
 			"id": 1,
 			"page_id": 15,
-			"name": "main_contact",
-			"title": "Main Contact",
-			"label": "Contact",
+			"name_tk": "main_contact",
+			"title_tk": "Main Contact",
+			"label_tk": "Contact",
 			"phone_number": "+99361234567",
 			"home_phone_number": "",
 			"work_phone_number": "",
@@ -414,60 +404,57 @@
 		{
 			"id": 1,
 			"file_path": "/static/1.png",
-			"title": "We're building the roads to the future",
-			"desc": "Working on whole preparation work course",
-			"text_data_id": 2
+			"title_tk": "We're building the roads to the future",
+			"desc_tk": "Working on whole preparation work course"
 		},
 		{
 			"id": 2,
 			"collection_id": 1,
 			"file_path": "/static/web/assets/img/project/project1/1.jpg",
-			"title": "We're building the roads to the future",
-			"desc": "",
-			"text_data_id": null
+			"title_tk": "We're building the roads to the future",
+			"desc_tk": ""
 		},
 		{
 			"id": 3,
 			"collection_id": 2,
 			"file_path": "/static/web/assets/img/project/project2/1.jpg",
-			"title": "Yaren Collection",
-			"desc": "",
-			"text_data_id": null
+			"title_tk": "Yaren Collection",
+			"desc_tk": ""
 		},
 		{
 			"id": 4,
 			"page_id": 6,
 			"file_path": "/static/web/assets/img/project/project5/1.jpg",
-			"title": "Small Silver Car",
-			"label": "Photography"
+			"title_tk": "Small Silver Car",
+			"label_tk": "Photography"
 		},
 		{
 			"id": 5,
 			"page_id": 6,
 			"file_path": "/static/web/assets/img/project/project3/1.jpg",
-			"title": "Huggl Power Pack",
-			"label": "induction"
+			"title_tk": "Huggl Power Pack",
+			"label_tk": "induction"
 		},
 		{
 			"id": 6,
 			"page_id": 6,
 			"file_path": "/static/web/assets/img/project/project6/1.jpg",
-			"title": "Lengshuikeng",
-			"label": "Photography"
+			"title_tk": "Lengshuikeng",
+			"label_tk": "Photography"
 		},
 		{
 			"id": 7,
 			"page_id": 6,
 			"file_path": "/static/web/assets/img/project/project1/1.jpg",
-			"title": "Design",
-			"label": "Product"
+			"title_tk": "Design",
+			"label_tk": "Product"
 		},
 		{
 			"id": 8,
 			"page_id": 6,
 			"file_path": "/static/web/assets/img/project/project4/1.jpg",
-			"title": "Principal Garden",
-			"label": "Architecture"
+			"title_tk": "Principal Garden",
+			"label_tk": "Architecture"
 		},
 
 		{
@@ -511,30 +498,6 @@
 			"id": 16,
 			"collection_id": 26,
 			"file_path": "/static/web/assets/img/blog/1.jpg"
-		}
-	],
-
-	"text_data": [
-		{
-			"id": 1,
-			"title_en": "We're building the roads to the future",
-			"title_ru": "Мы строим дороги в будущее",
-			"title_tk": "Biz gelejege ýol gurýaryn",
-			"desc_en": "Working on whole preparation work course",
-			"desc_ru": "Выполняем полный комплекс работ по подготовке",
-			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris"
-		},
-		{
-			"id": 2,
-			"label_en": "Home",
-			"label_ru": "Home",
-			"label_tk": "Home",
-			"title_en": "Best for the best",
-			"title_ru": "",
-			"title_tk": "",
-			"desc_en": "",
-			"desc_ru": "",
-			"desc_tk": ""
 		}
 	]
 }

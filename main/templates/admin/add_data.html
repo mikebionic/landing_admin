@@ -23,9 +23,20 @@ content %}
 															<label class="form-label">Name</label>
 															<input
 																type="text"
-																name="name"
-																value=""
-																placeholder="Name"
+																name="name_tk"
+																placeholder="Name_tk"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="name_ru"
+																placeholder="Name_ru"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="name_en"
+																placeholder="Name_en"
 																class="form-control"
 															/>
 														</div>
@@ -38,9 +49,20 @@ content %}
 															<label class="form-label">Title</label>
 															<input
 																type="text"
-																name="title"
-																value=""
-																placeholder="Title"
+																name="title_tk"
+																placeholder="Title_tk"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="title_ru"
+																placeholder="Title_ru"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="title_en"
+																placeholder="Title_en"
 																class="form-control"
 															/>
 														</div>
@@ -53,9 +75,60 @@ content %}
 															<label class="form-label">Label</label>
 															<input
 																type="text"
-																name="label"
-																value=""
-																placeholder="Label"
+																name="label_tk"
+																placeholder="Label_tk"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="label_ru"
+																placeholder="Label_ru"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="label_tk"
+																placeholder="Label_tk"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Note</label>
+															<input
+																type="text"
+																name="note_tk"
+																placeholder="Note_tk"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="note_ru"
+																placeholder="Note_ru"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="note_en"
+																placeholder="Note_en"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">link</label>
+															<input
+																type="text"
+																name="link"
+																placeholder="Link"
 																class="form-control"
 															/>
 														</div>
@@ -66,13 +139,29 @@ content %}
 													<div data-repeater-item="">
 														<div class="form-group row d-flex align-items-end">
 															<div class="col">
-																<label class="form-label">Desc</label>
+																<label class="form-label">Description</label>
 																<textarea
 																	type="text"
-																	name="desc"
+																	name="desc_tk"
 																	class="form-control"
-																	placeholder="Description"
-																	rows="5"
+																	placeholder="Description_tk"
+																	rows="3"
+																>
+																</textarea>
+																<textarea
+																	type="text"
+																	name="desc_ru"
+																	class="form-control"
+																	placeholder="Description_ru"
+																	rows="3"
+																>
+																</textarea>
+																<textarea
+																	type="text"
+																	name="desc_en"
+																	class="form-control"
+																	placeholder="Description_en"
+																	rows="3"
 																>
 																</textarea>
 															</div>
@@ -85,17 +174,50 @@ content %}
 																<label class="form-label">HTML</label>
 																<textarea
 																	type="text"
-																	name="html"
+																	name="html_tk"
 																	class="form-control"
-																	placeholder="Description"
-																	rows="5"
+																	placeholder="HTML_tk"
+																	rows="3"
+																>
+																</textarea>
+																<textarea
+																	type="text"
+																	name="html_ru"
+																	class="form-control"
+																	placeholder="HTML_ru"
+																	rows="3"
+																>
+																</textarea>
+																<textarea
+																	type="text"
+																	name="html_en"
+																	class="form-control"
+																	placeholder="HTML_en"
+																	rows="3"
 																>
 																</textarea>
 															</div>
 														</div>
 													</div>
+
+													<div data-repeater-item="">
+														<div class="form-group row d-flex align-items-end">
+															<div class="col">
+																<label class="form-label">HTML output</label>
+																<div
+																	class="toHtml"
+																	style="
+																		border: 1px solid #a0a0a0;
+																		padding: 0.5rem;
+																		border-radius: 1rem;
+																	"
+																></div>
+															</div>
+														</div>
+													</div>
 												</div>
 											</div>
+
 											{% if data_type == 'contacts' %}
 											<div class="card-body">
 												<div data-repeater-item="">

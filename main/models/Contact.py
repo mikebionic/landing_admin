@@ -8,7 +8,6 @@ class Contact(BaseModel, db.Model):
 	__tablename__ = "tbl_contact"
 	id = db.Column("id",db.Integer,nullable=False,primary_key=True)
 	page_id = db.Column("page_id",db.Integer,db.ForeignKey("tbl_page.id"))
-	text_data_id = db.Column("text_data_id",db.Integer,db.ForeignKey("tbl_text_data.id"))
 
 	phone_number = db.Column("phone_number",db.String)
 	home_phone_number = db.Column("home_phone_number",db.String)

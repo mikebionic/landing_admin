@@ -9,7 +9,6 @@ class Collection(BaseModel, db.Model):
 	id = db.Column("id",db.Integer,nullable=False,primary_key=True)
 	page_id = db.Column("page_id",db.Integer,db.ForeignKey("tbl_page.id"))
 	category_id = db.Column("category_id",db.Integer,db.ForeignKey("tbl_category.id"))
-	text_data_id = db.Column("text_data_id",db.Integer,db.ForeignKey("tbl_text_data.id"))
 	Image = db.relationship("Image",backref='collection',lazy='joined')
 
 	def to_json_api(self):

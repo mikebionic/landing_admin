@@ -23,9 +23,23 @@ content %}
 															<label class="form-label">Name</label>
 															<input
 																type="text"
-																name="name"
-																value="{{ data.name or '' }}"
-																placeholder="Name"
+																name="name_tk"
+																value="{{ data.name_tk or '' }}"
+																placeholder="Name_tk"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="name_ru"
+																value="{{ data.name_ru or '' }}"
+																placeholder="Name_ru"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="name_en"
+																value="{{ data.name_en or '' }}"
+																placeholder="Name_en"
 																class="form-control"
 															/>
 														</div>
@@ -38,9 +52,23 @@ content %}
 															<label class="form-label">Title</label>
 															<input
 																type="text"
-																name="title"
-																value="{{ data.title or '' }}"
-																placeholder="Title"
+																name="title_tk"
+																value="{{ data.title_tk or '' }}"
+																placeholder="Title_tk"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="title_ru"
+																value="{{ data.title_ru or '' }}"
+																placeholder="Title_ru"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="title_en"
+																value="{{ data.title_en or '' }}"
+																placeholder="Title_en"
 																class="form-control"
 															/>
 														</div>
@@ -53,9 +81,67 @@ content %}
 															<label class="form-label">Label</label>
 															<input
 																type="text"
-																name="label"
-																value="{{ data.label or '' }}"
-																placeholder="Label"
+																name="label_tk"
+																value="{{ data.label_tk or '' }}"
+																placeholder="Label_tk"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="label_ru"
+																value="{{ data.label_ru or '' }}"
+																placeholder="Label_ru"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="label_tk"
+																value="{{ data.label_tk or '' }}"
+																placeholder="Label_tk"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Note</label>
+															<input
+																type="text"
+																name="note_tk"
+																value="{{ data.note_tk or '' }}"
+																placeholder="Note_tk"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="note_ru"
+																value="{{ data.note_ru or '' }}"
+																placeholder="Note_ru"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="note_en"
+																value="{{ data.note_en or '' }}"
+																placeholder="Note_en"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">link</label>
+															<input
+																type="text"
+																name="link"
+																value="{{ data.link or '' }}"
+																placeholder="Link"
 																class="form-control"
 															/>
 														</div>
@@ -69,12 +155,32 @@ content %}
 																<label class="form-label">Description</label>
 																<textarea
 																	type="text"
-																	name="desc"
+																	name="desc_tk"
 																	class="form-control"
-																	placeholder="Description"
-																	rows="5"
+																	placeholder="Description_tk"
+																	rows="3"
 																>
-{{ data.desc or '' }}
+{{ data.desc_tk or '' }}
+															</textarea
+																>
+																<textarea
+																	type="text"
+																	name="desc_ru"
+																	class="form-control"
+																	placeholder="Description_ru"
+																	rows="3"
+																>
+{{ data.desc_ru or '' }}
+															</textarea
+																>
+																<textarea
+																	type="text"
+																	name="desc_en"
+																	class="form-control"
+																	placeholder="Description_en"
+																	rows="3"
+																>
+{{ data.desc_en or '' }}
 															</textarea
 																>
 															</div>
@@ -87,12 +193,32 @@ content %}
 																<label class="form-label">HTML</label>
 																<textarea
 																	type="text"
-																	name="html"
+																	name="html_tk"
 																	class="form-control"
-																	placeholder="Description"
-																	rows="5"
+																	placeholder="HTML_tk"
+																	rows="3"
 																>
-{{ data.html or '' }}
+{{ data.html_tk or '' }}
+															</textarea
+																>
+																<textarea
+																	type="text"
+																	name="html_ru"
+																	class="form-control"
+																	placeholder="HTML_ru"
+																	rows="3"
+																>
+{{ data.html_ru or '' }}
+															</textarea
+																>
+																<textarea
+																	type="text"
+																	name="html_en"
+																	class="form-control"
+																	placeholder="HTML_en"
+																	rows="3"
+																>
+{{ data.html_en or '' }}
 															</textarea
 																>
 															</div>
@@ -111,7 +237,7 @@ content %}
 																		border-radius: 1rem;
 																	"
 																>
-																	{{ data.html or '' }}
+																	{{ data.html_tk or '' }}
 																</div>
 															</div>
 														</div>

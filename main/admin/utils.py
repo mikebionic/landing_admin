@@ -3,16 +3,50 @@ from main.config import Config
 
 def add_data_from_form(request, data_type=None):
 	request_data = {}
-	if "name" in request.form:
-		request_data["name"] = request.form["name"]
-	if "title" in request.form:
-		request_data["title"] = request.form["title"]
-	if "label" in request.form:
-		request_data["label"] = request.form["label"]
-	if "desc" in request.form:
-		request_data["desc"] = request.form["desc"]
-	if "html" in request.form:
-		request_data["html"] = request.form["html"]
+	if "name_tk" in request.form:
+		request_data["name_tk"] = request.form["name_tk"]
+	if "name_ru" in request.form:
+		request_data["name_ru"] = request.form["name_ru"]
+	if "name_en" in request.form:
+		request_data["name_en"] = request.form["name_en"]
+
+	if "title_tk" in request.form:
+		request_data["title_tk"] = request.form["title_tk"]
+	if "title_ru" in request.form:
+		request_data["title_ru"] = request.form["title_ru"]
+	if "title_en" in request.form:
+		request_data["title_en"] = request.form["title_en"]
+
+	if "label_tk" in request.form:
+		request_data["label_tk"] = request.form["label_tk"]
+	if "label_ru" in request.form:
+		request_data["label_ru"] = request.form["label_ru"]
+	if "label_en" in request.form:
+		request_data["label_en"] = request.form["label_en"]
+
+	if "desc_tk" in request.form:
+		request_data["desc_tk"] = request.form["desc_tk"]
+	if "desc_ru" in request.form:
+		request_data["desc_ru"] = request.form["desc_ru"]
+	if "desc_en" in request.form:
+		request_data["desc_en"] = request.form["desc_en"]
+
+	if "html_tk" in request.form:
+		request_data["html_tk"] = request.form["html_tk"]
+	if "html_ru" in request.form:
+		request_data["html_ru"] = request.form["html_ru"]
+	if "html_en" in request.form:
+		request_data["html_en"] = request.form["html_en"]
+
+	if "note_tk" in request.form:
+		request_data["note_tk"] = request.form["note_tk"]
+	if "note_ru" in request.form:
+		request_data["note_ru"] = request.form["note_ru"]
+	if "note_en" in request.form:
+		request_data["note_en"] = request.form["note_en"]
+
+	if "link" in request.form:
+		request_data["link"] = request.form["link"]
 
 	if data_type == "contacts":
 		if "phone_number" in request.form:
