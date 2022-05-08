@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Flask,session,request
+from flask import Flask,session,request,redirect,url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_session import Session
@@ -70,6 +70,11 @@ def create_app(config_class=Config):
 	app.register_blueprint(web_bp, url_prefix=f"{web_url_prefix}/")
 	csrf.exempt(web_bp)
 
+
+	@app.route("/set_language/<code>")
+	def set_language(code):
+		session['language'] = code
+		return redirect(url_for('web.home'))
 
 	@app.after_request
 	def response_minify(response):
