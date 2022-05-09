@@ -20,7 +20,9 @@ content %}
 						<div class="card-header">
 							<div class="d-flex" style="place-content: space-between">
 								<h4 class="card-title"><b>ID: {{item.id}}</b></h4>
-								<h4 class="card-title">{{item.title}}</h4>
+								<h4 class="card-title">
+									{{item.title if data_type != 'users' else item.username }}
+								</h4>
 								<a
 									class="btn btn-outline-primary"
 									href="/admin/{{data_type}}/{{item.id}}/manage/"
@@ -29,10 +31,12 @@ content %}
 							</div>
 							<p class="text-muted mb-0">{{item.name}}</p>
 						</div>
+						{% if data_type != 'users' %}
 						<div class="card-body">
 							<p><b>Label: </b>{{item.label}}</p>
 							<p><b>Description: </b>{{item.desc}}</p>
 						</div>
+						{% endif %}
 					</div>
 				</div>
 				{% endfor %}

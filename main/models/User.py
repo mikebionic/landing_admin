@@ -23,6 +23,12 @@ class User(db.Model, UserMixin):
 	type_id = db.Column("type_id",db.Integer)
 	created_date = db.Column("created_date",db.DateTime,default=datetime.now())
 
+	def update(self, **kwargs):
+		for key, value in kwargs.items():
+			if value is not None:
+				if hasattr(self, key):
+					setattr(self, key, value)
+
 	def is_admin(self):
 		return self.type_id == 1
 

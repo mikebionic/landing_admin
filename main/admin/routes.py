@@ -4,7 +4,7 @@ from flask_login import login_required
 from . import bp
 
 from main import db
-from main.models import Page, Collection, Category, Contact, Image
+from main.models import Page, Collection, Category, Contact, Image, User
 from main.admin.utils import add_data_from_form
 
 
@@ -25,6 +25,9 @@ def dashboard(data_type="pages"):
 
 	elif data_type == "contacts":
 		data = Contact.get_all(Contact)
+
+	elif data_type == "users":
+		data = [user.to_json_api() for user in User.query.all()]
 
 	elif data_type == "images":
 		data = Image.get_all(Image)
@@ -59,6 +62,11 @@ def manage_data(data_type, id):
 		data = data.to_json_api()
 		return render_template('admin/manage_image.html', data=data, data_type=data_type)
 
+	if data_type == "users":
+		data = User.query.get_or_404(id)
+		data = data.to_json_api()
+		return render_template('admin/manage_user.html', data=data, data_type=data_type)
+
 	return render_template('admin/manage_data.html', data=data, data_type=data_type)
 
 
@@ -82,6 +90,9 @@ def manage_data_post(data_type, id):
 	if data_type == "images":
 		db_model = Image.query.get_or_404(id)
 
+	if data_type == "users":
+		db_model = User.query.get_or_404(id)
+
 	db_model.update(**request_data)
 	db.session.commit()
 	return redirect(url_for('admin.manage_data', data_type=data_type, id=id))
@@ -92,6 +103,8 @@ def manage_data_post(data_type, id):
 def add_data_get(data_type):
 	if data_type == "images":
 		return render_template('admin/add_image.html', data_type=data_type)
+	if data_type == "users":
+		return render_template('admin/add_user.html', data_type=data_type)
 	return render_template('admin/add_data.html', data_type=data_type)
 
 @bp.route("/<data_type>/add/", methods=["POST"])
@@ -109,6 +122,8 @@ def add_data_post(data_type):
 		DbModel = Contact
 	if data_type == "images":
 		db_model = Image
+	if data_type == "users":
+		db_model = User
 
 	lastId_model = DbModel.query.with_entities(DbModel.id).order_by(DbModel.id.desc()).first()
 	if lastId_model:
