@@ -1,9 +1,13 @@
-
+from sqlalchemy.orm import joinedload
 from main.models import Page
 
 def get_all_data():
 	data = {}
-	pages = Page.query.all()
+	pages = Page.query.options(
+		joinedload(Page.Category),
+		joinedload(Page.Collection)
+	)\
+		.all()
 	for page in pages:
 		page_data = page.to_json_api()
 		page_data["images"] = [image.to_json_api() for image in page.Image]

@@ -45,7 +45,7 @@
 			"label_tk": "Our Work",
 			"title_tk": "Our Portfolio",
 			"name_ru": "portfolio",
-			"label_ru": "Наша деятельность",
+			"label_ru": "Наши работы",
 			"title_ru": "Портфолио",
 			"name_en": "portfolio",
 			"label_en": "Our Work",
@@ -66,9 +66,18 @@
 		{
 			"id": 5,
 			"name_tk": "with_banner",
-			"label_tk": "Build perfect websites",
+			"label_tk": "Наши преимущества",
 			"title_tk": "Unlimited power",
 			"desc_tk": "Most of our writings have centered on implementing strategies for business units, with their unique \n geeza arse it’s your round grub sloshed burke, my good sir chancer he legged it he lost his bottle pear shaped bugger all mate",
+
+			"label_ru": "Наши преимущества",
+			"title_ru": "Централизованное распределение ресурсов",
+			"desc_ru": "Обустроенная промышленная база компании, оснащенная оборудованием и установками по производству строительных материалах АБЗ, БСУ, ДСУ с внешней инфраструктурой жд тупиками подъездными автодорогами, размещенная на участке площадью 10га в удобном месте в районе населенного пункта Гоушут где имеется одноименный карьер и жд станция Гоушут позволяют системно обеспечивать строящиеся автомагистрали, автодороги Туркменистана стройматериалами и являться фактически ХАБом по поставке стройматериалов.",
+
+			"label_en": "Наши преимущества",
+			"title_en": "Unlimited power",
+			"desc_en": "Обустроенная промышленная база компании, оснащенная оборудованием и установками по производству строительных материалах АБЗ, БСУ, ДСУ с внешней инфраструктурой жд тупиками подъездными автодорогами, размещенная на участке площадью 10га в удобном месте в районе населенного пункта Гоушут где имеется одноименный карьер и жд станция Гоушут позволяют системно обеспечивать строящиеся автомагистрали, автодороги Туркменистана стройматериалами и являться фактически ХАБом по поставке стройматериалов.",
+
 			"link": "http://localhost:8000/#projects",
 			"note_tk": "NOTE : Some details are very important."
 		},
@@ -88,7 +97,13 @@
 			"id": 8,
 			"name_tk": "purpose",
 			"label_tk": "Our Purpose",
-			"title_tk": "WE PLAN YOUR PROJECT"
+			"title_tk": "WE PLAN YOUR PROJECT",
+			"name_ru": "purpose",
+			"label_ru": "Эффективность",
+			"title_ru": "Объединяем предприятия для эффективности.",
+			"name_en": "purpose",
+			"label_en": "Эффективность",
+			"title_en": "Объединяем предприятия для эффективности."
 		},
 		{
 			"id": 9,
@@ -99,8 +114,14 @@
 		{
 			"id": 10,
 			"name_tk": "resume",
-			"label_tk": "Our Resume",
-			"title_tk": "Повышаем стандарты качества и внедряем лучшие технологии"
+			"label_tk": "Этапы строительства",
+			"title_tk": "Повышаем стандарты качества и внедряем лучшие технологии",
+			"name_ru": "resume",
+			"label_ru": "Этапы строительства",
+			"title_ru": "Повышаем стандарты качества и внедряем лучшие технологии",
+			"name_en": "resume",
+			"label_en": "Этапы строительства",
+			"title_en": "Повышаем стандарты качества и внедряем лучшие технологии"
 		},
 		{
 			"id": 11,
@@ -189,22 +210,22 @@
 		{
 			"id": 6,
 			"page_id": 10,
-			"name_tk": "education",
-			"title_tk": "Education",
-			"name_ru": "education",
-			"title_ru": "Education",
-			"name_en": "education",
-			"title_en": "Education"
+			"name_tk": "preparation",
+			"title_tk": "Preparation",
+			"name_ru": "preparation",
+			"title_ru": "Подготовка",
+			"name_en": "preparation",
+			"title_en": "Taýýarlyk"
 		},
 		{
 			"id": 7,
 			"page_id": 10,
-			"name_tk": "workshops",
-			"title_tk": "Workshops",
-			"name_ru": "workshops",
-			"title_ru": "Workshops",
-			"name_en": "workshops",
-			"title_en": "Workshops"
+			"name_tk": "work",
+			"title_tk": "Work",
+			"name_ru": "work",
+			"title_ru": "Разработка",
+			"name_en": "work",
+			"title_en": "Işler"
 		}
 	],
 
@@ -361,32 +382,32 @@
 		{
 			"id": 22,
 			"page_id": 8,
-			"title_tk": "Dedicated Staff",
-			"desc_tk": "Quisque placerat vitae lacus ut sceleris queusce luctus odio ac nibh luctus, in porttitor.",
-			"title_ru": "Dedicated Staff",
-			"desc_ru": "Quisque placerat vitae lacus ut sceleris queusce luctus odio ac nibh luctus, in porttitor.",
-			"title_en": "Dedicated Staff",
-			"desc_en": "Quisque placerat vitae lacus ut sceleris queusce luctus odio ac nibh luctus, in porttitor."
+			"title_tk": "5 предприятий Нацеленные на предоставление полного спектра услуг",
+			"desc_tk": "ХО «Ugurly Yol» \n ХО «Келет Даг» \n ХО «Бургут» \n ХО «Гуль ада» \n ХО «Давут Гурлышик» \n Группа компаний ХО «Ugurly Yol» объединяет авторитетные туркменские хозяйственные общества с опытом и передовыми технологиями под руководством одной эффективно управляющей команды.",
+			"title_ru": "5 предприятий Нацеленные на предоставление полного спектра услуг",
+			"desc_ru": "ХО «Ugurly Yol» \n ХО «Келет Даг» \n ХО «Бургут» \n ХО «Гуль ада» \n ХО «Давут Гурлышик» \n Группа компаний ХО «Ugurly Yol» объединяет авторитетные туркменские хозяйственные общества с опытом и передовыми технологиями под руководством одной эффективно управляющей команды.",
+			"title_en": "5 предприятий Нацеленные на предоставление полного спектра услуг",
+			"desc_en": "ХО «Ugurly Yol» \n ХО «Келет Даг» \n ХО «Бургут» \n ХО «Гуль ада» \n ХО «Давут Гурлышик» \n Группа компаний ХО «Ugurly Yol» объединяет авторитетные туркменские хозяйственные общества с опытом и передовыми технологиями под руководством одной эффективно управляющей команды."
 		},
 		{
 			"id": 23,
 			"page_id": 8,
-			"title_tk": "User Experience",
-			"desc_tk": "Cepteur sint occaecat cupidatat proident, taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole.",
-			"title_ru": "User Experience",
-			"desc_ru": "Cepteur sint occaecat cupidatat proident, taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole.",
-			"title_en": "User Experience",
-			"desc_en": "Cepteur sint occaecat cupidatat proident, taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole."
+			"title_tk": "Материалы и продукты производимые нами",
+			"desc_tk": "1. Мелкозернистый асфаольтобетон \n 2. Крупнозернистый асфальтобетон \n 3. Щебень фракции 5‐10 мм \n 4. Щебень фракции 10‐20 мм \n 5. Мятый песок фракции до 2,5 мм \n 6. Отсев дробления фракций 2,5 мм и < \n 7. Товарный бетон \n 8. Бордюры и прочие изделия из бетона ",
+			"title_ru": "Материалы и продукты производимые нами",
+			"desc_ru": "1. Мелкозернистый асфаольтобетон \n 2. Крупнозернистый асфальтобетон \n 3. Щебень фракции 5‐10 мм \n 4. Щебень фракции 10‐20 мм \n 5. Мятый песок фракции до 2,5 мм \n 6. Отсев дробления фракций 2,5 мм и < \n 7. Товарный бетон \n 8. Бордюры и прочие изделия из бетона ",
+			"title_en": "Материалы и продукты производимые нами",
+			"desc_en": "1. Мелкозернистый асфаольтобетон \n 2. Крупнозернистый асфальтобетон \n 3. Щебень фракции 5‐10 мм \n 4. Щебень фракции 10‐20 мм \n 5. Мятый песок фракции до 2,5 мм \n 6. Отсев дробления фракций 2,5 мм и < \n 7. Товарный бетон \n 8. Бордюры и прочие изделия из бетона "
 		},
 		{
 			"id": 24,
 			"page_id": 8,
-			"title_tk": "Extensive Employment",
-			"desc_tk": "Quisque placerat vitae lacus ut sceleris queusce luctus odio ac nibh luctus, in porttitor.",
-			"title_ru": "Extensive Employment",
-			"desc_ru": "Quisque placerat vitae lacus ut sceleris queusce luctus odio ac nibh luctus, in porttitor.",
-			"title_en": "Extensive Employment",
-			"desc_en": "Quisque placerat vitae lacus ut sceleris queusce luctus odio ac nibh luctus, in porttitor."
+			"title_tk": "Проведение работ на автобане Ашхабад‐Туркменабад",
+			"desc_tk": "Наша команда выполнила геодезические земляные работы, укладку слоев C6 и C7 на Автобане Ашхабад‐Туркменабад на услугах у ХО «Эдермен», а также ведет автомобильные и железнодорожные перевозки гравия для строящегося Автобана Ашхабад‐Туркменабад",
+			"title_ru": "Проведение работ на автобане Ашхабад‐Туркменабад",
+			"desc_ru": "Наша команда выполнила геодезические земляные работы, укладку слоев C6 и C7 на Автобане Ашхабад‐Туркменабад на услугах у ХО «Эдермен», а также ведет автомобильные и железнодорожные перевозки гравия для строящегося Автобана Ашхабад‐Туркменабад",
+			"title_en": "Проведение работ на автобане Ашхабад‐Туркменабад",
+			"desc_en": "Наша команда выполнила геодезические земляные работы, укладку слоев C6 и C7 на Автобане Ашхабад‐Туркменабад на услугах у ХО «Эдермен», а также ведет автомобильные и железнодорожные перевозки гравия для строящегося Автобана Ашхабад‐Туркменабад"
 		},
 
 		{
@@ -435,40 +456,62 @@
 		{
 			"id": 28,
 			"category_id": 6,
-			"title_tk": "University of Studies",
-			"desc_tk": "Duis posuere, quam non imperdiet egestas, eros enim mattis mauris, in posuere lacus arcu quis felis. Etiam interdum erat non enim venenatis fermentum."
+			"desc_tk": "",
+			"title_tk": "Топографическая съемка и разбивка участка",
+			"desc_ru": "",
+			"title_ru": "Топографическая съемка и разбивка участка",
+			"desc_en": "",
+			"title_en": "Топографическая съемка и разбивка участка"
 		},
 		{
 			"id": 29,
 			"category_id": 6,
-			"title_tk": "Doctoral Degree",
-			"desc_tk": "Aliquam tincidunt malesuada tortor vitae iaculis. In eu turpis iaculis, feugiat risus quis, aliquet urna. Quisque fringilla mollis risus, eu pulvinar dolor."
+			"desc_tk": "",
+			"title_tk": "Подготовительные работы и расчистка местности",
+			"desc_ru": "",
+			"title_ru": "Подготовительные работы и расчистка местности",
+			"desc_en": "",
+			"title_en": "Подготовительные работы и расчистка местности"
 		},
 		{
 			"id": 30,
 			"category_id": 6,
-			"title_tk": "Doctoral Degree",
-			"desc_tk": "Maecenas finibus nec sem ut imperdiet. Ut tincidunt est ac dolor aliquam sodales. Phasellus sed mauris hendrerit, laoreet sem in, lobortis ante."
+			"desc_tk": "",
+			"title_tk": "Составление сметы затрат и закупка материалов",
+			"desc_ru": "",
+			"title_ru": "Составление сметы затрат и закупка материалов",
+			"desc_en": "",
+			"title_en": "Составление сметы затрат и закупка материалов"
 		},
 		{
 			"id": 31,
-			"category_id": 7,
-			"title_tk": "Rolling Thunder",
-			"label_tk": "Senior UX / UI Designer",
-			"desc_tk": "Praesent dignissim sollicitudin justo, sed elementum quam lacinia quis. Phasellus eleifend tristique posuere. Sed vitae dui nec magna."
+			"category_id": 6,
+			"desc_tk": "",
+			"title_tk": "Проведение земляных работ",
+			"desc_ru": "",
+			"title_ru": "Проведение земляных работ",
+			"desc_en": "",
+			"title_en": "Проведение земляных работ"
 		},
 		{
 			"id": 32,
 			"category_id": 7,
-			"title_tk": "Rolling Thunder",
-			"label_tk": "DDB Athens ( Tribal )",
-			"desc_tk": "Maecenas tempus faucibus rutrum. Duis eu aliquam urna. Proin vitae nulla tristique, ornare felis id, congue libero. Nam volutpat euismod quam."
+			"desc_tk": "",
+			"title_tk": "Строительство и монтаж водоотвода",
+			"desc_ru": "",
+			"title_ru": "Строительство и монтаж водоотвода",
+			"desc_en": "",
+			"title_en": "Строительство и монтаж водоотвода"
 		},
 		{
 			"id": 33,
 			"category_id": 7,
-			"title_tk": "Freelancer",
-			"label_tk": "DDB Athens ( Tribal )"
+			"desc_tk": "",
+			"title_tk": "Укладка, уплотнение и утрамбовывание «Подушки»",
+			"desc_ru": "",
+			"title_ru": "Укладка, уплотнение и утрамбовывание «Подушки»",
+			"desc_en": "",
+			"title_en": "Укладка, уплотнение и утрамбовывание «Подушки»"
 		},
 
 		{
@@ -505,6 +548,27 @@
 			"page_id": 3,
 			"title_tk": "Lengshuikeng",
 			"link": "web/assets/img/project/project6/1.jpg"
+		},
+
+		{
+			"id": 39,
+			"category_id": 7,
+			"desc_tk": "",
+			"title_tk": "Укладка асфальтированного покрытия",
+			"desc_ru": "",
+			"title_ru": "Укладка асфальтированного покрытия",
+			"desc_en": "",
+			"title_en": "Укладка асфальтированного покрытия"
+		},
+		{
+			"id": 40,
+			"category_id": 7,
+			"desc_tk": "",
+			"title_tk": "Нанесение дорожной разметки и благоустройство дорог",
+			"desc_ru": "",
+			"title_ru": "Нанесение дорожной разметки и благоустройство дорог",
+			"desc_en": "",
+			"title_en": "Нанесение дорожной разметки и благоустройство дорог"
 		}
 	],
 
@@ -515,17 +579,23 @@
 			"name_tk": "main_contact",
 			"title_tk": "Main Contact",
 			"label_tk": "Contact",
-			"phone_number": "+99361234567",
+			"name_ru": "main_contact",
+			"title_ru": "Мы всегда открыты для сотрудничества и рады новым проектам",
+			"label_ru": "Наши контакты",
+			"name_en": "main_contact",
+			"title_en": "Main Contact",
+			"label_en": "Contact",
+			"phone_number": "+99312469214",
 			"home_phone_number": "",
-			"work_phone_number": "",
+			"work_phone_number": "+99312469215",
 			"phone_number_1": "",
 			"phone_number_2": "",
 			"phone_number_3": "",
-			"mail": "info@example.com",
+			"mail": "ugurlyyol@gmail.com",
 			"mail_1": "",
 			"mail_2": "",
 			"mail_3": "",
-			"address": "Ashgabat, Turkmenistan",
+			"address": "Ул «Ататюрка» 1972; БЦ «Беркарар»; офис NoF4, F8 Ашхабад; Туркменистан",
 			"address_1": "",
 			"address_2": "",
 			"address_3": "",
@@ -707,18 +777,36 @@
 			"id": 29,
 			"page_id": 2,
 			"file_path": "/static/web/assets/img/about-intro.jpg",
-			"title_ru": "25",
-			"label_ru": "Лет опыта",
-			"title_en": "25",
-			"label_en": "Years of experience",
-			"title_tk": "25",
-			"label_tk": "Ýyl tejribesi"
+			"title_ru": "25 Лет опыта",
+			"label_ru": "Следуем и повышаем стандарты качества, а также экономим бюджеты заказчиков",
+			"title_en": "25 Years of experience",
+			"label_en": "Следуем и повышаем стандарты качества, а также экономим бюджеты заказчиков",
+			"title_tk": "25 Ýyl tejribesi",
+			"label_tk": "Следуем и повышаем стандарты качества, а также экономим бюджеты заказчиков"
 		},
 
 		{
-			"id": 222,
-			"page_id": 1,
-			"file_path": "/static/web/assets/img/project/project2/1.jpg"
+			"id": 30,
+			"collection_id": 27,
+			"file_path": "/static/web/assets/img/blog/2.jpg"
+		},
+
+		{
+			"id": 31,
+			"page_id": 8,
+			"file_path": "/static/web/assets/img/ugurly_yol/resources.png"
+		},
+
+		{
+			"id": 32,
+			"page_id": 8,
+			"file_path": "/static/web/assets/img/ugurly_yol/resources.png"
+		},
+
+		{
+			"id": 33,
+			"page_id": 8,
+			"file_path": "/static/web/assets/img/ugurly_yol/resources.png"
 		}
 	]
 }
