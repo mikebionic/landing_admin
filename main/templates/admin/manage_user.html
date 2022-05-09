@@ -1,0 +1,115 @@
+{% extends "admin/layout.html" %} {% block styles %} {% endblock %} {% block
+content %}
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="page-title-box">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title">{{ data.username or '' }}</h4>
+							<p class="text-muted mb-0">{{ data.name or '' }}</p>
+						</div>
+						<div class="card-body">
+							<form method="POST" action="" class="form-horizontal well">
+								<fieldset>
+									<div class="repeater-custom-show-hide">
+										<div class="d-flex">
+											<div class="card-body" data-repeater-list="car">
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Name</label>
+															<input
+																type="text"
+																name="name"
+																value="{{ data.name or '' }}"
+																placeholder="name"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Username</label>
+															<input
+																type="text"
+																name="username"
+																value="{{ data.username or '' }}"
+																placeholder="username"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Password</label>
+															<input
+																type="text"
+																name="password"
+																value="{{ data.password or '' }}"
+																placeholder="password"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Email</label>
+															<input
+																type="email"
+																name="email"
+																value="{{ data.email or '' }}"
+																placeholder="email"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Type Id</label>
+															<input
+																type="text"
+																name="type_id"
+																value="{{ data.type_id or '' }}"
+																placeholder="type_id"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group row mb-0">
+											<input
+												type="submit"
+												value="Save"
+												class="btn btn-outline-primary"
+											/>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
