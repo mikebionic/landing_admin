@@ -45,8 +45,8 @@
 			"label_tk": "Our Work",
 			"title_tk": "Our Portfolio",
 			"name_ru": "portfolio",
-			"label_ru": "Наши работы",
-			"title_ru": "Портфолио",
+			"label_ru": "Услуги",
+			"title_ru": "Предлагаем полный цикл строительных работ",
 			"name_en": "portfolio",
 			"label_en": "Our Work",
 			"title_en": "Our Portfolio"
@@ -57,7 +57,7 @@
 			"label_tk": "Our Services",
 			"title_tk": "Ценности нашей компании",
 			"name_ru": "services",
-			"label_ru": "Наши сервисы",
+			"label_ru": "Наш сервис",
 			"title_ru": "Ценности нашей компании",
 			"name_en": "services",
 			"label_en": "Our Services",
@@ -159,22 +159,12 @@
 		{
 			"id": 1,
 			"page_id": 3,
-			"name_tk": "induction",
-			"label_tk": "Induction",
-			"name_ru": "induction",
-			"label_ru": "Induction",
-			"name_en": "induction",
-			"label_en": "Induction"
-		},
-		{
-			"id": 2,
-			"page_id": 3,
-			"name_tk": "photography",
-			"label_tk": "Photography",
-			"name_ru": "photography",
-			"label_ru": "Photography",
-			"name_en": "photography",
-			"label_en": "Photography"
+			"name_tk": "Other",
+			"label_tk": "Other",
+			"name_ru": "Other",
+			"label_ru": "Другое",
+			"name_en": "Other",
+			"label_en": "Other"
 		},
 		{
 			"id": 3,
@@ -189,22 +179,22 @@
 		{
 			"id": 4,
 			"page_id": 3,
-			"name_tk": "product",
-			"label_tk": "Product",
-			"name_ru": "product",
-			"label_ru": "Product",
-			"name_en": "product",
-			"label_en": "Product"
+			"name_tk": "Roads",
+			"label_tk": "Roads",
+			"name_ru": "Roads",
+			"label_ru": "Дороги",
+			"name_en": "Roads",
+			"label_en": "Roads"
 		},
 		{
 			"id": 5,
 			"page_id": 3,
-			"name_tk": "pen",
-			"label_tk": "Pen",
-			"name_ru": "pen",
-			"label_ru": "Pen",
-			"name_en": "pen",
-			"label_en": "Pen"
+			"name_tk": "Engine",
+			"label_tk": "Engine",
+			"name_ru": "Engine",
+			"label_ru": "Техника",
+			"name_en": "Engine",
+			"label_en": "Engine"
 		},
 
 		{
@@ -514,41 +504,122 @@
 			"title_en": "Укладка, уплотнение и утрамбовывание «Подушки»"
 		},
 
+
+
+
 		{
 			"id": 34,
-			"category_id": 4,
+			"category_id": 3,
 			"page_id": 3,
-			"title_tk": "Yaren collection",
+			"title_tk": "Gelejeki proyektler",
+			"title_ru": "Будущие проекты",
+			"title_en": "Gelejeki proyektler",
 			"link": "web/assets/img/project/project2/1.jpg"
 		},
 		{
 			"id": 35,
 			"category_id": 3,
 			"page_id": 3,
-			"title_tk": "Principal Garden",
+			"title_tk": "Gelejeki proyektler",
+			"title_ru": "Будущие проекты",
+			"title_en": "Gelejeki proyektler",
 			"link": "web/assets/img/project/project4/1.jpg"
 		},
 		{
 			"id": 36,
 			"category_id": 1,
 			"page_id": 3,
-			"title_tk": "Huggl Power Pack",
+			"title_tk": "Iş prosesi",
+			"title_ru": "Процесс работы",
+			"title_en": "Iş prosesi",
 			"link": "web/assets/img/project/project3/1.jpg"
 		},
 		{
 			"id": 37,
-			"category_id": 3,
+			"category_id": 4,
 			"page_id": 3,
-			"title_tk": "Small Silver Car",
+			"title_tk": "Howpsyzlyk",
+			"title_ru": "Безопасность",
+			"title_en": "Howpsyzlyk",
 			"link": "web/assets/img/project/project5/1.jpg"
 		},
 		{
 			"id": 38,
 			"category_id": 5,
 			"page_id": 3,
-			"title_tk": "Lengshuikeng",
+			"title_tk": "Ýeriň taýýarlygy",
+			"title_ru": "Подготовка земли",
+			"title_en": "Ýeriň taýýarlygy",
 			"link": "web/assets/img/project/project6/1.jpg"
 		},
+		{
+			"id": 41,
+			"category_id": 5,
+			"page_id": 3,
+			"title_tk": "Ýeriň taýýarlygy",
+			"title_ru": "Строительство автомагистралей и шоссе",
+			"title_en": "Ýeriň taýýarlygy",
+			"link": "/static/web/assets/img/ugurly_yol/engine1.png"
+		},
+		{
+			"id": 42,
+			"category_id": 5,
+			"page_id": 3,
+			"title_tk": "Ýeriň taýýarlygy",
+			"title_ru": "Услуги по аренде техники с экипажем",
+			"title_en": "Ýeriň taýýarlygy",
+			"link": "/static/web/assets/img/ugurly_yol/engine2.png"
+		},
+		{
+			"id": 43,
+			"category_id": 3,
+			"page_id": 3,
+			"title_tk": "Ýeriň taýýarlygy",
+			"title_ru": "Строительство гидротехнических сооружений и мостов",
+			"title_en": "Ýeriň taýýarlygy",
+			"link": "/static/web/assets/img/ugurly_yol/land.png"
+		},
+		{
+			"id": 44,
+			"category_id": 1,
+			"page_id": 3,
+			"title_tk": "Ýeriň taýýarlygy",
+			"title_ru": "Строительство линий электропередач и телекомумуникаций",
+			"title_en": "Ýeriň taýýarlygy",
+			"link": "/static/web/assets/img/ugurly_yol/electricity.png"
+		},
+		{
+			"id": 45,
+			"category_id": 3,
+			"page_id": 3,
+			"title_tk": "Ýeriň taýýarlygy",
+			"title_ru": "Строительство жилых, промышленных и общественных зданий",
+			"title_en": "Ýeriň taýýarlygy",
+			"link": "/static/web/assets/img/ugurly_yol/houses.png"
+		},
+		{
+			"id": 46,
+			"category_id": 3,
+			"page_id": 3,
+			"title_tk": "Ýeriň taýýarlygy",
+			"title_ru": "Подготовка строительного участка",
+			"title_en": "Ýeriň taýýarlygy",
+			"link": "/static/web/assets/img/ugurly_yol/worker1.png"
+		},
+		{
+			"id": 47,
+			"category_id": 5,
+			"page_id": 3,
+			"title_tk": "Ýeriň taýýarlygy",
+			"title_ru": "Грузоперевозка стройматериалов, ГСМ и оборудования",
+			"title_en": "Ýeriň taýýarlygy",
+			"link": "/static/web/assets/img/ugurly_yol/engine3.png"
+		},
+
+
+
+
+
 
 		{
 			"id": 39,
@@ -807,6 +878,66 @@
 			"id": 33,
 			"page_id": 8,
 			"file_path": "/static/web/assets/img/ugurly_yol/resources.png"
+		},
+
+
+
+		{
+			"id": 41,
+			"collection_id": 41,
+			"category_id": 5,
+			"page_id": 3,
+			"title_ru": "Строительство автомагистралей и шоссе",
+			"file_path": "/static/web/assets/img/ugurly_yol/engine1.png"
+		},
+		{
+			"id": 42,
+			"collection_id": 42,
+			"category_id": 5,
+			"page_id": 3,
+			"title_ru": "Услуги по аренде техники с экипажем",
+			"file_path": "/static/web/assets/img/ugurly_yol/engine2.png"
+		},
+		{
+			"id": 43,
+			"collection_id": 43,
+			"category_id": 3,
+			"page_id": 3,
+			"title_ru": "Строительство гидротехнических сооружений и мостов",
+			"file_path": "/static/web/assets/img/ugurly_yol/land.png"
+		},
+		{
+			"id": 44,
+			"collection_id": 44,
+			"category_id": 1,
+			"page_id": 3,
+			"title_ru": "Строительство линий электропередач и телекомумуникаций",
+			"file_path": "/static/web/assets/img/ugurly_yol/electricity.png"
+		},
+		{
+			"id": 45,
+			"collection_id": 45,
+			"category_id": 3,
+			"page_id": 3,
+			"title_ru": "Строительство жилых, промышленных и общественных зданий",
+			"file_path": "/static/web/assets/img/ugurly_yol/houses.png"
+		},
+		{
+			"id": 46,
+			"collection_id": 46,
+			"category_id": 3,
+			"page_id": 3,
+			"title_ru": "Подготовка строительного участка",
+			"file_path": "/static/web/assets/img/ugurly_yol/worker1.png"
+		},
+		{
+			"id": 47,
+			"collection_id": 47,
+			"category_id": 5,
+			"page_id": 3,
+			"title_ru": "Грузоперевозка стройматериалов, ГСМ и оборудования",
+			"file_path": "/static/web/assets/img/ugurly_yol/engine3.png"
 		}
+
 	]
 }
