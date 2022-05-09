@@ -8,7 +8,7 @@
 	<meta name="discrption" content="parallax one page" />
 	<meta name="keyword"
 		content="agency, business, corporate, creative, freelancer, interior, joomla template, K2 Blog, minimal, modern, multipurpose, personal, portfolio, responsive, simple" />
-	<title>Ugurly Yol</title>
+	<title>{{ data.home_page.note }}</title>
 	<link rel="shortcut icon" href="{{ url_for('static', filename='web/assets/img/favicon.ico') }}" type="image/x-icon" />
 	<link rel="icon" href="{{ url_for('static', filename='web/assets/img/favicon.ico') }}" type="image/x-icon" />
 	<link rel="preload" href="{{ url_for('static', filename='web/assets/img/circle-dotted.png') }}" as="image" />
@@ -31,8 +31,8 @@
 		</div>
 
 		<h1 class="title v-middle">
-			<span class="text-strok">Угурлы Йол</span>
-			<span class="text-fill">Угурлы Йол</span>
+			<span class="text-strok">{{ data.home_page.note }}</span>
+			<span class="text-fill">{{ data.home_page.note }}</span>
 		</h1>
 	</div>
 	<!-- ========== End Loading Page ========== -->
@@ -44,17 +44,17 @@
 			<div class="inner-header p-relative">
 				<div class="main-logo">
 					<a href="" data-dsn="parallax">
-						<img class="light-logo"
+						<img class="light-logo" style="max-height: 40px;"
 							src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-							data-dsn-src="{{ url_for('static', filename='web/assets/img/logo.png') }}" alt="" />
-						<img class="dark-logo"
+							data-dsn-src="{{ url_for('static', filename='web/assets/img/ugurly_yol/ugurly_yol_logo.png') }}" alt="" />
+						<img class="dark-logo" style="max-height: 40px;"
 							src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-							data-dsn-src="{{ url_for('static', filename='web/assets/img/logo-dark.png') }}" alt="" />
+							data-dsn-src="{{ url_for('static', filename='web/assets/img/ugurly_yol/ugurly_yol_logo.png') }}" alt="" />
 					</a>
 
 				</div>
 			</div>
-			
+
 			<ul class="change_lang">
 				<a href="/set_language/en">en</a>
 				<a href="/set_language/ru">ru</a>
@@ -129,94 +129,20 @@
 							<div class="bg-container  dsn-hero-parallax-img p-relative w-100 h-100">
 								<div class="slide-inner h-100">
 									<div class="swiper-wrapper">
-										<div class="slide-item swiper-slide over-hidden">
-											<div class="image-bg cover-bg w-100 h-100 " data-overlay="6"
-												data-swiper-parallax="50%" data-swiper-parallax-scale="1.1">
-												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project1/1.jpg') }}" alt="">
-											</div>
-											<div class="slide-content p-absolute ">
-												<div class="content p-relative">
-													<div class="metas d-inline-block mb-20">
-														<span>Угурлы <span>
-														<span>йол</span>
-													</div>
-													<div class="d-block"></div>
-													<h1 class="title user-no-selection d-inline-block ">
-														<a href="" class="effect-ajax"
-															data-dsn-ajax="slider">{{data.home_page.title or 'home_page.title'}}</a>
-													</h1>
-													<hr class="mt-20" />
 
-													<p class="max-w570 mt-20 description ">
-														{{data.home_page.desc or 'home_page.desc'}}
-													</p>
-												</div>
-											</div>
 
-										</div>
-
-										<div class="slide-item swiper-slide over-hidden">
-											<div class="image-bg cover-bg w-100 h-100 " data-overlay="6"
-												data-swiper-parallax="50%" data-swiper-parallax-scale="1.1">
-												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project2/1.jpg') }}" alt="">
-											</div>
-											<div class="slide-content p-absolute  ">
-												<div class="content p-relative">
-													<div class="metas d-inline-block mb-20">
-														<span>Угурлы <span>
-														<span>йол</span>
-													</div>
-													<div class="d-block"></div>
-													<h1 class="title user-no-selection d-inline-block ">
-														<a href="" class="effect-ajax"
-															data-dsn-ajax="slider">{{data.home_page.title or 'home_page.title'}}</a>
-													</h1>
-													<hr class="mt-20" />
-
-													<p class="max-w570 mt-20 description ">{{data.home_page.desc or 'home_page.desc'}}</p>
-												</div>
-											</div>
-
-										</div>
-
-										<div class="slide-item swiper-slide over-hidden">
-											<div class="image-bg cover-bg w-100 h-100 " data-overlay="6"
-												data-swiper-parallax="50%" data-swiper-parallax-scale="1.1">
-												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project3/1.jpg') }}" alt="">
-											</div>
-											<div class="slide-content p-absolute  ">
-												<div class="content p-relative">
-													<div class="metas d-inline-block mb-20">
-														<span>Угурлы <span>
-														<span>йол</span>
-													</div>
-													<div class="d-block"></div>
-													<h1 class="title user-no-selection d-inline-block ">
-														<a href="" class="effect-ajax"
-															data-dsn-ajax="slider">{{data.home_page.title or 'home_page.title'}}</a>
-													</h1>
-													<hr class="mt-20" />
-
-													<p class="max-w570 mt-20 description ">{{data.home_page.desc or 'home_page.desc'}}</p>
-												</div>
-											</div>
-
-										</div>
-
+									{% if data.home_page.images %}
+									{% for image in data.home_page.images %}
 										<div class="slide-item swiper-slide over-hidden">
 											<div class="image-bg cover-bg w-100 h-100 " data-overlay="2"
 												data-swiper-parallax="50%" data-swiper-parallax-scale="1.1">
 												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project4/1.jpg') }}" alt="">
+												data-dsn-src="{{image.file_path}}" alt="">
 											</div>
 											<div class="slide-content p-absolute  ">
 											<div class="content p-relative">
 												<div class="metas d-inline-block mb-20">
-													<span>Угурлы <span>
-														<span>йол</span>
+													<span>{{ data.home_page.note }}<span>
 												</div>
 												<div class="d-block"></div>
 												<h1 class="title user-no-selection d-inline-block ">
@@ -224,38 +150,13 @@
 														data-dsn-ajax="slider">{{data.home_page.title or 'home_page.title'}}</a>
 												</h1>
 												<hr class="mt-20" />
-
 												<p class="max-w570 mt-20 description ">{{data.home_page.desc or 'home_page.desc'}}</p>
 											</div>
 											</div>
-
 										</div>
+									{% endfor %}
+									{% endif %}
 
-
-										<div class="slide-item swiper-slide over-hidden">
-											<div class="image-bg cover-bg w-100 h-100 " data-overlay="4"
-												data-swiper-parallax="50%" data-swiper-parallax-scale="1.1">
-												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project6/1.jpg') }}" alt="">
-											</div>
-											<div class="slide-content p-absolute  ">
-													<div class="content p-relative">
-														<div class="metas d-inline-block mb-20">
-															<span>Угурлы <span>
-																<span>йол</span>
-														</div>
-														<div class="d-block"></div>
-														<h1 class="title user-no-selection d-inline-block ">
-															<a href="" class="effect-ajax"
-																data-dsn-ajax="slider">{{data.home_page.title or 'home_page.title'}}</a>
-														</h1>
-														<hr class="mt-20" />
-	
-														<p class="max-w570 mt-20 description ">{{data.home_page.desc or 'home_page.desc'}}</p>
-													</div>
-											</div>
-
-										</div>
 									</div>
 								</div>
 							</div>
@@ -321,34 +222,14 @@
 											{{data.advantages.desc or 'advantages.desc'}}
 										</p>
 
-
 										<div class="toHtml">
 											{{data.advantages.html or 'advantages.html'}}
-										</div>
-
-
-										<div class="box-awards d-grid grid-md-2  mt-30">
-											<div class="box-awards-item has-border dsn-up ">
-												<h5 class="number background-section p-10">
-													<span class="has-animate-number title">37</span>
-													<span class="sm-title-block">Business
-														<br> partner</span>
-												</h5>
-											</div>
-
-											<div class="box-awards-item has-border dsn-up">
-												<h5 class="number background-section p-10">
-													<span class="has-animate-number title">19</span>
-													<span class="sm-title-block">SUTISFIED <br> CUSTOMERS</span>
-												</h5>
-											</div>
-
-
 										</div>
 									</div>
 								</div>
 
 								<div class="col-lg-6">
+									{% if data.advantages.images %}
 									<div class="background-mask p-20 p-absolute h-100 w-100">
 										<div class="line line-top"></div>
 										<div class="line line-bottom"></div>
@@ -359,7 +240,7 @@
 											<div class="img-container h-100 before-z-index" data-dsn-grid="move-up"
 												data-overlay="3">
 												<img class="cover-bg-img " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-dsn-src="{{ url_for('static', filename='web/assets/img/about-intro.jpg') }}" alt="">
+												data-dsn-src="{{ data.advantages.images[0].file_path }}" alt="">
 											</div>
 										</div>
 
@@ -367,13 +248,14 @@
 										<div
 											class="box-awards-item has-border big-number p-absolute left-0 bottom-0 ml-40 mb-40 dsn-up v-dark-head">
 											<h5 class="number  p-10">
-												<span class="has-animate-number title">25</span>
+												<span class="has-animate-number title">{{ data.advantages.images[0].title or 'title' }}</span>
 												<span class="sm-title-block d-block">
-													YEARS OF <br /> DIGITAL EXPERIENCE
+													{{ data.advantages.images[0].label or 'label' }}
 												</span>
 											</h5>
 										</div>
 									</div>
+									{% endif %}
 								</div>
 							</div>
 
@@ -402,7 +284,7 @@
 											All
 										</button>
 										{% for category in data.portfolio.categories %}
-											<button type="button" data-filter=".{{category.name}}">{{category.label}}</button>
+											<button type="button" data-filter=".portfolio-{{category.id}}">{{category.label}}</button>
 										{% endfor %}
 
 									</div>
@@ -413,10 +295,10 @@
 								class="work-inner projects-list work-one-page d-grid grid-md-2  grid-lg-3 p-relative w-100 dsn-item-filter dsn-isotope">
 
 								{% for collection in data.portfolio.collections %}
-								<div class="work-item  p-relative {{ collection.category_name or '' }}">
+								<div class="work-item  p-relative portfolio-{{collection.category_id or '' }}">
 									<a class="effect-ajax" data-dsn-ajax="work">
 										<div class="work-item-inner">
-											<h5 class="cat p-absolute">{{ collection.label or 'collection.label' }}</h5>
+											<h5 class="cat p-absolute">{{ collection.category_name or 'category_name' }}</h5>
 
 											<div class="line line-top"></div>
 											<div class="line line-bottom"></div>
@@ -426,7 +308,7 @@
 											{% if collection.images %}
 											<div class="box-img before-z-index" data-overlay="6">
 												<img class="cover-bg-img has-top-bottom"
-													src="{{collection.images[0].file_path}}"
+													src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 													data-dsn-src="{{collection.images[0].file_path}}" alt="{{collection.images[0].name or collection.images[0].title}}">
 											</div>
 											{% endif %}
@@ -439,123 +321,7 @@
 								</div>
 								{% endfor %}
 
-								<div class="work-item p-relative Product pen">
-									<a class="effect-ajax" data-dsn-ajax="work" href="">
-										<div class="work-item-inner">
-											<h5 class="cat p-absolute">pen</h5>
 
-											<div class="line line-top"></div>
-											<div class="line line-bottom"></div>
-											<div class="line line-left"></div>
-											<div class="line line-right"></div>
-
-											<div class="box-img before-z-index" data-overlay="6">
-												<img class="cover-bg-img has-top-bottom"
-													src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-													data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project2/1.jpg') }}" alt="">
-											</div>
-										</div>
-
-										<div class="box-content">
-											<h4 class="title-block sec-title">Yaren collection</h4>
-										</div>
-									</a>
-								</div>
-
-
-
-								
-								<div class="work-item p-relative architecture">
-									<a class="effect-ajax" data-dsn-ajax="work" href="">
-										<div class="work-item-inner">
-											<h5 class="cat p-absolute">Architecture</h5>
-
-											<div class="line line-top"></div>
-											<div class="line line-bottom"></div>
-											<div class="line line-left"></div>
-											<div class="line line-right"></div>
-
-											<div class="box-img before-z-index" data-overlay="2">
-												<img class="cover-bg-img has-top-bottom"
-													src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-													data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project4/1.jpg') }}" alt="">
-											</div>
-										</div>
-
-										<div class="box-content">
-											<h4 class="title-block sec-title">Principal Garden</h4>
-										</div>
-									</a>
-								</div>
-
-								<div class="work-item p-relative photography induction">
-									<a class="effect-ajax" data-dsn-ajax="work" href="">
-										<div class="work-item-inner">
-											<h5 class="cat p-absolute">induction</h5>
-
-											<div class="line line-top"></div>
-											<div class="line line-bottom"></div>
-											<div class="line line-left"></div>
-											<div class="line line-right"></div>
-
-											<div class="box-img before-z-index" data-overlay="6">
-												<img class="cover-bg-img has-top-bottom"
-													src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-													data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project3/1.jpg') }}" alt="">
-											</div>
-										</div>
-
-										<div class="box-content">
-											<h4 class="title-block sec-title">Huggl Power Pack</h4>
-										</div>
-									</a>
-								</div>
-
-								<div class="work-item p-relative photography">
-									<a class="effect-ajax" data-dsn-ajax="work" href="">
-										<div class="work-item-inner">
-											<h5 class="cat p-absolute">Photography , car</h5>
-
-											<div class="line line-top"></div>
-											<div class="line line-bottom"></div>
-											<div class="line line-left"></div>
-											<div class="line line-right"></div>
-
-											<div class="box-img before-z-index" data-overlay="5">
-												<img class="cover-bg-img has-top-bottom"
-													src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-													data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project5/1.jpg') }}" alt="">
-											</div>
-										</div>
-
-										<div class="box-content">
-											<h4 class="title-block sec-title">Small Silver Car</h4>
-										</div>
-									</a>
-								</div>
-
-								<div class="work-item p-relative photography">
-									<a class="effect-ajax" data-dsn-ajax="work" href="">
-										<div class="work-item-inner">
-											<h5 class="cat p-absolute">Photography</h5>
-
-											<div class="line line-top"></div>
-											<div class="line line-bottom"></div>
-											<div class="line line-left"></div>
-											<div class="line line-right"></div>
-
-											<div class="box-img before-z-index" data-overlay="4">
-												<img class="cover-bg-img has-top-bottom" data-overlay="3"
-													src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-													data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project6/1.jpg') }}" alt="">
-											</div>
-										</div>
-
-										<div class="box-content">
-											<h4 class="title-block sec-title">Lengshuikeng</h4>
-										</div>
-									</a>
-								</div>
 							</div>
 						</div>
 					</section>
@@ -856,20 +622,11 @@
 									<span class="line-bg-right">{{data.with_banner.label or 'with_banner.label'}}</span>
 								</p>
 								<h2 class="section-title">{{data.with_banner.title or 'with_banner.title'}}</h2>
-
 							</div>
 
-
 							<p class="mb-10">
-								{{data.with_banner.desc or 'with_banner.desc'}}	
+								{{data.with_banner.desc or 'with_banner.desc'}}
 							</p>
-
-							{% if data.with_banner.link %}
-							<a href="{{data.with_banner.link}}" class="mt-30 dsn-button image-zoom" data-dsn="parallax">
-								<span class="dsn-border border-color-reverse-color"></span>
-								More Projects <span>⟶</span>
-							</a>
-							{% endif %}
 
 							{% if data.with_banner.note %}
 							<p class="sm-p mt-15 theme-color">
@@ -985,7 +742,6 @@
 														<div class="swiper-wrapper">
 
 
-
 															{% for collection in data.feedback.collections %}
 															<div class="swiper-slide d-flex align-items-center">
 																<div class="box-img mr-15"
@@ -1009,7 +765,7 @@
 											<div class="testimonial-content ">
 												<div class="swiper-container">
 													<div class="swiper-wrapper">
-														
+
 														{% for collection in data.feedback.collections %}
 														<div class="swiper-slide">
 															<p>{{collection.desc or 'collection.desc'}}</p>
@@ -1069,11 +825,13 @@
 							<div class="row dsn-z-index-2">
 								<div class="col-lg-6  dsn-z-index-2 pr-0 mb-lg-section">
 									<div class="box-im h-100 p-absolute">
+										{% if data.purpose.images %}
 										<div class="img-container h-100 before-z-index" data-dsn-grid="move-up"
 											data-overlay="3">
 											<img class="cover-bg-img " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											data-dsn-src="{{ url_for('static', filename='web/assets/img/plan-project.jpg') }}" alt="">
+											data-dsn-src="{{data.purpose.images[0].file_path}}" alt="">
 										</div>
+										{% endif %}
 
 									</div>
 								</div>
@@ -1084,7 +842,7 @@
 										<div class="box-info-inner">
 											<div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.1"
 												data-dsn-duration="170%" data-dsn-move="0%">
-												Ugurly Ýol
+												{{ data.home_page.note }}
 											</div>
 
 											<div class="mb-50 d-flex text-left flex-column align-items-start">
@@ -1098,8 +856,8 @@
 											</div>
 											<div class="dsn-accordion accordion">
 												<div class="accordion__wrapper">
-													
-													
+
+
 
 													{% set purpose_count = 0 %}
 													{% for collection in data.purpose.collections %}

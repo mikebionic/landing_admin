@@ -16,10 +16,11 @@ def get_all_data():
 			for collection in category.Collection:
 				collection_data = collection.to_json_api()
 				collection_data["category_name"] = collection.category.name_tk if collection.category else ''
+				collection_data["category_id"] = collection.category.id if collection.category else ''
 				collection_data["images"] = [image.to_json_api() for image in collection.Image]
 				collections_list.append(collection_data)
-				category_data["collections"] = collections_list
 
+			category_data["collections"] = collections_list
 			categories_list.append(category_data)
 		
 		page_data["categories"] = categories_list
@@ -28,11 +29,11 @@ def get_all_data():
 		for collection in page.Collection:
 			collection_data = collection.to_json_api()
 			collection_data["category_name"] = collection.category.name_tk if collection.category else ''
+			collection_data["category_id"] = collection.category.id if collection.category else ''
 			collection_data["images"] = [image.to_json_api() for image in collection.Image]
 			collections_list.append(collection_data)
 		
 		page_data["collections"] = collections_list
-
 
 		data[page.name_tk] = page_data
 
