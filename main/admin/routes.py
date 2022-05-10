@@ -74,7 +74,42 @@ def manage_data(data_type, id):
 @login_required
 def manage_data_post(data_type, id):
 	request_data = add_data_from_form(request, data_type)
+	db_model = get_db_model_from_data_type_and_id(data_type, id)
+	db_model.update(**request_data)
+	db.session.commit()
+	return redirect(url_for('admin.manage_data', data_type=data_type, id=id))
 
+
+@bp.route("/<data_type>/add/")
+@login_required
+def add_data_get(data_type):
+	if data_type == "images":
+		return render_template('admin/add_image.html', data_type=data_type)
+	if data_type == "users":
+		return render_template('admin/add_user.html', data_type=data_type)
+	return render_template('admin/add_data.html', data_type=data_type)
+
+
+@bp.route("/<data_type>/<id>/delete/")
+@login_required
+def delete_data_get(data_type, id):
+	db_model = get_db_model_from_data_type_and_id(data_type, id)
+	db_model.update(**{"deleted":1})
+	db.session.commit()
+	return redirect(url_for('admin.dashboard', data_type=data_type))
+
+
+@bp.route("/<data_type>/<id>/restore/")
+@login_required
+def restore_data_get(data_type, id):
+	db_model = get_db_model_from_data_type_and_id(data_type, id)
+	db_model.update(**{"deleted":0})
+	db.session.commit()
+	return redirect(url_for('admin.dashboard', data_type=data_type))
+
+
+def get_db_model_from_data_type_and_id(data_type, id):
+	db_model = None
 	if data_type == 'pages':
 		db_model = Page.query.get_or_404(id)
 
@@ -92,20 +127,7 @@ def manage_data_post(data_type, id):
 
 	if data_type == "users":
 		db_model = User.query.get_or_404(id)
-
-	db_model.update(**request_data)
-	db.session.commit()
-	return redirect(url_for('admin.manage_data', data_type=data_type, id=id))
-
-
-@bp.route("/<data_type>/add/")
-@login_required
-def add_data_get(data_type):
-	if data_type == "images":
-		return render_template('admin/add_image.html', data_type=data_type)
-	if data_type == "users":
-		return render_template('admin/add_user.html', data_type=data_type)
-	return render_template('admin/add_data.html', data_type=data_type)
+	return db_model
 
 @bp.route("/<data_type>/add/", methods=["POST"])
 @login_required

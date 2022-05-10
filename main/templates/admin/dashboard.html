@@ -28,6 +28,19 @@ content %}
 									href="/admin/{{data_type}}/{{item.id}}/manage/"
 									>Edit</a
 								>
+								{% if item.deleted == 1 %}
+								<a
+									class="btn btn-outline-danger"
+									href="/admin/{{data_type}}/{{item.id}}/delete/"
+									>Delete</a
+								>
+								{% else %}
+								<a
+									class="btn btn-outline-warning"
+									href="/admin/{{data_type}}/{{item.id}}/restore/"
+									>Restore</a
+								>
+								{% endif %}
 							</div>
 							<p class="text-muted mb-0">{{item.name}}</p>
 						</div>
