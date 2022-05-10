@@ -1288,7 +1288,7 @@
 						<div class="container mb-70 d-flex text-center flex-column  align-items-center">
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									{{data.our_clients.name or 'our_clients.name'}}
+									{{data.our_clients.label or 'our_clients.label'}}
 								</span>
 
 							</p>
@@ -1368,7 +1368,7 @@
 								<div class="d-flex flex-column">
 									<p class="sub-heading line-shap line-shap-after ">
 										<span class="line-bg-left">
-											{{data.footer.name or 'footer.name'}}
+											{{data.footer.label or 'footer.label'}}
 										</span>
 									</p>
 									<h2 class="section-title max-w750 mt-15">
@@ -1473,8 +1473,25 @@
 							<div class="box-info-contact">
 								<ul>
 									<li>
-										<h5 class="title-block mb-15">Contact</h5>
-										<p class="text-p">{{data.contact.contacts[0].phone_number or 'contact.contacts[0].phone_number'}}</p>
+										<h5 class="title-block mb-15">{{data.contact.note}}</h5>
+										{% if data.contact.contacts[0].phone_number %}
+											<p class="text-p">{{ data.contact.contacts[0].phone_number }}</p>
+										{% endif %}
+										{% if data.contact.contacts[0].work_phone_number %}
+											<p class="text-p">{{ data.contact.contacts[0].work_phone_number }}</p>
+										{% endif %}
+										{% if data.contact.contacts[0].home_phone_number %}
+											<p class="text-p">{{ data.contact.contacts[0].home_phone_number }}</p>
+										{% endif %}
+										{% if data.contact.contacts[0].phone_number_1 %}
+											<p class="text-p">{{ data.contact.contacts[0].phone_number_1 }}</p>
+										{% endif %}
+										{% if data.contact.contacts[0].phone_number_2 %}
+											<p class="text-p">{{ data.contact.contacts[0].phone_number_2 }}</p>
+										{% endif %}
+										{% if data.contact.contacts[0].phone_number_3 %}
+											<p class="text-p">{{ data.contact.contacts[0].phone_number_3 }}</p>
+										{% endif %}
 										<div class="over-hidden mt-5">
 											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].mail or 'contact.contacts[0].mail'}}"
 												href="mailto:{{data.contact.contacts[0].mail}}">{{data.contact.contacts[0].mail or 'contact.contacts[0].mail'}}</a>
@@ -1482,11 +1499,20 @@
 
 									</li>
 									<li>
-										<h5 class="title-block mb-15">Address</h5>
-										<p class="text-p">{{data.contact.contacts[0].address or 'contact.contacts[0].address'}}</p>
+										{% if data.contact.contacts[0].address %}
+											<p class="text-p">{{data.contact.contacts[0].address}}</p>
+										{% endif %}
+										{% if data.contact.contacts[0].address_1 %}
+											<p class="text-p">{{data.contact.contacts[0].address_1}}</p>
+										{% endif %}
+										{% if data.contact.contacts[0].address_2 %}
+											<p class="text-p">{{data.contact.contacts[0].address_2}}</p>
+										{% endif %}
+										{% if data.contact.contacts[0].address_3 %}
+											<p class="text-p">{{data.contact.contacts[0].address_3}}</p>
+										{% endif %}
 									</li>
 									<li>
-										<h5 class="title-block mb-15">Follow</h5>
 										{% if data.contact.contacts[0].social_1 %}
 										<div class="social-item over-hidden">
 											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].social_1_name or 'social1_name'}}" href="{{data.contact.contacts[0].social_1 or 'social1'}}" target="_blank"

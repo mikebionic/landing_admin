@@ -83,14 +83,26 @@
 		{
 			"id": 6,
 			"name_tk": "work",
-			"label_tk": "Our Work",
-			"title_tk": "Creative Portfolio \n Designs"
+			"label_tk": "Biziň işlerimiz",
+			"title_tk": "Geçirilýän işleriň\n suratlary",
+			"name_ru": "work",
+			"label_ru": "Наша работа",
+			"title_ru": "Фотографии \n проводимых работ",
+			"name_en": "work",
+			"label_en": "Our Work",
+			"title_en": "Work process \n photos"
 		},
 		{
 			"id": 7,
 			"name_tk": "feedback",
-			"label_tk": "Feedback",
-			"title_tk": "Feedback from our clients."
+			"label_tk": "Teswirler",
+			"title_tk": "Biziň müşderilerimiziň teswirleri.",
+			"name_ru": "feedback",
+			"label_ru": "Отзывы",
+			"title_ru": "Отзывы наших клиентов.",
+			"name_en": "feedback",
+			"label_en": "Feedback",
+			"title_en": "Feedback from our clients."
 		},
 		{
 			"id": 8,
@@ -107,8 +119,14 @@
 		{
 			"id": 9,
 			"name_tk": "posts",
-			"label_tk": "Last posts",
-			"title_tk": "Latest And Greatest Posts"
+			"label_tk": "Soňky täzerliker",
+			"title_tk": "Soňky täzerliker",
+			"name_ru": "posts",
+			"label_ru": "Последние новости",
+			"title_ru": "Лучшие последние события и новости",
+			"name_en": "posts",
+			"label_en": "Last posts",
+			"title_en": "Latest And Greatest News"
 		},
 		{
 			"id": 10,
@@ -125,11 +143,23 @@
 		{
 			"id": 11,
 			"name_tk": "team",
-			"label_tk": "Our Team",
-			"title_tk": "The Best Team Ever"
+			"label_tk": "Biziň işgärlerimiz",
+			"title_tk": "Dünýäniň iň gowy topary",
+			"name_ru": "team",
+			"label_ru": "Наша команда",
+			"title_ru": "Лучшая команда на свете!",
+			"name_en": "team",
+			"label_en": "Our Team",
+			"title_en": "The Best Team Ever!"
 		},
 		{
 			"id": 12,
+			"name_tk": "footer_portfolio",
+			"label_tk": "footer_portfolio",
+			"title_tk": "The Best footer portfolio",
+			"name_tk": "footer_portfolio",
+			"label_tk": "footer_portfolio",
+			"title_tk": "The Best footer portfolio",
 			"name_tk": "footer_portfolio",
 			"label_tk": "footer_portfolio",
 			"title_tk": "The Best footer portfolio"
@@ -137,28 +167,40 @@
 		{
 			"id": 13,
 			"name_tk": "our_clients",
-			"label_tk": "our_clients name_tk",
-			"title_tk": "Your success, our reputation"
+			"label_tk": "Biziň müşderilerimiz",
+			"title_tk": "Siziň üsünligiňiz biziň abyraýymyz",
+			"name_ru": "our_clients",
+			"label_ru": "Наши клиенты",
+			"title_ru": "Ваш успех - наша репутация",
+			"name_en": "our_clients",
+			"label_en": "Our Clients",
+			"title_en": "Your success, our reputation"
 		},
 		{
 			"id": 14,
 			"name_tk": "footer",
-			"label_tk": "footer label_tk",
-			"title_tk": "Would you like more information or do you have a question"
+			"label_tk": "Biz bilen habarlaş!",
+			"title_tk": "Size has köp maglumat gerekmi ýa-da soraglar barmy?",
+			"name_ru": "footer",
+			"label_ru": "Свяжитесь с нами!",
+			"title_ru": "Вам нужно больше информаций или у вас остались вопросы?",
+			"name_en": "footer",
+			"label_en": "Contact us!",
+			"title_en": "Would you like more information or do you have a question?"
 		},
 		{
 			"id": 15,
 			"name_tk": "contact",
 			"label_tk": "Stay connected",
-			"note_tk": "Kontakt",
+			"note_tk": "Kontaktlar",
 			"title_tk": "Get in Touch",
 			"name_ru": "contact",
 			"label_ru": "Оставайтесь на связи",
-			"note_ru": "Контакт",
+			"note_ru": "Контакты",
 			"title_ru": "Свяжитесь с нами",
 			"name_en": "contact",
 			"label_en": "Stay connected",
-			"note_en": "Kontakt",
+			"note_en": "Contacts",
 			"title_en": "Get in Touch"
 		}
 	],
@@ -178,9 +220,9 @@
 			"id": 3,
 			"page_id": 3,
 			"name_tk": "architecture",
-			"label_tk": "Architecture",
+			"label_tk": "Arhitektura",
 			"name_ru": "architecture",
-			"label_ru": "Architecture",
+			"label_ru": "Архитектура",
 			"name_en": "architecture",
 			"label_en": "Architecture"
 		},
@@ -219,44 +261,15 @@
 			"id": 7,
 			"page_id": 10,
 			"name_tk": "work",
-			"title_tk": "Work",
+			"title_tk": "Işler",
 			"name_ru": "work",
 			"title_ru": "Разработка",
 			"name_en": "work",
-			"title_en": "Işler"
+			"title_en": "Work"
 		}
 	],
 
 	"collection": [
-		{
-			"id": 1,
-			"page_id": null,
-			"category_id": 4,
-			"name_tk": "product",
-			"label_tk": "Product",
-			"title_tk": "Maybe speaker",
-			"name_ru": "product",
-			"label_ru": "Product",
-			"title_ru": "Maybe speaker",
-			"name_en": "product",
-			"label_en": "Product",
-			"title_en": "Maybe speaker"
-		},
-		{
-			"id": 2,
-			"page_id": null,
-			"category_id": 5,
-			"name_tk": "pen",
-			"label_tk": "Pen",
-			"title_tk": "Yaren collection",
-			"name_ru": "pen",
-			"label_ru": "Pen",
-			"title_ru": "Yaren collection",
-			"name_en": "pen",
-			"label_en": "Pen",
-			"title_en": "Yaren collection"
-		},
-
 		{
 			"id": 12,
 			"page_id": 4,
@@ -685,18 +698,6 @@
 			"file_path": "/static/1.png",
 			"title_tk": "We're building the roads to the future",
 			"desc_tk": "Working on whole preparation work course"
-		},
-		{
-			"id": 2,
-			"collection_id": 1,
-			"file_path": "/static/web/assets/img/project/project1/1.jpg",
-			"title_tk": "We're building the roads to the future"
-		},
-		{
-			"id": 3,
-			"collection_id": 2,
-			"file_path": "/static/web/assets/img/project/project2/1.jpg",
-			"title_tk": "Yaren Collection"
 		},
 		{
 			"id": 4,
