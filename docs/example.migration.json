@@ -155,14 +155,14 @@
 		{
 			"id": 12,
 			"name_tk": "footer_portfolio",
-			"label_tk": "footer_portfolio",
-			"title_tk": "The Best footer portfolio",
-			"name_tk": "footer_portfolio",
-			"label_tk": "footer_portfolio",
-			"title_tk": "The Best footer portfolio",
-			"name_tk": "footer_portfolio",
-			"label_tk": "footer_portfolio",
-			"title_tk": "The Best footer portfolio"
+			"label_tk": "Portfolio",
+			"title_tk": "Işlerimiziň suratlary",
+			"name_ru": "footer_portfolio",
+			"label_ru": "Портфолио",
+			"title_ru": "Изображения наших работ",
+			"name_en": "footer_portfolio",
+			"label_en": "Portfolio",
+			"title_en": "Images of our work"
 		},
 		{
 			"id": 13,
@@ -567,7 +567,7 @@
 			"page_id": 3,
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Подготовка земли",
-			"title_en": "Ýeriň taýýarlygy",
+			"title_en": "Land preparation",
 			"link": "web/assets/img/project/project6/1.jpg"
 		},
 		{
@@ -576,7 +576,7 @@
 			"page_id": 3,
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Строительство автомагистралей и шоссе",
-			"title_en": "Ýeriň taýýarlygy",
+			"title_en": "Land preparation",
 			"link": "/static/web/assets/img/ugurly_yol/engine1.png"
 		},
 		{
@@ -585,7 +585,7 @@
 			"page_id": 3,
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Услуги по аренде техники с экипажем",
-			"title_en": "Ýeriň taýýarlygy",
+			"title_en": "Land preparation",
 			"link": "/static/web/assets/img/ugurly_yol/engine2.png"
 		},
 		{
@@ -594,7 +594,7 @@
 			"page_id": 3,
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Строительство гидротехнических сооружений и мостов",
-			"title_en": "Ýeriň taýýarlygy",
+			"title_en": "Land preparation",
 			"link": "/static/web/assets/img/ugurly_yol/land.png"
 		},
 		{
@@ -603,7 +603,7 @@
 			"page_id": 3,
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Строительство линий электропередач и телекомумуникаций",
-			"title_en": "Ýeriň taýýarlygy",
+			"title_en": "Land preparation",
 			"link": "/static/web/assets/img/ugurly_yol/electricity.png"
 		},
 		{
@@ -612,7 +612,7 @@
 			"page_id": 3,
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Строительство жилых, промышленных и общественных зданий",
-			"title_en": "Ýeriň taýýarlygy",
+			"title_en": "Land preparation",
 			"link": "/static/web/assets/img/ugurly_yol/houses.png"
 		},
 		{
@@ -621,7 +621,7 @@
 			"page_id": 3,
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Подготовка строительного участка",
-			"title_en": "Ýeriň taýýarlygy",
+			"title_en": "Land preparation",
 			"link": "/static/web/assets/img/ugurly_yol/worker1.png"
 		},
 		{
@@ -630,7 +630,7 @@
 			"page_id": 3,
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Грузоперевозка стройматериалов, ГСМ и оборудования",
-			"title_en": "Ýeriň taýýarlygy",
+			"title_en": "Land preparation",
 			"link": "/static/web/assets/img/ugurly_yol/engine3.png"
 		},
 
@@ -703,36 +703,56 @@
 			"id": 4,
 			"page_id": 6,
 			"file_path": "/static/web/assets/img/project/project5/1.jpg",
-			"title_tk": "Small Silver Car",
-			"label_tk": "Photography"
+			"title_tk": "Ýol berjerişi",
+			"label_tk": "Gurluşyk",
+			"title_ru": "Починка дорог",
+			"label_ru": "Постойка",
+			"title_en": "Road fixing",
+			"label_en": "Building"
 		},
 		{
 			"id": 5,
 			"page_id": 6,
 			"file_path": "/static/web/assets/img/project/project3/1.jpg",
-			"title_tk": "Huggl Power Pack",
-			"label_tk": "induction"
+			"title_tk": "Ýeriň taýýarlygy",
+			"label_tk": "Taýýarlyk",
+			"title_ru": "Подготовка местности",
+			"label_ru": "Подготовка",
+			"title_en": "Land preparation",
+			"label_en": "Preparing"
 		},
 		{
 			"id": 6,
 			"page_id": 6,
 			"file_path": "/static/web/assets/img/project/project6/1.jpg",
-			"title_tk": "Lengshuikeng",
-			"label_tk": "Photography"
+			"title_tk": "Topragyň gazmagy",
+			"label_tk": "Taýýarlyk",
+			"title_ru": "Работы по раскопке",
+			"label_ru": "Подготовка",
+			"title_en": "Land preparation",
+			"label_en": "Preparing"
 		},
 		{
 			"id": 7,
 			"page_id": 6,
-			"file_path": "/static/web/assets/img/project/project1/1.jpg",
-			"title_tk": "Design",
-			"label_tk": "Product"
+			"file_path": "/static/web/assets/img/project/project2/1.jpg",
+			"title_tk": "Döwrebap binalar gurluşygy",
+			"label_tk": "Gurluşyk",
+			"title_ru": "Постройка современных зданий",
+			"label_ru": "Постойка",
+			"title_en": "Building modern buildings",
+			"label_en": "Building"
 		},
 		{
 			"id": 8,
 			"page_id": 6,
 			"file_path": "/static/web/assets/img/project/project4/1.jpg",
-			"title_tk": "Principal Garden",
-			"label_tk": "Architecture"
+			"title_tk": "Gurluşyk prosesi",
+			"label_tk": "Gurluşyk",
+			"title_ru": "Процесс постройки",
+			"label_ru": "Постойка",
+			"title_en": "Building process",
+			"label_en": "Building"
 		},
 
 		{
@@ -832,71 +852,71 @@
 			"id": 24,
 			"page_id": 1,
 			"file_path": "/static/web/assets/img/project/project5/1.jpg",
-			"title_en": "We're building the roads to the future",
-			"title_ru": "Мы строим дороги в будущее",
-			"title_tk": "Biz gelejege ýol gurýarys",
 			"desc_en": "Working on whole preparation work course",
 			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
 			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
-			"note_tk": "Ugurly Ýol",
-			"note_ru": "Угурлы Йол",
-			"note_en": "Ugurly Yol"
+			"title_tk": "Ýol berjerişi",
+			"title_ru": "Починка дорог",
+			"title_en": "Road fixing",
+			"note_tk": "Gurluşyk",
+			"note_ru": "Постойка",
+			"note_en": "Building"
 		},
 		{
 			"id": 25,
 			"page_id": 1,
 			"file_path": "/static/web/assets/img/project/project3/1.jpg",
-			"title_en": "We're building the roads to the future",
-			"title_ru": "Мы строим дороги в будущее",
-			"title_tk": "Biz gelejege ýol gurýarys",
 			"desc_en": "Working on whole preparation work course",
 			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
 			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
-			"note_tk": "Ugurly Ýol",
-			"note_ru": "Угурлы Йол",
-			"note_en": "Ugurly Yol"
+			"title_tk": "Ýeriň taýýarlygy",
+			"title_ru": "Подготовка местности",
+			"title_en": "Land preparation",
+			"note_tk": "Taýýarlyk",
+			"note_ru": "Подготовка",
+			"note_en": "Preparing"
 		},
 		{
 			"id": 26,
 			"page_id": 1,
 			"file_path": "/static/web/assets/img/project/project4/1.jpg",
-			"title_en": "We're building the roads to the future",
-			"title_ru": "Мы строим дороги в будущее",
-			"title_tk": "Biz gelejege ýol gurýarys",
 			"desc_en": "Working on whole preparation work course",
 			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
 			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
-			"note_tk": "Ugurly Ýol",
-			"note_ru": "Угурлы Йол",
-			"note_en": "Ugurly Yol"
+			"title_tk": "Gurluşyk prosesi",
+			"title_ru": "Процесс постройки",
+			"title_en": "Building process",
+			"note_tk": "Gurluşyk",
+			"note_ru": "Постойка",
+			"note_en": "Building"
 		},
 		{
 			"id": 27,
 			"page_id": 1,
 			"file_path": "/static/web/assets/img/project/project6/1.jpg",
-			"title_en": "We're building the roads to the future",
-			"title_ru": "Мы строим дороги в будущее",
-			"title_tk": "Biz gelejege ýol gurýarys",
 			"desc_en": "Working on whole preparation work course",
 			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
 			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
-			"note_tk": "Ugurly Ýol",
-			"note_ru": "Угурлы Йол",
-			"note_en": "Ugurly Yol"
+			"title_tk": "Topragyň gazmagy",
+			"title_ru": "Работы по раскопке",
+			"title_en": "Land preparation",
+			"note_tk": "Taýýarlyk",
+			"note_ru": "Подготовка",
+			"note_en": "Preparing"
 		},
 		{
 			"id": 28,
 			"page_id": 1,
 			"file_path": "/static/web/assets/img/project/project2/1.jpg",
-			"title_en": "We're building the roads to the future",
-			"title_ru": "Мы строим дороги в будущее",
-			"title_tk": "Biz gelejege ýol gurýarys",
 			"desc_en": "Working on whole preparation work course",
 			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
 			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
-			"note_tk": "Ugurly Ýol",
-			"note_ru": "Угурлы Йол",
-			"note_en": "Ugurly Yol"
+			"title_tk": "Döwrebap binalar gurluşygy",
+			"title_ru": "Постройка современных зданий",
+			"title_en": "Building modern buildings",
+			"note_tk": "Gurluşyk",
+			"note_ru": "Постойка",
+			"note_en": "Building"
 		},
 
 		{
@@ -989,6 +1009,84 @@
 			"category_id": 5,
 			"page_id": 3,
 			"title_ru": "Грузоперевозка стройматериалов, ГСМ и оборудования",
+			"file_path": "/static/web/assets/img/ugurly_yol/engine3.png"
+		},
+
+		{
+			"id": 51,
+			"page_id": 12,
+			"label_tk": "Строительство",
+			"title_tk": "Строительство автомагистралей и шоссе",
+			"label_ru": "Строительство",
+			"title_ru": "Строительство автомагистралей и шоссе",
+			"label_en": "Строительство",
+			"title_en": "Строительство автомагистралей и шоссе",
+			"file_path": "/static/web/assets/img/ugurly_yol/engine1.png"
+		},
+		{
+			"id": 52,
+			"page_id": 12,
+			"label_tk": "Услуги",
+			"title_tk": "Услуги по аренде техники с экипажем",
+			"label_ru": "Услуги",
+			"title_ru": "Услуги по аренде техники с экипажем",
+			"label_en": "Услуги",
+			"title_en": "Услуги по аренде техники с экипажем",
+			"file_path": "/static/web/assets/img/ugurly_yol/engine2.png"
+		},
+		{
+			"id": 53,
+			"page_id": 12,
+			"label_tk": "Строительство",
+			"title_tk": "Строительство гидротехнических сооружений и мостов",
+			"label_ru": "Строительство",
+			"title_ru": "Строительство гидротехнических сооружений и мостов",
+			"label_en": "Строительство",
+			"title_en": "Строительство гидротехнических сооружений и мостов",
+			"file_path": "/static/web/assets/img/ugurly_yol/land.png"
+		},
+		{
+			"id": 54,
+			"page_id": 12,
+			"label_tk": "Строительство",
+			"title_tk": "Строительство линий электропередач и телекомумуникаций",
+			"label_ru": "Строительство",
+			"title_ru": "Строительство линий электропередач и телекомумуникаций",
+			"label_en": "Строительство",
+			"title_en": "Строительство линий электропередач и телекомумуникаций",
+			"file_path": "/static/web/assets/img/ugurly_yol/electricity.png"
+		},
+		{
+			"id": 55,
+			"page_id": 12,
+			"label_tk": "Строительство",
+			"title_tk": "Строительство жилых, промышленных и общественных зданий",
+			"label_ru": "Строительство",
+			"title_ru": "Строительство жилых, промышленных и общественных зданий",
+			"label_en": "Строительство",
+			"title_en": "Строительство жилых, промышленных и общественных зданий",
+			"file_path": "/static/web/assets/img/ugurly_yol/houses.png"
+		},
+		{
+			"id": 56,
+			"page_id": 12,
+			"label_tk": "Подготовка",
+			"title_tk": "Подготовка строительного участка",
+			"label_ru": "Подготовка",
+			"title_ru": "Подготовка строительного участка",
+			"label_en": "Подготовка",
+			"title_en": "Подготовка строительного участка",
+			"file_path": "/static/web/assets/img/ugurly_yol/worker1.png"
+		},
+		{
+			"id": 57,
+			"page_id": 12,
+			"label_tk": "Грузоперевозка",
+			"title_tk": "Грузоперевозка стройматериалов, ГСМ и оборудования",
+			"label_ru": "Грузоперевозка",
+			"title_ru": "Грузоперевозка стройматериалов, ГСМ и оборудования",
+			"label_en": "Грузоперевозка",
+			"title_en": "Грузоперевозка стройматериалов, ГСМ и оборудования",
 			"file_path": "/static/web/assets/img/ugurly_yol/engine3.png"
 		}
 	]

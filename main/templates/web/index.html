@@ -251,12 +251,12 @@
 
 										<div
 											class="box-awards-item has-border big-number p-absolute left-0 bottom-0 ml-40 mb-40 dsn-up v-dark-head">
-											<h7 class="number  p-10">
+											<h6 class="number  p-10">
 												<span class="has-animate-number title">{{ data.advantages.images[0].title or 'title' }}</span>
 												<span class="sm-title-block d-block">
 													{{ data.advantages.images[0].label or 'label' }}
 												</span>
-											</h7>
+											</h6>
 										</div>
 									</div>
 									{% endif %}
@@ -276,7 +276,7 @@
 							<div class="">
 								<h2 class="section-title line-bg-left">{{data.portfolio.title or 'Our Portfolio'}}</h2>
 								<p class="sub-heading theme-color  line-shap line-shap-before mt-15 d-inline-block">
-									<span class="background-section pt-5 pb-5 pl-10 pr-10">{{data.portfolio.label or 'Our Works'}}</span>
+									<span class="background-section pt-5 pb-5 pl-10 pr-10">{{data.portfolio.label or 'Our Work'}}</span>
 								</p>
 							</div>
 						</div>
@@ -679,11 +679,11 @@
 
 									<div class="box-content" data-swiper-parallax-opacity="0">
 										<div class="metas d-inline-block mb-15">
-											<span>{{image.label or 'image.label'}}</span>
+											<span>{{image.label}}</span>
 										</div>
 										<h4 class="sec-title">
 											<a class="effect-ajax" data-dsn-ajax="work" href="">
-												{{image.title or 'image.title'}}
+												{{image.title}}
 											</a>
 										</h4>
 									</div>
@@ -855,17 +855,16 @@
 										<div class="box-info-inner">
 											<div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.1"
 												data-dsn-duration="170%" data-dsn-move="0%">
-												{{ data.home_page.note }}
+												{{ data.home_page.note if 'home_page' in data else 'Ugurly Ýol' }}
 											</div>
 
 											<div class="mb-50 d-flex text-left flex-column align-items-start">
 												<p class="sub-heading line-shap line-shap-after mb-15">
-													<span class="line-bg-right">{{data.purpose.name or 'purpose.name'}}</span>
+													<span class="line-bg-right">{{data.purpose.label or 'purpose.label'}}</span>
 												</p>
 												<h2 class="section-title text-transform-upper">
 													{{data.purpose.title or 'purpose.title'}}
 												</h2>
-												{{data.purpose.label or ''}}
 
 											</div>
 											<div class="dsn-accordion accordion">
@@ -1196,84 +1195,20 @@
 						<div class="swiper-container" data-swiper-autoplay="5000">
 							<div class="swiper-wrapper">
 
+								{% for image in data.footer_portfolio.images %}
 								<div class="work-item  swiper-slide over-hidden">
 									<div class="box-img p-relative over-hidden" data-overlay="6">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project1/1.jpg') }}" alt="">
+										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{image.file_path}}" alt="">
 									</div>
-
 									<div class="box-content">
 										<div class="metas d-inline-block mb-15">
-											<span> Product</span> <span>voice</span>
+											<span>{{image.label}}</span>
 										</div>
-										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work" href="">{{data.footer_portfolio.label or 'Footer Portfolio.label'}}</a></h4>
+										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work" href="">{{image.title or 'image.title'}}</a></h4>
 									</div>
 								</div>
+								{% endfor %}
 
-								<div class="work-item  swiper-slide over-hidden">
-									<div class="box-img p-relative over-hidden" data-overlay="6">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project2/1.jpg') }}" alt="">
-									</div>
-
-									<div class="box-content">
-										<div class="metas d-inline-block mb-15">
-											<span> pen</span>
-										</div>
-										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work" href="">{{data.footer_portfolio.label or 'Footer Portfolio.label'}}</a></h4>
-									</div>
-								</div>
-
-								<div class="work-item  swiper-slide over-hidden">
-									<div class="box-img p-relative over-hidden" data-overlay="2">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project4/1.jpg') }}" alt="">
-									</div>
-
-									<div class="box-content">
-										<div class="metas d-inline-block mb-15">
-											<span> Architecture</span>
-										</div>
-										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work" href="">{{data.footer_portfolio.label or 'Footer Portfolio.label'}}</a></h4>
-									</div>
-								</div>
-
-								<div class="work-item  swiper-slide over-hidden">
-									<div class="box-img p-relative over-hidden" data-overlay="6">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project3/1.jpg') }}" alt="">
-									</div>
-
-									<div class="box-content">
-										<div class="metas d-inline-block mb-15">
-											<span>induction</span>
-										</div>
-										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work" href="">{{data.footer_portfolio.label or 'Footer Portfolio.label'}}</a></h4>
-									</div>
-								</div>
-
-								<div class="work-item  swiper-slide over-hidden">
-									<div class="box-img p-relative over-hidden" data-overlay="4">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project6/1.jpg') }}" alt="">
-									</div>
-
-									<div class="box-content">
-										<div class="metas d-inline-block mb-15">
-											<span>Photography</span>
-										</div>
-										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work"
-												href="">{{data.footer_portfolio.label or 'Footer Portfolio.label'}}</a></h4>
-									</div>
-								</div>
-
-								<div class="work-item  swiper-slide over-hidden">
-									<div class="box-img p-relative over-hidden" data-overlay="5">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project5/1.jpg') }}" alt="">
-									</div>
-
-									<div class="box-content">
-										<div class="metas d-inline-block mb-15">
-											<span>Photography</span> <span> car</span>
-										</div>
-										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work" href="">{{data.footer_portfolio.label or 'Footer Portfolio.label'}}</a></h4>
-									</div>
-								</div>
 
 							</div>
 						</div>
