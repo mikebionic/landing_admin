@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json, uuid
 from main import db, create_app
 from main.models import (
