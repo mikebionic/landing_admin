@@ -14,13 +14,12 @@
 		{
 			"id": 1,
 			"name_tk": "home_page",
+			"name_ru": "home_page",
+			"name_en": "home_page",
 			"label_tk": "Home",
 			"title_en": "We're building the roads to the future",
 			"title_ru": "Мы строим дороги в будущее",
 			"title_tk": "Biz gelejege ýol gurýarys",
-			"desc_en": "Working on whole preparation work course",
-			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
-			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
 			"note_tk": "Ugurly Ýol",
 			"note_ru": "Угурлы Йол",
 			"note_en": "Ugurly Yol"
@@ -132,7 +131,7 @@
 		{
 			"id": 12,
 			"name_tk": "footer_portfolio",
-			"label_tk": "Small silver car ",
+			"label_tk": "footer_portfolio",
 			"title_tk": "The Best footer portfolio"
 		},
 		{
@@ -151,7 +150,16 @@
 			"id": 15,
 			"name_tk": "contact",
 			"label_tk": "Stay connected",
-			"title_tk": "Get in Touch"
+			"note_tk": "Kontakt",
+			"title_tk": "Get in Touch",
+			"name_ru": "contact",
+			"label_ru": "Оставайтесь на связи",
+			"note_ru": "Контакт",
+			"title_ru": "Свяжитесь с нами",
+			"name_en": "contact",
+			"label_en": "Stay connected",
+			"note_en": "Kontakt",
+			"title_en": "Get in Touch"
 		}
 	],
 
@@ -504,9 +512,6 @@
 			"title_en": "Укладка, уплотнение и утрамбовывание «Подушки»"
 		},
 
-
-
-
 		{
 			"id": 34,
 			"category_id": 3,
@@ -615,11 +620,6 @@
 			"title_en": "Ýeriň taýýarlygy",
 			"link": "/static/web/assets/img/ugurly_yol/engine3.png"
 		},
-
-
-
-
-
 
 		{
 			"id": 39,
@@ -816,32 +816,86 @@
 		{
 			"id": 23,
 			"page_id": 1,
-			"file_path": "/static/web/assets/img/ugurly_yol/banner1.png"
+			"file_path": "/static/web/assets/img/ugurly_yol/banner1.png",
+			"title_en": "We're building the roads to the future",
+			"title_ru": "Мы строим дороги в будущее",
+			"title_tk": "Biz gelejege ýol gurýarys",
+			"desc_en": "Working on whole preparation work course",
+			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
+			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
+			"note_tk": "Ugurly Ýol",
+			"note_ru": "Угурлы Йол",
+			"note_en": "Ugurly Yol"
 		},
 		{
 			"id": 24,
 			"page_id": 1,
-			"file_path": "/static/web/assets/img/project/project5/1.jpg"
+			"file_path": "/static/web/assets/img/project/project5/1.jpg",
+			"title_en": "We're building the roads to the future",
+			"title_ru": "Мы строим дороги в будущее",
+			"title_tk": "Biz gelejege ýol gurýarys",
+			"desc_en": "Working on whole preparation work course",
+			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
+			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
+			"note_tk": "Ugurly Ýol",
+			"note_ru": "Угурлы Йол",
+			"note_en": "Ugurly Yol"
 		},
 		{
 			"id": 25,
 			"page_id": 1,
-			"file_path": "/static/web/assets/img/project/project3/1.jpg"
+			"file_path": "/static/web/assets/img/project/project3/1.jpg",
+			"title_en": "We're building the roads to the future",
+			"title_ru": "Мы строим дороги в будущее",
+			"title_tk": "Biz gelejege ýol gurýarys",
+			"desc_en": "Working on whole preparation work course",
+			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
+			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
+			"note_tk": "Ugurly Ýol",
+			"note_ru": "Угурлы Йол",
+			"note_en": "Ugurly Yol"
 		},
 		{
 			"id": 26,
 			"page_id": 1,
-			"file_path": "/static/web/assets/img/project/project4/1.jpg"
+			"file_path": "/static/web/assets/img/project/project4/1.jpg",
+			"title_en": "We're building the roads to the future",
+			"title_ru": "Мы строим дороги в будущее",
+			"title_tk": "Biz gelejege ýol gurýarys",
+			"desc_en": "Working on whole preparation work course",
+			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
+			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
+			"note_tk": "Ugurly Ýol",
+			"note_ru": "Угурлы Йол",
+			"note_en": "Ugurly Yol"
 		},
 		{
 			"id": 27,
 			"page_id": 1,
-			"file_path": "/static/web/assets/img/project/project6/1.jpg"
+			"file_path": "/static/web/assets/img/project/project6/1.jpg",
+			"title_en": "We're building the roads to the future",
+			"title_ru": "Мы строим дороги в будущее",
+			"title_tk": "Biz gelejege ýol gurýarys",
+			"desc_en": "Working on whole preparation work course",
+			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
+			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
+			"note_tk": "Ugurly Ýol",
+			"note_ru": "Угурлы Йол",
+			"note_en": "Ugurly Yol"
 		},
 		{
 			"id": 28,
 			"page_id": 1,
-			"file_path": "/static/web/assets/img/project/project2/1.jpg"
+			"file_path": "/static/web/assets/img/project/project2/1.jpg",
+			"title_en": "We're building the roads to the future",
+			"title_ru": "Мы строим дороги в будущее",
+			"title_tk": "Biz gelejege ýol gurýarys",
+			"desc_en": "Working on whole preparation work course",
+			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
+			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
+			"note_tk": "Ugurly Ýol",
+			"note_ru": "Угурлы Йол",
+			"note_en": "Ugurly Yol"
 		},
 
 		{
@@ -879,8 +933,6 @@
 			"page_id": 8,
 			"file_path": "/static/web/assets/img/ugurly_yol/resources.png"
 		},
-
-
 
 		{
 			"id": 41,
@@ -938,6 +990,5 @@
 			"title_ru": "Грузоперевозка стройматериалов, ГСМ и оборудования",
 			"file_path": "/static/web/assets/img/ugurly_yol/engine3.png"
 		}
-
 	]
 }
