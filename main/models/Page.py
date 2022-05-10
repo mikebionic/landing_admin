@@ -28,10 +28,10 @@ class Page(BaseModel, db.Model):
 		collections_list = []
 		for collection in db_model.Collection:
 			collection_data = collection.to_json_api()
-			collection_data["category_name"] = collection.category.name if collection.category else ''
+			collection_data["category_name"] = collection.category.name_tk if collection.category else ''
 			collection_data["images"] = [image.to_json_api() for image in collection.Image]
 			collections_list.append(collection_data)
-		
+
 		page_data["collections"] = collections_list
 		return page_data
 
