@@ -33,7 +33,7 @@ class BaseModel(object):
 
 	link = db.Column("link",db.String)
 	created_date = db.Column("created_date",db.DateTime,default=datetime.now())
-	deleted = db.Column("deleted",db.Integer,default=None)
+	deleted = db.Column("deleted",db.Integer,default=0)
 
 	def get_all(self):
 		db_models = self.query.order_by(self.id.asc()).all()

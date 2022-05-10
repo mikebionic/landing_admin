@@ -28,7 +28,7 @@ content %}
 									href="/admin/{{data_type}}/{{item.id}}/manage/"
 									>Edit</a
 								>
-								{% if item.deleted == 1 %}
+								{% if item.deleted == '1' %}
 								<a
 									class="btn btn-outline-danger"
 									href="/admin/{{data_type}}/{{item.id}}/delete/"

@@ -94,7 +94,7 @@ def add_data_get(data_type):
 @login_required
 def delete_data_get(data_type, id):
 	db_model = get_db_model_from_data_type_and_id(data_type, id)
-	db_model.update(**{"deleted":1})
+	db_model.deleted = 1
 	db.session.commit()
 	return redirect(url_for('admin.dashboard', data_type=data_type))
 
@@ -103,7 +103,7 @@ def delete_data_get(data_type, id):
 @login_required
 def restore_data_get(data_type, id):
 	db_model = get_db_model_from_data_type_and_id(data_type, id)
-	db_model.update(**{"deleted":0})
+	db_model.deleted = 0
 	db.session.commit()
 	return redirect(url_for('admin.dashboard', data_type=data_type))
 
