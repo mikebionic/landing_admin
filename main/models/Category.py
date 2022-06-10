@@ -7,6 +7,7 @@ class Category(BaseModel, db.Model):
 	__tablename__ = "tbl_category"
 	id = db.Column("id",db.Integer,nullable=False,primary_key=True)
 	page_id = db.Column("page_id",db.Integer,db.ForeignKey("tbl_page.id"))
+	category_name = db.Column("category_name",db.String,nullable=False)
 	Collection = db.relationship("Collection",backref='category',lazy=True)
 	Image = db.relationship("Image",backref='category',lazy="joined")
 
@@ -14,6 +15,7 @@ class Category(BaseModel, db.Model):
 		data = {
 			"id": self.id,
 			"page_id": self.page_id,
+			"category_name": self.category_name,
 		}
 		for key, value in BaseModel.to_json(self).items():
 			data[key] = value

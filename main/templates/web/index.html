@@ -20,8 +20,6 @@
 
 <body class="v-light dsn-effect-scroll  dsn-ajax">
 
-
-
 	<!-- ========== Loading Page ========== -->
 	<div class="preloader">
 		<span class="percent ">0</span>
@@ -300,28 +298,28 @@
 							<div
 								class="work-inner projects-list work-one-page d-grid grid-md-2  grid-lg-3 p-relative w-100 dsn-item-filter dsn-isotope">
 
-								{% for collection in data.portfolio.collections %}
-								<div class="work-item  p-relative portfolio-{{collection.category_id or '' }}">
+								{% for image in data.portfolio.images %}
+								<div class="work-item  p-relative portfolio-{{image.category_id or '' }}">
 									<a class="effect-ajax" data-dsn-ajax="work">
 										<div class="work-item-inner">
-											<h5 class="cat p-absolute">{{ collection.category_name or 'category_name' }}</h5>
+											<h5 class="cat p-absolute">{{ image.category_name or 'category_name' }}</h5>
 
 											<div class="line line-top"></div>
 											<div class="line line-bottom"></div>
 											<div class="line line-left"></div>
 											<div class="line line-right"></div>
 
-											{% if collection.images %}
+											{% if image.file_path %}
 											<div class="box-img before-z-index" data-overlay="6">
 												<img class="cover-bg-img has-top-bottom"
 													src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-													data-dsn-src="{{collection.images[0].file_path}}" alt="{{collection.images[0].name or collection.images[0].title}}">
+													data-dsn-src="{{image.file_path}}" alt="{{image.name or image.title}}">
 											</div>
 											{% endif %}
 										</div>
 
 										<div class="box-content">
-											<h4 class="title-block sec-title">{{ collection.title or 'collection.title' }}</h4>
+											<h4 class="title-block sec-title">{{ image.title or 'image.title' }}</h4>
 										</div>
 									</a>
 								</div>
@@ -753,21 +751,19 @@
 														<div class="swiper-wrapper">
 
 
-															{% for collection in data.feedback.collections %}
+															{% for image in data.feedback.images %}
 															<div class="swiper-slide d-flex align-items-center">
 																<div class="box-img mr-15"
 																	data-swiper-parallax-scale="0.7">
-																	<img  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{collection.images[0].file_path if collection.images else ''}}" alt="">
+																	<img  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{image.file_path if image else ''}}" alt="">
 																</div>
 																<div class="box-text" data-swiper-parallax="30%"
 																	data-swiper-parallax-opacity="0">
-																	<h4 class="title-block mb-10">{{collection.name or 'collection.name'}}</h4>
-																	<h5 class="sm-title-block">{{collection.label or 'collection.label'}}</h5>
+																	<h4 class="title-block mb-10">{{image.name or 'image.name'}}</h4>
+																	<h5 class="sm-title-block">{{image.label or 'image.label'}}</h5>
 																</div>
 															</div>
 															{% endfor %}
-
-
 														</div>
 													</div>
 
@@ -777,9 +773,9 @@
 												<div class="swiper-container">
 													<div class="swiper-wrapper">
 
-														{% for collection in data.feedback.collections %}
+														{% for image in data.feedback.images %}
 														<div class="swiper-slide">
-															<p>{{collection.desc or 'collection.desc'}}</p>
+															<p>{{image.desc or 'image.desc'}}</p>
 														</div>
 														{% endfor %}
 
@@ -920,29 +916,29 @@
 							<div class="swiper-container">
 								<div class="swiper-wrapper">
 
-									{% for collection in data.posts.collections %}
+									{% for image in data.posts.images %}
 									<div class="swiper-slide blog-classic-item">
 										<div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
 											data-swiper-parallax-scale="0.85">
 											<div class="box-meta">
-													<span class="author">{{collection.note}}</span>
-													<!--<a href="#">{{collection.created_date}}</a>-->
+													<span class="author">{{image.note}}</span>
+													<!--<a href="#">{{image.created_date}}</a>-->
 											</div>
 
 											<div class="box-img over-hidden">
 												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-dsn-src="{{collection.images[0].file_path if collection.images else ''}}" alt="">
+												data-dsn-src="{{image.file_path if image else ''}}" alt="">
 											</div>
 											<div class="box-content p-relative">
 
 												<div class="box-content-body">
 													<div class="metas">
-														<span class="mb-5">{{collection.label or 'collection.label'}}</span>
+														<span class="mb-5">{{image.label or 'image.label'}}</span>
 													</div>
 													<h4 class="title-block mb-20 ">
-														<a href="#">{{collection.title or 'collection.title'}}</a>
+														{{image.title or 'image.title'}}
 													</h4>
-													<p>{{collection.desc or 'collection.desc'}}.</p>
+													<p>{{image.desc or 'image.desc'}}.</p>
 												</div>
 											</div>
 										</div>
