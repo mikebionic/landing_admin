@@ -3,6 +3,11 @@ from main.config import Config
 
 def add_data_from_form(request, data_type=None):
 	request_data = {}
+	if "page_name" in request.form:
+		request_data["page_name"] = request.form["page_name"]
+	if "category_name" in request.form:
+		request_data["category_name"] = request.form["category_name"]
+
 	if "name_tk" in request.form:
 		request_data["name_tk"] = request.form["name_tk"]
 	if "name_ru" in request.form:

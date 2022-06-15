@@ -12,15 +12,15 @@ content %}
 							<p class="text-muted mb-0">{{ data.name or '' }}</p>
 						</div>
 						<div class="card-body">
-							<div class="form-group row mb-0" style="place-content: end">
-								<input
-									type="submit"
-									value="Save"
-									class="btn btn-primary"
-									style="width: 5rem; margin-right: 2rem"
-								/>
-							</div>
 							<form method="POST" action="" class="form-horizontal well">
+								<div class="form-group row mb-0" style="place-content: end">
+									<input
+										type="submit"
+										value="Save"
+										class="btn btn-primary"
+										style="width: 5rem; margin-right: 2rem"
+									/>
+								</div>
 								<fieldset>
 									<div class="repeater-custom-show-hide">
 										<div class="d-flex">
@@ -933,6 +933,23 @@ content %}
 										href="/admin/images/{{image.id}}/manage/"
 										>Edit</a
 									>
+
+									{% if image.deleted == 0 %}
+									<a
+										class="btn btn-outline-danger"
+										href="/admin/images/{{image.id}}/delete/"
+										target="_blank"
+										>Delete</a
+									>
+									{% else %}
+									<a
+										class="btn btn-outline-warning"
+										href="/admin/images/{{image.id}}/restore/"
+										target="_blank"
+										>Restore</a
+									>
+									{% endif %}
+
 								</div>
 							</div>
 							{% endfor %}
