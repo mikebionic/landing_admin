@@ -42,6 +42,12 @@ def dashboard(data_type="pages"):
 @bp.route("/<data_type>/<id>/manage/")
 @login_required
 def manage_data(data_type, id):
+	all_data = {
+		"pages": Page.query.all(),
+		"collections": Collection.query.all(),
+		"categories": Category.query.all(),
+		"contacts": Contact.query.all(),
+	}
 	if data_type == 'pages':
 		data = Page.get_related_data(id)
 
@@ -60,14 +66,14 @@ def manage_data(data_type, id):
 	if data_type == "images":
 		data = Image.query.get_or_404(id)
 		data = data.to_json_api()
-		return render_template('admin/manage_image.html', data=data, data_type=data_type)
+		return render_template('admin/manage_image.html', data=data, data_type=data_type, **all_data)
 
 	if data_type == "users":
 		data = User.query.get_or_404(id)
 		data = data.to_json_api()
-		return render_template('admin/manage_user.html', data=data, data_type=data_type)
+		return render_template('admin/manage_user.html', data=data, data_type=data_type, **all_data)
 
-	return render_template('admin/manage_data.html', data=data, data_type=data_type)
+	return render_template('admin/manage_data.html', data=data, data_type=data_type, **all_data)
 
 
 @bp.route("/<data_type>/<id>/manage/", methods=["POST"])

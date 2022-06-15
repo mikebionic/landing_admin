@@ -444,12 +444,6 @@
 
 	"image": [
 		{
-			"id": 1,
-			"file_path": "/static/1.png",
-			"title_tk": "We're building the roads to the future",
-			"desc_tk": "Working on whole preparation work course"
-		},
-		{
 			"id": 4,
 			"page_id": 6,
 			"file_path": "/static/web/assets/img/project/project5/1.jpg",
