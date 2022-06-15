@@ -12,6 +12,14 @@ content %}
 							<p class="text-muted mb-0">{{ data.name or '' }}</p>
 						</div>
 						<div class="card-body">
+							<div class="form-group row mb-0" style="place-content: end">
+								<input
+									type="submit"
+									value="Save"
+									class="btn btn-outline-primary"
+									style="width: 5rem; margin-right: 2rem"
+								/>
+							</div>
 							<form method="POST" action="" class="form-horizontal well">
 								<fieldset>
 									<div class="repeater-custom-show-hide">
@@ -21,30 +29,54 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">Name</label>
-															<span>name_tk</span>
-															<input
-																type="text"
-																name="name_tk"
-																value="{{ data.name_tk or '' }}"
-																placeholder="Name_tk"
-																class="form-control"
-															/>
-															<span>name_ru</span>
-															<input
-																type="text"
-																name="name_ru"
-																value="{{ data.name_ru or '' }}"
-																placeholder="Name_ru"
-																class="form-control"
-															/>
-															<span>name_en</span>
-															<input
-																type="text"
-																name="name_en"
-																value="{{ data.name_en or '' }}"
-																placeholder="Name_en"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Name_tk:</label>
+																<input
+																	type="text"
+																	name="name_tk"
+																	value="{{ data.name_tk or '' }}"
+																	placeholder="Name_tk"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Name_ru:</label>
+																<input
+																	type="text"
+																	name="name_ru"
+																	value="{{ data.name_ru or '' }}"
+																	placeholder="Name_ru"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Name_en:</label>
+																<input
+																	type="text"
+																	name="name_en"
+																	value="{{ data.name_en or '' }}"
+																	placeholder="Name_en"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -53,27 +85,54 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">Title</label>
-															<input
-																type="text"
-																name="title_tk"
-																value="{{ data.title_tk or '' }}"
-																placeholder="Title_tk"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="title_ru"
-																value="{{ data.title_ru or '' }}"
-																placeholder="Title_ru"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="title_en"
-																value="{{ data.title_en or '' }}"
-																placeholder="Title_en"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Title_tk:</label>
+																<input
+																	type="text"
+																	name="title_tk"
+																	value="{{ data.title_tk or '' }}"
+																	placeholder="Title_tk"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Title_ru:</label>
+																<input
+																	type="text"
+																	name="title_ru"
+																	value="{{ data.title_ru or '' }}"
+																	placeholder="Title_ru"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Title_en:</label>
+																<input
+																	type="text"
+																	name="title_en"
+																	value="{{ data.title_en or '' }}"
+																	placeholder="Title_en"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -82,27 +141,54 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">Label</label>
-															<input
-																type="text"
-																name="label_tk"
-																value="{{ data.label_tk or '' }}"
-																placeholder="Label_tk"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="label_ru"
-																value="{{ data.label_ru or '' }}"
-																placeholder="Label_ru"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="label_en"
-																value="{{ data.label_en or '' }}"
-																placeholder="Label_en"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Label_tk:</label>
+																<input
+																	type="text"
+																	name="label_tk"
+																	value="{{ data.label_tk or '' }}"
+																	placeholder="Label_tk"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Label_ru:</label>
+																<input
+																	type="text"
+																	name="label_ru"
+																	value="{{ data.label_ru or '' }}"
+																	placeholder="Label_ru"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Label_en:</label>
+																<input
+																	type="text"
+																	name="label_en"
+																	value="{{ data.label_en or '' }}"
+																	placeholder="Label_en"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -111,27 +197,54 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">Note</label>
-															<input
-																type="text"
-																name="note_tk"
-																value="{{ data.note_tk or '' }}"
-																placeholder="Note_tk"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="note_ru"
-																value="{{ data.note_ru or '' }}"
-																placeholder="Note_ru"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="note_en"
-																value="{{ data.note_en or '' }}"
-																placeholder="Note_en"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Note_tk:</label>
+																<input
+																	type="text"
+																	name="note_tk"
+																	value="{{ data.note_tk or '' }}"
+																	placeholder="Note_tk"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Note_ru:</label>
+																<input
+																	type="text"
+																	name="note_ru"
+																	value="{{ data.note_ru or '' }}"
+																	placeholder="Note_ru"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Note_en:</label>
+																<input
+																	type="text"
+																	name="note_en"
+																	value="{{ data.note_en or '' }}"
+																	placeholder="Note_en"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -140,13 +253,22 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">link</label>
-															<input
-																type="text"
-																name="link"
-																value="{{ data.link or '' }}"
-																placeholder="Link"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Link:</label>
+																<input
+																	type="text"
+																	name="link"
+																	value="{{ data.link or '' }}"
+																	placeholder="Link"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -162,6 +284,7 @@ content %}
 																	class="form-control"
 																	placeholder="Description_tk"
 																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 {{ data.desc_tk or '' }}
 															</textarea
@@ -172,6 +295,7 @@ content %}
 																	class="form-control"
 																	placeholder="Description_ru"
 																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 {{ data.desc_ru or '' }}
 															</textarea
@@ -182,6 +306,7 @@ content %}
 																	class="form-control"
 																	placeholder="Description_en"
 																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 {{ data.desc_en or '' }}
 															</textarea
@@ -200,6 +325,7 @@ content %}
 																	class="form-control"
 																	placeholder="HTML_tk"
 																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 {{ data.html_tk or '' }}
 															</textarea
@@ -210,6 +336,7 @@ content %}
 																	class="form-control"
 																	placeholder="HTML_ru"
 																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 {{ data.html_ru or '' }}
 															</textarea
@@ -220,6 +347,7 @@ content %}
 																	class="form-control"
 																	placeholder="HTML_en"
 																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 {{ data.html_en or '' }}
 															</textarea
@@ -440,51 +568,16 @@ content %}
 				</div>
 
 				{% if data_type == 'pages' %}
-				<div class="col-xl-6">
-					<div class="card">
-						<div class="card-header">
-							<h4 class="card-title">Categories</h4>
-							<p class="text-muted mb-0">Manage categories</p>
-						</div>
-						<div class="card-body">
-							{% for category in data.categories %}
-							<div class="card card-body">
-								<p><b>Title:</b>{{ category.title }}</p>
-								<p><b>Name:</b>{{ category.name }}</p>
-								<p><b>Label:</b>{{ category.label }}</p>
-							</div>
-							{% endfor %}
-						</div>
-					</div>
-				</div>
 
-				<div class="col-xl-6">
-					<div class="card">
-						<div class="card-header">
-							<h4 class="card-title">Collections</h4>
-							<p class="text-muted mb-0">Setup Collections</p>
-						</div>
-						<div class="card-body">
-							{% for collection in data.collections %}
-							<div class="card card-body">
-								<p><b>Title:</b>{{ collection.title }}</p>
-								<p><b>Name:</b>{{ collection.name }}</p>
-								<p><b>Label:</b>{{ collection.label }}</p>
-							</div>
-							{% endfor %}
-						</div>
-					</div>
-				</div>
-
-				<div class="col-xl-6">
+				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
 							<h4 class="card-title">Images</h4>
 							<p class="text-muted mb-0">Add remove update images</p>
 						</div>
-						<div class="card-body">
+						<div class="card-body row" style="gap: 0.25rem">
 							{% for image in data.images %}
-							<div class="card card-body col-6">
+							<div class="card card-body col-3">
 								<img src="{{image.file_path}}" />
 								<div>
 									<p><b>Title:</b>{{ image.title }}</p>
