@@ -863,24 +863,24 @@ content %}
 
 				{% if data_type == 'pages' %}
 
-				<div class="col-xl-6">
+				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
 							<h4 class="card-title">Categories</h4>
 							<p class="text-muted mb-0">Manage categories</p>
 						</div>
-						<div class="card-body">
+						<div class="card-body" style="display: grid; grid-auto-columns: 1fr 1fr 1fr 1fr; grid-auto-flow: column; gap: 0.25rem;">
 							{% for category in data.categories %}
-							<div class="card card-body">
+							<div class="card card-body" style="place-content: end">
 								<p><b>Title:</b>{{ category.title }}</p>
 								<p><b>Name:</b>{{ category.name }}</p>
 								<p><b>Label:</b>{{ category.label }}</p>
+								<a
+									class="btn btn-outline-primary"
+									href="/admin/categories/{{category.id}}/manage/"
+									>Edit</a
+								>
 							</div>
-							<a
-								class="btn btn-outline-primary"
-								href="/admin/categories/{{category.id}}/manage/"
-								>Edit</a
-							>
 							{% endfor %}
 						</div>
 					</div>
@@ -889,24 +889,24 @@ content %}
 
 				{% if data_type == 'pages' or data_type == 'categories' %}
 
-				<div class="col-xl-6">
+				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
 							<h4 class="card-title">Collections</h4>
 							<p class="text-muted mb-0">Setup Collections</p>
 						</div>
-						<div class="card-body">
+						<div class="card-body" style="display: grid; grid-auto-columns: 1fr 1fr 1fr 1fr; grid-auto-flow: column; gap: 0.25rem;">
 							{% for collection in data.collections %}
-							<div class="card card-body">
+							<div class="card card-body" style="place-content: end;">
 								<p><b>Title:</b>{{ collection.title }}</p>
 								<p><b>Name:</b>{{ collection.name }}</p>
 								<p><b>Label:</b>{{ collection.label }}</p>
+								<a
+									class="btn btn-outline-primary"
+									href="/admin/collections/{{collection.id}}/manage/"
+									>Edit</a
+								>
 							</div>
-							<a
-								class="btn btn-outline-primary"
-								href="/admin/collections/{{collection.id}}/manage/"
-								>Edit</a
-							>
 							{% endfor %}
 						</div>
 					</div>
