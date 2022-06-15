@@ -44,6 +44,21 @@ def add_data_from_form(request, data_type=None):
 		request_data["note_ru"] = request.form["note_ru"]
 	if "note_en" in request.form:
 		request_data["note_en"] = request.form["note_en"]
+	
+
+
+	if "page_id" in request.form:
+		request_data["page_id"] = request.form["page_id"] if int(request.form["page_id"]) != 0 else None
+
+	if "category_id" in request.form:
+		request_data["category_id"] = request.form["category_id"] if int(request.form["category_id"]) != 0 else None
+
+	if "collection_id" in request.form:
+		request_data["collection_id"] = request.form["collection_id"] if int(request.form["collection_id"]) != 0 else None
+
+	if "contact_id" in request.form:
+		request_data["contact_id"] = request.form["contact_id"] if int(request.form["contact_id"]) != 0 else None
+
 
 	if "link" in request.form:
 		request_data["link"] = request.form["link"]

@@ -80,6 +80,7 @@ def manage_data(data_type, id):
 @login_required
 def manage_data_post(data_type, id):
 	request_data = add_data_from_form(request, data_type)
+	print(request_data)
 	db_model = get_db_model_from_data_type_and_id(data_type, id)
 	db_model.update(**request_data)
 	db.session.commit()
