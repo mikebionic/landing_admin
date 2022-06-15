@@ -29,6 +29,44 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">Name</label>
+
+															{% if data_type == 'categories' %}
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">category_name:</label>
+																	<input
+																		type="text"
+																		name="category_name"
+																		value="{{ data.category_name or '' }}"
+																		placeholder="category_name"
+																		class="form-control"
+																	/>
+																</div>
+															{% endif %}
+															{% if data_type == 'pages' %}
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">page_name:</label>
+																	<input
+																		type="text"
+																		name="page_name"
+																		value="{{ data.page_name or '' }}"
+																		placeholder="page_name"
+																		class="form-control"
+																	/>
+																</div>
+															{% endif %}
+
 															<div
 																style="
 																	display: flex;
@@ -375,6 +413,46 @@ content %}
 													</div>
 												</div>
 											</div>
+
+
+											{% if data_type == 'categories' %}
+
+											<div class="card-body">
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div style="display: grid; gap: 0.25rem">
+															<label class="form-label">Additional config</label>
+															<div
+																class="row"
+																style="gap: 0.25rem; margin-bottom: 1rem"
+															>
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">page_id:</label>
+																	<select name="page_id" class="form-control">
+																		<option value="0">Not selected</option>
+																		{% for page in pages %}
+																		<option value="{{page.id}}" {{ 'selected' if data.page_id == page.id }}>
+																			{{page.page_name if page.page_name else
+																			page.title}}
+																		</option>
+																		{% endfor %}
+																	</select>
+																</div>
+															</div>
+
+
+														</div>
+													</div>
+												</div>
+											</div>
+											{% endif %}
+
 											{% if data_type == 'contacts' %}
 											<div class="card-body">
 												<div data-repeater-item="">

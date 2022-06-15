@@ -27,6 +27,42 @@ content %}
 											<div class="card-body" data-repeater-list="car">
 												<div data-repeater-item="">
 													<div class="form-group row d-flex align-items-end">
+														{% if data_type == 'categories' %}
+														<div
+															style="
+																display: flex;
+																place-items: center;
+																gap: 0.5rem;
+															"
+														>
+															<label class="form-label">category_name:</label>
+															<input
+																type="text"
+																name="category_name"
+																value="{{ data.category_name or '' }}"
+																placeholder="category_name"
+																class="form-control"
+															/>
+														</div>
+														{% endif %} {% if data_type == 'pages' %}
+														<div
+															style="
+																display: flex;
+																place-items: center;
+																gap: 0.5rem;
+															"
+														>
+															<label class="form-label">page_name:</label>
+															<input
+																type="text"
+																name="page_name"
+																value="{{ data.page_name or '' }}"
+																placeholder="page_name"
+																class="form-control"
+															/>
+														</div>
+														{% endif %}
+
 														<div class="">
 															<label class="form-label">Name</label>
 															<input
