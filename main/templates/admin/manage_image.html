@@ -398,23 +398,16 @@ content %}
 																	"
 																>
 																	<label class="form-label">page_id:</label>
-																	<input
-																		type="text"
-																		name="page_id"
-																		value="{{ data.page_id or '' }}"
-																		placeholder="page_id"
-																		class="form-control"
-																	/>
+																	<select name="page_id" class="form-control">
+																		<option value="0">Not selected</option>
+																		{% for page in pages %}
+																		<option value="{{page.id}}" {{ 'selected' if data.page_id == page.id }}>
+																			{{page.page_name if page.page_name else
+																			page.title}}
+																		</option>
+																		{% endfor %}
+																	</select>
 																</div>
-																<select class="form-control">
-																	<option value="0">Not selected</option>
-																	{% for page in pages %}
-																	<option value="{{page.id}}">
-																		{{page.page_name if page.page_name else
-																		page.title}}
-																	</option>
-																	{% endfor %}
-																</select>
 															</div>
 															<div
 																class="row"
@@ -428,24 +421,20 @@ content %}
 																	"
 																>
 																	<label class="form-label">category_id:</label>
-																	<input
-																		type="text"
+																	<select
 																		name="category_id"
-																		value="{{ data.category_id or '' }}"
-																		placeholder="category_id"
 																		class="form-control"
-																	/>
+																	>
+																		<option value="0">Not selected</option>
+																		{% for category in categories %}
+																		<option value="{{category.id}}" {{ 'selected' if data.category_id == category.id }}>
+																			{{category.category_name if
+																			category.category_name else category.title
+																			}}
+																		</option>
+																		{% endfor %}
+																	</select>
 																</div>
-																<select class="form-control">
-																	<option value="0">Not selected</option>
-																	{% for category in categories %}
-																	<option value="{{category.id}}">
-																		{{category.category_name if
-																		category.category_name else category.title
-																		}}
-																	</option>
-																	{% endfor %}
-																</select>
 															</div>
 
 															<div
@@ -462,39 +451,19 @@ content %}
 																	<label class="form-label"
 																		>collection_id:</label
 																	>
-																	<input
-																		type="text"
+																	<select
 																		name="collection_id"
-																		value="{{ data.collection_id or '' }}"
-																		placeholder="collection_id"
 																		class="form-control"
-																	/>
+																	>
+																		<option value="0">Not selected</option>
+																		{% for collection in collections %}
+																		<option value="{{collection.id}}" {{ 'selected' if data.collection_id == collection.id }}>
+																			{{collection.name if collection.name else
+																			collection.title}}
+																		</option>
+																		{% endfor %}
+																	</select>
 																</div>
-																<select class="form-control">
-																	<option value="0">Not selected</option>
-																	{% for collection in collections %}
-																	<option value="{{collection.id}}">
-																		{{collection.name if collection.name else
-																		collection.title}}
-																	</option>
-																	{% endfor %}
-																</select>
-															</div>
-															<div
-																style="
-																	display: flex;
-																	place-items: center;
-																	gap: 0.5rem;
-																"
-															>
-																<label class="form-label">collection_id:</label>
-																<input
-																	type="text"
-																	name="collection_id"
-																	value="{{ data.collection_id or '' }}"
-																	placeholder="collection_id"
-																	class="form-control"
-																/>
 															</div>
 															<div
 																class="row"
@@ -508,39 +477,19 @@ content %}
 																	"
 																>
 																	<label class="form-label">contact_id:</label>
-																	<input
-																		type="text"
+																	<select
 																		name="contact_id"
-																		value="{{ data.contact_id or '' }}"
-																		placeholder="contact_id"
 																		class="form-control"
-																	/>
+																	>
+																		<option value="0">Not selected</option>
+																		{% for contact in contacts %}
+																		<option value="{{contact.id}}" {{ 'selected' if data.contact_id == contact.id }}>
+																			{{contact.name if contact.name else
+																			contact.phone_number}}
+																		</option>
+																		{% endfor %}
+																	</select>
 																</div>
-																<select class="form-control">
-																	<option value="0">Not selected</option>
-																	{% for contact in contacts %}
-																	<option value="{{contact.id}}">
-																		{{contact.name if contact.name else
-																		contact.phone_number}}
-																	</option>
-																	{% endfor %}
-																</select>
-															</div>
-															<div
-																style="
-																	display: flex;
-																	place-items: center;
-																	gap: 0.5rem;
-																"
-															>
-																<label class="form-label">contact_id:</label>
-																<input
-																	type="text"
-																	name="contact_id"
-																	value="{{ data.contact_id or '' }}"
-																	placeholder="contact_id"
-																	class="form-control"
-																/>
 															</div>
 															<div
 																style="

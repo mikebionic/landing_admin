@@ -45,9 +45,8 @@ class BaseModel(object):
 
 	def update(self, **kwargs):
 		for key, value in kwargs.items():
-			if value is not None:
-				if hasattr(self, key):
-					setattr(self, key, value)
+			if hasattr(self, key):
+				setattr(self, key, value)
 
 	def to_json(self):
 		data = {
