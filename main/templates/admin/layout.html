@@ -145,7 +145,7 @@
 			<!-- Page Content-->
 			<div class="page-content">
 				<div class="container-fluid">
-					<section class="section">
+					<section class="section" style="margin-top: 1rem">
 						{% with messages = get_flashed_messages(with_categories=true) %} {%
 						if messages %} {% for category, message in messages %}
 						<div class="p-3 alert alert-{{ category }}" role="alert">
