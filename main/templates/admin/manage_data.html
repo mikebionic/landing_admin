@@ -851,6 +851,11 @@ content %}
 									<p><b>Title:</b>{{ image.title }}</p>
 									<p><b>Name:</b>{{ image.name }}</p>
 									<p><b>Label:</b>{{ image.label }}</p>
+									<a
+										class="btn btn-outline-primary"
+										href="/admin/images/{{image.id}}/manage/"
+										>Edit</a
+									>
 								</div>
 							</div>
 							{% endfor %}
