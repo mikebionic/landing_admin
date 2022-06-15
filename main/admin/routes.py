@@ -52,25 +52,28 @@ def manage_data(data_type, id):
 		data = Page.get_related_data(id)
 
 	if data_type == "collections":
-		data = Collection.query.get_or_404(id)
-		data = data.to_json_api()
+		model = Collection.query.get_or_404(id)
+		data = model.to_json_api()
+		data["images"] = [image.to_json_api() for image in model.Image]
 
 	if data_type == "categories":
-		data = Category.query.get_or_404(id)
-		data = data.to_json_api()
+		model = Category.query.get_or_404(id)
+		data = model.to_json_api()
+		data["images"] = [image.to_json_api() for image in model.Image]
+		data["collections"] = [collection.to_json_api() for collection in model.Collection]
 
 	if data_type == "contacts":
-		data = Contact.query.get_or_404(id)
-		data = data.to_json_api()
+		model = Contact.query.get_or_404(id)
+		data = model.to_json_api()
 
 	if data_type == "images":
-		data = Image.query.get_or_404(id)
-		data = data.to_json_api()
+		model = Image.query.get_or_404(id)
+		data = model.to_json_api()
 		return render_template('admin/manage_image.html', data=data, data_type=data_type, **all_data)
 
 	if data_type == "users":
-		data = User.query.get_or_404(id)
-		data = data.to_json_api()
+		model = User.query.get_or_404(id)
+		data = model.to_json_api()
 		return render_template('admin/manage_user.html', data=data, data_type=data_type, **all_data)
 
 	return render_template('admin/manage_data.html', data=data, data_type=data_type, **all_data)

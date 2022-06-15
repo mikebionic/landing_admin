@@ -415,7 +415,7 @@ content %}
 											</div>
 
 
-											{% if data_type == 'categories' %}
+											{% if data_type == 'categories' or data_type == 'collections' or data_type == 'contacts' %}
 
 											<div class="card-body">
 												<div data-repeater-item="">
@@ -445,6 +445,32 @@ content %}
 																	</select>
 																</div>
 															</div>
+
+															{% if data_type == 'collections'%}
+															<div
+																class="row"
+																style="gap: 0.25rem; margin-bottom: 1rem"
+															>
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">category_id:</label>
+																	<select name="category_id" class="form-control">
+																		<option value="0">Not selected</option>
+																		{% for category in categories %}
+																		<option value="{{category.id}}" {{ 'selected' if data.category_id == category.id }}>
+																			{{category.category_name if category.category_name else
+																			category.title}}
+																		</option>
+																		{% endfor %}
+																	</select>
+																</div>
+															</div>
+															{% endif %}
 
 
 														</div>
@@ -837,6 +863,57 @@ content %}
 
 				{% if data_type == 'pages' %}
 
+				<div class="col-xl-6">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title">Categories</h4>
+							<p class="text-muted mb-0">Manage categories</p>
+						</div>
+						<div class="card-body">
+							{% for category in data.categories %}
+							<div class="card card-body">
+								<p><b>Title:</b>{{ category.title }}</p>
+								<p><b>Name:</b>{{ category.name }}</p>
+								<p><b>Label:</b>{{ category.label }}</p>
+							</div>
+							<a
+								class="btn btn-outline-primary"
+								href="/admin/categories/{{category.id}}/manage/"
+								>Edit</a
+							>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				{% endif %}
+
+				{% if data_type == 'pages' or data_type == 'categories' %}
+
+				<div class="col-xl-6">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title">Collections</h4>
+							<p class="text-muted mb-0">Setup Collections</p>
+						</div>
+						<div class="card-body">
+							{% for collection in data.collections %}
+							<div class="card card-body">
+								<p><b>Title:</b>{{ collection.title }}</p>
+								<p><b>Name:</b>{{ collection.name }}</p>
+								<p><b>Label:</b>{{ collection.label }}</p>
+							</div>
+							<a
+								class="btn btn-outline-primary"
+								href="/admin/collections/{{collection.id}}/manage/"
+								>Edit</a
+							>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				{% endif %}
+
+				{% if data_type == 'pages' or data_type == 'collections' or data_type == 'categories' %}
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
