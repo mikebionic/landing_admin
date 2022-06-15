@@ -255,20 +255,58 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">Image config</label>
-															<input
-																type="text"
-																name="page_id"
-																value="{{ data.page_id or '' }}"
-																placeholder="page_id"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="category_id"
-																value="{{ data.category_id or '' }}"
-																placeholder="category_id"
-																class="form-control"
-															/>
+															<div class="row">
+																<input
+																	type="text"
+																	name="page_id"
+																	value="{{ data.page_id or '' }}"
+																	placeholder="page_id"
+																	class="form-control col-6"
+																/>
+																<select class="form-control col-6">
+																	<option value="0">Not selected</option>
+																	{% for page in pages %}
+																	<option value="{{page.id}}">
+																		{{page.page_name}}
+																	</option>
+																	{% endfor %}
+																</select>
+															</div>
+															<div class="row">
+																<input
+																	type="text"
+																	name="category_id"
+																	value="{{ data.category_id or '' }}"
+																	placeholder="category_id"
+																	class="form-control col-6"
+																/>
+																<select class="form-control col-6">
+																	<option value="0">Not selected</option>
+																	{% for category in categories %}
+																	<option value="{{category.id}}">
+																		{{category.category_name}}
+																	</option>
+																	{% endfor %}
+																</select>
+															</div>
+
+															<div class="row">
+																<input
+																	type="text"
+																	name="collection_id"
+																	value="{{ data.collection_id or '' }}"
+																	placeholder="collection_id"
+																	class="form-control col-6"
+																/>
+																<select class="form-control col-6">
+																	<option value="0">Not selected</option>
+																	{% for collection in collections %}
+																	<option value="{{collection.id}}">
+																		{{collection.collection_name}}
+																	</option>
+																	{% endfor %}
+																</select>
+															</div>
 															<input
 																type="text"
 																name="collection_id"
@@ -276,6 +314,23 @@ content %}
 																placeholder="collection_id"
 																class="form-control"
 															/>
+															<div class="row">
+																<input
+																	type="text"
+																	name="contact_id"
+																	value="{{ data.contact_id or '' }}"
+																	placeholder="contact_id"
+																	class="form-control col-6"
+																/>
+																<select class="form-control col-6">
+																	<option value="0">Not selected</option>
+																	{% for contact in contacts %}
+																	<option value="{{contact.id}}">
+																		{{contact.name}}
+																	</option>
+																	{% endfor %}
+																</select>
+															</div>
 															<input
 																type="text"
 																name="contact_id"

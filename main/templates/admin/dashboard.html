@@ -28,7 +28,7 @@ content %}
 									href="/admin/{{data_type}}/{{item.id}}/manage/"
 									>Edit</a
 								>
-								{% if item.deleted == '1' %}
+								{% if item.deleted == 0 %}
 								<a
 									class="btn btn-outline-danger"
 									href="/admin/{{data_type}}/{{item.id}}/delete/"
@@ -42,7 +42,9 @@ content %}
 								>
 								{% endif %}
 							</div>
-							<p class="text-muted mb-0">{{item.name}}</p>
+							<p class="text-muted mb-0">
+								{{item.page_name if data_type == 'pages' else item.name }}
+							</p>
 						</div>
 						{% if data_type != 'users' %}
 						<div class="card-body">
