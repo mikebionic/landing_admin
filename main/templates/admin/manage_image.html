@@ -267,7 +267,8 @@ content %}
 																	<option value="0">Not selected</option>
 																	{% for page in pages %}
 																	<option value="{{page.id}}">
-																		{{page.page_name}}
+																		{{page.page_name if page.page_name else
+																		page.title}}
 																	</option>
 																	{% endfor %}
 																</select>
@@ -284,7 +285,9 @@ content %}
 																	<option value="0">Not selected</option>
 																	{% for category in categories %}
 																	<option value="{{category.id}}">
-																		{{category.category_name}}
+																		{{category.category_name if
+																		category.category_name else category.title
+																		}}
 																	</option>
 																	{% endfor %}
 																</select>
@@ -302,18 +305,12 @@ content %}
 																	<option value="0">Not selected</option>
 																	{% for collection in collections %}
 																	<option value="{{collection.id}}">
-																		{{collection.collection_name}}
+																		{{collection.name if collection.name else
+																		collection.title}}
 																	</option>
 																	{% endfor %}
 																</select>
 															</div>
-															<input
-																type="text"
-																name="collection_id"
-																value="{{ data.collection_id or '' }}"
-																placeholder="collection_id"
-																class="form-control"
-															/>
 															<div class="row">
 																<input
 																	type="text"
@@ -326,18 +323,12 @@ content %}
 																	<option value="0">Not selected</option>
 																	{% for contact in contacts %}
 																	<option value="{{contact.id}}">
-																		{{contact.name}}
+																		{{contact.name if contact.name else
+																		contact.phone_number}}
 																	</option>
 																	{% endfor %}
 																</select>
 															</div>
-															<input
-																type="text"
-																name="contact_id"
-																value="{{ data.contact_id or '' }}"
-																placeholder="contact_id"
-																class="form-control"
-															/>
 															<input
 																type="text"
 																name="file_path"

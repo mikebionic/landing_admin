@@ -44,9 +44,9 @@ def dashboard(data_type="pages"):
 def manage_data(data_type, id):
 	all_data = {
 		"pages": Page.query.all(),
-		"collections": Collection.query.all(),
-		"categories": Category.query.all(),
-		"contacts": Contact.query.all(),
+		"collections": [collection.to_json_api() for collection in Collection.query.all()],
+		"categories": [category.to_json_api() for category in Category.query.all()],
+		"contacts": [contact.to_json_api() for contact in Contact.query.all()],
 	}
 	if data_type == 'pages':
 		data = Page.get_related_data(id)
