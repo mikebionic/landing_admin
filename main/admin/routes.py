@@ -144,6 +144,7 @@ def get_db_model_from_data_type_and_id(data_type, id):
 def add_data_post(data_type):
 	request_data = add_data_from_form(request, data_type)
 
+
 	if data_type == 'pages':
 		DbModel = Page
 	if data_type == "collections":
@@ -153,9 +154,9 @@ def add_data_post(data_type):
 	if data_type == "contacts":
 		DbModel = Contact
 	if data_type == "images":
-		db_model = Image
+		DbModel = Image
 	if data_type == "users":
-		db_model = User
+		DbModel = User
 
 	lastId_model = DbModel.query.with_entities(DbModel.id).order_by(DbModel.id.desc()).first()
 	if lastId_model:

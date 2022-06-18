@@ -133,4 +133,16 @@ def add_data_from_form(request, data_type=None):
 				file.save(file_location)
 				request_data["file_path"] = os.path.join('/static',file_db_url)
 
+	if data_type == "users":
+		if "name" in request.form:
+			request_data["name"] = request.form["name"]
+		if "username" in request.form:
+			request_data["username"] = request.form["username"]
+		if "password" in request.form:
+			request_data["password"] = request.form["password"]
+		if "email" in request.form:
+			request_data["email"] = request.form["email"]
+		if "type_id" in request.form:
+			request_data["type_id"] = request.form["type_id"]
+
 	return request_data
