@@ -83,7 +83,6 @@ def manage_data(data_type, id):
 @login_required
 def manage_data_post(data_type, id):
 	request_data = add_data_from_form(request, data_type)
-	print(request_data)
 	db_model = get_db_model_from_data_type_and_id(data_type, id)
 	db_model.update(**request_data)
 	db.session.commit()
@@ -93,11 +92,20 @@ def manage_data_post(data_type, id):
 @bp.route("/<data_type>/add/")
 @login_required
 def add_data_get(data_type):
+	all_data = {
+		"pages": Page.query.all(),
+		"collections": [collection.to_json_api() for collection in Collection.query.all()],
+		"categories": [category.to_json_api() for category in Category.query.all()],
+		"contacts": [contact.to_json_api() for contact in Contact.query.all()],
+	}
+
 	if data_type == "images":
-		return render_template('admin/add_image.html', data_type=data_type)
+		return render_template('admin/add_image.html', data_type=data_type, **all_data)
+
 	if data_type == "users":
-		return render_template('admin/add_user.html', data_type=data_type)
-	return render_template('admin/add_data.html', data_type=data_type)
+		return render_template('admin/add_user.html', data_type=data_type, **all_data)
+
+	return render_template('admin/add_data.html', data_type=data_type, **all_data)
 
 
 @bp.route("/<data_type>/<id>/delete/")
