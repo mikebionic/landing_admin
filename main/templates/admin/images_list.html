@@ -21,26 +21,24 @@ content %}
 							<div class="d-flex" style="place-content: space-between">
 								<h4 class="card-title"><b>ID: {{item.id}}</b></h4>
 								<h4 class="card-title">{{item.title}}</h4>
-								<div>
-									<a
-										class="btn btn-outline-primary"
-										href="/admin/{{data_type}}/{{item.id}}/manage/"
-										>Edit</a
-									>
-									{% if item.deleted == 0 %}
-									<a
-										class="btn btn-outline-danger"
-										href="/admin/{{data_type}}/{{item.id}}/delete/"
-										>Delete</a
-									>
-									{% else %}
-									<a
-										class="btn btn-outline-warning"
-										href="/admin/{{data_type}}/{{item.id}}/restore/"
-										>Restore</a
-									>
-									{% endif %}
-								</div>
+								<a
+									class="btn btn-outline-primary"
+									href="/admin/{{data_type}}/{{item.id}}/manage/"
+									>Edit</a
+								>
+								{% if item.deleted == 0 %}
+								<a
+									class="btn btn-outline-danger"
+									href="/admin/{{data_type}}/{{item.id}}/delete/"
+									>Delete</a
+								>
+								{% else %}
+								<a
+									class="btn btn-outline-warning"
+									href="/admin/{{data_type}}/{{item.id}}/restore/"
+									>Restore</a
+								>
+								{% endif %}
 							</div>
 							<p class="text-muted mb-0">{{item.name}}</p>
 						</div>
