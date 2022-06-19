@@ -1230,61 +1230,16 @@
 						</div>
 						<div class="container">
 							<div class="wrapper-client dsn-up">
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/1.png') }}" alt="">
-									</div>
-								</div>
 
+								{% for image in data.our_clients.images %}
 								<div class="logo-box">
 									<div class="logo-box-inner">
 										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/2.png') }}" alt="">
+										data-dsn-src="{{image.file_path}}}" alt="">
 									</div>
 								</div>
-
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/3.png') }}" alt="">
-									</div>
-								</div>
-
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/4.png') }}" alt="">
-									</div>
-								</div>
-
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/5.png') }}" alt="">
-									</div>
-								</div>
-
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/6.png') }}" alt="">
-									</div>
-								</div>
-
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/1.png') }}" alt="">
-									</div>
-								</div>
-
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/3.png') }}" alt="">
-									</div>
-								</div>
+								{% endfor %}
+								
 							</div>
 						</div>
 					</section>
