@@ -1231,11 +1231,11 @@
 						<div class="container">
 							<div class="wrapper-client dsn-up">
 
-								{% for image in data.our_clients.images %}
+								{% for image in data.footer_portfolio.images %}
 								<div class="logo-box">
 									<div class="logo-box-inner">
 										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{image.file_path}}}" alt="">
+										data-dsn-src="{{image.file_path if image else ''}}}" alt="">
 									</div>
 								</div>
 								{% endfor %}
