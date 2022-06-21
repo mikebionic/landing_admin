@@ -1,5 +1,6 @@
 from flask import render_template, request, redirect, url_for
 from flask_login import login_required
+import uuid
 
 from . import bp
 
@@ -152,7 +153,6 @@ def get_db_model_from_data_type_and_id(data_type, id):
 def add_data_post(data_type):
 	request_data = add_data_from_form(request, data_type)
 
-
 	if data_type == 'pages':
 		DbModel = Page
 	if data_type == "collections":
@@ -169,6 +169,7 @@ def add_data_post(data_type):
 	lastId_model = DbModel.query.with_entities(DbModel.id).order_by(DbModel.id.desc()).first()
 	if lastId_model:
 		request_data['id'] = lastId_model.id + 1
+	request_data["guid"] = uuid.uuid4()
 	db_model = DbModel(**request_data)
 	db.session.add(db_model)
 	db.session.commit()
