@@ -918,7 +918,7 @@ content %}
 						<div class="card-body row" style="gap: 0.25rem">
 							{% for image in data.images %}
 							<div class="card card-body col-3">
-								<img src="{{image.file_path}}" style="width: 15rem; height: 13rem;"/>
+								<img src="{{image.file_path}}" style="width: 15rem; height: 13rem;" loading="lazy"/>
 								<div>
 									<p><b>Title:</b>{{ image.title }}</p>
 									<p><b>Name:</b>{{ image.name }}</p>

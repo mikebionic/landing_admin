@@ -45,7 +45,11 @@ content %}
 						<div class="card-body">
 							<p><b>Label: </b>{{item.label}}</p>
 							<p><b>Description: </b>{{item.desc}}</p>
-							<img src="{{item.file_path}}" style="max-width: 25rem" />
+							<img
+								src="{{item.file_path}}"
+								style="max-width: 25rem"
+								loading="lazy"
+							/>
 						</div>
 					</div>
 				</div>
