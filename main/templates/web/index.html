@@ -618,10 +618,12 @@
 					<!-- ==========  box description move  ========== -->
 					<div class="box-seat box-seat-parallax section-margin">
 
+						{% for image in data.with_banner.images %}
 						<div class="inner-img h-100-v" data-dsn-grid="move-up" data-overlay="2">
 							<img class="transform-3d has-bigger-scale" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-							data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project3/2.jpg') }}" alt="">
+							data-dsn-src="{{image.file_path if image else ''}}" alt="">
 						</div>
+						{% endfor %}
 						<div class="pro-text background-section box-padding" data-dsn-grid="move-section"
 							data-dsn-responsive="tablet">
 							<div class="mb-30 d-flex text-left flex-column align-items-start">

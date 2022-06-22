@@ -971,6 +971,11 @@
 			"id": 65,
 			"page_id": 13,
 			"file_path": "/static/web/assets/img/logo/2.png"
+		},
+		{
+			"id": 66,
+			"page_id": 5,
+			"file_path": "/static/web/assets/img/project/project3/2.jpg"
 		}
 	]
 }
