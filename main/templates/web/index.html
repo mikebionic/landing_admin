@@ -42,10 +42,10 @@
 			<div class="inner-header p-relative">
 				<div class="main-logo">
 					<a href="" data-dsn="parallax">
-						<img class="light-logo" style="max-height: 40px;"
+						<img class="light-logo" style="max-height: 40px;" loading="lazy"
 							src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 							data-dsn-src="{{ url_for('static', filename='web/assets/img/ugurly_yol/ugurly_yol_logo.png') }}" alt="" />
-						<img class="dark-logo" style="max-height: 40px;"
+						<img class="dark-logo" style="max-height: 40px;" loading="lazy"
 							src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 							data-dsn-src="{{ url_for('static', filename='web/assets/img/ugurly_yol/ugurly_yol_logo.png') }}" alt="" />
 					</a>
@@ -136,7 +136,7 @@
 										<div class="slide-item swiper-slide over-hidden">
 											<div class="image-bg cover-bg w-100 h-100 " data-overlay="2"
 												data-swiper-parallax="50%" data-swiper-parallax-scale="1.1">
-												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
 												data-dsn-src="{{image.file_path}}" alt="">
 											</div>
 											<div class="slide-content p-absolute  ">
@@ -241,7 +241,7 @@
 										<div class="img-box h-100">
 											<div class="img-container h-100 before-z-index" data-dsn-grid="move-up"
 												data-overlay="3">
-												<img class="cover-bg-img " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+												<img class="cover-bg-img " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
 												data-dsn-src="{{ data.advantages.images[0].file_path }}" alt="">
 											</div>
 										</div>
@@ -312,7 +312,7 @@
 											{% if image.file_path %}
 											<div class="box-img before-z-index" data-overlay="6">
 												<img class="cover-bg-img has-top-bottom"
-													src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+													src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
 													data-dsn-src="{{image.file_path}}" alt="{{image.name or image.title}}">
 											</div>
 											{% endif %}
@@ -620,7 +620,7 @@
 
 						{% for image in data.with_banner.images %}
 						<div class="inner-img h-100-v" data-dsn-grid="move-up" data-overlay="2">
-							<img class="transform-3d has-bigger-scale" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+							<img class="transform-3d has-bigger-scale" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
 							data-dsn-src="{{image.file_path if image else ''}}" alt="">
 						</div>
 						{% endfor %}
@@ -673,7 +673,7 @@
 								<div class="swiper-slide over-hidden work-item">
 									<div class="box-img p-relative over-hidden before-z-index" data-overlay="5"
 										data-swiper-parallax-scale="0.85">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
 										data-dsn-src="{{image.file_path}}" alt="{{image.title or image.label}}">
 									</div>
 
@@ -757,7 +757,7 @@
 															<div class="swiper-slide d-flex align-items-center">
 																<div class="box-img mr-15"
 																	data-swiper-parallax-scale="0.7">
-																	<img  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{image.file_path if image else ''}}" alt="">
+																	<img  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{image.file_path if image else ''}}" alt="" loading="lazy"> 
 																</div>
 																<div class="box-text" data-swiper-parallax="30%"
 																	data-swiper-parallax-opacity="0">
@@ -839,7 +839,7 @@
 										{% if data.purpose.images %}
 										<div class="img-container h-100 before-z-index" data-dsn-grid="move-up"
 											data-overlay="3">
-											<img class="cover-bg-img " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+											<img class="cover-bg-img " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
 											data-dsn-src="{{data.purpose.images[0].file_path}}" alt="">
 										</div>
 										{% endif %}
@@ -928,7 +928,7 @@
 											</div>
 
 											<div class="box-img over-hidden">
-												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
 												data-dsn-src="{{image.file_path if image else ''}}" alt="">
 											</div>
 											<div class="box-content p-relative">
@@ -1044,7 +1044,7 @@
 										<div class="team-item-wapper background-section">
 											<div class="item-content d-flex a-item-center">
 												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/1.jpg') }}" alt="">
+													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/1.jpg') }}" alt="" loading="lazy">
 												</div>
 												<div class="box-text">
 													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
@@ -1068,7 +1068,7 @@
 										<div class="team-item-wapper background-section">
 											<div class="item-content d-flex a-item-center">
 												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/2.jpg') }}" alt="">
+													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/2.jpg') }}" alt="" loading="lazy">
 												</div>
 												<div class="box-text">
 													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
@@ -1091,31 +1091,7 @@
 										<div class="team-item-wapper background-section">
 											<div class="item-content d-flex a-item-center">
 												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/3.jpg') }}" alt="">
-												</div>
-												<div class="box-text">
-													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
-													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
-
-													<ul class="box-social mt-20">
-														<li data-dsn="parallax"><a href="#">FB</a></li>
-														<li data-dsn="parallax"><a href="#">TW</a></li>
-														<li data-dsn="parallax"><a href="#">LN</a></li>
-
-													</ul>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-
-								<div class="team-item">
-									<div class="team-item-inner">
-										<div class="team-item-wapper background-section">
-											<div class="item-content d-flex a-item-center">
-												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/2.jpg') }}" alt="">
+													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/3.jpg') }}" alt="" loading="lazy">
 												</div>
 												<div class="box-text">
 													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
@@ -1139,7 +1115,7 @@
 										<div class="team-item-wapper background-section">
 											<div class="item-content d-flex a-item-center">
 												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/1.jpg') }}" alt="">
+													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/2.jpg') }}" alt="" loading="lazy">
 												</div>
 												<div class="box-text">
 													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
@@ -1163,7 +1139,31 @@
 										<div class="team-item-wapper background-section">
 											<div class="item-content d-flex a-item-center">
 												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/1.jpg') }}" alt="">
+													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/1.jpg') }}" alt="" loading="lazy">
+												</div>
+												<div class="box-text">
+													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
+													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
+
+													<ul class="box-social mt-20">
+														<li data-dsn="parallax"><a href="#">FB</a></li>
+														<li data-dsn="parallax"><a href="#">TW</a></li>
+														<li data-dsn="parallax"><a href="#">LN</a></li>
+
+													</ul>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+								<div class="team-item">
+									<div class="team-item-inner">
+										<div class="team-item-wapper background-section">
+											<div class="item-content d-flex a-item-center">
+												<div class="box-img">
+													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/1.jpg') }}" alt="" loading="lazy">
 												</div>
 												<div class="box-text">
 													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
@@ -1196,7 +1196,7 @@
 								{% for image in data.footer_portfolio.images %}
 								<div class="work-item  swiper-slide over-hidden">
 									<div class="box-img p-relative over-hidden" data-overlay="6">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{image.file_path}}" alt="">
+										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{image.file_path}}" alt="" loading="lazy">
 									</div>
 									<div class="box-content">
 										<div class="metas d-inline-block mb-15">
@@ -1236,7 +1236,7 @@
 								{% for image in data.our_clients.images %}
 								<div class="logo-box">
 									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
 										data-dsn-src="{{image.file_path if image else ''}}" alt="">
 									</div>
 								</div>
@@ -1434,7 +1434,7 @@
 
 	<!-- ========== Scroll Right Page To Top Page ========== -->
 	<div class="scroll-to-top">
-		<img src="{{ url_for('static', filename='web/assets/img/scroll_top.svg') }}" alt="">
+		<img src="{{ url_for('static', filename='web/assets/img/scroll_top.svg') }}" alt="" loading="lazy">
 		<div class="box-numper">
 			<span>10%</span>
 		</div>
