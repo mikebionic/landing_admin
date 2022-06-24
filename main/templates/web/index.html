@@ -23,7 +23,7 @@
 	<!-- ========== Loading Page ========== -->
 	<div class="preloader">
 		<span class="percent ">0</span>
-		<span class="loading-text text-uppercase">Loading ...</span>
+		<span class="loading-text text-uppercase">{{_('Loading')}} ...</span>
 		<div class="preloader-bar">
 			<div class="preloader-progress"></div>
 		</div>
@@ -69,22 +69,22 @@
 
 						<div class="mb-30 d-flex text-left flex-column align-items-start">
 								<p class="sub-heading line-shap line-shap-before mb-15">
-										<span class="line-bg-right">Stay connected</span>
+										<span class="line-bg-right">{{_('Stay connected')}}</span>
 								</p>
 								<h2 class="section-title  title-cap">
-										Login
+									{{_('Login')}}
 								</h2>
 						</div>
 
-						<form id="contact-form" class="form" method="post" action="contact.php"
+						<form id="contact-form" class="form"
 								data-toggle="validator">
 								<div class="messages"></div>
 								<div class="input__wrap controls">
 										<div class="form-group">
 												<div class="entry-box">
-														<label>Your name *</label>
+														<label>{{_('Your name')}} *</label>
 														<input id="form_name" type="text" name="name"
-																placeholder="Type your name" required="required"
+																placeholder="{{_('Type your name')}}" required="required"
 																data-error="name is required." />
 												</div>
 												<div class="help-block with-errors"></div>
@@ -92,9 +92,9 @@
 
 										<div class="form-group">
 												<div class="entry-box">
-														<label>Your E-Mail *</label>
+														<label>{{_('Your E-Mail')}} *</label>
 														<input id="form_email" type="email" name="email"
-																placeholder="Type your Email Address" required="required"
+																placeholder="{{_('Type your Email Address')}}" required="required"
 																data-error="Valid email is required." />
 												</div>
 												<div class="help-block with-errors"></div>
@@ -102,7 +102,7 @@
 
 										<div class="text-right">
 												<div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
-														<input type="submit" value="Login"
+														<input type="submit" value="{{_('Login')}}"
 																class="dsn-button background-main border-radius">
 												</div>
 										</div>
@@ -1318,9 +1318,9 @@
 									<div class="input__wrap controls">
 										<div class="form-group">
 											<div class="entry-box">
-												<label>Your name *</label>
+												<label>{{_('Your name')}} *</label>
 												<input id="form_name" type="text" name="name"
-													placeholder="Type your name" required="required"
+													placeholder="{{_('Type your name')}}" required="required"
 													data-error="name is required." />
 											</div>
 											<div class="help-block with-errors"></div>
@@ -1328,27 +1328,27 @@
 
 										<div class="form-group">
 											<div class="entry-box">
-												<label>Your E-Mail *</label>
+												<label>{{_('Your E-Mail')}} *</label>
 												<input id="form_email" type="email" name="email"
-													placeholder="Type your Email Address" required="required"
-													data-error="Valid email is required." />
+													placeholder="{{_('Type your Email Address')}}" required="required"
+													data-error="{{_('Valid email is required')}}" />
 											</div>
 											<div class="help-block with-errors"></div>
 										</div>
 
 										<div class="form-group">
 											<div class="entry-box">
-												<label>Message</label>
+												<label>{{_('Message')}}</label>
 												<textarea id="form_message" class="form-control" name="message"
-													placeholder="Tell us about you and the world" required="required"
-													data-error="Please,leave us a message."></textarea>
+													placeholder="{{_('Tell us about you')}}" required="required"
+													data-error="{{_('Please,leave us a message')}}"></textarea>
 											</div>
 											<div class="help-block with-errors"></div>
 										</div>
 
 										<div class="text-right">
 											<div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
-												<input type="submit" value="Send Message"
+												<input type="submit" value="{{_('Send Message')}}"
 													class="dsn-button background-main border-radius">
 											</div>
 										</div>
