@@ -33,6 +33,7 @@ class BaseModel(object):
 
 	link = db.Column("link",db.String)
 	created_date = db.Column("created_date",db.DateTime,default=datetime.now())
+	order = db.Column("order",db.Integer,default=999)
 	deleted = db.Column("deleted",db.Integer,default=0)
 
 	def get_all(self):
@@ -76,6 +77,7 @@ class BaseModel(object):
 
 			"link": self.link,
 			"created_date": self.created_date,
+			"order": self.order,
 			"deleted": self.deleted,
 		}
 		translated = dataLangSelector(data)

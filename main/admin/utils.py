@@ -3,6 +3,8 @@ from main.config import Config
 
 def add_data_from_form(request, data_type=None):
 	request_data = {}
+	if "order" in request.form:
+		request_data["order"] = request.form["order"]
 	if "page_name" in request.form:
 		request_data["page_name"] = request.form["page_name"]
 	if "category_name" in request.form:

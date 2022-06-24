@@ -8,7 +8,7 @@
 	<meta name="discrption" content="parallax one page" />
 	<meta name="keyword"
 		content="agency, business, corporate, creative, freelancer, interior, joomla template, K2 Blog, minimal, modern, multipurpose, personal, portfolio, responsive, simple" />
-	<title>{{ data.home_page.note if 'home_page' in data else 'Ugurly Ýol' }}</title>
+	<title>{{ page.note if 'home_page' in data else 'Ugurly Ýol' }}</title>
 	<link rel="shortcut icon" href="{{ url_for('static', filename='web/assets/img/ugurly_yol/ugurly_yol_logo.png') }}" type="image/x-icon" />
 	<link rel="icon" href="{{ url_for('static', filename='web/assets/img/ugurly_yol/ugurly_yol_logo.png') }}" type="image/x-icon" />
 	<link rel="preload" href="{{ url_for('static', filename='web/assets/img/circle-dotted.png') }}" as="image" />
@@ -29,8 +29,12 @@
 		</div>
 
 		<h1 class="title v-middle">
-			<span class="text-strok">{{ data.home_page.note if 'home_page' in data else 'Ugurly Ýol' }}</span>
-			<span class="text-fill">{{ data.home_page.note if 'home_page' in data else 'Ugurly Ýol' }}</span>
+			{% for page in data %}
+			{% if page.page_name == 'home_page' %}
+			<span class="text-strok">{{ page.note if 'home_page' in data else 'Ugurly Ýol' }}</span>
+			<span class="text-fill">{{ page.note if 'home_page' in data else 'Ugurly Ýol' }}</span>
+			{% endif %}
+			{% endfor %}
 		</h1>
 	</div>
 	<!-- ========== End Loading Page ========== -->
@@ -122,7 +126,9 @@
 			<div class="main-content">
 				<div class="wrapper">
 
-					{% if 'home_page' in data %}
+				{% for page in data %}
+
+					{% if page.page_name == 'home_page' %}
 					<!-- ========== Slider Parallax ========== -->
 					<header class="main-slider  has-horizontal p-relative w-100 h-100-v dsn-header-animation">
 						<div class="content-slider p-relative w-100 h-100 over-hidden v-dark-head">
@@ -131,8 +137,8 @@
 									<div class="swiper-wrapper">
 
 
-									{% if data.home_page.images %}
-									{% for image in data.home_page.images %}
+									{% if page.images %}
+									{% for image in page.images %}
 										<div class="slide-item swiper-slide over-hidden">
 											<div class="image-bg cover-bg w-100 h-100 " data-overlay="2"
 												data-swiper-parallax="50%" data-swiper-parallax-scale="1.1">
@@ -203,13 +209,15 @@
 					<!-- ========== End Slider Parallax ========== -->
 					{% endif %}
 
-				<section class="about-section p-relative section-margin" data-dsn-title="Media" data-dsn-animate-multi data-dsn-animate="section">
-					<video width="90%" height="80%" autoplay muted controls style="margin: 0 auto; display: flex">
-						<source src="../../static/web/assets/media/ugurly.webm" type="video/webm">
-					</video>
-				</section>
+					{% if page.page_name == 'media' %}
+					<section class="about-section p-relative section-margin" data-dsn-title="Media" data-dsn-animate-multi data-dsn-animate="section">
+						<video width="90%" height="80%" autoplay muted controls style="margin: 0 auto; display: flex">
+							<source src="../../static/web/assets/media/ugurly.webm" type="video/webm">
+						</video>
+					</section>
+					{% endif %}
 
-					{% if 'advantages' in data %}
+					{% if page.page_name == 'advantages' %}
 					<!-- ========== About Section ========== -->
 					<section class="about-section p-relative section-margin " data-dsn-title="How We Are"
 						data-dsn-animate-multi data-dsn-animate="section">
@@ -221,23 +229,23 @@
 											data-dsn-move="-70" data-dsn-duration="100%" data-dsn-opacity="1.2"
 											data-dsn-responsive="tablet">
 											<h2 class="section-title mb-30 dsn-text-shadow text-transform-upper">
-												{{data.advantages.title or 'advantages.title'}} <br />
+												{{page.title or 'advantages.title'}} <br />
 											</h2>
 										</div>
-										<h6 class="mt-80 pb-30 mb-30 border-bottom title-block">{{data.advantages.label}}
+										<h6 class="mt-80 pb-30 mb-30 border-bottom title-block">{{page.label}}
 										</h6>
 										<p class="max-w570 dsn-up mb-10 ">
-											{{data.advantages.desc or 'advantages.desc'}}
+											{{page.desc or 'advantages.desc'}}
 										</p>
 
 										<div class="toHtml">
-											{{data.advantages.html or 'advantages.html'}}
+											{{page.html or 'advantages.html'}}
 										</div>
 									</div>
 								</div>
 
 								<div class="col-lg-6">
-									{% if data.advantages.images %}
+									{% if page.images %}
 									<div class="background-mask p-20 p-absolute h-100 w-100">
 										<div class="line line-top"></div>
 										<div class="line line-bottom"></div>
@@ -248,7 +256,7 @@
 											<div class="img-container h-100 before-z-index" data-dsn-grid="move-up"
 												data-overlay="3">
 												<img class="cover-bg-img " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
-												data-dsn-src="{{ data.advantages.images[0].file_path }}" alt="">
+												data-dsn-src="{{ page.images[0].file_path }}" alt="">
 											</div>
 										</div>
 
@@ -256,9 +264,9 @@
 										<div
 											class="box-awards-item has-border big-number p-absolute left-0 bottom-0 ml-40 mb-40 dsn-up v-dark-head">
 											<h6 class="number  p-10">
-												<span class="has-animate-number title">{{ data.advantages.images[0].title or 'title' }}</span>
+												<span class="has-animate-number title">{{ page.images[0].title or 'title' }}</span>
 												<span class="sm-title-block d-block">
-													{{ data.advantages.images[0].label or 'label' }}
+													{{ page.images[0].label or 'label' }}
 												</span>
 											</h6>
 										</div>
@@ -273,14 +281,14 @@
 					<!-- ========== End About Section ========== -->
 					{% endif %}
 
-					{% if 'portfolio' in data %}
+					{% if page.page_name == 'portfolio' %}
 					<section class="work section-margin dsn-col dsn-col-space dsn-filter not-filter"
 						data-dsn-title="our Work">
 						<div class="container d-flex text-right flex-column align-items-center mb-70">
 							<div class="">
-								<h2 class="section-title line-bg-left">{{data.portfolio.title or 'Our Portfolio'}}</h2>
+								<h2 class="section-title line-bg-left">{{page.title or 'Our Portfolio'}}</h2>
 								<p class="sub-heading theme-color  line-shap line-shap-before mt-15 d-inline-block">
-									<span class="background-section pt-5 pb-5 pl-10 pr-10">{{data.portfolio.label or 'Our Work'}}</span>
+									<span class="background-section pt-5 pb-5 pl-10 pr-10">{{page.label or 'Our Work'}}</span>
 								</p>
 							</div>
 						</div>
@@ -293,7 +301,7 @@
 										<button type="button" data-filter="*" class="active">
 											All
 										</button>
-										{% for category in data.portfolio.categories %}
+										{% for category in page.categories %}
 											<button type="button" data-filter=".portfolio-{{category.id}}">{{category.label}}</button>
 										{% endfor %}
 
@@ -304,7 +312,7 @@
 							<div
 								class="work-inner projects-list work-one-page d-grid grid-md-2  grid-lg-3 p-relative w-100 dsn-item-filter dsn-isotope">
 
-								{% for image in data.portfolio.images %}
+								{% for image in page.images %}
 								<div class="work-item  p-relative portfolio-{{image.category_id or '' }}">
 									<a class="effect-ajax" data-dsn-ajax="work">
 										<div class="work-item-inner">
@@ -336,7 +344,7 @@
 					</section>
 					{% endif %}
 
-					{% if 'services' in data %}
+					{% if page.page_name == 'services' %}
 					<!-- ========== Service Section ========== -->
 					<section class="services with-line with-number p-relative section-margin dsn-col"
 						data-dsn-title="Our Services">
@@ -344,12 +352,12 @@
 
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									{{data.services.label or 'Our Services'}}
+									{{page.label or 'Our Services'}}
 								</span>
 
 							</p>
 							<h2 class="section-title  title-cap">
-									{{data.services.title or 'services.title'}}
+									{{page.title or 'services.title'}}
 								<br>
 							</h2>
 
@@ -391,10 +399,10 @@
 											</div>
 											<div class="service-description">
 												<h4 class="title-block mb-15">
-													{{data.services.collections[0].title if data.services.collections[0] else 'collections[0].title'}}
+													{{page.collections[0].title if page.collections[0] else 'collections[0].title'}}
 												</h4>
 												<p>
-													{{data.services.collections[0].desc if data.services.collections[0] else 'collections[0].desc'}}
+													{{page.collections[0].desc if page.collections[0] else 'collections[0].desc'}}
 												</p>
 											</div>
 
@@ -428,10 +436,10 @@
 											</div>
 											<div class="service-description">
 												<h4 class="title-block mb-15">
-													{{data.services.collections[1].title if data.services.collections[1] else 'collections[1].title'}}
+													{{page.collections[1].title if page.collections[1] else 'collections[1].title'}}
 												</h4>
 												<p>
-													{{data.services.collections[1].desc if data.services.collections[1] else 'collections[1].desc'}}
+													{{page.collections[1].desc if page.collections[1] else 'collections[1].desc'}}
 												</p>
 											</div>
 
@@ -461,10 +469,10 @@
 											</div>
 											<div class="service-description">
 												<h4 class="title-block mb-15">
-													{{data.services.collections[2].title if data.services.collections[2] else 'collections[2].title'}}
+													{{page.collections[2].title if page.collections[2] else 'collections[2].title'}}
 												</h4>
 												<p>
-													{{data.services.collections[2].desc if data.services.collections[2] else 'collections[2].desc'}}
+													{{page.collections[2].desc if page.collections[2] else 'collections[2].desc'}}
 												</p>
 											</div>
 
@@ -505,10 +513,10 @@
 											</div>
 											<div class="service-description">
 												<h4 class="title-block mb-15">
-													{{data.services.collections[3].title if data.services.collections[3] else 'collections[3].title'}}
+													{{page.collections[3].title if page.collections[3] else 'collections[3].title'}}
 												</h4>
 												<p>
-													{{data.services.collections[3].desc if data.services.collections[3] else 'collections[3].desc'}}
+													{{page.collections[3].desc if page.collections[3] else 'collections[3].desc'}}
 												</p>
 											</div>
 
@@ -550,10 +558,10 @@
 											</div>
 											<div class="service-description">
 												<h4 class="title-block mb-15">
-													{{data.services.collections[4].title if data.services.collections[4] else 'collections[4].title'}}
+													{{page.collections[4].title if page.collections[4] else 'collections[4].title'}}
 												</h4>
 												<p>
-													{{data.services.collections[4].desc if data.services.collections[4] else 'collections[4].desc'}}
+													{{page.collections[4].desc if page.collections[4] else 'collections[4].desc'}}
 												</p>
 											</div>
 
@@ -603,10 +611,10 @@
 											</div>
 											<div class="service-description">
 												<h4 class="title-block mb-15">
-													{{data.services.collections[5].title if data.services.collections[5] else 'collections[5].title'}}
+													{{page.collections[5].title if page.collections[5] else 'collections[5].title'}}
 												</h4>
 												<p>
-													{{data.services.collections[5].desc if data.services.collections[5] else 'collections[5].desc'}}
+													{{page.collections[5].desc if page.collections[5] else 'collections[5].desc'}}
 												</p>
 											</div>
 
@@ -620,11 +628,11 @@
 					<!-- ========== End Service Section ========== -->
 					{% endif %}
 
-					{% if 'with_banner' in data %}
+					{% if page.page_name == 'with_banner' %}
 					<!-- ==========  box description move  ========== -->
 					<div class="box-seat box-seat-parallax section-margin">
 
-						{% for image in data.with_banner.images %}
+						{% for image in page.images %}
 						<div class="inner-img h-100-v" data-dsn-grid="move-up" data-overlay="2">
 							<img class="transform-3d has-bigger-scale" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
 							data-dsn-src="{{image.file_path if image else ''}}" alt="">
@@ -634,18 +642,18 @@
 							data-dsn-responsive="tablet">
 							<div class="mb-30 d-flex text-left flex-column align-items-start">
 								<p class="sub-heading line-shap line-shap-after mb-15">
-									<span class="line-bg-right">{{data.with_banner.label or 'with_banner.label'}}</span>
+									<span class="line-bg-right">{{page.label or 'with_banner.label'}}</span>
 								</p>
-								<h2 class="section-title">{{data.with_banner.title or 'with_banner.title'}}</h2>
+								<h2 class="section-title">{{page.title or 'with_banner.title'}}</h2>
 							</div>
 
 							<p class="mb-10">
-								{{data.with_banner.desc or 'with_banner.desc'}}
+								{{page.desc or 'with_banner.desc'}}
 							</p>
 
-							{% if data.with_banner.note %}
+							{% if page.note %}
 							<p class="sm-p mt-15 theme-color">
-								{{data.with_banner.note}}
+								{{page.note}}
 							</p>
 							{% endif %}
 						</div>
@@ -654,7 +662,7 @@
 					<!-- ========== End  box description move ========== -->
 					{% endif %}
 
-					{% if 'work' in data %}
+					{% if page.page_name == 'work' %}
 					<!-- ========== Work Section ========== -->
 					<section class="work-section p-relative section-margin dsn-swiper over-hidden"
 						data-dsn-title="our Portfolio" data-dsn-option='{"slidesPerView":1.5,"spaceBetween":50}'>
@@ -662,12 +670,12 @@
 
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									{{data.work.label or 'work.label'}}
+									{{page.label or 'work.label'}}
 								</span>
 
 							</p>
 							<h2 class="section-title  title-cap">
-									{{data.work.title or 'work.title'}}
+									{{page.title or 'work.title'}}
 							</h2>
 
 						</div>
@@ -675,7 +683,7 @@
 						<div class="swiper-container">
 							<div class="swiper-wrapper v-dark-head">
 
-								{% for image in data.work.images %}
+								{% for image in page.images %}
 								<div class="swiper-slide over-hidden work-item">
 									<div class="box-img p-relative over-hidden before-z-index" data-overlay="5"
 										data-swiper-parallax-scale="0.85">
@@ -735,7 +743,7 @@
 					<!-- ========== End Work Section ========== -->
 					{% endif %}
 
-					{% if 'feedback' in data %}
+					{% if page.page_name == 'feedback' %}
 					<!-- ========== testimonial Section ========== -->
 					<section class="testimonials testimonials-half section-margin" data-dsn-title="testimonials">
 						<div class="container">
@@ -745,7 +753,7 @@
 										<div class="text-left">
 											<h2 class="section-title" data-dsn-grid="move-section" data-dsn-move="-60"
 												data-dsn-duration="100%" data-dsn-opacity="1"
-												data-dsn-responsive="tablet">{{data.feedback.title or 'feedback.title'}}</h2>
+												data-dsn-responsive="tablet">{{page.title or 'feedback.title'}}</h2>
 										</div>
 									</div>
 
@@ -759,7 +767,7 @@
 														<div class="swiper-wrapper">
 
 
-															{% for image in data.feedback.images %}
+															{% for image in page.images %}
 															<div class="swiper-slide d-flex align-items-center">
 																<div class="box-img mr-15"
 																	data-swiper-parallax-scale="0.7">
@@ -781,7 +789,7 @@
 												<div class="swiper-container">
 													<div class="swiper-wrapper">
 
-														{% for image in data.feedback.images %}
+														{% for image in page.images %}
 														<div class="swiper-slide">
 															<p>{{image.desc or 'image.desc'}}</p>
 														</div>
@@ -834,7 +842,7 @@
 					{% endif %}
 
 
-					{% if 'purpose' in data %}
+					{% if page.page_name == 'purpose' %}
 					<!-- ========== box vertical Section ========== -->
 					<div class="box-gallery-vertical box-gallery-content section-margin " data-dsn-animate="section"
 						data-dsn-duration="100%">
@@ -842,11 +850,11 @@
 							<div class="row dsn-z-index-2">
 								<div class="col-lg-6  dsn-z-index-2 pr-0 mb-lg-section">
 									<div class="box-im h-100 p-absolute">
-										{% if data.purpose.images %}
+										{% if page.images %}
 										<div class="img-container h-100 before-z-index" data-dsn-grid="move-up"
 											data-overlay="3">
 											<img class="cover-bg-img " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
-											data-dsn-src="{{data.purpose.images[0].file_path}}" alt="">
+											data-dsn-src="{{page.images[0].file_path}}" alt="">
 										</div>
 										{% endif %}
 
@@ -859,15 +867,15 @@
 										<div class="box-info-inner">
 											<div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.1"
 												data-dsn-duration="170%" data-dsn-move="0%">
-												{{ data.home_page.note if 'home_page' in data else 'Ugurly Ýol' }}
+												{{ page.note if 'home_page' in data else 'Ugurly Ýol' }}
 											</div>
 
 											<div class="mb-50 d-flex text-left flex-column align-items-start">
 												<p class="sub-heading line-shap line-shap-after mb-15">
-													<span class="line-bg-right">{{data.purpose.label or 'purpose.label'}}</span>
+													<span class="line-bg-right">{{page.label or 'purpose.label'}}</span>
 												</p>
 												<h2 class="section-title text-transform-upper">
-													{{data.purpose.title or 'purpose.title'}}
+													{{page.title or 'purpose.title'}}
 												</h2>
 
 											</div>
@@ -877,7 +885,7 @@
 
 
 													{% set purpose_count = 0 %}
-													{% for collection in data.purpose.collections %}
+													{% for collection in page.collections %}
 													{% set purpose_count = purpose_count + loop.index %}
 													<div class="accordion__item dsn-up">
 														<div
@@ -903,18 +911,18 @@
 					<!-- ========== End box vertical Section ========== -->
 					{% endif %}
 
-					{% if 'posts' in data %}
+					{% if page.page_name == 'posts' %}
 					<!-- ========== blog Section ========== -->
 					<section class="our-blog section-margin p-relative dsn-swiper" data-dsn-animate="section"
-						data-dsn-option='{"slidesPerView":1.5  }' data-dsn-title="{{data.posts.label}}">
+						data-dsn-option='{"slidesPerView":1.5  }' data-dsn-title="{{page.label}}">
 						<div class="container mb-70 d-flex text-center flex-column align-items-center">
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									{{data.posts.label or 'posts.label'}}
+									{{page.label or 'posts.label'}}
 								</span>
 							</p>
 							<h2 class="section-title  title-cap">
-								{{data.posts.title or 'posts.title'}}
+								{{page.title or 'posts.title'}}
 							</h2>
 
 						</div>
@@ -924,7 +932,7 @@
 							<div class="swiper-container">
 								<div class="swiper-wrapper">
 
-									{% for image in data.posts.images %}
+									{% for image in page.images %}
 									<div class="swiper-slide blog-classic-item">
 										<div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
 											data-swiper-parallax-scale="0.85">
@@ -992,19 +1000,19 @@
 					<!-- ========== End blog Section ========== -->
 					{% endif %}
 
-					{% if 'resume' in data %}
+					{% if page.page_name == 'resume' %}
 					<section class="resume section-padding background-section" data-dsn-title="Resume">
 						<div class="container section-title mb-70 p-relative dsn-z-index-2">
 							<p class="sub-heading  line-bg-left mb-15">
-								{{data.resume.label or 'resume.label'}}
+								{{page.label or 'resume.label'}}
 							</p>
-							<h2 class="section-title title-cap">{{data.resume.title or 'resume.title'}}</h2>
+							<h2 class="section-title title-cap">{{page.title or 'resume.title'}}</h2>
 						</div>
 
 						<div class="container">
 							<div class="row">
 
-								{% for category in data.resume.categories %}
+								{% for category in page.categories %}
 								<div class="col-md-6 resume-box-inner">
 									<div class="resume-box p-relative pr-30">
 										<h3 class="title-block mb-30">{{category.title or 'category.title'}}</h3>
@@ -1027,26 +1035,26 @@
 					</section>
 					{% endif %}
 					
-					{% if 'team' in data %}
+					{% if page.page_name == 'team' %}
 					<section class="team section-margin p-relative" data-dsn-animate="section"
 						data-dsn-title="our team">
 
 						<div class="container mb-70 d-flex text-center flex-column  align-items-center">
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									{{data.team.label or 'team.label'}}
+									{{page.label or 'team.label'}}
 								</span>
 
 							</p>
 							<h2 class="section-title  title-cap">
-								{{data.team.title or 'team.title'}}
+								{{page.title or 'team.title'}}
 							</h2>
 
 						</div>
 						<div class="container">
 							<div class="d-grid grid-lg-3 grid-sm-2 dsn-up">
 
-								{% for image in data.team.images %}
+								{% for image in page.images %}
 								<div class="team-item">
 									<div class="team-item-inner">
 										<div class="team-item-wapper background-section">
@@ -1077,14 +1085,14 @@
 					</section>
 					{% endif %}
 					
-					{% if 'footer_portfolio' in data %}
+					{% if page.page_name == 'footer_portfolio' %}
 					<section class="work-section work-no-scale not-filter p-relative dsn-swiper over-hidden v-dark-head"
 						data-dsn-title="our Work"
 						data-dsn-option='{"slidesPerView":3,"autoplay":true,"centeredSlides":false}'>
 						<div class="swiper-container" data-swiper-autoplay="5000">
 							<div class="swiper-wrapper">
 
-								{% for image in data.footer_portfolio.images %}
+								{% for image in page.images %}
 								<div class="work-item  swiper-slide over-hidden">
 									<div class="box-img p-relative over-hidden" data-overlay="6">
 										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{image.file_path}}" alt="" loading="lazy">
@@ -1105,26 +1113,26 @@
 					</section>
 					{% endif %}
 	
-					{% if 'our_clients' in data %}
+					{% if page.page_name == 'our_clients' %}
 					<section class="brand-client section-margin" data-dsn-animate="section"
 						data-dsn-title="our clients">
 
 						<div class="container mb-70 d-flex text-center flex-column  align-items-center">
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									{{data.our_clients.label or 'our_clients.label'}}
+									{{page.label or 'our_clients.label'}}
 								</span>
 
 							</p>
 							<h2 class="section-title  title-cap">
-								{{data.our_clients.title or 'our_clients.title'}}
+								{{page.title or 'our_clients.title'}}
 							</h2>
 
 						</div>
 						<div class="container">
 							<div class="wrapper-client dsn-up">
 
-								{% for image in data.our_clients.images %}
+								{% for image in page.images %}
 								<div class="logo-box">
 									<div class="logo-box-inner">
 										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
@@ -1138,7 +1146,7 @@
 					</section>
 					{% endif %}
 
-					{% if 'footer' in data %}
+					{% if page.page_name == 'footer' %}
 					<section class="next-page p-relative section-padding border-top background-section">
 						<div class="bg-circle-dotted"></div>
 						<div class="bg-circle-dotted bg-circle-dotted-right"></div>
@@ -1147,11 +1155,11 @@
 								<div class="d-flex flex-column">
 									<p class="sub-heading line-shap line-shap-after ">
 										<span class="line-bg-left">
-											{{data.footer.label or 'footer.label'}}
+											{{page.label or 'footer.label'}}
 										</span>
 									</p>
 									<h2 class="section-title max-w750 mt-15">
-										{{data.footer.title or 'footer.title'}}
+										{{page.title or 'footer.title'}}
 									</h2>
 								</div>
 							</div>
@@ -1159,6 +1167,9 @@
 					</section>
 					{% endif %}
 
+				
+				
+				{% endfor %}
 				</div>
 				<footer class="footer p-relative background-section">
 					<div class="container">
@@ -1179,9 +1190,11 @@
 			</div>
 		</div>
 
-		{% if 'contact' in data %}
+			
+		{% for page in data %}
+		{% if page.page_name == 'contact' %}
 		<div class="contact-btn">
-			<div class="contact-btn-txt">{{data.contact.note}}</div>
+			<div class="contact-btn-txt">{{page.note}}</div>
 		</div>
 		<div class="contact-modal background-section">
 			<div class="contact-container h-100 w-100  border-right">
@@ -1196,14 +1209,14 @@
 
 								<div class="mb-30 d-flex text-left flex-column align-items-start">
 									<p class="sub-heading line-shap line-shap-before mb-15">
-										<span class="line-bg-right">{{ data.contact.label or 'contact.label' }}</span>
+										<span class="line-bg-right">{{ page.label or 'contact.label' }}</span>
 									</p>
 									<h2 class="section-title  title-cap">
-										{{ data.contact.title or 'contact.title' }}
+										{{ page.title or 'contact.title' }}
 									</h2>
 								</div>
 
-								<form id="contact-form" class="form" method="post" action="mailto:{{data.contact.contacts[0].mail}}?Subject=Summat%20or%20Other&body=I%20Have%20been%20for%20a%20massive%20poo"
+								<form id="contact-form" class="form" method="post" action="mailto:{{page.contacts[0].mail}}?Subject=Summat%20or%20Other&body=I%20Have%20been%20for%20a%20massive%20poo"
 									data-toggle="validator">
 									<div class="messages"></div>
 									<div class="input__wrap controls">
@@ -1252,62 +1265,62 @@
 							<div class="box-info-contact">
 								<ul>
 									<li>
-										<h5 class="title-block mb-15">{{data.contact.note}}</h5>
-										{% if data.contact.contacts[0].phone_number %}
-											<a href="tel:{{data.contact.contacts[0].phone_number}}" class="text-p">{{ data.contact.contacts[0].phone_number }}</a>
+										<h5 class="title-block mb-15">{{page.note}}</h5>
+										{% if page.contacts[0].phone_number %}
+											<a href="tel:{{page.contacts[0].phone_number}}" class="text-p">{{ page.contacts[0].phone_number }}</a>
 										{% endif %}
-										{% if data.contact.contacts[0].work_phone_number %}
-											<a href="tel:{{data.contact.contacts[0].work_phone_number}}" class="text-p">{{ data.contact.contacts[0].work_phone_number }}</a>
+										{% if page.contacts[0].work_phone_number %}
+											<a href="tel:{{page.contacts[0].work_phone_number}}" class="text-p">{{ page.contacts[0].work_phone_number }}</a>
 										{% endif %}
-										{% if data.contact.contacts[0].home_phone_number %}
-											<a href="tel:{{data.contact.contacts[0].home_phone_number}}" class="text-p">{{ data.contact.contacts[0].home_phone_number }}</a>
+										{% if page.contacts[0].home_phone_number %}
+											<a href="tel:{{page.contacts[0].home_phone_number}}" class="text-p">{{ page.contacts[0].home_phone_number }}</a>
 										{% endif %}
-										{% if data.contact.contacts[0].phone_number_1 %}
-											<a href="tel:{{data.contact.contacts[0].phone_number_1}}" class="text-p">{{ data.contact.contacts[0].phone_number_1 }}</a>
+										{% if page.contacts[0].phone_number_1 %}
+											<a href="tel:{{page.contacts[0].phone_number_1}}" class="text-p">{{ page.contacts[0].phone_number_1 }}</a>
 										{% endif %}
-										{% if data.contact.contacts[0].phone_number_2 %}
-											<a href="tel:{{data.contact.contacts[0].phone_number_2}}" class="text-p">{{ data.contact.contacts[0].phone_number_2 }}</a>
+										{% if page.contacts[0].phone_number_2 %}
+											<a href="tel:{{page.contacts[0].phone_number_2}}" class="text-p">{{ page.contacts[0].phone_number_2 }}</a>
 										{% endif %}
-										{% if data.contact.contacts[0].phone_number_3 %}
-											<a href="tel:{{data.contact.contacts[0].phone_number_3}}" class="text-p">{{ data.contact.contacts[0].phone_number_3 }}</a>
+										{% if page.contacts[0].phone_number_3 %}
+											<a href="tel:{{page.contacts[0].phone_number_3}}" class="text-p">{{ page.contacts[0].phone_number_3 }}</a>
 										{% endif %}
 										<div class="over-hidden mt-5">
-											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].mail or 'contact.contacts[0].mail'}}"
-												href="mailto:{{data.contact.contacts[0].mail}}">{{data.contact.contacts[0].mail or 'contact.contacts[0].mail'}}</a>
+											<a class="link-hover" data-hover-text="{{page.contacts[0].mail or 'contact.contacts[0].mail'}}"
+												href="mailto:{{page.contacts[0].mail}}">{{page.contacts[0].mail or 'contact.contacts[0].mail'}}</a>
 										</div>
 
 									</li>
 									<li>
-										{% if data.contact.contacts[0].address %}
-											<p class="text-p">{{data.contact.contacts[0].address}}</p>
+										{% if page.contacts[0].address %}
+											<p class="text-p">{{page.contacts[0].address}}</p>
 										{% endif %}
-										{% if data.contact.contacts[0].address_1 %}
-											<p class="text-p">{{data.contact.contacts[0].address_1}}</p>
+										{% if page.contacts[0].address_1 %}
+											<p class="text-p">{{page.contacts[0].address_1}}</p>
 										{% endif %}
-										{% if data.contact.contacts[0].address_2 %}
-											<p class="text-p">{{data.contact.contacts[0].address_2}}</p>
+										{% if page.contacts[0].address_2 %}
+											<p class="text-p">{{page.contacts[0].address_2}}</p>
 										{% endif %}
-										{% if data.contact.contacts[0].address_3 %}
-											<p class="text-p">{{data.contact.contacts[0].address_3}}</p>
+										{% if page.contacts[0].address_3 %}
+											<p class="text-p">{{page.contacts[0].address_3}}</p>
 										{% endif %}
 									</li>
 									<li>
-										{% if data.contact.contacts[0].social_1 %}
+										{% if page.contacts[0].social_1 %}
 										<div class="social-item over-hidden">
-											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].social_1_name or 'social1_name'}}" href="{{data.contact.contacts[0].social_1 or 'social1'}}" target="_blank"
-												rel="nofollow">{{data.contact.contacts[0].social_1_name or 'social1_name'}}</a>
+											<a class="link-hover" data-hover-text="{{page.contacts[0].social_1_name or 'social1_name'}}" href="{{page.contacts[0].social_1 or 'social1'}}" target="_blank"
+												rel="nofollow">{{page.contacts[0].social_1_name or 'social1_name'}}</a>
 										</div>
 										{% endif %}
-										{% if data.contact.contacts[0].social_2 %}
+										{% if page.contacts[0].social_2 %}
 										<div class="social-item over-hidden">
-											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].social_2_name or 'social2_name'}}" href="{{data.contact.contacts[0].social_2 or 'social2'}}" target="_blank"
-												rel="nofollow">{{data.contact.contacts[0].social_2_name or 'social2_name'}}</a>
+											<a class="link-hover" data-hover-text="{{page.contacts[0].social_2_name or 'social2_name'}}" href="{{page.contacts[0].social_2 or 'social2'}}" target="_blank"
+												rel="nofollow">{{page.contacts[0].social_2_name or 'social2_name'}}</a>
 										</div>
 										{% endif %}
-										{% if data.contact.contacts[0].social_3 %}
+										{% if page.contacts[0].social_3 %}
 										<div class="social-item over-hidden">
-											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].social_3_name or 'social3_name'}}" href="{{data.contact.contacts[0].social_3 or 'social3'}}" target="_blank"
-												rel="nofollow">{{data.contact.contacts[0].social_3_name or 'social3_name'}}</a>
+											<a class="link-hover" data-hover-text="{{page.contacts[0].social_3_name or 'social3_name'}}" href="{{page.contacts[0].social_3 or 'social3'}}" target="_blank"
+												rel="nofollow">{{page.contacts[0].social_3_name or 'social3_name'}}</a>
 										</div>
 										{% endif %}
 
@@ -1320,6 +1333,7 @@
 			</div>
 		</div>
 		{% endif %}
+		{% endfor %}
 	</main>
 
 

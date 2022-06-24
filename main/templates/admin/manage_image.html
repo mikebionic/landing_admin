@@ -33,6 +33,23 @@ content %}
 												<div data-repeater-item="">
 													<div class="form-group row d-flex align-items-end">
 														<div style="display: grid; gap: 0.25rem">
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Order:</label>
+																<input
+																	type="text"
+																	name="order"
+																	value="{{ data.order or '' }}"
+																	placeholder="order"
+																	class="form-control"
+																/>
+															</div>
+															
 															<label class="form-label">Name</label>
 															<div
 																style="

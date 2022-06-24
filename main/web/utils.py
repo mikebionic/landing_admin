@@ -1,13 +1,14 @@
 from sqlalchemy.orm import joinedload
 from main.models import Page
 
-def get_all_data():
-	data = {}
+def get_all_data(as_list = False):
+	data = [] if as_list else {}
 	pages = Page.query.options(
 		joinedload(Page.Category),
 		joinedload(Page.Collection)
 	)\
 		.filter(Page.deleted != 1)\
+		.order_by(Page.order.asc())\
 		.all()
 	for page in pages:
 		page_data = page.to_json_api()
@@ -44,23 +45,11 @@ def get_all_data():
 			collection_data["images"] = [image.to_json_api() for image in collection.Image]
 			collections_list.append(collection_data)
 		page_data["collections"] = collections_list
-			
-		data[page.page_name] = page_data
 
-
-
-		#collections_list = []
-		#for collection in page.Collection:
-		#	collection_data = collection.to_json_api()
-		#	collection_data["category_name"] = collection.category.name_tk if collection.category else ''
-		#	collection_data["category_id"] = collection.category.id if collection.category else ''
-		#	collection_data["images"] = [image.to_json_api() for image in collection.Image]
-		#	collections_list.append(collection_data)
-		
-		#page_data["collections"] = collections_list
-
-		#data[page.name_tk] = page_data
-
+		if as_list:
+			data.append(page_data)
+		else:
+			data[page.page_name] = page_data
 
 	return data
 		
