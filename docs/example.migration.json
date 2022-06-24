@@ -175,6 +175,11 @@
 			"label_en": "Stay connected",
 			"note_en": "Contacts",
 			"title_en": "Get in Touch"
+		},
+		{
+			"id": 16,
+			"page_name": "media",
+			"file_path": "/static/web/assets/media/ugurly.mp4"
 		}
 	],
 
