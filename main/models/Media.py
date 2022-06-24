@@ -21,5 +21,4 @@ class Media(BaseModel, db.Model):
 
 		for key, value in BaseModel.to_json(self).items():
 			data[key] = value
-
 		return data

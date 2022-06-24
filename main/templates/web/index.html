@@ -203,6 +203,12 @@
 					<!-- ========== End Slider Parallax ========== -->
 					{% endif %}
 
+				<section class="about-section p-relative section-margin" data-dsn-title="Media" data-dsn-animate-multi data-dsn-animate="section">
+					<video width="90%" height="80%" autoplay muted style="margin: 0 auto; display: flex">
+						<source src="../../static/web/assets/media/ugurly.webm" type="video/webm">
+					</video>
+				</section>
+
 					{% if 'advantages' in data %}
 					<!-- ========== About Section ========== -->
 					<section class="about-section p-relative section-margin " data-dsn-title="How We Are"
@@ -1197,7 +1203,7 @@
 									</h2>
 								</div>
 
-								<form id="contact-form" class="form" method="post" action="mailto:{{data.contact.mail}}"
+								<form id="contact-form" class="form" method="post" action="mailto:{{data.contact.contacts[0].mail}}?Subject=Summat%20or%20Other&body=I%20Have%20been%20for%20a%20massive%20poo"
 									data-toggle="validator">
 									<div class="messages"></div>
 									<div class="input__wrap controls">
@@ -1248,22 +1254,22 @@
 									<li>
 										<h5 class="title-block mb-15">{{data.contact.note}}</h5>
 										{% if data.contact.contacts[0].phone_number %}
-											<p class="text-p">{{ data.contact.contacts[0].phone_number }}</p>
+											<a href="tel:{{data.contact.contacts[0].phone_number}}" class="text-p">{{ data.contact.contacts[0].phone_number }}</a>
 										{% endif %}
 										{% if data.contact.contacts[0].work_phone_number %}
-											<p class="text-p">{{ data.contact.contacts[0].work_phone_number }}</p>
+											<a href="tel:{{data.contact.contacts[0].work_phone_number}}" class="text-p">{{ data.contact.contacts[0].work_phone_number }}</a>
 										{% endif %}
 										{% if data.contact.contacts[0].home_phone_number %}
-											<p class="text-p">{{ data.contact.contacts[0].home_phone_number }}</p>
+											<a href="tel:{{data.contact.contacts[0].home_phone_number}}" class="text-p">{{ data.contact.contacts[0].home_phone_number }}</a>
 										{% endif %}
 										{% if data.contact.contacts[0].phone_number_1 %}
-											<p class="text-p">{{ data.contact.contacts[0].phone_number_1 }}</p>
+											<a href="tel:{{data.contact.contacts[0].phone_number_1}}" class="text-p">{{ data.contact.contacts[0].phone_number_1 }}</a>
 										{% endif %}
 										{% if data.contact.contacts[0].phone_number_2 %}
-											<p class="text-p">{{ data.contact.contacts[0].phone_number_2 }}</p>
+											<a href="tel:{{data.contact.contacts[0].phone_number_2}}" class="text-p">{{ data.contact.contacts[0].phone_number_2 }}</a>
 										{% endif %}
 										{% if data.contact.contacts[0].phone_number_3 %}
-											<p class="text-p">{{ data.contact.contacts[0].phone_number_3 }}</p>
+											<a href="tel:{{data.contact.contacts[0].phone_number_3}}" class="text-p">{{ data.contact.contacts[0].phone_number_3 }}</a>
 										{% endif %}
 										<div class="over-hidden mt-5">
 											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].mail or 'contact.contacts[0].mail'}}"

@@ -178,8 +178,7 @@
 		},
 		{
 			"id": 16,
-			"page_name": "media",
-			"file_path": "/static/web/assets/media/ugurly.mp4"
+			"page_name": "media"
 		}
 	],
 
