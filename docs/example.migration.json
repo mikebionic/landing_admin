@@ -25,7 +25,7 @@
 		},
 		{
 			"id": 2,
-			"order": 2,
+			"order": 3,
 			"page_name": "advantages",
 			"label_tk": "Aýratynlyklary",
 			"title_tk": "Gowylar üçin iň gowy zat",
@@ -42,7 +42,7 @@
 		},
 		{
 			"id": 3,
-			"order": 3,
+			"order": 4,
 			"page_name": "portfolio",
 			"label_tk": "Our Work",
 			"title_tk": "Our Portfolio",
@@ -53,7 +53,7 @@
 		},
 		{
 			"id": 4,
-			"order": 4,
+			"order": 5,
 			"page_name": "services",
 			"label_tk": "Our Services",
 			"title_tk": "Ценности нашей компании",
@@ -64,7 +64,7 @@
 		},
 		{
 			"id": 5,
-			"order": 5,
+			"order": 6,
 			"page_name": "with_banner",
 			"label_tk": "Наши преимущества",
 			"title_tk": "Unlimited power",
@@ -80,7 +80,7 @@
 		},
 		{
 			"id": 6,
-			"order": 6,
+			"order": 7,
 			"page_name": "work",
 			"label_tk": "Biziň işlerimiz",
 			"title_tk": "Geçirilýän işleriň\n suratlary",
@@ -91,7 +91,7 @@
 		},
 		{
 			"id": 7,
-			"order": 7,
+			"order": 8,
 			"page_name": "feedback",
 			"label_tk": "Teswirler",
 			"title_tk": "Biziň müşderilerimiziň teswirleri.",
@@ -102,7 +102,7 @@
 		},
 		{
 			"id": 8,
-			"order": 8,
+			"order": 9,
 			"page_name": "purpose",
 			"label_tk": "Our Purpose",
 			"title_tk": "WE PLAN YOUR PROJECT",
@@ -113,7 +113,7 @@
 		},
 		{
 			"id": 9,
-			"order": 9,
+			"order": 10,
 			"page_name": "posts",
 			"label_tk": "Soňky täzerliker",
 			"title_tk": "Soňky täzerliker",
@@ -124,7 +124,7 @@
 		},
 		{
 			"id": 10,
-			"order": 10,
+			"order": 11,
 			"page_name": "resume",
 			"label_tk": "Этапы строительства",
 			"title_tk": "Повышаем стандарты качества и внедряем лучшие технологии",
@@ -135,7 +135,7 @@
 		},
 		{
 			"id": 11,
-			"order": 11,
+			"order": 12,
 			"page_name": "team",
 			"label_tk": "Biziň işgärlerimiz",
 			"title_tk": "Dünýäniň iň gowy topary",
@@ -146,7 +146,7 @@
 		},
 		{
 			"id": 12,
-			"order": 12,
+			"order": 13,
 			"page_name": "footer_portfolio",
 			"label_tk": "Portfolio",
 			"title_tk": "Işlerimiziň suratlary",
@@ -157,7 +157,7 @@
 		},
 		{
 			"id": 13,
-			"order": 13,
+			"order": 14,
 			"page_name": "our_clients",
 			"label_tk": "Biziň müşderilerimiz",
 			"title_tk": "Siziň üsünligiňiz biziň abyraýymyz",
@@ -168,7 +168,7 @@
 		},
 		{
 			"id": 14,
-			"order": 14,
+			"order": 15,
 			"page_name": "footer",
 			"label_tk": "Biz bilen habarlaş!",
 			"title_tk": "Size has köp maglumat gerekmi ýa-da soraglar barmy?",
@@ -179,7 +179,7 @@
 		},
 		{
 			"id": 15,
-			"order": 15,
+			"order": 16,
 			"page_name": "contact",
 			"label_tk": "Stay connected",
 			"note_tk": "Kontaktlar",
@@ -193,7 +193,7 @@
 		},
 		{
 			"id": 16,
-			"order": 16,
+			"order": 2,
 			"page_name": "media"
 		}
 	],
