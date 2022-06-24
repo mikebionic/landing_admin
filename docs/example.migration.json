@@ -981,6 +981,72 @@
 			"id": 66,
 			"page_id": 5,
 			"file_path": "/static/web/assets/img/project/project3/2.jpg"
+		},
+		{
+			"id": 67,
+			"page_id": 11,
+			"file_path": "/static/web/assets/img/team/1.jpg",
+			"name_tk": "Myrat Babamyradov",
+			"label_tk": "Envato Customer",
+			"name_en": "Myrat Babamyradov",
+			"label_en": "Envato Customer",
+			"name_ru": "Myrat Babamyradov",
+			"label_ru": "Envato Customer"
+		},
+		{
+			"id": 68,
+			"page_id": 11,
+			"file_path": "/static/web/assets/img/team/2.jpg",
+			"name_tk": "Geldi Geldiyew",
+			"label_tk": "Web designer",
+			"name_en": "Geldi Geldiyew",
+			"label_en": "Web designer",
+			"name_ru": "Geldi Geldiyew",
+			"label_ru": "Web designer"
+		},
+		{
+			"id": 69,
+			"page_id": 11,
+			"file_path": "/static/web/assets/img/team/3.jpg",
+			"name_tk": "Muhammetnur Ataniyazow",
+			"label_tk": "Marketing manager",
+			"name_en": "Muhammetnur Ataniyazow",
+			"label_en": "Marketing manager",
+			"name_ru": "Muhammetnur Ataniyazow",
+			"label_ru": "Marketing manager"
+		},
+		{
+			"id": 70,
+			"page_id": 11,
+			"file_path": "/static/web/assets/img/team/1.jpg",
+			"name_tk": "Myrat Babamyradov",
+			"label_tk": "Envato Customer",
+			"name_en": "Myrat Babamyradov",
+			"label_en": "Envato Customer",
+			"name_ru": "Myrat Babamyradov",
+			"label_ru": "Envato Customer"
+		},
+		{
+			"id": 71,
+			"page_id": 11,
+			"file_path": "/static/web/assets/img/team/2.jpg",
+			"name_tk": "Geldi Geldiyew",
+			"label_tk": "Web designer",
+			"name_en": "Geldi Geldiyew",
+			"label_en": "Web designer",
+			"name_ru": "Geldi Geldiyew",
+			"label_ru": "Web designer"
+		},
+		{
+			"id": 72,
+			"page_id": 11,
+			"file_path": "/static/web/assets/img/team/3.jpg",
+			"name_tk": "Muhammetnur Ataniyazow",
+			"label_tk": "Marketing manager",
+			"name_en": "Muhammetnur Ataniyazow",
+			"label_en": "Marketing manager",
+			"name_ru": "Muhammetnur Ataniyazow",
+			"label_ru": "Marketing manager"
 		}
 	]
 }

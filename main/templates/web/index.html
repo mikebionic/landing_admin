@@ -1039,148 +1039,33 @@
 						</div>
 						<div class="container">
 							<div class="d-grid grid-lg-3 grid-sm-2 dsn-up">
+
+								{% for image in data.team.images %}
 								<div class="team-item">
 									<div class="team-item-inner">
 										<div class="team-item-wapper background-section">
 											<div class="item-content d-flex a-item-center">
 												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/1.jpg') }}" alt="" loading="lazy">
+													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{image.file_path if image else ''}}" alt="" loading="lazy">
 												</div>
 												<div class="box-text">
-													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
-													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
+													<h4 class="sm-title-block mb-5">{{image.name or 'image.name'}}</h4>
+													<h5 class="theme-color">{{image.label or 'image.label'}}</h5>
 
-													<ul class="box-social mt-20">
+													<!-- <ul class="box-social mt-20">
 														<li data-dsn="parallax"><a href="#">FB</a></li>
 														<li data-dsn="parallax"><a href="#">TW</a></li>
 														<li data-dsn="parallax"><a href="#">LN</a></li>
 
-													</ul>
+													</ul> -->
 												</div>
 											</div>
 										</div>
 
 									</div>
 								</div>
+								{% endfor %}
 
-								<div class="team-item">
-									<div class="team-item-inner">
-										<div class="team-item-wapper background-section">
-											<div class="item-content d-flex a-item-center">
-												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/2.jpg') }}" alt="" loading="lazy">
-												</div>
-												<div class="box-text">
-													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
-													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
-
-													<ul class="box-social mt-20">
-														<li data-dsn="parallax"><a href="#">FB</a></li>
-														<li data-dsn="parallax"><a href="#">TW</a></li>
-														<li data-dsn="parallax"><a href="#">LN</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-
-								<div class="team-item">
-									<div class="team-item-inner">
-										<div class="team-item-wapper background-section">
-											<div class="item-content d-flex a-item-center">
-												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/3.jpg') }}" alt="" loading="lazy">
-												</div>
-												<div class="box-text">
-													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
-													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
-
-													<ul class="box-social mt-20">
-														<li data-dsn="parallax"><a href="#">FB</a></li>
-														<li data-dsn="parallax"><a href="#">TW</a></li>
-														<li data-dsn="parallax"><a href="#">LN</a></li>
-
-													</ul>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-
-								<div class="team-item">
-									<div class="team-item-inner">
-										<div class="team-item-wapper background-section">
-											<div class="item-content d-flex a-item-center">
-												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/2.jpg') }}" alt="" loading="lazy">
-												</div>
-												<div class="box-text">
-													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
-													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
-
-													<ul class="box-social mt-20">
-														<li data-dsn="parallax"><a href="#">FB</a></li>
-														<li data-dsn="parallax"><a href="#">TW</a></li>
-														<li data-dsn="parallax"><a href="#">LN</a></li>
-
-													</ul>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-
-								<div class="team-item">
-									<div class="team-item-inner">
-										<div class="team-item-wapper background-section">
-											<div class="item-content d-flex a-item-center">
-												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/1.jpg') }}" alt="" loading="lazy">
-												</div>
-												<div class="box-text">
-													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
-													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
-
-													<ul class="box-social mt-20">
-														<li data-dsn="parallax"><a href="#">FB</a></li>
-														<li data-dsn="parallax"><a href="#">TW</a></li>
-														<li data-dsn="parallax"><a href="#">LN</a></li>
-
-													</ul>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-
-								<div class="team-item">
-									<div class="team-item-inner">
-										<div class="team-item-wapper background-section">
-											<div class="item-content d-flex a-item-center">
-												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/1.jpg') }}" alt="" loading="lazy">
-												</div>
-												<div class="box-text">
-													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
-													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
-
-													<ul class="box-social mt-20">
-														<li data-dsn="parallax"><a href="#">FB</a></li>
-														<li data-dsn="parallax"><a href="#">TW</a></li>
-														<li data-dsn="parallax"><a href="#">LN</a></li>
-
-													</ul>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
 							</div>
 						</div>
 					</section>
