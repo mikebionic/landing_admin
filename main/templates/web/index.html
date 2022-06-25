@@ -31,8 +31,8 @@
 		<h1 class="title v-middle">
 			{% for page in data %}
 			{% if page.page_name == 'home_page' %}
-			<span class="text-strok">{{ page.note if 'home_page' in data else 'Ugurly Ýol' }}</span>
-			<span class="text-fill">{{ page.note if 'home_page' in data else 'Ugurly Ýol' }}</span>
+			<span class="text-strok">{{ page.note }}</span>
+			<span class="text-fill">{{ page.note }}</span>
 			{% endif %}
 			{% endfor %}
 		</h1>

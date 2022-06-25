@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-06-23 18:06+0500\n"
+"POT-Creation-Date: 2022-06-25 17:06+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,8 @@ msgid "Admin panel"
 msgstr ""
 
 #: templates/admin/login.html:11 templates/admin/login.html:47
-#: templates/web/index.html:75 templates/web/index.html:105
+#: templates/web/index.html:79 templates/web/index.html:109
+#: templates/web/index_dict.html:75 templates/web/index_dict.html:105
 msgid "Login"
 msgstr ""
 
@@ -34,47 +35,95 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: templates/web/index.html:26
+#: templates/web/index.html:26 templates/web/index_dict.html:26
 msgid "Loading"
 msgstr ""
 
-#: templates/web/index.html:72
+#: templates/web/index.html:76 templates/web/index_dict.html:72
 msgid "Stay connected"
 msgstr ""
 
-#: templates/web/index.html:85 templates/web/index.html:1321
+#: templates/web/index.html:89 templates/web/index.html:1178
+#: templates/web/index_dict.html:85 templates/web/index_dict.html:1214
 msgid "Your name"
 msgstr ""
 
-#: templates/web/index.html:87 templates/web/index.html:1323
+#: templates/web/index.html:91 templates/web/index.html:1180
+#: templates/web/index_dict.html:87 templates/web/index_dict.html:1216
 msgid "Type your name"
 msgstr ""
 
-#: templates/web/index.html:95 templates/web/index.html:1331
+#: templates/web/index.html:99 templates/web/index.html:1188
+#: templates/web/index_dict.html:95 templates/web/index_dict.html:1224
 msgid "Your E-Mail"
 msgstr ""
 
-#: templates/web/index.html:97 templates/web/index.html:1333
+#: templates/web/index.html:101 templates/web/index.html:1190
+#: templates/web/index_dict.html:97 templates/web/index_dict.html:1226
 msgid "Type your Email Address"
 msgstr ""
 
-#: templates/web/index.html:1334
+#: templates/web/index.html:213
+msgid "Media"
+msgstr ""
+
+#: templates/web/index.html:222
+msgid "How We Are"
+msgstr ""
+
+#: templates/web/index.html:286 templates/web/index.html:1090
+msgid "Our Work"
+msgstr ""
+
+#: templates/web/index.html:350
+msgid "Our Services"
+msgstr ""
+
+#: templates/web/index.html:668
+msgid "Our Portfolio"
+msgstr ""
+
+#: templates/web/index.html:748
+msgid "Testimonials"
+msgstr ""
+
+#: templates/web/index.html:917
+msgid "Our blog"
+msgstr ""
+
+#: templates/web/index.html:1004
+msgid "Resume"
+msgstr ""
+
+#: templates/web/index.html:1040
+msgid "Our team"
+msgstr ""
+
+#: templates/web/index.html:1118
+msgid "Our clients"
+msgstr ""
+
+#: templates/web/index.html:1151
+msgid "Contact us"
+msgstr ""
+
+#: templates/web/index.html:1191 templates/web/index_dict.html:1227
 msgid "Valid email is required"
 msgstr ""
 
-#: templates/web/index.html:1341
+#: templates/web/index.html:1198 templates/web/index_dict.html:1234
 msgid "Message"
 msgstr ""
 
-#: templates/web/index.html:1343
+#: templates/web/index.html:1200 templates/web/index_dict.html:1236
 msgid "Tell us about you"
 msgstr ""
 
-#: templates/web/index.html:1344
+#: templates/web/index.html:1201 templates/web/index_dict.html:1237
 msgid "Please,leave us a message"
 msgstr ""
 
-#: templates/web/index.html:1351
+#: templates/web/index.html:1208 templates/web/index_dict.html:1244
 msgid "Send Message"
 msgstr ""
 
