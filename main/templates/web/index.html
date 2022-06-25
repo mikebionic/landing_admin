@@ -210,7 +210,7 @@
 					{% endif %}
 
 					{% if page.page_name == 'media' %}
-					<section class="about-section p-relative section-margin" data-dsn-title="Media" data-dsn-animate-multi data-dsn-animate="section">
+					<section class="about-section p-relative section-margin" data-dsn-title="{{_('Media')}}" data-dsn-animate-multi data-dsn-animate="section">
 						<video width="90%" height="80%" autoplay muted controls style="margin: 0 auto; display: flex">
 							<source src="../../static/web/assets/media/ugurly.webm" type="video/webm">
 						</video>
@@ -219,7 +219,7 @@
 
 					{% if page.page_name == 'advantages' %}
 					<!-- ========== About Section ========== -->
-					<section class="about-section p-relative section-margin " data-dsn-title="How We Are"
+					<section class="about-section p-relative section-margin " data-dsn-title="{{_('How We Are')}}"
 						data-dsn-animate-multi data-dsn-animate="section">
 						<div class="container">
 							<div class="row fill-right-container">
@@ -283,7 +283,7 @@
 
 					{% if page.page_name == 'portfolio' %}
 					<section class="work section-margin dsn-col dsn-col-space dsn-filter not-filter"
-						data-dsn-title="our Work">
+						data-dsn-title="{{_('Our Work')}}">
 						<div class="container d-flex text-right flex-column align-items-center mb-70">
 							<div class="">
 								<h2 class="section-title line-bg-left">{{page.title or 'Our Portfolio'}}</h2>
@@ -347,7 +347,7 @@
 					{% if page.page_name == 'services' %}
 					<!-- ========== Service Section ========== -->
 					<section class="services with-line with-number p-relative section-margin dsn-col"
-						data-dsn-title="Our Services">
+						data-dsn-title="{{_('Our Services')}}">
 						<div class="container mb-70 d-flex text-center flex-column align-items-center">
 
 							<p class="sub-heading line-shap line-shap-before mb-15">
@@ -665,7 +665,7 @@
 					{% if page.page_name == 'work' %}
 					<!-- ========== Work Section ========== -->
 					<section class="work-section p-relative section-margin dsn-swiper over-hidden"
-						data-dsn-title="our Portfolio" data-dsn-option='{"slidesPerView":1.5,"spaceBetween":50}'>
+						data-dsn-title="{{_('our Portfolio')}}" data-dsn-option='{"slidesPerView":1.5,"spaceBetween":50}'>
 						<div class="container mb-70 d-flex text-center flex-column align-items-center">
 
 							<p class="sub-heading line-shap line-shap-before mb-15">
@@ -745,7 +745,7 @@
 
 					{% if page.page_name == 'feedback' %}
 					<!-- ========== testimonial Section ========== -->
-					<section class="testimonials testimonials-half section-margin" data-dsn-title="testimonials">
+					<section class="testimonials testimonials-half section-margin" data-dsn-title="{{_('testimonials')}}">
 						<div class="container">
 							<div class="testimonials-box box-padding p-relative w-100 background-section">
 								<div class="row">
@@ -914,7 +914,7 @@
 					{% if page.page_name == 'posts' %}
 					<!-- ========== blog Section ========== -->
 					<section class="our-blog section-margin p-relative dsn-swiper" data-dsn-animate="section"
-						data-dsn-option='{"slidesPerView":1.5  }' data-dsn-title="{{page.label}}">
+						data-dsn-option='{"slidesPerView":1.5  }' data-dsn-title="{{_('Our blog')}}">
 						<div class="container mb-70 d-flex text-center flex-column align-items-center">
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
@@ -1001,7 +1001,7 @@
 					{% endif %}
 
 					{% if page.page_name == 'resume' %}
-					<section class="resume section-padding background-section" data-dsn-title="Resume">
+					<section class="resume section-padding background-section" data-dsn-title="{{_('Resume')}}">
 						<div class="container section-title mb-70 p-relative dsn-z-index-2">
 							<p class="sub-heading  line-bg-left mb-15">
 								{{page.label or 'resume.label'}}
@@ -1037,7 +1037,7 @@
 					
 					{% if page.page_name == 'team' %}
 					<section class="team section-margin p-relative" data-dsn-animate="section"
-						data-dsn-title="our team">
+						data-dsn-title="{{_('our team')}}">
 
 						<div class="container mb-70 d-flex text-center flex-column  align-items-center">
 							<p class="sub-heading line-shap line-shap-before mb-15">
@@ -1087,7 +1087,7 @@
 					
 					{% if page.page_name == 'footer_portfolio' %}
 					<section class="work-section work-no-scale not-filter p-relative dsn-swiper over-hidden v-dark-head"
-						data-dsn-title="our Work"
+						data-dsn-title="{{_('our Work')}}"
 						data-dsn-option='{"slidesPerView":3,"autoplay":true,"centeredSlides":false}'>
 						<div class="swiper-container" data-swiper-autoplay="5000">
 							<div class="swiper-wrapper">
@@ -1115,7 +1115,7 @@
 	
 					{% if page.page_name == 'our_clients' %}
 					<section class="brand-client section-margin" data-dsn-animate="section"
-						data-dsn-title="our clients">
+						data-dsn-title="{{_('our clients')}}">
 
 						<div class="container mb-70 d-flex text-center flex-column  align-items-center">
 							<p class="sub-heading line-shap line-shap-before mb-15">
@@ -1148,7 +1148,7 @@
 
 					{% if page.page_name == 'contact' %}
 					<section class="next-page p-relative border-top background-section" data-dsn-animate="section" style="padding: 1rem 1rem"
-					data-dsn-title="contact us">
+					data-dsn-title="{{_('contact us')}}">
 						<div class="background-section">
 							<div class="contact-container h-100 w-100  border-right">
 								<div class="box-contact-inner">
