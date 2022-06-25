@@ -1146,21 +1146,142 @@
 					</section>
 					{% endif %}
 
-					{% if page.page_name == 'footer' %}
-					<section class="next-page p-relative section-padding border-top background-section">
-						<div class="bg-circle-dotted"></div>
-						<div class="bg-circle-dotted bg-circle-dotted-right"></div>
-						<div class="container">
-							<div class="c-wapp d-flex justify-content-between">
-								<div class="d-flex flex-column">
-									<p class="sub-heading line-shap line-shap-after ">
-										<span class="line-bg-left">
-											{{page.label or 'footer.label'}}
-										</span>
-									</p>
-									<h2 class="section-title max-w750 mt-15">
-										{{page.title or 'footer.title'}}
-									</h2>
+					{% if page.page_name == 'contact' %}
+					<section class="next-page p-relative border-top background-section" data-dsn-animate="section" style="padding: 1rem 1rem"
+					data-dsn-title="contact us">
+						<div class="background-section">
+							<div class="contact-container h-100 w-100  border-right">
+								<div class="box-contact-inner">
+									<div class="row align-items-center">
+										<div class="col-lg-7">
+											<div class="form-box">
+												<div class="line line-top"></div>
+												<div class="line line-bottom"></div>
+												<div class="line line-left"></div>
+												<div class="line line-right"></div>
+				
+												<div class="mb-30 d-flex text-left flex-column align-items-start">
+													<p class="sub-heading line-shap line-shap-before mb-15">
+														<span class="line-bg-right">{{ page.label or 'contact.label' }}</span>
+													</p>
+													<h2 class="section-title  title-cap">
+														{{ page.title or 'contact.title' }}
+													</h2>
+												</div>
+												<!-- action="mailto:{{page.contacts[0].mail}}?Subject=Summat%20or%20Other&body=I%20Have%20been%20for%20a%20massive%20poo" -->
+												<form id="contact-form" class="form" method="post" 
+													data-toggle="validator">
+													<div class="messages"></div>
+													<div class="input__wrap controls">
+														<div class="form-group">
+															<div class="entry-box">
+																<label>{{_('Your name')}} *</label>
+																<input id="form_name" type="text" name="name"
+																	placeholder="{{_('Type your name')}}" required="required"
+																	data-error="name is required." />
+															</div>
+															<div class="help-block with-errors"></div>
+														</div>
+				
+														<div class="form-group">
+															<div class="entry-box">
+																<label>{{_('Your E-Mail')}} *</label>
+																<input id="form_email" type="email" name="email"
+																	placeholder="{{_('Type your Email Address')}}" required="required"
+																	data-error="{{_('Valid email is required')}}" />
+															</div>
+															<div class="help-block with-errors"></div>
+														</div>
+				
+														<div class="form-group">
+															<div class="entry-box">
+																<label>{{_('Message')}}</label>
+																<textarea id="form_message" class="form-control" name="message"
+																	placeholder="{{_('Tell us about you')}}" required="required"
+																	data-error="{{_('Please,leave us a message')}}"></textarea>
+															</div>
+															<div class="help-block with-errors"></div>
+														</div>
+				
+														<div class="text-right">
+															<div class="image-zoom w-auto d-inline-block" data-dsn="parallax" >
+																<input type="submit" value="{{_('Send Message')}}" style="cursor: pointer"
+																	class="dsn-button background-main border-radius">
+															</div>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+				
+										<div class="col-lg-5">
+											<div class="box-info-contact">
+												<ul>
+													<li>
+														<h5 class="title-block mb-15">{{page.note}}</h5>
+														{% if page.contacts[0].phone_number %}
+															<a href="tel:{{page.contacts[0].phone_number}}" class="text-p">{{ page.contacts[0].phone_number }}</a>
+														{% endif %}
+														{% if page.contacts[0].work_phone_number %}
+															<a href="tel:{{page.contacts[0].work_phone_number}}" class="text-p">{{ page.contacts[0].work_phone_number }}</a>
+														{% endif %}
+														{% if page.contacts[0].home_phone_number %}
+															<a href="tel:{{page.contacts[0].home_phone_number}}" class="text-p">{{ page.contacts[0].home_phone_number }}</a>
+														{% endif %}
+														{% if page.contacts[0].phone_number_1 %}
+															<a href="tel:{{page.contacts[0].phone_number_1}}" class="text-p">{{ page.contacts[0].phone_number_1 }}</a>
+														{% endif %}
+														{% if page.contacts[0].phone_number_2 %}
+															<a href="tel:{{page.contacts[0].phone_number_2}}" class="text-p">{{ page.contacts[0].phone_number_2 }}</a>
+														{% endif %}
+														{% if page.contacts[0].phone_number_3 %}
+															<a href="tel:{{page.contacts[0].phone_number_3}}" class="text-p">{{ page.contacts[0].phone_number_3 }}</a>
+														{% endif %}
+														<div class="over-hidden mt-5">
+															<a class="link-hover" data-hover-text="{{page.contacts[0].mail or 'contact.contacts[0].mail'}}"
+																href="mailto:{{page.contacts[0].mail}}">{{page.contacts[0].mail or 'contact.contacts[0].mail'}}</a>
+														</div>
+				
+													</li>
+													<li>
+														{% if page.contacts[0].address %}
+															<p class="text-p">{{page.contacts[0].address}}</p>
+														{% endif %}
+														{% if page.contacts[0].address_1 %}
+															<p class="text-p">{{page.contacts[0].address_1}}</p>
+														{% endif %}
+														{% if page.contacts[0].address_2 %}
+															<p class="text-p">{{page.contacts[0].address_2}}</p>
+														{% endif %}
+														{% if page.contacts[0].address_3 %}
+															<p class="text-p">{{page.contacts[0].address_3}}</p>
+														{% endif %}
+													</li>
+													<li>
+														{% if page.contacts[0].social_1 %}
+														<div class="social-item over-hidden">
+															<a class="link-hover" data-hover-text="{{page.contacts[0].social_1_name or 'social1_name'}}" href="{{page.contacts[0].social_1 or 'social1'}}" target="_blank"
+																rel="nofollow">{{page.contacts[0].social_1_name or 'social1_name'}}</a>
+														</div>
+														{% endif %}
+														{% if page.contacts[0].social_2 %}
+														<div class="social-item over-hidden">
+															<a class="link-hover" data-hover-text="{{page.contacts[0].social_2_name or 'social2_name'}}" href="{{page.contacts[0].social_2 or 'social2'}}" target="_blank"
+																rel="nofollow">{{page.contacts[0].social_2_name or 'social2_name'}}</a>
+														</div>
+														{% endif %}
+														{% if page.contacts[0].social_3 %}
+														<div class="social-item over-hidden">
+															<a class="link-hover" data-hover-text="{{page.contacts[0].social_3_name or 'social3_name'}}" href="{{page.contacts[0].social_3 or 'social3'}}" target="_blank"
+																rel="nofollow">{{page.contacts[0].social_3_name or 'social3_name'}}</a>
+														</div>
+														{% endif %}
+				
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1174,9 +1295,9 @@
 				<footer class="footer p-relative background-section">
 					<div class="container">
 						<div class="footer-container">
-							<div class="d-flex align-items-center h-100">
+							<div class="d-flex align-items-center h-100" style="place-content: center">
 
-								<div class="column-right">
+								<div class="column-right" style="text-align: center">
 									<h5>2022 © Made with <span class="love">♥</span>by
 										<a class="link-hover" data-hover-text="Sap Hasap." target="_blank"
 											rel="nofollow"
@@ -1191,149 +1312,7 @@
 		</div>
 
 			
-		{% for page in data %}
-		{% if page.page_name == 'contact' %}
-		<div class="contact-btn">
-			<div class="contact-btn-txt">{{page.note}}</div>
-		</div>
-		<div class="contact-modal background-section">
-			<div class="contact-container h-100 w-100  border-right">
-				<div class="box-contact-inner section-padding ">
-					<div class="row align-items-center">
-						<div class="col-lg-7">
-							<div class="form-box">
-								<div class="line line-top"></div>
-								<div class="line line-bottom"></div>
-								<div class="line line-left"></div>
-								<div class="line line-right"></div>
 
-								<div class="mb-30 d-flex text-left flex-column align-items-start">
-									<p class="sub-heading line-shap line-shap-before mb-15">
-										<span class="line-bg-right">{{ page.label or 'contact.label' }}</span>
-									</p>
-									<h2 class="section-title  title-cap">
-										{{ page.title or 'contact.title' }}
-									</h2>
-								</div>
-								<!-- action="mailto:{{page.contacts[0].mail}}?Subject=Summat%20or%20Other&body=I%20Have%20been%20for%20a%20massive%20poo" -->
-								<form id="contact-form" class="form" method="post" 
-									data-toggle="validator">
-									<div class="messages"></div>
-									<div class="input__wrap controls">
-										<div class="form-group">
-											<div class="entry-box">
-												<label>{{_('Your name')}} *</label>
-												<input id="form_name" type="text" name="name"
-													placeholder="{{_('Type your name')}}" required="required"
-													data-error="name is required." />
-											</div>
-											<div class="help-block with-errors"></div>
-										</div>
-
-										<div class="form-group">
-											<div class="entry-box">
-												<label>{{_('Your E-Mail')}} *</label>
-												<input id="form_email" type="email" name="email"
-													placeholder="{{_('Type your Email Address')}}" required="required"
-													data-error="{{_('Valid email is required')}}" />
-											</div>
-											<div class="help-block with-errors"></div>
-										</div>
-
-										<div class="form-group">
-											<div class="entry-box">
-												<label>{{_('Message')}}</label>
-												<textarea id="form_message" class="form-control" name="message"
-													placeholder="{{_('Tell us about you')}}" required="required"
-													data-error="{{_('Please,leave us a message')}}"></textarea>
-											</div>
-											<div class="help-block with-errors"></div>
-										</div>
-
-										<div class="text-right">
-											<div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
-												<input type="submit" value="{{_('Send Message')}}"
-													class="dsn-button background-main border-radius">
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-
-						<div class="col-lg-5">
-							<div class="box-info-contact">
-								<ul>
-									<li>
-										<h5 class="title-block mb-15">{{page.note}}</h5>
-										{% if page.contacts[0].phone_number %}
-											<a href="tel:{{page.contacts[0].phone_number}}" class="text-p">{{ page.contacts[0].phone_number }}</a>
-										{% endif %}
-										{% if page.contacts[0].work_phone_number %}
-											<a href="tel:{{page.contacts[0].work_phone_number}}" class="text-p">{{ page.contacts[0].work_phone_number }}</a>
-										{% endif %}
-										{% if page.contacts[0].home_phone_number %}
-											<a href="tel:{{page.contacts[0].home_phone_number}}" class="text-p">{{ page.contacts[0].home_phone_number }}</a>
-										{% endif %}
-										{% if page.contacts[0].phone_number_1 %}
-											<a href="tel:{{page.contacts[0].phone_number_1}}" class="text-p">{{ page.contacts[0].phone_number_1 }}</a>
-										{% endif %}
-										{% if page.contacts[0].phone_number_2 %}
-											<a href="tel:{{page.contacts[0].phone_number_2}}" class="text-p">{{ page.contacts[0].phone_number_2 }}</a>
-										{% endif %}
-										{% if page.contacts[0].phone_number_3 %}
-											<a href="tel:{{page.contacts[0].phone_number_3}}" class="text-p">{{ page.contacts[0].phone_number_3 }}</a>
-										{% endif %}
-										<div class="over-hidden mt-5">
-											<a class="link-hover" data-hover-text="{{page.contacts[0].mail or 'contact.contacts[0].mail'}}"
-												href="mailto:{{page.contacts[0].mail}}">{{page.contacts[0].mail or 'contact.contacts[0].mail'}}</a>
-										</div>
-
-									</li>
-									<li>
-										{% if page.contacts[0].address %}
-											<p class="text-p">{{page.contacts[0].address}}</p>
-										{% endif %}
-										{% if page.contacts[0].address_1 %}
-											<p class="text-p">{{page.contacts[0].address_1}}</p>
-										{% endif %}
-										{% if page.contacts[0].address_2 %}
-											<p class="text-p">{{page.contacts[0].address_2}}</p>
-										{% endif %}
-										{% if page.contacts[0].address_3 %}
-											<p class="text-p">{{page.contacts[0].address_3}}</p>
-										{% endif %}
-									</li>
-									<li>
-										{% if page.contacts[0].social_1 %}
-										<div class="social-item over-hidden">
-											<a class="link-hover" data-hover-text="{{page.contacts[0].social_1_name or 'social1_name'}}" href="{{page.contacts[0].social_1 or 'social1'}}" target="_blank"
-												rel="nofollow">{{page.contacts[0].social_1_name or 'social1_name'}}</a>
-										</div>
-										{% endif %}
-										{% if page.contacts[0].social_2 %}
-										<div class="social-item over-hidden">
-											<a class="link-hover" data-hover-text="{{page.contacts[0].social_2_name or 'social2_name'}}" href="{{page.contacts[0].social_2 or 'social2'}}" target="_blank"
-												rel="nofollow">{{page.contacts[0].social_2_name or 'social2_name'}}</a>
-										</div>
-										{% endif %}
-										{% if page.contacts[0].social_3 %}
-										<div class="social-item over-hidden">
-											<a class="link-hover" data-hover-text="{{page.contacts[0].social_3_name or 'social3_name'}}" href="{{page.contacts[0].social_3 or 'social3'}}" target="_blank"
-												rel="nofollow">{{page.contacts[0].social_3_name or 'social3_name'}}</a>
-										</div>
-										{% endif %}
-
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		{% endif %}
-		{% endfor %}
 	</main>
 
 
