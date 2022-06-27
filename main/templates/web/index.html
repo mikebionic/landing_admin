@@ -1168,15 +1168,14 @@
 														{{ page.title or 'contact.title' }}
 													</h2>
 												</div>
-												<!-- action="mailto:{{page.contacts[0].mail}}?Subject=Summat%20or%20Other&body=I%20Have%20been%20for%20a%20massive%20poo" -->
-												<form id="contact-form" class="form" method="post" 
+												<form id="contact-form" class="form" method="post" enctype="multipart/form-data" action="mailto:{{page.contacts[0].mail}}?&subject=Contact us"
 													data-toggle="validator">
 													<div class="messages"></div>
 													<div class="input__wrap controls">
 														<div class="form-group">
 															<div class="entry-box">
 																<label>{{_('Your name')}} *</label>
-																<input id="form_name" type="text" name="name"
+																<input id="form_name" type="text"
 																	placeholder="{{_('Type your name')}}" required="required"
 																	data-error="name is required." />
 															</div>
@@ -1186,7 +1185,7 @@
 														<div class="form-group">
 															<div class="entry-box">
 																<label>{{_('Your E-Mail')}} *</label>
-																<input id="form_email" type="email" name="email"
+																<input id="form_email" type="email"
 																	placeholder="{{_('Type your Email Address')}}" required="required"
 																	data-error="{{_('Valid email is required')}}" />
 															</div>
@@ -1196,7 +1195,7 @@
 														<div class="form-group">
 															<div class="entry-box">
 																<label>{{_('Message')}}</label>
-																<textarea id="form_message" class="form-control" name="message"
+																<textarea id="form_message" class="form-control" type="text" name="message"
 																	placeholder="{{_('Tell us about you')}}" required="required"
 																	data-error="{{_('Please,leave us a message')}}"></textarea>
 															</div>
