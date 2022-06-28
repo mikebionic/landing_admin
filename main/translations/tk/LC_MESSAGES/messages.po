@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-06-25 17:06+0500\n"
+"POT-Creation-Date: 2022-06-28 17:07+0500\n"
 "PO-Revision-Date: 2022-06-23 18:06+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: tk\n"
@@ -44,25 +44,29 @@ msgstr "Ýüklenýär"
 msgid "Stay connected"
 msgstr "Biz bilen habarlaşyň"
 
-#: templates/web/index.html:89 templates/web/index.html:1178
+#: templates/web/index.html:89 templates/web/index.html:1177
 #: templates/web/index_dict.html:85 templates/web/index_dict.html:1214
 msgid "Your name"
 msgstr "Adyňyz"
 
-#: templates/web/index.html:91 templates/web/index.html:1180
+#: templates/web/index.html:91 templates/web/index.html:1179
 #: templates/web/index_dict.html:87 templates/web/index_dict.html:1216
 msgid "Type your name"
 msgstr "Adyňyz giriziň"
 
-#: templates/web/index.html:99 templates/web/index.html:1188
+#: templates/web/index.html:99 templates/web/index.html:1187
 #: templates/web/index_dict.html:95 templates/web/index_dict.html:1224
 msgid "Your E-Mail"
 msgstr "E-mail adresyňyz"
 
-#: templates/web/index.html:101 templates/web/index.html:1190
+#: templates/web/index.html:101 templates/web/index.html:1189
 #: templates/web/index_dict.html:97 templates/web/index_dict.html:1226
 msgid "Type your Email Address"
 msgstr "E-mail adresyňyzy giriziň"
+
+#: templates/web/index.html:133
+msgid "Slider"
+msgstr "Slider"
 
 #: templates/web/index.html:213
 msgid "Media"
@@ -109,23 +113,23 @@ msgstr "Biziň müşderilerimiz"
 msgid "Contact us"
 msgstr "Biziň bilen habarlaşyň"
 
-#: templates/web/index.html:1191 templates/web/index_dict.html:1227
+#: templates/web/index.html:1190 templates/web/index_dict.html:1227
 msgid "Valid email is required"
 msgstr "Dogry E-mail adresy giriziň"
 
-#: templates/web/index.html:1198 templates/web/index_dict.html:1234
+#: templates/web/index.html:1197 templates/web/index_dict.html:1234
 msgid "Message"
 msgstr "Habar"
 
-#: templates/web/index.html:1200 templates/web/index_dict.html:1236
+#: templates/web/index.html:1199 templates/web/index_dict.html:1236
 msgid "Tell us about you"
 msgstr "Özüňiz barada aýdyň"
 
-#: templates/web/index.html:1201 templates/web/index_dict.html:1237
+#: templates/web/index.html:1200 templates/web/index_dict.html:1237
 msgid "Please,leave us a message"
 msgstr "Bize habar iberiň"
 
-#: templates/web/index.html:1208 templates/web/index_dict.html:1244
+#: templates/web/index.html:1207 templates/web/index_dict.html:1244
 msgid "Send Message"
 msgstr "Iber"
 

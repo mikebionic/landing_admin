@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-06-25 17:06+0500\n"
+"POT-Creation-Date: 2022-06-28 17:07+0500\n"
 "PO-Revision-Date: 2022-06-23 18:06+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -45,25 +45,29 @@ msgstr "Загрузка"
 msgid "Stay connected"
 msgstr "Оставайтесь на связи"
 
-#: templates/web/index.html:89 templates/web/index.html:1178
+#: templates/web/index.html:89 templates/web/index.html:1177
 #: templates/web/index_dict.html:85 templates/web/index_dict.html:1214
 msgid "Your name"
 msgstr "Ваше имя"
 
-#: templates/web/index.html:91 templates/web/index.html:1180
+#: templates/web/index.html:91 templates/web/index.html:1179
 #: templates/web/index_dict.html:87 templates/web/index_dict.html:1216
 msgid "Type your name"
 msgstr "Введите ваше имя"
 
-#: templates/web/index.html:99 templates/web/index.html:1188
+#: templates/web/index.html:99 templates/web/index.html:1187
 #: templates/web/index_dict.html:95 templates/web/index_dict.html:1224
 msgid "Your E-Mail"
 msgstr "Ваш адрес эл.почты"
 
-#: templates/web/index.html:101 templates/web/index.html:1190
+#: templates/web/index.html:101 templates/web/index.html:1189
 #: templates/web/index_dict.html:97 templates/web/index_dict.html:1226
 msgid "Type your Email Address"
 msgstr "Введите адрес эл.почты"
+
+#: templates/web/index.html:133
+msgid "Slider"
+msgstr "Слайдер"
 
 #: templates/web/index.html:213
 msgid "Media"
@@ -110,23 +114,23 @@ msgstr "Наши клиенты"
 msgid "Contact us"
 msgstr "Свяжитесь с нами"
 
-#: templates/web/index.html:1191 templates/web/index_dict.html:1227
+#: templates/web/index.html:1190 templates/web/index_dict.html:1227
 msgid "Valid email is required"
 msgstr "Введите верный адрес эл.почты"
 
-#: templates/web/index.html:1198 templates/web/index_dict.html:1234
+#: templates/web/index.html:1197 templates/web/index_dict.html:1234
 msgid "Message"
 msgstr "Сообщение"
 
-#: templates/web/index.html:1200 templates/web/index_dict.html:1236
+#: templates/web/index.html:1199 templates/web/index_dict.html:1236
 msgid "Tell us about you"
 msgstr "Расскажите о себе"
 
-#: templates/web/index.html:1201 templates/web/index_dict.html:1237
+#: templates/web/index.html:1200 templates/web/index_dict.html:1237
 msgid "Please,leave us a message"
 msgstr "Оставьте нам сообщение"
 
-#: templates/web/index.html:1208 templates/web/index_dict.html:1244
+#: templates/web/index.html:1207 templates/web/index_dict.html:1244
 msgid "Send Message"
 msgstr "Отправить сообщение"
 
