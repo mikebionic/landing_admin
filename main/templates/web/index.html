@@ -130,7 +130,7 @@
 
 					{% if page.page_name == 'home_page' %}
 					<!-- ========== Slider Parallax ========== -->
-					<header class="main-slider  has-horizontal p-relative w-100 h-100-v dsn-header-animation">
+					<header class="main-slider  has-horizontal p-relative w-100 h-100-v dsn-header-animation" data-dsn-title="{{_('Slider')}}" data-dsn-animate-multi data-dsn-animate="section">
 						<div class="content-slider p-relative w-100 h-100 over-hidden v-dark-head">
 							<div class="bg-container  dsn-hero-parallax-img p-relative w-100 h-100">
 								<div class="slide-inner h-100">
@@ -211,7 +211,7 @@
 
 					{% if page.page_name == 'media' %}
 					<section class="about-section p-relative section-margin" data-dsn-title="{{_('Media')}}" data-dsn-animate-multi data-dsn-animate="section">
-						<video width="90%" height="80%" autoplay muted controls style="margin: 0 auto; display: flex">
+						<video width="90%" height="80%" muted controls style="margin: 0 auto; display: flex">
 							<source src="../../static/web/assets/media/ugurly.webm" type="video/webm">
 						</video>
 					</section>

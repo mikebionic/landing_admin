@@ -139,6 +139,15 @@ def add_data_from_form(request, data_type=None):
 				file_location = os.path.join(os.path.abspath(''), 'main/static/', file_db_url)
 				file.save(file_location)
 				request_data["file_path"] = os.path.join('/static',file_db_url)
+	
+	if data_type == "media":
+		if "media" in request.files:
+			file = request.files["media"]
+			if len(file.filename) > 2:
+				file_db_url = os.path.join(Config.UPLOAD_FOLDER, file.filename)
+				file_location = os.path.join(os.path.abspath(''), 'main/static/', file_db_url)
+				file.save(file_location)
+				request_data["file_path"] = os.path.join('/static',file_db_url)
 
 	if data_type == "users":
 		if "name" in request.form:

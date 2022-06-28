@@ -1063,5 +1063,12 @@
 			"name_ru": "Muhammetnur Ataniyazow",
 			"label_ru": "Marketing manager"
 		}
+	],
+	"media": [
+		{
+			"id": 1,
+			"page_id": 16,
+			"file_path": "/static/web/assets/media/ugurly.webm"
+		}
 	]
 }

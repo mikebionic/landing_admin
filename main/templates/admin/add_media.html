@@ -1,0 +1,441 @@
+{% extends "admin/layout.html" %} {% block styles %} {% endblock %} {% block
+content %}
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="page-title-box">
+			<div class="row">
+				<div class="col-xl-6">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title">Title here</h4>
+							<p class="text-muted mb-0">Name will be here</p>
+						</div>
+						<div class="card-body">
+							<form
+								method="POST"
+								action=""
+								enctype="multipart/form-data"
+								class="form-horizontal well"
+							>
+								<div class="form-group row mb-0" style="place-content: end">
+									<input
+										type="submit"
+										value="Save"
+										class="btn btn-primary"
+										style="width: 5rem; margin-right: 2rem"
+									/>
+								</div>
+								<fieldset>
+									<div class="repeater-custom-show-hide">
+										<div class="d-flex">
+											<div class="card-body" data-repeater-list="car">
+												<div data-repeater-item="">
+													<div
+														style="
+															display: flex;
+															place-items: center;
+															gap: 0.5rem;
+														"
+													>
+														<label class="form-label">Order:</label>
+														<input
+															type="text"
+															name="order"
+															placeholder="order"
+															class="form-control"
+														/>
+													</div>
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Name</label>
+															<input
+																type="text"
+																name="name_tk"
+																placeholder="Name_tk"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="name_ru"
+																placeholder="Name_ru"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="name_en"
+																placeholder="Name_en"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Title</label>
+															<input
+																type="text"
+																name="title_tk"
+																placeholder="Title_tk"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="title_ru"
+																placeholder="Title_ru"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="title_en"
+																placeholder="Title_en"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Label</label>
+															<input
+																type="text"
+																name="label_tk"
+																placeholder="Label_tk"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="label_ru"
+																placeholder="Label_ru"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="label_en"
+																placeholder="Label_en"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">Note</label>
+															<input
+																type="text"
+																name="note_tk"
+																placeholder="Note_tk"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="note_ru"
+																placeholder="Note_ru"
+																class="form-control"
+															/>
+															<input
+																type="text"
+																name="note_en"
+																placeholder="Note_en"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div>
+															<label class="form-label">link</label>
+															<input
+																type="text"
+																name="link"
+																placeholder="Link"
+																class="form-control"
+															/>
+														</div>
+													</div>
+												</div>
+
+												<div class="">
+													<div data-repeater-item="">
+														<div class="form-group row d-flex align-items-end">
+															<div class="col">
+																<label class="form-label">Description</label>
+																<textarea
+																	type="text"
+																	name="desc_tk"
+																	class="form-control"
+																	placeholder="Description_tk"
+																>
+																</textarea>
+																<textarea
+																	type="text"
+																	name="desc_ru"
+																	class="form-control"
+																	placeholder="Description_ru"
+																>
+																</textarea>
+																<textarea
+																	type="text"
+																	name="desc_en"
+																	class="form-control"
+																	placeholder="Description_en"
+																>
+																</textarea>
+															</div>
+														</div>
+													</div>
+
+													<div data-repeater-item="">
+														<div class="form-group row d-flex align-items-end">
+															<div class="col">
+																<label class="form-label">HTML</label>
+																<textarea
+																	type="text"
+																	name="html_tk"
+																	class="form-control"
+																	placeholder="HTML_tk"
+																>
+																</textarea>
+																<textarea
+																	type="text"
+																	name="html_ru"
+																	class="form-control"
+																	placeholder="HTML_ru"
+																>
+																</textarea>
+																<textarea
+																	type="text"
+																	name="html_en"
+																	class="form-control"
+																	placeholder="HTML_en"
+																>
+																</textarea>
+															</div>
+														</div>
+													</div>
+
+													<div data-repeater-item="">
+														<div class="form-group row d-flex align-items-end">
+															<div class="col">
+																<label class="form-label">HTML output</label>
+																<div
+																	class="toHtml"
+																	style="
+																		border: 1px solid #a0a0a0;
+																		padding: 0.5rem;
+																		border-radius: 1rem;
+																	"
+																></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="card-body">
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div style="display: grid; gap: 0.25rem">
+															<label class="form-label">Image config</label>
+															<div
+																class="row"
+																style="gap: 0.25rem; margin-bottom: 1rem"
+															>
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">page_id:</label>
+																	<select name="page_id" class="form-control">
+																		<option value="0">Not selected</option>
+																		{% for page in pages %}
+																		<option value="{{page.id}}">
+																			{{page.page_name if page.page_name else
+																			page.title}}
+																		</option>
+																		{% endfor %}
+																	</select>
+																</div>
+															</div>
+															<div
+																class="row"
+																style="gap: 0.25rem; margin-bottom: 1rem"
+															>
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">category_id:</label>
+																	<select
+																		name="category_id"
+																		class="form-control"
+																	>
+																		<option value="0">Not selected</option>
+																		{% for category in categories %}
+																		<option value="{{category.id}}">
+																			{{category.category_name if
+																			category.category_name else category.title
+																			}}
+																		</option>
+																		{% endfor %}
+																	</select>
+																</div>
+															</div>
+
+															<div
+																class="row"
+																style="gap: 0.25rem; margin-bottom: 1rem"
+															>
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label"
+																		>collection_id:</label
+																	>
+																	<select
+																		name="collection_id"
+																		class="form-control"
+																	>
+																		<option value="0">Not selected</option>
+																		{% for collection in collections %}
+																		<option value="{{collection.id}}">
+																			{{collection.name if collection.name else
+																			collection.title}}
+																		</option>
+																		{% endfor %}
+																	</select>
+																</div>
+															</div>
+															<div
+																class="row"
+																style="gap: 0.25rem; margin-bottom: 1rem"
+															>
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">contact_id:</label>
+																	<select
+																		name="contact_id"
+																		class="form-control"
+																	>
+																		<option value="0">Not selected</option>
+																		{% for contact in contacts %}
+																		<option value="{{contact.id}}">
+																			{{contact.name if contact.name else
+																			contact.phone_number}}
+																		</option>
+																		{% endfor %}
+																	</select>
+																</div>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">file_path:</label>
+																<input
+																	type="text"
+																	name="file_path"
+																	placeholder="file_path"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">file_path_m:</label>
+																<input
+																	type="text"
+																	name="file_path_m"
+																	placeholder="file_path_m"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">file_path_s:</label>
+																<input
+																	type="text"
+																	name="file_path_s"
+																	placeholder="file_path_s"
+																	class="form-control"
+																/>
+															</div>
+
+															<div style="padding: 1rem">
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">Image:</label>
+																	<input
+																		name="image"
+																		class="form-control"
+																		type="file"
+																	/>
+																</div>
+																<img style="max-width: 25rem" loading="lazy" />
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group row mb-0">
+											<input
+												type="submit"
+												value="Save"
+												class="btn btn-primary"
+											/>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+							`
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

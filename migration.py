@@ -8,6 +8,7 @@ from main.models import (
 	Collection,
 	Image,
 	Contact,
+	Media
 )
 
 f = open('docs/app.migration.json')
@@ -30,6 +31,8 @@ for item in migration_data["page"]:
 	this_model = Page(**item)
 	db.session.add(this_model)
 
+db.session.commit()
+
 for item in migration_data["category"]:
 	item['guid'] = uuid.uuid4()
 	this_model = Category(**item)
@@ -45,9 +48,16 @@ for item in migration_data["image"]:
 	this_model = Image(**item)
 	db.session.add(this_model)
 
+
 for item in migration_data["contact"]:
 	item['guid'] = uuid.uuid4()
 	this_model = Contact(**item)
+	db.session.add(this_model)
+
+
+for item in migration_data["media"]:
+	item['guid'] = uuid.uuid4()
+	this_model = Media(**item)
 	db.session.add(this_model)
 
 db.session.commit()

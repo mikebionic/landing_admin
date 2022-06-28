@@ -5,7 +5,7 @@ import uuid
 from . import bp
 
 from main import db
-from main.models import Page, Collection, Category, Contact, Image, User
+from main.models import Page, Collection, Category, Contact, Image, User, Media
 from main.admin.utils import add_data_from_form
 
 
@@ -33,6 +33,10 @@ def dashboard(data_type="pages"):
 	elif data_type == "images":
 		data = Image.get_all(Image)
 		return render_template('admin/images_list.html', data=data, data_type=data_type)
+	
+	elif data_type == "media":
+		data = Media.get_all(Media)
+		return render_template('admin/media_list.html', data=data, data_type=data_type)
 
 	else:
 		return redirect(url_for('admin.dashboard'))
@@ -77,6 +81,11 @@ def manage_data(data_type, id):
 		data = model.to_json_api()
 		return render_template('admin/manage_user.html', data=data, data_type=data_type, **all_data)
 
+	if data_type == "media":
+		model = Media.query.get_or_404(id)
+		data = model.to_json_api()
+		return render_template('admin/manage_media.html', data=data, data_type=data_type, **all_data)
+	
 	return render_template('admin/manage_data.html', data=data, data_type=data_type, **all_data)
 
 
@@ -105,6 +114,9 @@ def add_data_get(data_type):
 
 	if data_type == "users":
 		return render_template('admin/add_user.html', data_type=data_type, **all_data)
+	
+	if data_type == "media":
+		return render_template('admin/add_media.html', data_type=data_type, **all_data)
 
 	return render_template('admin/add_data.html', data_type=data_type, **all_data)
 
@@ -146,6 +158,10 @@ def get_db_model_from_data_type_and_id(data_type, id):
 
 	if data_type == "users":
 		db_model = User.query.get_or_404(id)
+
+	if data_type == "media":
+		db_model = Media.query.get_or_404(id)
+
 	return db_model
 
 @bp.route("/<data_type>/add/", methods=["POST"])
@@ -165,6 +181,8 @@ def add_data_post(data_type):
 		DbModel = Image
 	if data_type == "users":
 		DbModel = User
+	if data_type == "media":
+		DbModel = Media
 
 	lastId_model = DbModel.query.with_entities(DbModel.id).order_by(DbModel.id.desc()).first()
 	if lastId_model:
