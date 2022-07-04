@@ -1407,6 +1407,22 @@
 			$(this).html($(this).text());
 		});
 	</script>
+	<script>
+		
+		function activeMenu() {
+			const navigation = document.querySelectorAll(".dsn-link-paginate")
+			const section = document.querySelectorAll("section")
+			console.log(navigation)
+
+			let len = section.length;
+			while(--len && window.scrollY + 97 < section[len].offsetTop){}
+			navigation.forEach(ltx => ltx.classList.remove("action_current_section"));
+			navigation[len].classList.add("action_current_section");
+		}
+		setTimeout(activeMenu, 2000);
+
+		window.addEventListener("scroll", activeMenu);
+	</script>
 
 </body>
 
