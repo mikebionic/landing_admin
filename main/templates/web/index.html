@@ -1437,7 +1437,7 @@
 						if(top >= offset && top < offset + height){
 							RightLinks.forEach(links => {
 								links.classList.remove('action_current_section');
-								links.classList.add('action_current_section')
+								document.querySelector('.dsn-link-paginate').classList.add('action_current_section')
 							})
 						}
 					})
