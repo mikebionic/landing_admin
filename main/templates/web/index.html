@@ -1423,6 +1423,29 @@
 	
 			window.addEventListener("scroll", activeMenu);
 		</script> -->
+		<script>
+			setTimeout(() => {
+				let section = document.querySelectorAll("section");
+				let RightLinks = document.querySelectorAll(".dsn-link-paginate")
+	
+				window.scroll = () => {
+					section.forEach(sec => {
+						let top = window.scrollY;
+						let offset = sec.offsetTop - 150;
+						let height = sec.offsetHeight;
+	
+						if(top >= offset && top < offset + height){
+							RightLinks.forEach(links => {
+								links.classList.remove('action_current_section');
+								links.classList.add('action_current_section')
+							})
+						}
+					})
+				}
+				console.log(section, RightLinks)
+			}, 3000);
+			
+		</script>
 
 </body>
 
