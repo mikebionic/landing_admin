@@ -1,10 +1,11 @@
 from flask import render_template, request, redirect, url_for
 from flask_login import login_required
+import uuid
 
 from . import bp
 
 from main import db
-from main.models import Page, Collection, Category, Contact, Image, User
+from main.models import Page, Collection, Category, Contact, Image, User, Media
 from main.admin.utils import add_data_from_form
 
 
@@ -32,6 +33,10 @@ def dashboard(data_type="pages"):
 	elif data_type == "images":
 		data = Image.get_all(Image)
 		return render_template('admin/images_list.html', data=data, data_type=data_type)
+	
+	elif data_type == "media":
+		data = Media.get_all(Media)
+		return render_template('admin/media_list.html', data=data, data_type=data_type)
 
 	else:
 		return redirect(url_for('admin.dashboard'))
@@ -42,39 +47,100 @@ def dashboard(data_type="pages"):
 @bp.route("/<data_type>/<id>/manage/")
 @login_required
 def manage_data(data_type, id):
+	all_data = {
+		"pages": Page.query.all(),
+		"collections": [collection.to_json_api() for collection in Collection.query.all()],
+		"categories": [category.to_json_api() for category in Category.query.all()],
+		"contacts": [contact.to_json_api() for contact in Contact.query.all()],
+	}
 	if data_type == 'pages':
 		data = Page.get_related_data(id)
 
 	if data_type == "collections":
-		data = Collection.query.get_or_404(id)
-		data = data.to_json_api()
+		model = Collection.query.get_or_404(id)
+		data = model.to_json_api()
+		data["images"] = [image.to_json_api() for image in model.Image]
 
 	if data_type == "categories":
-		data = Category.query.get_or_404(id)
-		data = data.to_json_api()
+		model = Category.query.get_or_404(id)
+		data = model.to_json_api()
+		data["images"] = [image.to_json_api() for image in model.Image]
+		data["collections"] = [collection.to_json_api() for collection in model.Collection]
 
 	if data_type == "contacts":
-		data = Contact.query.get_or_404(id)
-		data = data.to_json_api()
+		model = Contact.query.get_or_404(id)
+		data = model.to_json_api()
 
 	if data_type == "images":
-		data = Image.query.get_or_404(id)
-		data = data.to_json_api()
-		return render_template('admin/manage_image.html', data=data, data_type=data_type)
+		model = Image.query.get_or_404(id)
+		data = model.to_json_api()
+		return render_template('admin/manage_image.html', data=data, data_type=data_type, **all_data)
 
 	if data_type == "users":
-		data = User.query.get_or_404(id)
-		data = data.to_json_api()
-		return render_template('admin/manage_user.html', data=data, data_type=data_type)
+		model = User.query.get_or_404(id)
+		data = model.to_json_api()
+		return render_template('admin/manage_user.html', data=data, data_type=data_type, **all_data)
 
-	return render_template('admin/manage_data.html', data=data, data_type=data_type)
+	if data_type == "media":
+		model = Media.query.get_or_404(id)
+		data = model.to_json_api()
+		return render_template('admin/manage_media.html', data=data, data_type=data_type, **all_data)
+	
+	return render_template('admin/manage_data.html', data=data, data_type=data_type, **all_data)
 
 
 @bp.route("/<data_type>/<id>/manage/", methods=["POST"])
 @login_required
 def manage_data_post(data_type, id):
 	request_data = add_data_from_form(request, data_type)
+	db_model = get_db_model_from_data_type_and_id(data_type, id)
+	db_model.update(**request_data)
+	db.session.commit()
+	return redirect(url_for('admin.manage_data', data_type=data_type, id=id))
 
+
+@bp.route("/<data_type>/add/")
+@login_required
+def add_data_get(data_type):
+	all_data = {
+		"pages": Page.query.all(),
+		"collections": [collection.to_json_api() for collection in Collection.query.all()],
+		"categories": [category.to_json_api() for category in Category.query.all()],
+		"contacts": [contact.to_json_api() for contact in Contact.query.all()],
+	}
+
+	if data_type == "images":
+		return render_template('admin/add_image.html', data_type=data_type, **all_data)
+
+	if data_type == "users":
+		return render_template('admin/add_user.html', data_type=data_type, **all_data)
+	
+	if data_type == "media":
+		return render_template('admin/add_media.html', data_type=data_type, **all_data)
+
+	return render_template('admin/add_data.html', data_type=data_type, **all_data)
+
+
+@bp.route("/<data_type>/<id>/delete/")
+@login_required
+def delete_data_get(data_type, id):
+	db_model = get_db_model_from_data_type_and_id(data_type, id)
+	db_model.deleted = 1
+	db.session.commit()
+	return redirect(url_for('admin.dashboard', data_type=data_type))
+
+
+@bp.route("/<data_type>/<id>/restore/")
+@login_required
+def restore_data_get(data_type, id):
+	db_model = get_db_model_from_data_type_and_id(data_type, id)
+	db_model.deleted = 0
+	db.session.commit()
+	return redirect(url_for('admin.dashboard', data_type=data_type))
+
+
+def get_db_model_from_data_type_and_id(data_type, id):
+	db_model = None
 	if data_type == 'pages':
 		db_model = Page.query.get_or_404(id)
 
@@ -93,19 +159,10 @@ def manage_data_post(data_type, id):
 	if data_type == "users":
 		db_model = User.query.get_or_404(id)
 
-	db_model.update(**request_data)
-	db.session.commit()
-	return redirect(url_for('admin.manage_data', data_type=data_type, id=id))
+	if data_type == "media":
+		db_model = Media.query.get_or_404(id)
 
-
-@bp.route("/<data_type>/add/")
-@login_required
-def add_data_get(data_type):
-	if data_type == "images":
-		return render_template('admin/add_image.html', data_type=data_type)
-	if data_type == "users":
-		return render_template('admin/add_user.html', data_type=data_type)
-	return render_template('admin/add_data.html', data_type=data_type)
+	return db_model
 
 @bp.route("/<data_type>/add/", methods=["POST"])
 @login_required
@@ -121,13 +178,16 @@ def add_data_post(data_type):
 	if data_type == "contacts":
 		DbModel = Contact
 	if data_type == "images":
-		db_model = Image
+		DbModel = Image
 	if data_type == "users":
-		db_model = User
+		DbModel = User
+	if data_type == "media":
+		DbModel = Media
 
 	lastId_model = DbModel.query.with_entities(DbModel.id).order_by(DbModel.id.desc()).first()
 	if lastId_model:
 		request_data['id'] = lastId_model.id + 1
+	request_data["guid"] = uuid.uuid4()
 	db_model = DbModel(**request_data)
 	db.session.add(db_model)
 	db.session.commit()

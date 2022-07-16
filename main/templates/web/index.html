@@ -8,7 +8,7 @@
 	<meta name="discrption" content="parallax one page" />
 	<meta name="keyword"
 		content="agency, business, corporate, creative, freelancer, interior, joomla template, K2 Blog, minimal, modern, multipurpose, personal, portfolio, responsive, simple" />
-	<title>{{ data.home_page.note }}</title>
+	<title>{{ page.note if 'home_page' in data else 'Ugurly Ýol' }}</title>
 	<link rel="shortcut icon" href="{{ url_for('static', filename='web/assets/img/ugurly_yol/ugurly_yol_logo.png') }}" type="image/x-icon" />
 	<link rel="icon" href="{{ url_for('static', filename='web/assets/img/ugurly_yol/ugurly_yol_logo.png') }}" type="image/x-icon" />
 	<link rel="preload" href="{{ url_for('static', filename='web/assets/img/circle-dotted.png') }}" as="image" />
@@ -18,21 +18,23 @@
 </head>
 
 
-<body class="v-light dsn-effect-scroll dsn-cursor-effect dsn-ajax">
-
-
+<body class="v-light dsn-effect-scroll  dsn-ajax">
 
 	<!-- ========== Loading Page ========== -->
 	<div class="preloader">
 		<span class="percent ">0</span>
-		<span class="loading-text text-uppercase">Loading ...</span>
+		<span class="loading-text text-uppercase">{{_('Loading')}} ...</span>
 		<div class="preloader-bar">
 			<div class="preloader-progress"></div>
 		</div>
 
 		<h1 class="title v-middle">
-			<span class="text-strok">{{ data.home_page.note }}</span>
-			<span class="text-fill">{{ data.home_page.note }}</span>
+			{% for page in data %}
+			{% if page.page_name == 'home_page' %}
+			<span class="text-strok">{{ page.note }}</span>
+			<span class="text-fill">{{ page.note }}</span>
+			{% endif %}
+			{% endfor %}
 		</h1>
 	</div>
 	<!-- ========== End Loading Page ========== -->
@@ -44,10 +46,10 @@
 			<div class="inner-header p-relative">
 				<div class="main-logo">
 					<a href="" data-dsn="parallax">
-						<img class="light-logo" style="max-height: 40px;"
+						<img class="light-logo" style="max-height: 40px;" loading="lazy"
 							src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 							data-dsn-src="{{ url_for('static', filename='web/assets/img/ugurly_yol/ugurly_yol_logo.png') }}" alt="" />
-						<img class="dark-logo" style="max-height: 40px;"
+						<img class="dark-logo" style="max-height: 40px;" loading="lazy"
 							src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 							data-dsn-src="{{ url_for('static', filename='web/assets/img/ugurly_yol/ugurly_yol_logo.png') }}" alt="" />
 					</a>
@@ -71,22 +73,22 @@
 
 						<div class="mb-30 d-flex text-left flex-column align-items-start">
 								<p class="sub-heading line-shap line-shap-before mb-15">
-										<span class="line-bg-right">Stay connected</span>
+										<span class="line-bg-right">{{_('Stay connected')}}</span>
 								</p>
 								<h2 class="section-title  title-cap">
-										Login
+									{{_('Login')}}
 								</h2>
 						</div>
 
-						<form id="contact-form" class="form" method="post" action="contact.php"
+						<form id="contact-form" class="form"
 								data-toggle="validator">
 								<div class="messages"></div>
 								<div class="input__wrap controls">
 										<div class="form-group">
 												<div class="entry-box">
-														<label>Your name *</label>
+														<label>{{_('Your name')}} *</label>
 														<input id="form_name" type="text" name="name"
-																placeholder="Type your name" required="required"
+																placeholder="{{_('Type your name')}}" required="required"
 																data-error="name is required." />
 												</div>
 												<div class="help-block with-errors"></div>
@@ -94,9 +96,9 @@
 
 										<div class="form-group">
 												<div class="entry-box">
-														<label>Your E-Mail *</label>
+														<label>{{_('Your E-Mail')}} *</label>
 														<input id="form_email" type="email" name="email"
-																placeholder="Type your Email Address" required="required"
+																placeholder="{{_('Type your Email Address')}}" required="required"
 																data-error="Valid email is required." />
 												</div>
 												<div class="help-block with-errors"></div>
@@ -104,7 +106,7 @@
 
 										<div class="text-right">
 												<div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
-														<input type="submit" value="Login"
+														<input type="submit" value="{{_('Login')}}"
 																class="dsn-button background-main border-radius">
 												</div>
 										</div>
@@ -123,34 +125,38 @@
 		<div id="dsn-scrollbar">
 			<div class="main-content">
 				<div class="wrapper">
+
+				{% for page in data %}
+
+					{% if page.page_name == 'home_page' %}
 					<!-- ========== Slider Parallax ========== -->
-					<header class="main-slider  has-horizontal p-relative w-100 h-100-v dsn-header-animation">
+					<header class="main-slider  has-horizontal p-relative w-100 h-100-v dsn-header-animation" data-dsn-title="{{_('Slider')}}" data-dsn-animate-multi data-dsn-animate="section">
 						<div class="content-slider p-relative w-100 h-100 over-hidden v-dark-head">
 							<div class="bg-container  dsn-hero-parallax-img p-relative w-100 h-100">
 								<div class="slide-inner h-100">
 									<div class="swiper-wrapper">
 
 
-									{% if data.home_page.images %}
-									{% for image in data.home_page.images %}
+									{% if page.images %}
+									{% for image in page.images %}
 										<div class="slide-item swiper-slide over-hidden">
 											<div class="image-bg cover-bg w-100 h-100 " data-overlay="2"
 												data-swiper-parallax="50%" data-swiper-parallax-scale="1.1">
-												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
 												data-dsn-src="{{image.file_path}}" alt="">
 											</div>
 											<div class="slide-content p-absolute  ">
 											<div class="content p-relative">
 												<div class="metas d-inline-block mb-20">
-													<span>{{ data.home_page.note }}<span>
+													<span>{{ image.note }}<span>
 												</div>
 												<div class="d-block"></div>
 												<h1 class="title user-no-selection d-inline-block ">
 													<a href="" class="effect-ajax"
-														data-dsn-ajax="slider">{{data.home_page.title or 'home_page.title'}}</a>
+														data-dsn-ajax="slider">{{image.title or 'image.title'}}</a>
 												</h1>
 												<hr class="mt-20" />
-												<p class="max-w570 mt-20 description ">{{data.home_page.desc or 'home_page.desc'}}</p>
+												<p class="max-w570 mt-20 description ">{{image.desc or 'image.desc'}}</p>
 											</div>
 											</div>
 										</div>
@@ -170,7 +176,7 @@
 							<div class="prev-container">
 								<div class="container-inner">
 									<div class="triangle"></div>
-									<svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+									<svg class="circle" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24">
 										<g class="circle-wrap" fill="none" stroke-width="1" stroke-linejoin="round"
 											stroke-miterlimit="10">
 											<circle cx="12" cy="12" r="10.5"></circle>
@@ -188,7 +194,7 @@
 							<div class="next-container">
 								<div class="container-inner">
 									<div class="triangle"></div>
-									<svg class="circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+									<svg class="circle" xmlns="https://www.w3.org/2000/svg" width="24" height="24"
 										viewBox="0 0 24 24">
 										<g class="circle-wrap" fill="none" stroke-width="1" stroke-linejoin="round"
 											stroke-miterlimit="10">
@@ -201,9 +207,19 @@
 						</div>
 					</header>
 					<!-- ========== End Slider Parallax ========== -->
+					{% endif %}
 
+					{% if page.page_name == 'media' %}
+					<section class="about-section p-relative section-margin" data-dsn-title="{{_('Media')}}" data-dsn-animate-multi data-dsn-animate="section">
+						<video width="90%" height="80%" muted controls style="margin: 0 auto; display: flex">
+							<source src="../../static/web/assets/media/ugurly.webm" type="video/webm">
+						</video>
+					</section>
+					{% endif %}
+
+					{% if page.page_name == 'advantages' %}
 					<!-- ========== About Section ========== -->
-					<section class="about-section p-relative section-margin " data-dsn-title="How We Are"
+					<section class="about-section p-relative section-margin " data-dsn-title="{{_('How We Are')}}"
 						data-dsn-animate-multi data-dsn-animate="section">
 						<div class="container">
 							<div class="row fill-right-container">
@@ -213,23 +229,23 @@
 											data-dsn-move="-70" data-dsn-duration="100%" data-dsn-opacity="1.2"
 											data-dsn-responsive="tablet">
 											<h2 class="section-title mb-30 dsn-text-shadow text-transform-upper">
-												{{data.advantages.title or 'advantages.title'}} <br />
+												{{page.title or 'advantages.title'}} <br />
 											</h2>
 										</div>
-										<h6 class="mt-80 pb-30 mb-30 border-bottom title-block">{{data.advantages.label}}
+										<h6 class="mt-80 pb-30 mb-30 border-bottom title-block">{{page.label}}
 										</h6>
 										<p class="max-w570 dsn-up mb-10 ">
-											{{data.advantages.desc or 'advantages.desc'}}
+											{{page.desc or 'advantages.desc'}}
 										</p>
 
 										<div class="toHtml">
-											{{data.advantages.html or 'advantages.html'}}
+											{{page.html or 'advantages.html'}}
 										</div>
 									</div>
 								</div>
 
 								<div class="col-lg-6">
-									{% if data.advantages.images %}
+									{% if page.images %}
 									<div class="background-mask p-20 p-absolute h-100 w-100">
 										<div class="line line-top"></div>
 										<div class="line line-bottom"></div>
@@ -239,20 +255,20 @@
 										<div class="img-box h-100">
 											<div class="img-container h-100 before-z-index" data-dsn-grid="move-up"
 												data-overlay="3">
-												<img class="cover-bg-img " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-dsn-src="{{ data.advantages.images[0].file_path }}" alt="">
+												<img class="cover-bg-img " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
+												data-dsn-src="{{ page.images[0].file_path }}" alt="">
 											</div>
 										</div>
 
 
 										<div
 											class="box-awards-item has-border big-number p-absolute left-0 bottom-0 ml-40 mb-40 dsn-up v-dark-head">
-											<h7 class="number  p-10">
-												<span class="has-animate-number title">{{ data.advantages.images[0].title or 'title' }}</span>
+											<h6 class="number  p-10">
+												<span class="has-animate-number title">{{ page.images[0].title or 'title' }}</span>
 												<span class="sm-title-block d-block">
-													{{ data.advantages.images[0].label or 'label' }}
+													{{ page.images[0].label or 'label' }}
 												</span>
-											</h7>
+											</h6>
 										</div>
 									</div>
 									{% endif %}
@@ -263,14 +279,16 @@
 
 					</section>
 					<!-- ========== End About Section ========== -->
+					{% endif %}
 
+					{% if page.page_name == 'portfolio' %}
 					<section class="work section-margin dsn-col dsn-col-space dsn-filter not-filter"
-						data-dsn-title="our Work">
+						data-dsn-title="{{_('Our Work')}}">
 						<div class="container d-flex text-right flex-column align-items-center mb-70">
 							<div class="">
-								<h2 class="section-title line-bg-left">{{data.portfolio.title or 'Our Portfolio'}}</h2>
+								<h2 class="section-title line-bg-left">{{page.title or 'Our Portfolio'}}</h2>
 								<p class="sub-heading theme-color  line-shap line-shap-before mt-15 d-inline-block">
-									<span class="background-section pt-5 pb-5 pl-10 pr-10">{{data.portfolio.label or 'Our Works'}}</span>
+									<span class="background-section pt-5 pb-5 pl-10 pr-10">{{page.label or 'Our Work'}}</span>
 								</p>
 							</div>
 						</div>
@@ -283,7 +301,7 @@
 										<button type="button" data-filter="*" class="active">
 											All
 										</button>
-										{% for category in data.portfolio.categories %}
+										{% for category in page.categories %}
 											<button type="button" data-filter=".portfolio-{{category.id}}">{{category.label}}</button>
 										{% endfor %}
 
@@ -294,51 +312,52 @@
 							<div
 								class="work-inner projects-list work-one-page d-grid grid-md-2  grid-lg-3 p-relative w-100 dsn-item-filter dsn-isotope">
 
-								{% for collection in data.portfolio.collections %}
-								<div class="work-item  p-relative portfolio-{{collection.category_id or '' }}">
+								{% for image in page.images %}
+								<div class="work-item  p-relative portfolio-{{image.category_id or '' }}">
 									<a class="effect-ajax" data-dsn-ajax="work">
 										<div class="work-item-inner">
-											<h5 class="cat p-absolute">{{ collection.category_name or 'category_name' }}</h5>
+											<h5 class="cat p-absolute">{{ image.category_name or 'category_name' }}</h5>
 
 											<div class="line line-top"></div>
 											<div class="line line-bottom"></div>
 											<div class="line line-left"></div>
 											<div class="line line-right"></div>
 
-											{% if collection.images %}
+											{% if image.file_path %}
 											<div class="box-img before-z-index" data-overlay="6">
 												<img class="cover-bg-img has-top-bottom"
-													src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-													data-dsn-src="{{collection.images[0].file_path}}" alt="{{collection.images[0].name or collection.images[0].title}}">
+													src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
+													data-dsn-src="{{image.file_path}}" alt="{{image.name or image.title}}">
 											</div>
 											{% endif %}
 										</div>
 
 										<div class="box-content">
-											<h4 class="title-block sec-title">{{ collection.title or 'collection.title' }}</h4>
+											<h4 class="title-block sec-title">{{ image.title or 'image.title' }}</h4>
 										</div>
 									</a>
 								</div>
 								{% endfor %}
 
-
 							</div>
 						</div>
 					</section>
+					{% endif %}
 
+					{% if page.page_name == 'services' %}
 					<!-- ========== Service Section ========== -->
 					<section class="services with-line with-number p-relative section-margin dsn-col"
-						data-dsn-title="Our Services">
+						data-dsn-title="{{_('Our Services')}}">
 						<div class="container mb-70 d-flex text-center flex-column align-items-center">
 
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									{{data.services.label or 'Our Services'}}
+									{{page.label or 'Our Services'}}
 								</span>
 
 							</p>
 							<h2 class="section-title  title-cap">
-									{{data.services.title or 'services.title'}}
+									{{page.title or 'services.title'}}
 								<br>
 							</h2>
 
@@ -357,7 +376,7 @@
 										<div class="services-content background-section">
 											<div class="icon">
 												<svg enable-background="new 0 0 300 300" viewBox="0 0 300 300"
-													xmlns="http://www.w3.org/2000/svg">
+													xmlns="https://www.w3.org/2000/svg">
 													<g>
 														<path
 															d="m164.804 62.461c2.478-.344 4.207-2.632 3.863-5.11s-2.632-4.207-5.11-3.862c-2.478.344-4.207 2.632-3.862 5.11.344 2.477 2.632 4.206 5.109 3.862z" />
@@ -380,10 +399,10 @@
 											</div>
 											<div class="service-description">
 												<h4 class="title-block mb-15">
-													{{data.services.collections[0].title if data.services.collections[0] else 'collections[0].title'}}
+													{{page.collections[0].title if page.collections[0] else 'collections[0].title'}}
 												</h4>
 												<p>
-													{{data.services.collections[0].desc if data.services.collections[0] else 'collections[0].desc'}}
+													{{page.collections[0].desc if page.collections[0] else 'collections[0].desc'}}
 												</p>
 											</div>
 
@@ -402,7 +421,7 @@
 										<div class="services-content background-section">
 											<div class="icon">
 												<svg enable-background="new 0 0 300 300" viewBox="0 0 300 300"
-													xmlns="http://www.w3.org/2000/svg">
+													xmlns="https://www.w3.org/2000/svg">
 													<g>
 														<path
 															d="m260 197.907h-8.08c-1.714-42.685-30.743-79.928-71.92-91.959v-16.041c0-.06-.031-.109-.034-.168-.019-.442-.096-.88-.263-1.301-.014-.036-.018-.075-.033-.11-.004-.009-.004-.019-.008-.028l-11.711-26.684-12.354-25.455c-1.336-2.758-5.859-2.758-7.195 0l-12.418 25.594-11.646 26.545c-.004.009-.004.019-.008.028-.015.036-.019.075-.033.111-.167.421-.244.858-.262 1.3-.003.059-.034.109-.034.169v16.043c-41.182 12.034-70.209 49.261-71.92 91.957h-12.081c-2.209 0-4 1.791-4 4v48c0 2.209 1.791 4 4 4h84v2.514c0 5.23 4.256 9.486 9.486 9.486h37.027c5.23 0 9.486-4.256 9.486-9.486v-2.514h80c2.209 0 4-1.791 4-4v-48c.001-2.21-1.79-4.001-3.999-4.001zm-136 0h-23.848c1.24-16.309 10.075-30.892 23.848-39.711zm8-104h8.486v92c0 2.209 1.791 4 4 4s4-1.791 4-4v-92h8v77.455c0 2.209 1.791 4 4 4s4-1.791 4-4v-77.455h7.514v91.262c0 2.209 1.791 4 4 4s4-1.791 4-4v-26.97c13.77 8.82 22.608 23.404 23.848 39.708h-71.848zm20-46.84 5.969 12.295h-11.936zm-9.744 20.295h19.485l8.136 18.545h-35.754zm28.258 190.545h-37.027c-.82 0-1.486-.666-1.486-1.486v-2.514h40v2.514c-.001.82-.667 1.486-1.487 1.486zm85.486-12h-12v-12c0-2.209-1.791-4-4-4s-4 1.791-4 4v12h-8v-8c0-2.209-1.791-4-4-4s-4 1.791-4 4v8h-8v-12c0-2.209-1.791-4-4-4s-4 1.791-4 4v12h-8v-8c0-2.209-1.791-4-4-4s-4 1.791-4 4v8h-8v-12c0-2.209-1.791-4-4-4s-4 1.791-4 4v12h-8v-8c0-2.209-1.791-4-4-4s-4 1.791-4 4v8h-8v-12c0-2.209-1.791-4-4-4s-4 1.791-4 4v12h-8v-8c0-2.209-1.791-4-4-4s-4 1.791-4 4v8h-8v-12c0-2.209-1.791-4-4-4s-4 1.791-4 4v12h-8v-8c0-2.209-1.791-4-4-4s-4 1.791-4 4v8h-8v-12c0-2.209-1.791-4-4-4s-4 1.791-4 4v12h-8v-8c0-2.209-1.791-4-4-4s-4 1.791-4 4v8h-16v-40h12c2.209 0 4-1.791 4-4 0-40.01 26.151-75.437 64-87.56v34.529c-19.751 10.46-32 30.688-32 53.031 0 2.209 1.791 4 4 4h112c2.209 0 4-1.791 4-4 0-22.336-12.249-42.573-32-53.033v-34.53c37.847 12.125 64 47.559 64 87.563 0 2.209 1.791 4 4 4h8z" />
@@ -417,10 +436,10 @@
 											</div>
 											<div class="service-description">
 												<h4 class="title-block mb-15">
-													{{data.services.collections[1].title if data.services.collections[1] else 'collections[1].title'}}
+													{{page.collections[1].title if page.collections[1] else 'collections[1].title'}}
 												</h4>
 												<p>
-													{{data.services.collections[1].desc if data.services.collections[1] else 'collections[1].desc'}}
+													{{page.collections[1].desc if page.collections[1] else 'collections[1].desc'}}
 												</p>
 											</div>
 
@@ -439,7 +458,7 @@
 										<div class="services-content background-section">
 											<div class="icon">
 												<svg enable-background="new 0 0 512 512" viewBox="0 0 512 512"
-													xmlns="http://www.w3.org/2000/svg">
+													xmlns="https://www.w3.org/2000/svg">
 													<g>
 														<g>
 															<path
@@ -450,10 +469,10 @@
 											</div>
 											<div class="service-description">
 												<h4 class="title-block mb-15">
-													{{data.services.collections[2].title if data.services.collections[2] else 'collections[2].title'}}
+													{{page.collections[2].title if page.collections[2] else 'collections[2].title'}}
 												</h4>
 												<p>
-													{{data.services.collections[2].desc if data.services.collections[2] else 'collections[2].desc'}}
+													{{page.collections[2].desc if page.collections[2] else 'collections[2].desc'}}
 												</p>
 											</div>
 
@@ -472,7 +491,7 @@
 										<div class="services-content background-section">
 											<div class="icon">
 												<svg enable-background="new 0 0 300 300" viewBox="0 0 300 300"
-													xmlns="http://www.w3.org/2000/svg">
+													xmlns="https://www.w3.org/2000/svg">
 													<g>
 														<path
 															d="m251.757 225.516c-1.562-1.562-4.094-1.562-5.656 0l-2.828 2.828-2.828-2.828c-1.562-1.562-4.094-1.562-5.656 0s-1.562 4.094 0 5.656l2.828 2.828-2.828 2.828c-1.562 1.562-1.562 4.094 0 5.656.781.781 1.805 1.172 2.828 1.172s2.047-.391 2.828-1.172l2.828-2.828 2.828 2.828c.781.781 1.805 1.172 2.828 1.172s2.047-.391 2.828-1.172c1.562-1.562 1.562-4.094 0-5.656l-2.828-2.828 2.828-2.828c1.562-1.563 1.562-4.094 0-5.656z" />
@@ -494,10 +513,10 @@
 											</div>
 											<div class="service-description">
 												<h4 class="title-block mb-15">
-													{{data.services.collections[3].title if data.services.collections[3] else 'collections[3].title'}}
+													{{page.collections[3].title if page.collections[3] else 'collections[3].title'}}
 												</h4>
 												<p>
-													{{data.services.collections[3].desc if data.services.collections[3] else 'collections[3].desc'}}
+													{{page.collections[3].desc if page.collections[3] else 'collections[3].desc'}}
 												</p>
 											</div>
 
@@ -516,7 +535,7 @@
 										<div class="services-content background-section">
 											<div class="icon">
 												<svg enable-background="new 0 0 300 300" viewBox="0 0 300 300"
-													xmlns="http://www.w3.org/2000/svg">
+													xmlns="https://www.w3.org/2000/svg">
 													<g>
 														<path
 															d="m248.172 54.504c2.502.005 4.533-2.02 4.538-4.521s-2.02-4.533-4.521-4.537c-2.501-.005-4.533 2.02-4.538 4.521s2.02 4.532 4.521 4.537z" />
@@ -539,10 +558,10 @@
 											</div>
 											<div class="service-description">
 												<h4 class="title-block mb-15">
-													{{data.services.collections[4].title if data.services.collections[4] else 'collections[4].title'}}
+													{{page.collections[4].title if page.collections[4] else 'collections[4].title'}}
 												</h4>
 												<p>
-													{{data.services.collections[4].desc if data.services.collections[4] else 'collections[4].desc'}}
+													{{page.collections[4].desc if page.collections[4] else 'collections[4].desc'}}
 												</p>
 											</div>
 
@@ -561,7 +580,7 @@
 										<div class="services-content background-section">
 											<div class="icon">
 												<svg enable-background="new 0 0 512 512" viewBox="0 0 512 512"
-													xmlns="http://www.w3.org/2000/svg">
+													xmlns="https://www.w3.org/2000/svg">
 													<g>
 														<g>
 															<path
@@ -592,10 +611,10 @@
 											</div>
 											<div class="service-description">
 												<h4 class="title-block mb-15">
-													{{data.services.collections[5].title if data.services.collections[5] else 'collections[5].title'}}
+													{{page.collections[5].title if page.collections[5] else 'collections[5].title'}}
 												</h4>
 												<p>
-													{{data.services.collections[5].desc if data.services.collections[5] else 'collections[5].desc'}}
+													{{page.collections[5].desc if page.collections[5] else 'collections[5].desc'}}
 												</p>
 											</div>
 
@@ -607,51 +626,56 @@
 						</div>
 					</section>
 					<!-- ========== End Service Section ========== -->
+					{% endif %}
 
+					{% if page.page_name == 'with_banner' %}
 					<!-- ==========  box description move  ========== -->
 					<div class="box-seat box-seat-parallax section-margin">
 
+						{% for image in page.images %}
 						<div class="inner-img h-100-v" data-dsn-grid="move-up" data-overlay="2">
-							<img class="transform-3d has-bigger-scale" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-							data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project3/2.jpg') }}" alt="">
+							<img class="transform-3d has-bigger-scale" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
+							data-dsn-src="{{image.file_path if image else ''}}" alt="">
 						</div>
+						{% endfor %}
 						<div class="pro-text background-section box-padding" data-dsn-grid="move-section"
 							data-dsn-responsive="tablet">
 							<div class="mb-30 d-flex text-left flex-column align-items-start">
 								<p class="sub-heading line-shap line-shap-after mb-15">
-									<span class="line-bg-right">{{data.with_banner.label or 'with_banner.label'}}</span>
+									<span class="line-bg-right">{{page.label or 'with_banner.label'}}</span>
 								</p>
-								<h2 class="section-title">{{data.with_banner.title or 'with_banner.title'}}</h2>
+								<h2 class="section-title">{{page.title or 'with_banner.title'}}</h2>
 							</div>
 
 							<p class="mb-10">
-								{{data.with_banner.desc or 'with_banner.desc'}}
+								{{page.desc or 'with_banner.desc'}}
 							</p>
 
-							{% if data.with_banner.note %}
+							{% if page.note %}
 							<p class="sm-p mt-15 theme-color">
-								{{data.with_banner.note}}
+								{{page.note}}
 							</p>
 							{% endif %}
 						</div>
 
 					</div>
 					<!-- ========== End  box description move ========== -->
+					{% endif %}
 
-
+					{% if page.page_name == 'work' %}
 					<!-- ========== Work Section ========== -->
 					<section class="work-section p-relative section-margin dsn-swiper over-hidden"
-						data-dsn-title="our Portfolio" data-dsn-option='{"slidesPerView":1.5,"spaceBetween":50}'>
+						data-dsn-title="{{_('Our Portfolio')}}" data-dsn-option='{"slidesPerView":1.5,"spaceBetween":50}'>
 						<div class="container mb-70 d-flex text-center flex-column align-items-center">
 
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									{{data.work.label or 'work.label'}}
+									{{page.label or 'work.label'}}
 								</span>
 
 							</p>
 							<h2 class="section-title  title-cap">
-									{{data.work.title or 'work.title'}}
+									{{page.title or 'work.title'}}
 							</h2>
 
 						</div>
@@ -659,21 +683,21 @@
 						<div class="swiper-container">
 							<div class="swiper-wrapper v-dark-head">
 
-								{% for image in data.work.images %}
+								{% for image in page.images %}
 								<div class="swiper-slide over-hidden work-item">
 									<div class="box-img p-relative over-hidden before-z-index" data-overlay="5"
 										data-swiper-parallax-scale="0.85">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
 										data-dsn-src="{{image.file_path}}" alt="{{image.title or image.label}}">
 									</div>
 
 									<div class="box-content" data-swiper-parallax-opacity="0">
 										<div class="metas d-inline-block mb-15">
-											<span>{{image.label or 'image.label'}}</span>
+											<span>{{image.label}}</span>
 										</div>
 										<h4 class="sec-title">
 											<a class="effect-ajax" data-dsn-ajax="work" href="">
-												{{image.title or 'image.title'}}
+												{{image.title}}
 											</a>
 										</h4>
 									</div>
@@ -686,7 +710,7 @@
 									<div class="next-container">
 										<div class="container-inner">
 											<div class="triangle"></div>
-											<svg class="circle" xmlns="http://www.w3.org/2000/svg" width="24"
+											<svg class="circle" xmlns="https://www.w3.org/2000/svg" width="24"
 												height="24" viewBox="0 0 24 24">
 												<g class="circle-wrap" fill="none" stroke-width="1"
 													stroke-linejoin="round" stroke-miterlimit="10">
@@ -701,7 +725,7 @@
 									<div class="prev-container">
 										<div class="container-inner">
 											<div class="triangle"></div>
-											<svg class="circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+											<svg class="circle" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24">
 												<g class="circle-wrap" fill="none" stroke-width="1"
 													stroke-linejoin="round" stroke-miterlimit="10">
 													<circle cx="12" cy="12" r="10.5"></circle>
@@ -717,10 +741,11 @@
 
 					</section>
 					<!-- ========== End Work Section ========== -->
+					{% endif %}
 
-
+					{% if page.page_name == 'feedback' %}
 					<!-- ========== testimonial Section ========== -->
-					<section class="testimonials testimonials-half section-margin" data-dsn-title="testimonials">
+					<section class="testimonials testimonials-half section-margin" data-dsn-title="{{_('Testimonials')}}">
 						<div class="container">
 							<div class="testimonials-box box-padding p-relative w-100 background-section">
 								<div class="row">
@@ -728,7 +753,7 @@
 										<div class="text-left">
 											<h2 class="section-title" data-dsn-grid="move-section" data-dsn-move="-60"
 												data-dsn-duration="100%" data-dsn-opacity="1"
-												data-dsn-responsive="tablet">{{data.feedback.title or 'feedback.title'}}</h2>
+												data-dsn-responsive="tablet">{{page.title or 'feedback.title'}}</h2>
 										</div>
 									</div>
 
@@ -742,21 +767,19 @@
 														<div class="swiper-wrapper">
 
 
-															{% for collection in data.feedback.collections %}
+															{% for image in page.images %}
 															<div class="swiper-slide d-flex align-items-center">
 																<div class="box-img mr-15"
 																	data-swiper-parallax-scale="0.7">
-																	<img  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{collection.images[0].file_path if collection.images else ''}}" alt="">
+																	<img  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{image.file_path if image else ''}}" alt="" loading="lazy"> 
 																</div>
 																<div class="box-text" data-swiper-parallax="30%"
 																	data-swiper-parallax-opacity="0">
-																	<h4 class="title-block mb-10">{{collection.name or 'collection.name'}}</h4>
-																	<h5 class="sm-title-block">{{collection.label or 'collection.label'}}</h5>
+																	<h4 class="title-block mb-10">{{image.name or 'image.name'}}</h4>
+																	<h5 class="sm-title-block">{{image.label or 'image.label'}}</h5>
 																</div>
 															</div>
 															{% endfor %}
-
-
 														</div>
 													</div>
 
@@ -766,9 +789,9 @@
 												<div class="swiper-container">
 													<div class="swiper-wrapper">
 
-														{% for collection in data.feedback.collections %}
+														{% for image in page.images %}
 														<div class="swiper-slide">
-															<p>{{collection.desc or 'collection.desc'}}</p>
+															<p>{{image.desc or 'image.desc'}}</p>
 														</div>
 														{% endfor %}
 
@@ -782,7 +805,7 @@
 													<div class="next-container">
 														<div class="container-inner">
 															<div class="triangle"></div>
-															<svg class="circle" xmlns="http://www.w3.org/2000/svg"
+															<svg class="circle" xmlns="https://www.w3.org/2000/svg"
 																width="24" height="24" viewBox="0 0 24 24">
 																<g class="circle-wrap" fill="none" stroke-width="1"
 																	stroke-linejoin="round" stroke-miterlimit="10">
@@ -797,7 +820,7 @@
 													<div class="prev-container">
 														<div class="container-inner">
 															<div class="triangle"></div>
-															<svg class="circle" xmlns="http://www.w3.org/2000/svg"
+															<svg class="circle" xmlns="https://www.w3.org/2000/svg"
 																viewBox="0 0 24 24">
 																<g class="circle-wrap" fill="none" stroke-width="1"
 																	stroke-linejoin="round" stroke-miterlimit="10">
@@ -816,8 +839,10 @@
 						</div>
 					</section>
 					<!-- ========== End testimonial Section ========== -->
+					{% endif %}
 
 
+					{% if page.page_name == 'purpose' %}
 					<!-- ========== box vertical Section ========== -->
 					<div class="box-gallery-vertical box-gallery-content section-margin " data-dsn-animate="section"
 						data-dsn-duration="100%">
@@ -825,11 +850,11 @@
 							<div class="row dsn-z-index-2">
 								<div class="col-lg-6  dsn-z-index-2 pr-0 mb-lg-section">
 									<div class="box-im h-100 p-absolute">
-										{% if data.purpose.images %}
+										{% if page.images %}
 										<div class="img-container h-100 before-z-index" data-dsn-grid="move-up"
 											data-overlay="3">
-											<img class="cover-bg-img " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-											data-dsn-src="{{data.purpose.images[0].file_path}}" alt="">
+											<img class="cover-bg-img " src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
+											data-dsn-src="{{page.images[0].file_path}}" alt="">
 										</div>
 										{% endif %}
 
@@ -842,17 +867,16 @@
 										<div class="box-info-inner">
 											<div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.1"
 												data-dsn-duration="170%" data-dsn-move="0%">
-												{{ data.home_page.note }}
+												{{ page.note if 'home_page' in data else 'Ugurly Ýol' }}
 											</div>
 
 											<div class="mb-50 d-flex text-left flex-column align-items-start">
 												<p class="sub-heading line-shap line-shap-after mb-15">
-													<span class="line-bg-right">{{data.purpose.name or 'purpose.name'}}</span>
+													<span class="line-bg-right">{{page.label or 'purpose.label'}}</span>
 												</p>
 												<h2 class="section-title text-transform-upper">
-													{{data.purpose.title or 'purpose.title'}}
+													{{page.title or 'purpose.title'}}
 												</h2>
-												{{data.purpose.label or ''}}
 
 											</div>
 											<div class="dsn-accordion accordion">
@@ -861,7 +885,7 @@
 
 
 													{% set purpose_count = 0 %}
-													{% for collection in data.purpose.collections %}
+													{% for collection in page.collections %}
 													{% set purpose_count = purpose_count + loop.index %}
 													<div class="accordion__item dsn-up">
 														<div
@@ -885,19 +909,20 @@
 						</div>
 					</div>
 					<!-- ========== End box vertical Section ========== -->
+					{% endif %}
 
-
+					{% if page.page_name == 'posts' %}
 					<!-- ========== blog Section ========== -->
 					<section class="our-blog section-margin p-relative dsn-swiper" data-dsn-animate="section"
-						data-dsn-option='{"slidesPerView":1.5  }' data-dsn-title="{{data.posts.label}}">
+						data-dsn-option='{"slidesPerView":1.5  }' data-dsn-title="{{_('Our blog')}}">
 						<div class="container mb-70 d-flex text-center flex-column align-items-center">
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									{{data.posts.label or 'posts.label'}}
+									{{page.label or 'posts.label'}}
 								</span>
 							</p>
 							<h2 class="section-title  title-cap">
-								{{data.posts.title or 'posts.title'}}
+								{{page.title or 'posts.title'}}
 							</h2>
 
 						</div>
@@ -907,29 +932,29 @@
 							<div class="swiper-container">
 								<div class="swiper-wrapper">
 
-									{% for collection in data.posts.collections %}
+									{% for image in page.images %}
 									<div class="swiper-slide blog-classic-item">
 										<div class=" blog-item p-relative d-flex align-items-center h-100 w-100"
 											data-swiper-parallax-scale="0.85">
 											<div class="box-meta">
-													<span class="author">{{collection.note}}</span>
-													<!--<a href="#">{{collection.created_date}}</a>-->
+													<span class="author">{{image.note}}</span>
+													<!--<a href="#">{{image.created_date}}</a>-->
 											</div>
 
 											<div class="box-img over-hidden">
-												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-												data-dsn-src="{{collection.images[0].file_path if collection.images else ''}}" alt="">
+												<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
+												data-dsn-src="{{image.file_path if image else ''}}" alt="">
 											</div>
 											<div class="box-content p-relative">
 
 												<div class="box-content-body">
 													<div class="metas">
-														<span class="mb-5">{{collection.label or 'collection.label'}}</span>
+														<span class="mb-5">{{image.label or 'image.label'}}</span>
 													</div>
 													<h4 class="title-block mb-20 ">
-														<a href="#">{{collection.title or 'collection.title'}}</a>
+														{{image.title or 'image.title'}}
 													</h4>
-													<p>{{collection.desc or 'collection.desc'}}.</p>
+													<p>{{image.desc or 'image.desc'}}.</p>
 												</div>
 											</div>
 										</div>
@@ -942,7 +967,7 @@
 										<div class="next-container">
 											<div class="container-inner">
 												<div class="triangle"></div>
-												<svg class="circle" xmlns="http://www.w3.org/2000/svg" width="24"
+												<svg class="circle" xmlns="https://www.w3.org/2000/svg" width="24"
 													height="24" viewBox="0 0 24 24">
 													<g class="circle-wrap" fill="none" stroke-width="1"
 														stroke-linejoin="round" stroke-miterlimit="10">
@@ -957,7 +982,7 @@
 										<div class="prev-container">
 											<div class="container-inner">
 												<div class="triangle"></div>
-												<svg class="circle" xmlns="http://www.w3.org/2000/svg"
+												<svg class="circle" xmlns="https://www.w3.org/2000/svg"
 													viewBox="0 0 24 24">
 													<g class="circle-wrap" fill="none" stroke-width="1"
 														stroke-linejoin="round" stroke-miterlimit="10">
@@ -973,18 +998,21 @@
 						</div>
 					</section>
 					<!-- ========== End blog Section ========== -->
-					<section class="resume section-padding background-section" data-dsn-title="Resume">
+					{% endif %}
+
+					{% if page.page_name == 'resume' %}
+					<section class="resume section-padding background-section" data-dsn-title="{{_('Resume')}}">
 						<div class="container section-title mb-70 p-relative dsn-z-index-2">
 							<p class="sub-heading  line-bg-left mb-15">
-								{{data.resume.label or 'resume.label'}}
+								{{page.label or 'resume.label'}}
 							</p>
-							<h2 class="section-title title-cap">{{data.resume.title or 'resume.title'}}</h2>
+							<h2 class="section-title title-cap">{{page.title or 'resume.title'}}</h2>
 						</div>
 
 						<div class="container">
 							<div class="row">
 
-								{% for category in data.resume.categories %}
+								{% for category in page.categories %}
 								<div class="col-md-6 resume-box-inner">
 									<div class="resume-box p-relative pr-30">
 										<h3 class="title-block mb-30">{{category.title or 'category.title'}}</h3>
@@ -1005,365 +1033,270 @@
 							</div>
 						</div>
 					</section>
-					<!-- ========== team Section ========== -->
+					{% endif %}
+					
+					{% if page.page_name == 'team' %}
 					<section class="team section-margin p-relative" data-dsn-animate="section"
-						data-dsn-title="our team">
+						data-dsn-title="{{_('Our team')}}">
 
 						<div class="container mb-70 d-flex text-center flex-column  align-items-center">
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									{{data.team.label or 'team.label'}}
+									{{page.label or 'team.label'}}
 								</span>
 
 							</p>
 							<h2 class="section-title  title-cap">
-								{{data.team.title or 'team.title'}}
+								{{page.title or 'team.title'}}
 							</h2>
 
 						</div>
 						<div class="container">
 							<div class="d-grid grid-lg-3 grid-sm-2 dsn-up">
+
+								{% for image in page.images %}
 								<div class="team-item">
 									<div class="team-item-inner">
 										<div class="team-item-wapper background-section">
 											<div class="item-content d-flex a-item-center">
 												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/1.jpg') }}" alt="">
+													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{image.file_path if image else ''}}" alt="" loading="lazy">
 												</div>
 												<div class="box-text">
-													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
-													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
+													<h4 class="sm-title-block mb-5">{{image.name or 'image.name'}}</h4>
+													<h5 class="theme-color">{{image.label or 'image.label'}}</h5>
 
-													<ul class="box-social mt-20">
+													<!-- <ul class="box-social mt-20">
 														<li data-dsn="parallax"><a href="#">FB</a></li>
 														<li data-dsn="parallax"><a href="#">TW</a></li>
 														<li data-dsn="parallax"><a href="#">LN</a></li>
 
-													</ul>
+													</ul> -->
 												</div>
 											</div>
 										</div>
 
 									</div>
 								</div>
+								{% endfor %}
 
-								<div class="team-item">
-									<div class="team-item-inner">
-										<div class="team-item-wapper background-section">
-											<div class="item-content d-flex a-item-center">
-												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/2.jpg') }}" alt="">
-												</div>
-												<div class="box-text">
-													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
-													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
-
-													<ul class="box-social mt-20">
-														<li data-dsn="parallax"><a href="#">FB</a></li>
-														<li data-dsn="parallax"><a href="#">TW</a></li>
-														<li data-dsn="parallax"><a href="#">LN</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-
-								<div class="team-item">
-									<div class="team-item-inner">
-										<div class="team-item-wapper background-section">
-											<div class="item-content d-flex a-item-center">
-												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/3.jpg') }}" alt="">
-												</div>
-												<div class="box-text">
-													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
-													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
-
-													<ul class="box-social mt-20">
-														<li data-dsn="parallax"><a href="#">FB</a></li>
-														<li data-dsn="parallax"><a href="#">TW</a></li>
-														<li data-dsn="parallax"><a href="#">LN</a></li>
-
-													</ul>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-
-								<div class="team-item">
-									<div class="team-item-inner">
-										<div class="team-item-wapper background-section">
-											<div class="item-content d-flex a-item-center">
-												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/2.jpg') }}" alt="">
-												</div>
-												<div class="box-text">
-													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
-													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
-
-													<ul class="box-social mt-20">
-														<li data-dsn="parallax"><a href="#">FB</a></li>
-														<li data-dsn="parallax"><a href="#">TW</a></li>
-														<li data-dsn="parallax"><a href="#">LN</a></li>
-
-													</ul>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-
-								<div class="team-item">
-									<div class="team-item-inner">
-										<div class="team-item-wapper background-section">
-											<div class="item-content d-flex a-item-center">
-												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/1.jpg') }}" alt="">
-												</div>
-												<div class="box-text">
-													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
-													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
-
-													<ul class="box-social mt-20">
-														<li data-dsn="parallax"><a href="#">FB</a></li>
-														<li data-dsn="parallax"><a href="#">TW</a></li>
-														<li data-dsn="parallax"><a href="#">LN</a></li>
-
-													</ul>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-
-								<div class="team-item">
-									<div class="team-item-inner">
-										<div class="team-item-wapper background-section">
-											<div class="item-content d-flex a-item-center">
-												<div class="box-img">
-													<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/team/1.jpg') }}" alt="">
-												</div>
-												<div class="box-text">
-													<h4 class="sm-title-block mb-5">{{data.team.label or 'team.label'}}</h4>
-													<h5 class="theme-color">{{data.team.desc or 'team.desc'}}</h5>
-
-													<ul class="box-social mt-20">
-														<li data-dsn="parallax"><a href="#">FB</a></li>
-														<li data-dsn="parallax"><a href="#">TW</a></li>
-														<li data-dsn="parallax"><a href="#">LN</a></li>
-
-													</ul>
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
 							</div>
 						</div>
 					</section>
-					<!-- ========== End team Section ========== -->
+					{% endif %}
+					
+					{% if page.page_name == 'footer_portfolio' %}
 					<section class="work-section work-no-scale not-filter p-relative dsn-swiper over-hidden v-dark-head"
-						data-dsn-title="our Work"
+						data-dsn-title="{{_('Our Work')}}"
 						data-dsn-option='{"slidesPerView":3,"autoplay":true,"centeredSlides":false}'>
 						<div class="swiper-container" data-swiper-autoplay="5000">
 							<div class="swiper-wrapper">
 
+								{% for image in page.images %}
 								<div class="work-item  swiper-slide over-hidden">
 									<div class="box-img p-relative over-hidden" data-overlay="6">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project1/1.jpg') }}" alt="">
+										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{image.file_path}}" alt="" loading="lazy">
 									</div>
-
 									<div class="box-content">
 										<div class="metas d-inline-block mb-15">
-											<span> Product</span> <span>voice</span>
+											<span>{{image.label}}</span>
 										</div>
-										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work" href="">{{data.footer_portfolio.label or 'Footer Portfolio.label'}}</a></h4>
+										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work" href="">{{image.title or 'image.title'}}</a></h4>
 									</div>
 								</div>
+								{% endfor %}
 
-								<div class="work-item  swiper-slide over-hidden">
-									<div class="box-img p-relative over-hidden" data-overlay="6">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project2/1.jpg') }}" alt="">
-									</div>
-
-									<div class="box-content">
-										<div class="metas d-inline-block mb-15">
-											<span> pen</span>
-										</div>
-										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work" href="">{{data.footer_portfolio.label or 'Footer Portfolio.label'}}</a></h4>
-									</div>
-								</div>
-
-								<div class="work-item  swiper-slide over-hidden">
-									<div class="box-img p-relative over-hidden" data-overlay="2">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project4/1.jpg') }}" alt="">
-									</div>
-
-									<div class="box-content">
-										<div class="metas d-inline-block mb-15">
-											<span> Architecture</span>
-										</div>
-										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work" href="">{{data.footer_portfolio.label or 'Footer Portfolio.label'}}</a></h4>
-									</div>
-								</div>
-
-								<div class="work-item  swiper-slide over-hidden">
-									<div class="box-img p-relative over-hidden" data-overlay="6">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project3/1.jpg') }}" alt="">
-									</div>
-
-									<div class="box-content">
-										<div class="metas d-inline-block mb-15">
-											<span>induction</span>
-										</div>
-										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work" href="">{{data.footer_portfolio.label or 'Footer Portfolio.label'}}</a></h4>
-									</div>
-								</div>
-
-								<div class="work-item  swiper-slide over-hidden">
-									<div class="box-img p-relative over-hidden" data-overlay="4">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project6/1.jpg') }}" alt="">
-									</div>
-
-									<div class="box-content">
-										<div class="metas d-inline-block mb-15">
-											<span>Photography</span>
-										</div>
-										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work"
-												href="">{{data.footer_portfolio.label or 'Footer Portfolio.label'}}</a></h4>
-									</div>
-								</div>
-
-								<div class="work-item  swiper-slide over-hidden">
-									<div class="box-img p-relative over-hidden" data-overlay="5">
-										<img class="cover-bg-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-dsn-src="{{ url_for('static', filename='web/assets/img/project/project5/1.jpg') }}" alt="">
-									</div>
-
-									<div class="box-content">
-										<div class="metas d-inline-block mb-15">
-											<span>Photography</span> <span> car</span>
-										</div>
-										<h4 class="sec-title"><a class="effect-ajax" data-dsn-ajax="work" href="">{{data.footer_portfolio.label or 'Footer Portfolio.label'}}</a></h4>
-									</div>
-								</div>
 
 							</div>
 						</div>
 
 					</section>
-					<!-- ========== End brand-client Section ========== -->
+					{% endif %}
+	
+					{% if page.page_name == 'our_clients' %}
 					<section class="brand-client section-margin" data-dsn-animate="section"
-						data-dsn-title="our clients">
+						data-dsn-title="{{_('Our clients')}}">
 
 						<div class="container mb-70 d-flex text-center flex-column  align-items-center">
 							<p class="sub-heading line-shap line-shap-before mb-15">
 								<span class="line-bg-right">
-									{{data.our_clients.name or 'our_clients.name'}}
+									{{page.label or 'our_clients.label'}}
 								</span>
 
 							</p>
 							<h2 class="section-title  title-cap">
-								{{data.our_clients.title or 'our_clients.title'}}
+								{{page.title or 'our_clients.title'}}
 							</h2>
 
 						</div>
 						<div class="container">
 							<div class="wrapper-client dsn-up">
+
+								{% for image in page.images %}
 								<div class="logo-box">
 									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/1.png') }}" alt="">
+										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" loading="lazy"
+										data-dsn-src="{{image.file_path if image else ''}}" alt="">
 									</div>
 								</div>
+								{% endfor %}
+								
+							</div>
+						</div>
+					</section>
+					{% endif %}
 
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/2.png') }}" alt="">
-									</div>
-								</div>
-
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/3.png') }}" alt="">
-									</div>
-								</div>
-
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/4.png') }}" alt="">
-									</div>
-								</div>
-
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/5.png') }}" alt="">
-									</div>
-								</div>
-
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/6.png') }}" alt="">
-									</div>
-								</div>
-
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/1.png') }}" alt="">
-									</div>
-								</div>
-
-								<div class="logo-box">
-									<div class="logo-box-inner">
-										<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-										data-dsn-src="{{ url_for('static', filename='web/assets/img/logo/3.png') }}" alt="">
+					{% if page.page_name == 'contact' %}
+					<section class="next-page p-relative border-top background-section" data-dsn-animate="section" style="padding: 1rem 1rem"
+					data-dsn-title="{{_('Contact us')}}">
+						<div class="background-section">
+							<div class="contact-container h-100 w-100  border-right">
+								<div class="box-contact-inner">
+									<div class="row align-items-center">
+										<div class="col-lg-7">
+											<div class="form-box">
+												<div class="line line-top"></div>
+												<div class="line line-bottom"></div>
+												<div class="line line-left"></div>
+												<div class="line line-right"></div>
+				
+												<div class="mb-30 d-flex text-left flex-column align-items-start">
+													<p class="sub-heading line-shap line-shap-before mb-15">
+														<span class="line-bg-right">{{ page.label or 'contact.label' }}</span>
+													</p>
+													<h2 class="section-title  title-cap">
+														{{ page.title or 'contact.title' }}
+													</h2>
+												</div>
+												<form id="contact-form" class="form" method="post" enctype="multipart/form-data" action="mailto:{{page.contacts[0].mail}}?&subject=Contact us"
+													data-toggle="validator">
+													<div class="messages"></div>
+													<div class="input__wrap controls">
+														<div class="form-group">
+															<div class="entry-box">
+																<label>{{_('Your name')}} *</label>
+																<input id="form_name" type="text"
+																	placeholder="{{_('Type your name')}}" required="required"
+																	data-error="name is required." />
+															</div>
+															<div class="help-block with-errors"></div>
+														</div>
+				
+														<div class="form-group">
+															<div class="entry-box">
+																<label>{{_('Your E-Mail')}} *</label>
+																<input id="form_email" type="email"
+																	placeholder="{{_('Type your Email Address')}}" required="required"
+																	data-error="{{_('Valid email is required')}}" />
+															</div>
+															<div class="help-block with-errors"></div>
+														</div>
+				
+														<div class="form-group">
+															<div class="entry-box">
+																<label>{{_('Message')}}</label>
+																<textarea id="form_message" class="form-control" type="text" name="message"
+																	placeholder="{{_('Tell us about you')}}" required="required"
+																	data-error="{{_('Please,leave us a message')}}"></textarea>
+															</div>
+															<div class="help-block with-errors"></div>
+														</div>
+				
+														<div class="text-right">
+															<div class="image-zoom w-auto d-inline-block" data-dsn="parallax" >
+																<input type="submit" value="{{_('Send Message')}}" style="cursor: pointer"
+																	class="dsn-button background-main border-radius">
+															</div>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+				
+										<div class="col-lg-5">
+											<div class="box-info-contact">
+												<ul>
+													<li>
+														<h5 class="title-block mb-15">{{page.note}}</h5>
+														{% if page.contacts[0].phone_number %}
+															<a href="tel:{{page.contacts[0].phone_number}}" class="text-p">{{ page.contacts[0].phone_number }}</a>
+														{% endif %}
+														{% if page.contacts[0].work_phone_number %}
+															<a href="tel:{{page.contacts[0].work_phone_number}}" class="text-p">{{ page.contacts[0].work_phone_number }}</a>
+														{% endif %}
+														{% if page.contacts[0].home_phone_number %}
+															<a href="tel:{{page.contacts[0].home_phone_number}}" class="text-p">{{ page.contacts[0].home_phone_number }}</a>
+														{% endif %}
+														{% if page.contacts[0].phone_number_1 %}
+															<a href="tel:{{page.contacts[0].phone_number_1}}" class="text-p">{{ page.contacts[0].phone_number_1 }}</a>
+														{% endif %}
+														{% if page.contacts[0].phone_number_2 %}
+															<a href="tel:{{page.contacts[0].phone_number_2}}" class="text-p">{{ page.contacts[0].phone_number_2 }}</a>
+														{% endif %}
+														{% if page.contacts[0].phone_number_3 %}
+															<a href="tel:{{page.contacts[0].phone_number_3}}" class="text-p">{{ page.contacts[0].phone_number_3 }}</a>
+														{% endif %}
+														<div class="over-hidden mt-5">
+															<a class="link-hover" data-hover-text="{{page.contacts[0].mail or 'contact.contacts[0].mail'}}"
+																href="mailto:{{page.contacts[0].mail}}">{{page.contacts[0].mail or 'contact.contacts[0].mail'}}</a>
+														</div>
+				
+													</li>
+													<li>
+														{% if page.contacts[0].address %}
+															<p class="text-p">{{page.contacts[0].address}}</p>
+														{% endif %}
+														{% if page.contacts[0].address_1 %}
+															<p class="text-p">{{page.contacts[0].address_1}}</p>
+														{% endif %}
+														{% if page.contacts[0].address_2 %}
+															<p class="text-p">{{page.contacts[0].address_2}}</p>
+														{% endif %}
+														{% if page.contacts[0].address_3 %}
+															<p class="text-p">{{page.contacts[0].address_3}}</p>
+														{% endif %}
+													</li>
+													<li>
+														{% if page.contacts[0].social_1 %}
+														<div class="social-item over-hidden">
+															<a class="link-hover" data-hover-text="{{page.contacts[0].social_1_name or 'social1_name'}}" href="{{page.contacts[0].social_1 or 'social1'}}" target="_blank"
+																rel="nofollow">{{page.contacts[0].social_1_name or 'social1_name'}}</a>
+														</div>
+														{% endif %}
+														{% if page.contacts[0].social_2 %}
+														<div class="social-item over-hidden">
+															<a class="link-hover" data-hover-text="{{page.contacts[0].social_2_name or 'social2_name'}}" href="{{page.contacts[0].social_2 or 'social2'}}" target="_blank"
+																rel="nofollow">{{page.contacts[0].social_2_name or 'social2_name'}}</a>
+														</div>
+														{% endif %}
+														{% if page.contacts[0].social_3 %}
+														<div class="social-item over-hidden">
+															<a class="link-hover" data-hover-text="{{page.contacts[0].social_3_name or 'social3_name'}}" href="{{page.contacts[0].social_3 or 'social3'}}" target="_blank"
+																rel="nofollow">{{page.contacts[0].social_3_name or 'social3_name'}}</a>
+														</div>
+														{% endif %}
+				
+													</li>
+												</ul>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</section>
-					<!-- ========== End brand-client Section ========== -->
+					{% endif %}
 
-					<!-- ==========  next page  ========== -->
-					<section class="next-page p-relative section-padding border-top background-section">
-						<div class="bg-circle-dotted"></div>
-						<div class="bg-circle-dotted bg-circle-dotted-right"></div>
-						<div class="container">
-							<div class="c-wapp d-flex justify-content-between">
-								<div class="d-flex flex-column">
-									<p class="sub-heading line-shap line-shap-after ">
-										<span class="line-bg-left">
-											{{data.footer.name or 'footer.name'}}
-										</span>
-									</p>
-									<h2 class="section-title max-w750 mt-15">
-										{{data.footer.title or 'footer.title'}}
-									</h2>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- ========== End next page ========== -->
-
+				
+				
+				{% endfor %}
 				</div>
 				<footer class="footer p-relative background-section">
 					<div class="container">
 						<div class="footer-container">
-							<div class="d-flex align-items-center h-100">
+							<div class="d-flex align-items-center h-100" style="place-content: center">
 
-								<div class="column-right">
+								<div class="column-right" style="text-align: center">
 									<h5>2022 © Made with <span class="love">♥</span>by
 										<a class="link-hover" data-hover-text="Sap Hasap." target="_blank"
 											rel="nofollow"
@@ -1377,127 +1310,14 @@
 			</div>
 		</div>
 
-		<!-- ========== Contact Form Model ========== -->
-		<div class="contact-btn">
-			<div class="contact-btn-txt">Contact</div>
-		</div>
-		<div class="contact-modal background-section">
-			<div class="contact-container h-100 w-100  border-right">
-				<div class="box-contact-inner section-padding ">
-					<div class="row align-items-center">
-						<div class="col-lg-7">
-							<div class="form-box">
-								<div class="line line-top"></div>
-								<div class="line line-bottom"></div>
-								<div class="line line-left"></div>
-								<div class="line line-right"></div>
+			
 
-								<div class="mb-30 d-flex text-left flex-column align-items-start">
-									<p class="sub-heading line-shap line-shap-before mb-15">
-										<span class="line-bg-right">{{ data.contact.label or 'contact.label' }}</span>
-									</p>
-									<h2 class="section-title  title-cap">
-										{{ data.contact.title or 'contact.title' }}
-									</h2>
-								</div>
-
-								<form id="contact-form" class="form" method="post" action="mailto:{{data.contact.mail}}"
-									data-toggle="validator">
-									<div class="messages"></div>
-									<div class="input__wrap controls">
-										<div class="form-group">
-											<div class="entry-box">
-												<label>Your name *</label>
-												<input id="form_name" type="text" name="name"
-													placeholder="Type your name" required="required"
-													data-error="name is required." />
-											</div>
-											<div class="help-block with-errors"></div>
-										</div>
-
-										<div class="form-group">
-											<div class="entry-box">
-												<label>Your E-Mail *</label>
-												<input id="form_email" type="email" name="email"
-													placeholder="Type your Email Address" required="required"
-													data-error="Valid email is required." />
-											</div>
-											<div class="help-block with-errors"></div>
-										</div>
-
-										<div class="form-group">
-											<div class="entry-box">
-												<label>Message</label>
-												<textarea id="form_message" class="form-control" name="message"
-													placeholder="Tell us about you and the world" required="required"
-													data-error="Please,leave us a message."></textarea>
-											</div>
-											<div class="help-block with-errors"></div>
-										</div>
-
-										<div class="text-right">
-											<div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
-												<input type="submit" value="Send Message"
-													class="dsn-button background-main border-radius">
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-
-						<div class="col-lg-5">
-							<div class="box-info-contact">
-								<ul>
-									<li>
-										<h5 class="title-block mb-15">Contact</h5>
-										<p class="text-p">{{data.contact.contacts[0].phone_number or 'contact.contacts[0].phone_number'}}</p>
-										<div class="over-hidden mt-5">
-											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].mail or 'contact.contacts[0].mail'}}"
-												href="mailto:{{data.contact.contacts[0].mail}}">{{data.contact.contacts[0].mail or 'contact.contacts[0].mail'}}</a>
-										</div>
-
-									</li>
-									<li>
-										<h5 class="title-block mb-15">Address</h5>
-										<p class="text-p">{{data.contact.contacts[0].address or 'contact.contacts[0].address'}}</p>
-									</li>
-									<li>
-										<h5 class="title-block mb-15">Follow</h5>
-										{% if data.contact.contacts[0].social_1 %}
-										<div class="social-item over-hidden">
-											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].social_1_name or 'social1_name'}}" href="{{data.contact.contacts[0].social_1 or 'social1'}}" target="_blank"
-												rel="nofollow">{{data.contact.contacts[0].social_1_name or 'social1_name'}}</a>
-										</div>
-										{% endif %}
-										{% if data.contact.contacts[0].social_2 %}
-										<div class="social-item over-hidden">
-											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].social_2_name or 'social2_name'}}" href="{{data.contact.contacts[0].social_2 or 'social2'}}" target="_blank"
-												rel="nofollow">{{data.contact.contacts[0].social_2_name or 'social2_name'}}</a>
-										</div>
-										{% endif %}
-										{% if data.contact.contacts[0].social_3 %}
-										<div class="social-item over-hidden">
-											<a class="link-hover" data-hover-text="{{data.contact.contacts[0].social_3_name or 'social3_name'}}" href="{{data.contact.contacts[0].social_3 or 'social3'}}" target="_blank"
-												rel="nofollow">{{data.contact.contacts[0].social_3_name or 'social3_name'}}</a>
-										</div>
-										{% endif %}
-
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- ========== End Contact Form Model ========== -->
 	</main>
 
 
 	<!-- ========== Scroll Right Page To Top Page ========== -->
 	<div class="scroll-to-top">
-		<img src="{{ url_for('static', filename='web/assets/img/scroll_top.svg') }}" alt="">
+		<img src="{{ url_for('static', filename='web/assets/img/scroll_top.svg') }}" alt="" loading="lazy">
 		<div class="box-numper">
 			<span>10%</span>
 		</div>
@@ -1525,7 +1345,7 @@
 	<div class="box-options c-hidden d-flex align-items-center">
 		<div class="box-icon d-flex align-items-center justify-content-center text-center">
 			<svg class="fa-spin" enable-background="new 0 0 512 512" viewBox="0 0 512 512"
-				xmlns="http://www.w3.org/2000/svg">
+				xmlns="https://www.w3.org/2000/svg">
 				<path
 					d="m272.066 512h-32.133c-25.989 0-47.134-21.144-47.134-47.133v-10.871c-11.049-3.53-21.784-7.986-32.097-13.323l-7.704 7.704c-18.659 18.682-48.548 18.134-66.665-.007l-22.711-22.71c-18.149-18.129-18.671-48.008.006-66.665l7.698-7.698c-5.337-10.313-9.792-21.046-13.323-32.097h-10.87c-25.988 0-47.133-21.144-47.133-47.133v-32.134c0-25.989 21.145-47.133 47.134-47.133h10.87c3.531-11.05 7.986-21.784 13.323-32.097l-7.704-7.703c-18.666-18.646-18.151-48.528.006-66.665l22.713-22.712c18.159-18.184 48.041-18.638 66.664.006l7.697 7.697c10.313-5.336 21.048-9.792 32.097-13.323v-10.87c0-25.989 21.144-47.133 47.134-47.133h32.133c25.989 0 47.133 21.144 47.133 47.133v10.871c11.049 3.53 21.784 7.986 32.097 13.323l7.704-7.704c18.659-18.682 48.548-18.134 66.665.007l22.711 22.71c18.149 18.129 18.671 48.008-.006 66.665l-7.698 7.698c5.337 10.313 9.792 21.046 13.323 32.097h10.87c25.989 0 47.134 21.144 47.134 47.133v32.134c0 25.989-21.145 47.133-47.134 47.133h-10.87c-3.531 11.05-7.986 21.784-13.323 32.097l7.704 7.704c18.666 18.646 18.151 48.528-.006 66.665l-22.713 22.712c-18.159 18.184-48.041 18.638-66.664-.006l-7.697-7.697c-10.313 5.336-21.048 9.792-32.097 13.323v10.871c0 25.987-21.144 47.131-47.134 47.131zm-106.349-102.83c14.327 8.473 29.747 14.874 45.831 19.025 6.624 1.709 11.252 7.683 11.252 14.524v22.148c0 9.447 7.687 17.133 17.134 17.133h32.133c9.447 0 17.134-7.686 17.134-17.133v-22.148c0-6.841 4.628-12.815 11.252-14.524 16.084-4.151 31.504-10.552 45.831-19.025 5.895-3.486 13.4-2.538 18.243 2.305l15.688 15.689c6.764 6.772 17.626 6.615 24.224.007l22.727-22.726c6.582-6.574 6.802-17.438.006-24.225l-15.695-15.695c-4.842-4.842-5.79-12.348-2.305-18.242 8.473-14.326 14.873-29.746 19.024-45.831 1.71-6.624 7.684-11.251 14.524-11.251h22.147c9.447 0 17.134-7.686 17.134-17.133v-32.134c0-9.447-7.687-17.133-17.134-17.133h-22.147c-6.841 0-12.814-4.628-14.524-11.251-4.151-16.085-10.552-31.505-19.024-45.831-3.485-5.894-2.537-13.4 2.305-18.242l15.689-15.689c6.782-6.774 6.605-17.634.006-24.225l-22.725-22.725c-6.587-6.596-17.451-6.789-24.225-.006l-15.694 15.695c-4.842 4.843-12.35 5.791-18.243 2.305-14.327-8.473-29.747-14.874-45.831-19.025-6.624-1.709-11.252-7.683-11.252-14.524v-22.15c0-9.447-7.687-17.133-17.134-17.133h-32.133c-9.447 0-17.134 7.686-17.134 17.133v22.148c0 6.841-4.628 12.815-11.252 14.524-16.084 4.151-31.504 10.552-45.831 19.025-5.896 3.485-13.401 2.537-18.243-2.305l-15.688-15.689c-6.764-6.772-17.627-6.615-24.224-.007l-22.727 22.726c-6.582 6.574-6.802 17.437-.006 24.225l15.695 15.695c4.842 4.842 5.79 12.348 2.305 18.242-8.473 14.326-14.873 29.746-19.024 45.831-1.71 6.624-7.684 11.251-14.524 11.251h-22.148c-9.447.001-17.134 7.687-17.134 17.134v32.134c0 9.447 7.687 17.133 17.134 17.133h22.147c6.841 0 12.814 4.628 14.524 11.251 4.151 16.085 10.552 31.505 19.024 45.831 3.485 5.894 2.537 13.4-2.305 18.242l-15.689 15.689c-6.782 6.774-6.605 17.634-.006 24.225l22.725 22.725c6.587 6.596 17.451 6.789 24.225.006l15.694-15.695c3.568-3.567 10.991-6.594 18.244-2.304z" />
 				<path
@@ -1564,75 +1384,11 @@
 					</svg>
 				</div>
 			</div>
-			<div class="mode-layout">
-				<div class="icon d-flex align-items-center justify-content-center">
-
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-						x="0px" y="0px" viewBox="0 0 35 35" xml:space="preserve">
-						<g>
-							<g>
-								<path d="M0,25.366h35V9.546H0V25.366z M2.121,11.667h30.758v11.578H2.121V11.667z" />
-								<rect y="28.283" width="35" height="6.717" />
-								<rect width="35" height="6.717" />
-							</g>
-						</g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-						<g></g>
-					</svg>
-				</div>
-
-			</div>
 		</div>
 
 	</div>
 	<!-- ========== End Style Option Page ========== -->
 
-	<!-- ========== social network ========== -->
-	<div class="social-side social-network d-flex align-items-center ">
-		<div class="icon" data-dsn="parallax">
-			<i class="fa fa-share-alt" aria-hidden="true"></i>
-		</div>
-		<ul class="socials d-flex flex-column p-absolute ">
-			<li>
-				<a href="" target="_blank">
-					<i class="fab fa-dribbble"></i>
-					<span>Db</span>
-				</a>
-			</li>
-			<li>
-				<a href="" target="_blank">
-					<i class="fab fa-twitter"></i>
-					<span>Tw</span>
-				</a>
-			</li>
-			<li>
-				<a href="" target="_blank">
-					<i class="fab fa-behance"></i>
-					<span>Be</span>
-				</a>
-			</li>
-			<li>
-				<a href="" target="_blank">
-					<i class="fab fa-facebook-f"></i>
-					<span>Fb</span>
-				</a>
-			</li>
-		</ul>
-	</div>
-	<!-- ========== End social network ========== -->
 
 	<!-- ========== paginate-right-page ========== -->
 	<div class="dsn-paginate-right-page"></div>
@@ -1650,7 +1406,46 @@
 		$('.toHtml').each(function(){
 			$(this).html($(this).text());
 		});
-	</script>
+		</script>
+		<!-- <script>
+			
+			function activeMenu() {
+				const navigation = document.querySelectorAll(".dsn-link-paginate")
+				const section = document.querySelectorAll("section")
+	
+				let len = section.length;
+				while(--len && window.scrollY < section[len].offsetTop){}
+				navigation.forEach(ltx => ltx.classList.remove("action_current_section"));
+				navigation[len].classList.add("action_current_section");
+			}
+			//97
+			setTimeout(activeMenu, 3000);
+	
+			window.addEventListener("scroll", activeMenu);
+		</script> -->
+		<script>
+			setTimeout(() => {
+				let section = document.querySelectorAll("section");
+				let RightLinks = document.querySelectorAll(".dsn-link-paginate")
+	
+				window.scroll = () => {
+					section.forEach(sec => {
+						let top = window.scrollY;
+						let offset = sec.offsetTop - 150;
+						let height = sec.offsetHeight;
+	
+						if(top >= offset && top < offset + height){
+							RightLinks.forEach(links => {
+								links.classList.remove('action_current_section');
+								document.querySelector('.dsn-link-paginate').classList.add('action_current_section')
+							})
+						}
+					})
+				}
+				console.log(section, RightLinks)
+			}, 3000);
+			
+		</script>
 
 </body>
 

@@ -22,6 +22,7 @@ class User(db.Model, UserMixin):
 	password = db.Column("password",db.String(60),nullable=False)
 	type_id = db.Column("type_id",db.Integer)
 	created_date = db.Column("created_date",db.DateTime,default=datetime.now())
+	deleted = db.Column("deleted",db.Integer,default=0)
 
 	def update(self, **kwargs):
 		for key, value in kwargs.items():
@@ -45,4 +46,5 @@ class User(db.Model, UserMixin):
 			"password": self.password,
 			"type_id": self.type_id,
 			"created_date": self.created_date,
+			"deleted": self.deleted,
 		}

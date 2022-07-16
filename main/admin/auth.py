@@ -1,8 +1,15 @@
 from flask import redirect, render_template, request, url_for, flash
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, logout_user
 
 from . import bp
 from main.models import User
+
+
+
+@bp.route('/logout/')
+def admin_logout():
+	logout_user()
+	return redirect(url_for('web.home'))
 
 @bp.route('/login/', methods=["GET","POST"])
 def admin_login():

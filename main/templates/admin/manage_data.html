@@ -13,6 +13,14 @@ content %}
 						</div>
 						<div class="card-body">
 							<form method="POST" action="" class="form-horizontal well">
+								<div class="form-group row mb-0" style="place-content: end">
+									<input
+										type="submit"
+										value="Save"
+										class="btn btn-primary"
+										style="width: 5rem; margin-right: 2rem"
+									/>
+								</div>
 								<fieldset>
 									<div class="repeater-custom-show-hide">
 										<div class="d-flex">
@@ -21,27 +29,109 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">Name</label>
-															<input
-																type="text"
-																name="name_tk"
-																value="{{ data.name_tk or '' }}"
-																placeholder="Name_tk"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="name_ru"
-																value="{{ data.name_ru or '' }}"
-																placeholder="Name_ru"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="name_en"
-																value="{{ data.name_en or '' }}"
-																placeholder="Name_en"
-																class="form-control"
-															/>
+
+															{% if data_type == 'categories' %}
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">category_name:</label>
+																	<input
+																		type="text"
+																		name="category_name"
+																		value="{{ data.category_name or '' }}"
+																		placeholder="category_name"
+																		class="form-control"
+																	/>
+																</div>
+															{% endif %}
+															{% if data_type == 'pages' %}
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">page_name:</label>
+																	<input
+																		type="text"
+																		name="page_name"
+																		value="{{ data.page_name or '' }}"
+																		placeholder="page_name"
+																		class="form-control"
+																	/>
+																</div>
+															{% endif %}
+
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Order:</label>
+																<input
+																	type="text"
+																	name="order"
+																	value="{{ data.order or '' }}"
+																	placeholder="order"
+																	class="form-control"
+																/>
+															</div>
+
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Name_tk:</label>
+																<input
+																	type="text"
+																	name="name_tk"
+																	value="{{ data.name_tk or '' }}"
+																	placeholder="Name_tk"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Name_ru:</label>
+																<input
+																	type="text"
+																	name="name_ru"
+																	value="{{ data.name_ru or '' }}"
+																	placeholder="Name_ru"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Name_en:</label>
+																<input
+																	type="text"
+																	name="name_en"
+																	value="{{ data.name_en or '' }}"
+																	placeholder="Name_en"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -50,27 +140,54 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">Title</label>
-															<input
-																type="text"
-																name="title_tk"
-																value="{{ data.title_tk or '' }}"
-																placeholder="Title_tk"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="title_ru"
-																value="{{ data.title_ru or '' }}"
-																placeholder="Title_ru"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="title_en"
-																value="{{ data.title_en or '' }}"
-																placeholder="Title_en"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Title_tk:</label>
+																<input
+																	type="text"
+																	name="title_tk"
+																	value="{{ data.title_tk or '' }}"
+																	placeholder="Title_tk"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Title_ru:</label>
+																<input
+																	type="text"
+																	name="title_ru"
+																	value="{{ data.title_ru or '' }}"
+																	placeholder="Title_ru"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Title_en:</label>
+																<input
+																	type="text"
+																	name="title_en"
+																	value="{{ data.title_en or '' }}"
+																	placeholder="Title_en"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -79,27 +196,54 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">Label</label>
-															<input
-																type="text"
-																name="label_tk"
-																value="{{ data.label_tk or '' }}"
-																placeholder="Label_tk"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="label_ru"
-																value="{{ data.label_ru or '' }}"
-																placeholder="Label_ru"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="label_en"
-																value="{{ data.label_en or '' }}"
-																placeholder="Label_en"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Label_tk:</label>
+																<input
+																	type="text"
+																	name="label_tk"
+																	value="{{ data.label_tk or '' }}"
+																	placeholder="Label_tk"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Label_ru:</label>
+																<input
+																	type="text"
+																	name="label_ru"
+																	value="{{ data.label_ru or '' }}"
+																	placeholder="Label_ru"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Label_en:</label>
+																<input
+																	type="text"
+																	name="label_en"
+																	value="{{ data.label_en or '' }}"
+																	placeholder="Label_en"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -108,27 +252,54 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">Note</label>
-															<input
-																type="text"
-																name="note_tk"
-																value="{{ data.note_tk or '' }}"
-																placeholder="Note_tk"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="note_ru"
-																value="{{ data.note_ru or '' }}"
-																placeholder="Note_ru"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="note_en"
-																value="{{ data.note_en or '' }}"
-																placeholder="Note_en"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Note_tk:</label>
+																<input
+																	type="text"
+																	name="note_tk"
+																	value="{{ data.note_tk or '' }}"
+																	placeholder="Note_tk"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Note_ru:</label>
+																<input
+																	type="text"
+																	name="note_ru"
+																	value="{{ data.note_ru or '' }}"
+																	placeholder="Note_ru"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Note_en:</label>
+																<input
+																	type="text"
+																	name="note_en"
+																	value="{{ data.note_en or '' }}"
+																	placeholder="Note_en"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -137,13 +308,22 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">link</label>
-															<input
-																type="text"
-																name="link"
-																value="{{ data.link or '' }}"
-																placeholder="Link"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Link:</label>
+																<input
+																	type="text"
+																	name="link"
+																	value="{{ data.link or '' }}"
+																	placeholder="Link"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -158,7 +338,7 @@ content %}
 																	name="desc_tk"
 																	class="form-control"
 																	placeholder="Description_tk"
-																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 {{ data.desc_tk or '' }}
 															</textarea
@@ -168,7 +348,7 @@ content %}
 																	name="desc_ru"
 																	class="form-control"
 																	placeholder="Description_ru"
-																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 {{ data.desc_ru or '' }}
 															</textarea
@@ -178,7 +358,7 @@ content %}
 																	name="desc_en"
 																	class="form-control"
 																	placeholder="Description_en"
-																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 {{ data.desc_en or '' }}
 															</textarea
@@ -196,7 +376,7 @@ content %}
 																	name="html_tk"
 																	class="form-control"
 																	placeholder="HTML_tk"
-																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 {{ data.html_tk or '' }}
 															</textarea
@@ -206,7 +386,7 @@ content %}
 																	name="html_ru"
 																	class="form-control"
 																	placeholder="HTML_ru"
-																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 {{ data.html_ru or '' }}
 															</textarea
@@ -217,6 +397,7 @@ content %}
 																	class="form-control"
 																	placeholder="HTML_en"
 																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 {{ data.html_en or '' }}
 															</textarea
@@ -244,54 +425,184 @@ content %}
 													</div>
 												</div>
 											</div>
+
+
+											{% if data_type == 'categories' or data_type == 'collections' or data_type == 'contacts' %}
+
+											<div class="card-body">
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div style="display: grid; gap: 0.25rem">
+															<label class="form-label">Additional config</label>
+															<div
+																class="row"
+																style="gap: 0.25rem; margin-bottom: 1rem"
+															>
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">page_id:</label>
+																	<select name="page_id" class="form-control">
+																		<option value="0">Not selected</option>
+																		{% for page in pages %}
+																		<option value="{{page.id}}" {{ 'selected' if data.page_id == page.id }}>
+																			{{page.page_name if page.page_name else
+																			page.title}}
+																		</option>
+																		{% endfor %}
+																	</select>
+																</div>
+															</div>
+
+															{% if data_type == 'collections'%}
+															<div
+																class="row"
+																style="gap: 0.25rem; margin-bottom: 1rem"
+															>
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">category_id:</label>
+																	<select name="category_id" class="form-control">
+																		<option value="0">Not selected</option>
+																		{% for category in categories %}
+																		<option value="{{category.id}}" {{ 'selected' if data.category_id == category.id }}>
+																			{{category.category_name if category.category_name else
+																			category.title}}
+																		</option>
+																		{% endfor %}
+																	</select>
+																</div>
+															</div>
+															{% endif %}
+
+
+														</div>
+													</div>
+												</div>
+											</div>
+											{% endif %}
+
 											{% if data_type == 'contacts' %}
 											<div class="card-body">
 												<div data-repeater-item="">
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">Phone Number</label>
-															<input
-																type="text"
-																name="phone_number"
-																value="{{ data.phone_number or '' }}"
-																placeholder="phone_number"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="home_phone_number"
-																value="{{ data.home_phone_number or '' }}"
-																placeholder="home_phone_number"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="work_phone_number"
-																value="{{ data.work_phone_number or '' }}"
-																placeholder="work_phone_number"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="phone_number_1"
-																value="{{ data.phone_number_1 or '' }}"
-																placeholder="phone_number_1"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="phone_number_2"
-																value="{{ data.phone_number_2 or '' }}"
-																placeholder="phone_number_2"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="phone_number_3"
-																value="{{ data.phone_number_3 or '' }}"
-																placeholder="phone_number_3"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Phone_number:</label>
+																<input
+																	type="text"
+																	name="phone_number"
+																	value="{{ data.phone_number or '' }}"
+																	placeholder="phone_number"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label"
+																	>Home_phone_number:</label
+																>
+																<input
+																	type="text"
+																	name="home_phone_number"
+																	value="{{ data.home_phone_number or '' }}"
+																	placeholder="home_phone_number"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label"
+																	>Work_phone_number:</label
+																>
+																<input
+																	type="text"
+																	name="work_phone_number"
+																	value="{{ data.work_phone_number or '' }}"
+																	placeholder="work_phone_number"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label"
+																	>Phone_number_1:</label
+																>
+																<input
+																	type="text"
+																	name="phone_number_1"
+																	value="{{ data.phone_number_1 or '' }}"
+																	placeholder="phone_number_1"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label"
+																	>Phone_number_2:</label
+																>
+																<input
+																	type="text"
+																	name="phone_number_2"
+																	value="{{ data.phone_number_2 or '' }}"
+																	placeholder="phone_number_2"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label"
+																	>Phone_number_3:</label
+																>
+																<input
+																	type="text"
+																	name="phone_number_3"
+																	value="{{ data.phone_number_3 or '' }}"
+																	placeholder="phone_number_3"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -300,34 +611,70 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">Mail</label>
-															<input
-																type="text"
-																name="mail"
-																value="{{ data.mail or '' }}"
-																placeholder="mail"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="mail_1"
-																value="{{ data.mail_1 or '' }}"
-																placeholder="mail_1"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="mail_2"
-																value="{{ data.mail_2 or '' }}"
-																placeholder="mail_2"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="mail_3"
-																value="{{ data.mail_3 or '' }}"
-																placeholder="mail_3"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Mail:</label>
+																<input
+																	type="text"
+																	name="mail"
+																	value="{{ data.mail or '' }}"
+																	placeholder="mail"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Mail_1:</label>
+																<input
+																	type="text"
+																	name="mail_1"
+																	value="{{ data.mail_1 or '' }}"
+																	placeholder="mail_1"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Mail_2:</label>
+																<input
+																	type="text"
+																	name="mail_2"
+																	value="{{ data.mail_2 or '' }}"
+																	placeholder="mail_2"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">mail_3:</label>
+																<input
+																	type="text"
+																	name="mail_3"
+																	value="{{ data.mail_3 or '' }}"
+																	placeholder="mail_3"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -336,34 +683,70 @@ content %}
 													<div class="form-group row d-flex align-items-end">
 														<div>
 															<label class="form-label">Address</label>
-															<input
-																type="text"
-																name="address"
-																value="{{ data.address or '' }}"
-																placeholder="address"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="address_1"
-																value="{{ data.address_1 or '' }}"
-																placeholder="address_1"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="address_2"
-																value="{{ data.address_2 or '' }}"
-																placeholder="address_2"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="address_3"
-																value="{{ data.address_3 or '' }}"
-																placeholder="address_3"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">address:</label>
+																<input
+																	type="text"
+																	name="address"
+																	value="{{ data.address or '' }}"
+																	placeholder="address"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">address_1:</label>
+																<input
+																	type="text"
+																	name="address_1"
+																	value="{{ data.address_1 or '' }}"
+																	placeholder="address_1"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">address_2:</label>
+																<input
+																	type="text"
+																	name="address_2"
+																	value="{{ data.address_2 or '' }}"
+																	placeholder="address_2"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">address_3:</label>
+																<input
+																	type="text"
+																	name="address_3"
+																	value="{{ data.address_3 or '' }}"
+																	placeholder="address_3"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -373,48 +756,102 @@ content %}
 														<div>
 															<label class="form-label">Social</label>
 
-															<input
-																type="text"
-																name="social_1_name"
-																value="{{ data.social_1_name or '' }}"
-																placeholder="social_1_name"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="social_1"
-																value="{{ data.social_1 or '' }}"
-																placeholder="social_1"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="social_2_name"
-																value="{{ data.social_2_name or '' }}"
-																placeholder="social_2_name"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="social_2"
-																value="{{ data.social_2 or '' }}"
-																placeholder="social_2"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="social_3_name"
-																value="{{ data.social_3_name or '' }}"
-																placeholder="social_3_name"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="social_3"
-																value="{{ data.social_3 or '' }}"
-																placeholder="social_3"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">social_1_name:</label>
+																<input
+																	type="text"
+																	name="social_1_name"
+																	value="{{ data.social_1_name or '' }}"
+																	placeholder="social_1_name"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">social_1:</label>
+																<input
+																	type="text"
+																	name="social_1"
+																	value="{{ data.social_1 or '' }}"
+																	placeholder="social_1"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">social_2_name:</label>
+																<input
+																	type="text"
+																	name="social_2_name"
+																	value="{{ data.social_2_name or '' }}"
+																	placeholder="social_2_name"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">social_2:</label>
+																<input
+																	type="text"
+																	name="social_2"
+																	value="{{ data.social_2 or '' }}"
+																	placeholder="social_2"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">social_3_name:</label>
+																<input
+																	type="text"
+																	name="social_3_name"
+																	value="{{ data.social_3_name or '' }}"
+																	placeholder="social_3_name"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">social_3:</label>
+																<input
+																	type="text"
+																	name="social_3"
+																	value="{{ data.social_3 or '' }}"
+																	placeholder="social_3"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -426,7 +863,7 @@ content %}
 											<input
 												type="submit"
 												value="Save"
-												class="btn btn-outline-primary"
+												class="btn btn-primary"
 											/>
 										</div>
 									</div>
@@ -437,71 +874,80 @@ content %}
 				</div>
 
 				{% if data_type == 'pages' %}
-				<div class="col-xl-6">
+
+				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
 							<h4 class="card-title">Categories</h4>
 							<p class="text-muted mb-0">Manage categories</p>
 						</div>
-						<div class="card-body">
+						<div class="card-body" style="display: grid; grid-auto-columns: 1fr 1fr 1fr 1fr; grid-auto-flow: column; gap: 0.25rem;">
 							{% for category in data.categories %}
-							<div class="card card-body">
+							<div class="card card-body" style="place-content: end">
 								<p><b>Title:</b>{{ category.title }}</p>
 								<p><b>Name:</b>{{ category.name }}</p>
 								<p><b>Label:</b>{{ category.label }}</p>
+								<a
+									class="btn btn-outline-primary"
+									href="/admin/categories/{{category.id}}/manage/"
+									>Edit</a
+								>
 							</div>
 							{% endfor %}
 						</div>
 					</div>
 				</div>
+				{% endif %}
 
-				<div class="col-xl-6">
+				{% if data_type == 'pages' or data_type == 'categories' %}
+
+				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
 							<h4 class="card-title">Collections</h4>
 							<p class="text-muted mb-0">Setup Collections</p>
 						</div>
-						<div class="card-body">
+						<div class="card-body" style="display: grid; grid-auto-columns: 1fr 1fr 1fr 1fr; grid-auto-flow: column; gap: 0.25rem;">
 							{% for collection in data.collections %}
-							<div class="card card-body">
+							<div class="card card-body" style="place-content: end;">
 								<p><b>Title:</b>{{ collection.title }}</p>
 								<p><b>Name:</b>{{ collection.name }}</p>
 								<p><b>Label:</b>{{ collection.label }}</p>
+								<a
+									class="btn btn-outline-primary"
+									href="/admin/collections/{{collection.id}}/manage/"
+									>Edit</a
+								>
 							</div>
 							{% endfor %}
 						</div>
 					</div>
 				</div>
+				{% endif %}
 
-				<div class="col-xl-6">
+				{% if data_type == 'pages' or data_type == 'collections' or data_type == 'categories' %}
+				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
 							<h4 class="card-title">Images</h4>
 							<p class="text-muted mb-0">Add remove update images</p>
 						</div>
-						<div class="card-body">
+						<div class="card-body row" style="gap: 0.25rem">
 							{% for image in data.images %}
-							<div class="card card-body col-6">
-								<img src="{{image.file_path}}" />
+							<div class="card card-body col-3">
+								<img src="{{image.file_path}}" style="width: 15rem; height: 13rem;" loading="lazy"/>
 								<div>
 									<p><b>Title:</b>{{ image.title }}</p>
 									<p><b>Name:</b>{{ image.name }}</p>
 									<p><b>Label:</b>{{ image.label }}</p>
+									<a
+										class="btn btn-outline-primary"
+										href="/admin/images/{{image.id}}/manage/"
+										>Edit</a
+									>
 								</div>
 							</div>
 							{% endfor %}
-						</div>
-					</div>
-				</div>
-
-				<div class="col-xl-6">
-					<div class="card">
-						<div class="card-header">
-							<h4 class="card-title">Logo</h4>
-							<p class="text-muted mb-0">Upload your logo</p>
-						</div>
-						<div class="card-body">
-							<input type="file" id="input-file-now" class="dropify" />
 						</div>
 					</div>
 				</div>

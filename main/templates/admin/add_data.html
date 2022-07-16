@@ -13,32 +13,168 @@ content %}
 						</div>
 						<div class="card-body">
 							<form method="POST" action="" class="form-horizontal well">
+								<div class="form-group row mb-0" style="place-content: end">
+									<input
+										type="submit"
+										value="Save"
+										class="btn btn-primary"
+										style="width: 5rem; margin-right: 2rem"
+									/>
+								</div>
 								<fieldset>
 									<div class="repeater-custom-show-hide">
 										<div class="d-flex">
 											<div class="card-body" data-repeater-list="car">
 												<div data-repeater-item="">
 													<div class="form-group row d-flex align-items-end">
-														<div>
+														{% if data_type == 'categories' %}
+														<div
+															style="
+																display: flex;
+																place-items: center;
+																gap: 0.5rem;
+															"
+														>
+															<label class="form-label">category_name:</label>
+															<input
+																type="text"
+																name="category_name"
+																placeholder="category_name"
+																class="form-control"
+															/>
+														</div>
+														{% endif %} {% if data_type == 'pages' %}
+														<div
+															style="
+																display: flex;
+																place-items: center;
+																gap: 0.5rem;
+															"
+														>
+															<label class="form-label">page_name:</label>
+															<input
+																type="text"
+																name="page_name"
+																placeholder="page_name"
+																class="form-control"
+															/>
+														</div>
+														{% endif %}
+														<div
+															style="
+																display: flex;
+																place-items: center;
+																gap: 0.5rem;
+															"
+														>
+															<label class="form-label">Order:</label>
+															<input
+																type="text"
+																name="order"
+																placeholder="order"
+																class="form-control"
+															/>
+														</div>
+
+														<div class="">
 															<label class="form-label">Name</label>
-															<input
-																type="text"
-																name="name_tk"
-																placeholder="Name_tk"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="name_ru"
-																placeholder="Name_ru"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="name_en"
-																placeholder="Name_en"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Name_tk:</label>
+																<input
+																	type="text"
+																	name="name_tk"
+																	placeholder="Name_tk"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Name_ru:</label>
+																<input
+																	type="text"
+																	name="name_ru"
+																	placeholder="Name_ru"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Name_en:</label>
+																<input
+																	type="text"
+																	name="name_en"
+																	placeholder="Name_en"
+																	class="form-control"
+																/>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div class="col-6">
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Title_tk:</label>
+																<input
+																	type="text"
+																	name="title_tk"
+																	placeholder="Title_tk"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Title_ru:</label>
+																<input
+																	type="text"
+																	name="title_ru"
+																	placeholder="Title_ru"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Title_en:</label>
+																<input
+																	type="text"
+																	name="title_en"
+																	placeholder="Title_en"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -46,25 +182,52 @@ content %}
 												<div data-repeater-item="">
 													<div class="form-group row d-flex align-items-end">
 														<div>
-															<label class="form-label">Title</label>
-															<input
-																type="text"
-																name="title_tk"
-																placeholder="Title_tk"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="title_ru"
-																placeholder="Title_ru"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="title_en"
-																placeholder="Title_en"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Label_tk:</label>
+
+																<input
+																	type="text"
+																	name="label_tk"
+																	placeholder="Label_tk"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Label_ru:</label>
+																<input
+																	type="text"
+																	name="label_ru"
+																	placeholder="Label_ru"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Label_en:</label>
+																<input
+																	type="text"
+																	name="label_en"
+																	placeholder="Label_en"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -72,25 +235,52 @@ content %}
 												<div data-repeater-item="">
 													<div class="form-group row d-flex align-items-end">
 														<div>
-															<label class="form-label">Label</label>
-															<input
-																type="text"
-																name="label_tk"
-																placeholder="Label_tk"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="label_ru"
-																placeholder="Label_ru"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="label_en"
-																placeholder="Label_en"
-																class="form-control"
-															/>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Note_tk:</label>
+																<label class="form-label">Note</label>
+																<input
+																	type="text"
+																	name="note_tk"
+																	placeholder="Note_tk"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Note_ru:</label>
+																<input
+																	type="text"
+																	name="note_ru"
+																	placeholder="Note_ru"
+																	class="form-control"
+																/>
+															</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Note_en:</label>
+																<input
+																	type="text"
+																	name="note_en"
+																	placeholder="Note_en"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -98,39 +288,22 @@ content %}
 												<div data-repeater-item="">
 													<div class="form-group row d-flex align-items-end">
 														<div>
-															<label class="form-label">Note</label>
-															<input
-																type="text"
-																name="note_tk"
-																placeholder="Note_tk"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="note_ru"
-																placeholder="Note_ru"
-																class="form-control"
-															/>
-															<input
-																type="text"
-																name="note_en"
-																placeholder="Note_en"
-																class="form-control"
-															/>
-														</div>
-													</div>
-												</div>
+															<div
+																style="
+																	display: flex;
+																	place-items: center;
+																	gap: 0.5rem;
+																"
+															>
+																<label class="form-label">Link:</label>
 
-												<div data-repeater-item="">
-													<div class="form-group row d-flex align-items-end">
-														<div>
-															<label class="form-label">link</label>
-															<input
-																type="text"
-																name="link"
-																placeholder="Link"
-																class="form-control"
-															/>
+																<input
+																	type="text"
+																	name="link"
+																	placeholder="Link"
+																	class="form-control"
+																/>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -145,7 +318,7 @@ content %}
 																	name="desc_tk"
 																	class="form-control"
 																	placeholder="Description_tk"
-																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 																</textarea>
 																<textarea
@@ -153,7 +326,7 @@ content %}
 																	name="desc_ru"
 																	class="form-control"
 																	placeholder="Description_ru"
-																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 																</textarea>
 																<textarea
@@ -161,7 +334,7 @@ content %}
 																	name="desc_en"
 																	class="form-control"
 																	placeholder="Description_en"
-																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 																</textarea>
 															</div>
@@ -177,7 +350,7 @@ content %}
 																	name="html_tk"
 																	class="form-control"
 																	placeholder="HTML_tk"
-																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 																</textarea>
 																<textarea
@@ -185,7 +358,7 @@ content %}
 																	name="html_ru"
 																	class="form-control"
 																	placeholder="HTML_ru"
-																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 																</textarea>
 																<textarea
@@ -193,7 +366,7 @@ content %}
 																	name="html_en"
 																	class="form-control"
 																	placeholder="HTML_en"
-																	rows="3"
+																	style="margin-bottom: 0.25rem"
 																>
 																</textarea>
 															</div>
@@ -218,7 +391,74 @@ content %}
 												</div>
 											</div>
 
-											{% if data_type == 'contacts' %}
+											{% if data_type == 'categories' or data_type ==
+											'collections' or data_type == 'contacts' %}
+
+											<div class="card-body">
+												<div data-repeater-item="">
+													<div class="form-group row d-flex align-items-end">
+														<div style="display: grid; gap: 0.25rem">
+															<label class="form-label"
+																>Additional config</label
+															>
+															<div
+																class="row"
+																style="gap: 0.25rem; margin-bottom: 1rem"
+															>
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">page_id:</label>
+																	<select name="page_id" class="form-control">
+																		<option value="0">Not selected</option>
+																		{% for page in pages %}
+																		<option value="{{page.id}}">
+																			{{page.page_name if page.page_name else
+																			page.title}}
+																		</option>
+																		{% endfor %}
+																	</select>
+																</div>
+															</div>
+
+															{% if data_type == 'collections'%}
+															<div
+																class="row"
+																style="gap: 0.25rem; margin-bottom: 1rem"
+															>
+																<div
+																	style="
+																		display: flex;
+																		place-items: center;
+																		gap: 0.5rem;
+																	"
+																>
+																	<label class="form-label">category_id:</label>
+																	<select
+																		name="category_id"
+																		class="form-control"
+																	>
+																		<option value="0">Not selected</option>
+																		{% for category in categories %}
+																		<option value="{{category.id}}">
+																			{{category.category_name if
+																			category.category_name else
+																			category.title}}
+																		</option>
+																		{% endfor %}
+																	</select>
+																</div>
+															</div>
+															{% endif %}
+														</div>
+													</div>
+												</div>
+											</div>
+											{% endif %} {% if data_type == 'contacts' %}
 											<div class="card-body">
 												<div data-repeater-item="">
 													<div class="form-group row d-flex align-items-end">
@@ -375,14 +615,9 @@ content %}
 											</div>
 											{% endif %}
 										</div>
-
-										<div class="form-group row mb-0">
-											<input
-												type="submit"
-												value="Save"
-												class="btn btn-outline-primary"
-											/>
-										</div>
+									</div>
+									<div class="form-group row mb-0">
+										<input type="submit" value="Save" class="btn btn-primary" />
 									</div>
 								</fieldset>
 							</form>

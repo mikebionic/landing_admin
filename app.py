@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from main import create_app
 from main.config import Config
 

@@ -64,6 +64,7 @@
 							src="{{ url_for('static', filename='/admin/assets/images/logo-sm.png') }}"
 							alt="logo-small"
 							class="logo-sm"
+							loading="lazy"
 						/>
 					</span>
 					<span>Landing Admin</span>
@@ -109,6 +110,12 @@
 							><span>Users</span></a
 						>
 					</li>
+					<li>
+						<a href="/admin/media/">
+							<i data-feather="video" class="align-self-center menu-icon"></i
+							><span>Media</span></a
+						>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -119,7 +126,9 @@
 				<nav class="navbar-custom">
 					<ul class="list-unstyled topbar-nav float-end mb-0">
 						<li class="dropdown">
-							<a class="nav-link dropdown-toggle nav-user" href="/logout"
+							<a
+								class="nav-link dropdown-toggle nav-user"
+								href="{{url_for('admin.admin_logout')}}"
 								><i
 									data-feather="power"
 									class="align-self-center icon-xs icon-dual me-1"
@@ -145,7 +154,7 @@
 			<!-- Page Content-->
 			<div class="page-content">
 				<div class="container-fluid">
-					<section class="section">
+					<section class="section" style="margin-top: 1rem">
 						{% with messages = get_flashed_messages(with_categories=true) %} {%
 						if messages %} {% for category, message in messages %}
 						<div class="p-3 alert alert-{{ category }}" role="alert">

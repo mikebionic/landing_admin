@@ -26,13 +26,30 @@ content %}
 									href="/admin/{{data_type}}/{{item.id}}/manage/"
 									>Edit</a
 								>
+								{% if item.deleted == 0 %}
+								<a
+									class="btn btn-outline-danger"
+									href="/admin/{{data_type}}/{{item.id}}/delete/"
+									>Delete</a
+								>
+								{% else %}
+								<a
+									class="btn btn-outline-warning"
+									href="/admin/{{data_type}}/{{item.id}}/restore/"
+									>Restore</a
+								>
+								{% endif %}
 							</div>
 							<p class="text-muted mb-0">{{item.name}}</p>
 						</div>
 						<div class="card-body">
 							<p><b>Label: </b>{{item.label}}</p>
 							<p><b>Description: </b>{{item.desc}}</p>
-							<img src="{{item.file_path}}" style="max-width: 25rem" />
+							<img
+								src="{{item.file_path}}"
+								style="max-width: 25rem"
+								loading="lazy"
+							/>
 						</div>
 					</div>
 				</div>

@@ -70,6 +70,10 @@ def create_app(config_class=Config):
 	app.register_blueprint(web_bp, url_prefix=f"{web_url_prefix}/")
 	csrf.exempt(web_bp)
 
+	from main.api import api as api_bp
+	app.register_blueprint(api_bp, url_prefix=f"{api_url_prefix}/")
+	csrf.exempt(api_bp)
+
 
 	@app.route("/set_language/<code>")
 	def set_language(code):

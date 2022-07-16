@@ -33,7 +33,8 @@ class BaseModel(object):
 
 	link = db.Column("link",db.String)
 	created_date = db.Column("created_date",db.DateTime,default=datetime.now())
-	deleted = db.Column("deleted",db.Integer,default=None)
+	order = db.Column("order",db.Integer,default=999)
+	deleted = db.Column("deleted",db.Integer,default=0)
 
 	def get_all(self):
 		db_models = self.query.order_by(self.id.asc()).all()
@@ -45,9 +46,8 @@ class BaseModel(object):
 
 	def update(self, **kwargs):
 		for key, value in kwargs.items():
-			if value is not None:
-				if hasattr(self, key):
-					setattr(self, key, value)
+			if hasattr(self, key):
+				setattr(self, key, value)
 
 	def to_json(self):
 		data = {
@@ -77,6 +77,7 @@ class BaseModel(object):
 
 			"link": self.link,
 			"created_date": self.created_date,
+			"order": self.order,
 			"deleted": self.deleted,
 		}
 		translated = dataLangSelector(data)

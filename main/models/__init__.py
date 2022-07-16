@@ -5,3 +5,4 @@ from .Contact import *
 from .Image import *
 from .Page import *
 from .User import *
+from .Media import *

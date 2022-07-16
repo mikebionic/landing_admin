@@ -3,6 +3,13 @@ from main.config import Config
 
 def add_data_from_form(request, data_type=None):
 	request_data = {}
+	if "order" in request.form:
+		request_data["order"] = request.form["order"]
+	if "page_name" in request.form:
+		request_data["page_name"] = request.form["page_name"]
+	if "category_name" in request.form:
+		request_data["category_name"] = request.form["category_name"]
+
 	if "name_tk" in request.form:
 		request_data["name_tk"] = request.form["name_tk"]
 	if "name_ru" in request.form:
@@ -44,6 +51,21 @@ def add_data_from_form(request, data_type=None):
 		request_data["note_ru"] = request.form["note_ru"]
 	if "note_en" in request.form:
 		request_data["note_en"] = request.form["note_en"]
+	
+
+
+	if "page_id" in request.form:
+		request_data["page_id"] = request.form["page_id"] if int(request.form["page_id"]) != 0 else None
+
+	if "category_id" in request.form:
+		request_data["category_id"] = request.form["category_id"] if int(request.form["category_id"]) != 0 else None
+
+	if "collection_id" in request.form:
+		request_data["collection_id"] = request.form["collection_id"] if int(request.form["collection_id"]) != 0 else None
+
+	if "contact_id" in request.form:
+		request_data["contact_id"] = request.form["contact_id"] if int(request.form["contact_id"]) != 0 else None
+
 
 	if "link" in request.form:
 		request_data["link"] = request.form["link"]
@@ -117,5 +139,26 @@ def add_data_from_form(request, data_type=None):
 				file_location = os.path.join(os.path.abspath(''), 'main/static/', file_db_url)
 				file.save(file_location)
 				request_data["file_path"] = os.path.join('/static',file_db_url)
+	
+	if data_type == "media":
+		if "media" in request.files:
+			file = request.files["media"]
+			if len(file.filename) > 2:
+				file_db_url = os.path.join(Config.UPLOAD_FOLDER, file.filename)
+				file_location = os.path.join(os.path.abspath(''), 'main/static/', file_db_url)
+				file.save(file_location)
+				request_data["file_path"] = os.path.join('/static',file_db_url)
+
+	if data_type == "users":
+		if "name" in request.form:
+			request_data["name"] = request.form["name"]
+		if "username" in request.form:
+			request_data["username"] = request.form["username"]
+		if "password" in request.form:
+			request_data["password"] = request.form["password"]
+		if "email" in request.form:
+			request_data["email"] = request.form["email"]
+		if "type_id" in request.form:
+			request_data["type_id"] = request.form["type_id"]
 
 	return request_data
