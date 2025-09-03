@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for additional refinements */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        .section-padding {
+            padding: 4rem 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 smooth-scroll">
+    <!-- Loading Indicator -->
+    <div class="fixed inset-0 bg-white flex items-center justify-center z-50 hidden" id="loading">
+        <div class="text-center">
+            <span class="text-2xl font-semibold">{{_('Loading')}} ...</span>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="bg-white shadow fixed w-full top-0 z-40">
+        <nav class="container mx-auto flex items-center justify-between py-4 px-6">
+            <div>
+                {% for page in data %}
+                    {% if page.page_name == 'home_page' %}
+                        <h1 class="text-2xl font-bold">{{ page.note }}</h1>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="flex items-center space-x-4">
+                <!-- Language Switcher -->
+                <div class="hidden md:flex space-x-2">
+                    <a href="#" class="text-gray-600 hover:text-blue-600">en</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600">ru</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600">tk</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <!-- Navigation Menu -->
+                <div id="menu" class="hidden md:flex md:items-center md:space-x-4 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none p-4 md:p-0">
+                    <a href="#" class="block md:inline-block text-gray-600 hover:text-blue-600 py-2">{{_('Stay connected')}}</a>
+                    <a href="#" class="block md:inline-block text-gray-600 hover:text-blue-600 py-2">{{_('Login')}}</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        {% for page in data %}
+            <!-- Home Page Section -->
+            {% if page.page_name == 'home_page' %}
+                <section class="section-padding bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+                    <div class="container mx-auto text-center">
+                        {% if page.images %}
+                            {% for image in page.images %}
+                                <div class="mb-8">
+                                    <img src="{{ image.file_path or '#' }}" alt="{{ image.title or 'image.title' }}" class="mx-auto w-full max-w-md rounded-lg shadow-lg">
+                                    <p class="mt-4 text-lg">{{ image.note }}</p>
+                                    <h2 class="text-3xl font-semibold mt-2">{{ image.title or 'image.title' }}</h2>
+                                    <p class="mt-2">{{ image.desc or 'image.desc' }}</p>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </section>
+            {% endif %}
+
+            <!-- Media Section -->
+            {% if page.page_name == 'media' %}
+                <section class="section-padding">
+                    <div class="container mx-auto">
+                        <h2 class="text-3xl font-bold text-center mb-8">Media</h2>
+                        <!-- Placeholder for media content -->
+                    </div>
+                </section>
+            {% endif %}
+
+            <!-- Advantages Section -->
+            {% if page.page_name == 'advantages' %}
+                <section class="section-padding bg-gray-100">
+                    <div class="container mx-auto">
+                        <h2 class="text-3xl font-bold text-center mb-4">{{ page.title or 'advantages.title' }}</h2>
+                        <p class="text-center text-gray-600 mb-2">{{ page.label }}</p>
+                        <p class="text-center mb-4">{{ page.desc or 'advantages.desc' }}</p>
+                        <div class="prose mx-auto" dangerouslySetInnerHTML="{{ page.html or 'advantages.html' }}"></div>
+                        {% if page.images %}
+                            <div class="mt-8">
+                                <img src="{{ page.images[0].file_path or '#' }}" alt="{{ page.images[0].title or 'title' }}" class="mx-auto w-full max-w-md rounded-lg shadow-lg">
+                                <h3 class="text-2xl font-semibold mt-4 text-center">{{ page.images[0].title or 'title' }}</h3>
+                                <p class="text-center text-gray-600">{{ page.images[0].label or 'label' }}</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </section>
+            {% endif %}
+
+            <!-- Portfolio Section -->
+            {% if page.page_name == 'portfolio' %}
+                <section class="section-padding">
+                    <div class="container mx-auto">
+                        <h2 class="text-3xl font-bold text-center mb-4">{{ page.title or 'Our Portfolio' }}</h2>
+                        <p class="text-center text-gray-600 mb-8">{{ page.label or 'Our Work' }}</p>
+                        <div class="flex justify-center space-x-4 mb-8">
+                            <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">All</button>
+                            {% for category in page.categories %}
+                                <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300">{{ category.label }}</button>
+                            {% endfor %}
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {% for image in page.images %}
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                                    {% if image.file_path %}
+                                        <img src="{{ image.file_path }}" alt="{{ image.title or 'image.title' }}" class="w-full h-48 object-cover">
+                                    {% endif %}
+                                    <div class="p-4">
+                                        <p class="text-sm text-gray-600">{{ image.category_name or 'category_name' }}</p>
+                                        <h3 class="text-lg font-semibold">{{ image.title or 'image.title' }}</h3>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            {% endif %}
+
+            <!-- Other Sections Placeholder -->
+            {% if page.page_name == 'services' %}
+                <section class="section-padding bg-gray-100">
+                    <div class="container mx-auto">
+                        <h2 class="text-3xl font-bold text-center mb-4">{{ page.title or 'services.title' }}</h2>
+                        <p class="text-center text-gray-600 mb-8">{{ page.label or 'Our Services' }}</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {% for collection in page.collections %}
+                                <div class="bg-white p-6 rounded-lg shadow-lg">
+                                    <h3 class="text-xl font-semibold">{{ collection.title or 'collection.title' }}</h3>
+                                    <p class="mt-2 text-gray-600">{{ collection.desc or 'collection.desc' }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            {% endif %}
+
+            <!-- Contact Section -->
+            {% if page.page_name == 'contact' %}
+                <section class="section-padding">
+                    <div class="container mx-auto">
+                        <h2 class="text-3xl font-bold text-center mb-4">{{ page.title or 'contact.title' }}</h2>
+                        <p class="text-center text-gray-600 mb-8">{{ page.label or 'contact.label' }}</p>
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/2">
+                                <div class="bg-white p-6 rounded-lg shadow-lg">
+                                    <div class="mb-4">
+                                        <label class="block text-gray-600">{{_('Your name')}} *</label>
+                                        <input type="text" class="w-full p-2 border rounded">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block text-gray-600">{{_('Your E-Mail')}} *</label>
+                                        <input type="email" class="w-full p-2 border rounded">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block text-gray-600">{{_('Message')}}</label>
+                                        <textarea class="w-full p-2 border rounded h-32"></textarea>
+                                    </div>
+                                    <button class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Submit</button>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2">
+                                <p>{{ page.note }}</p>
+                                {% if page.contacts[0].phone_number %}
+                                    <p>{{ page.contacts[0].phone_number }}</p>
+                                {% endif %}
+                                {% if page.contacts[0].work_phone_number %}
+                                    <p>{{ page.contacts[0].work_phone_number }}</p>
+                                {% endif %}
+                                {% if page.contacts[0].home_phone_number %}
+                                    <p>{{ page.contacts[0].home_phone_number }}</p>
+                                {% endif %}
+                                {% if page.contacts[0].phone_number_1 %}
+                                    <p>{{ page.contacts[0].phone_number_1 }}</p>
+                                {% endif %}
+                                {% if page.contacts[0].phone_number_2 %}
+                                    <p>{{ page.contacts[0].phone_number_2 }}</p>
+                                {% endif %}
+                                {% if page.contacts[0].phone_number_3 %}
+                                    <p>{{ page.contacts[0].phone_number_3 }}</p>
+                                {% endif %}
+                                <p>{{ page.contacts[0].mail or 'contact.contacts[0].mail' }}</p>
+                                {% if page.contacts[0].address %}
+                                    <p>{{ page.contacts[0].address }}</p>
+                                {% endif %}
+                                {% if page.contacts[0].address_1 %}
+                                    <p>{{ page.contacts[0].address_1 }}</p>
+                                {% endif %}
+                                {% if page.contacts[0].address_2 %}
+                                    <p>{{ page.contacts[0].address_2 }}</p>
+                                {% endif %}
+                                {% if page.contacts[0].address_3 %}
+                                    <p>{{ page.contacts[0].address_3 }}</p>
+                                {% endif %}
+                                {% if page.contacts[0].social_1 %}
+                                    <a href="{{ page.contacts[0].social_1 }}" class="text-blue-600">{{ page.contacts[0].social_1_name or 'social1_name' }}</a>
+                                {% endif %}
+                                {% if page.contacts[0].social_2 %}
+                                    <a href="{{ page.contacts[0].social_2 }}" class="text-blue-600">{{ page.contacts[0].social_2_name or 'social2_name' }}</a>
+                                {% endif %}
+                                {% if page.contacts[0].social_3 %}
+                                    <a href="{{ page.contacts[0].social_3 }}" class="text-blue-600">{{ page.contacts[0].social_3_name or 'social3_name' }}</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            {% endif %}
+        {% endfor %}
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>2022 © Made with ♥ by Sap Hasap.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

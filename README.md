@@ -6,6 +6,11 @@ A Python Flask web application with admin panel, REST API, and multi-language su
 | | |
 |----|---|
 |![](docs/admin1.png)|![](docs/admin3.png)|
+|![](docs/home1.png)|![](docs/home2.png)|
+|![](docs/home3.png)|![](docs/home4.png)|
+|![](docs/home5.png)|![](docs/home_v1.png)|
+
+
 
 ## Features
 
@@ -26,7 +31,7 @@ The fastest way to get started:
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone git@github.com:mikebionic/landing_admin.git
 cd landing-admin
 
 # Copy environment file
