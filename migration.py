@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import json, uuid
+import json, uuid, os
 from main import db, create_app
 from main.models import (
 	User,
@@ -11,12 +11,33 @@ from main.models import (
 	Media
 )
 
-f = open('docs/app.migration.json')
-migration_data = json.load(f)
+from sqlalchemy_utils import database_exists, create_database
+from sqlalchemy import create_engine
+from main.config import Config
+
+engine = create_engine(Config.SQLALCHEMY_DATABASE_URI)
+
+if not database_exists(engine.url):
+    create_database(engine.url)
+    print(f"✅ Database {engine.url.database} created.")
+else:
+    print(f"ℹ️ Database {engine.url.database} already exists.")
+    
+    
+app_migration_file = "docs/app.migration.json"
+example_migration_file = "docs/example.migration.json"
+
+if os.path.exists(app_migration_file):
+    migration_file = app_migration_file
+else:
+    migration_file = example_migration_file
+    print(f"⚠️ {app_migration_file} not found. Using {example_migration_file} instead.")
+
+with open(migration_file, "r", encoding="utf-8") as f:
+    migration_data = json.load(f)
 
 app = create_app()
 app.app_context().push()
-
 
 db.drop_all()
 db.create_all()

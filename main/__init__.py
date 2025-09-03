@@ -13,7 +13,6 @@ from htmlmin.main import minify
 
 from main.config import Config
 
-
 babel = Babel()
 db = SQLAlchemy()
 login_manager = LoginManager()
@@ -27,11 +26,10 @@ login_manager.login_message = lazy_gettext('Login the system!')
 login_manager.login_message_category = 'info'
 
 
-@babel.localeselector
 def get_locale():
 	language = Config.BABEL_DEFAULT_LOCALE
 	if 'language' in session:
-		language = session['language'] if session['language'] else Config.BABEL_DEFAULT_LOCALE
+		language = session['language'] or Config.BABEL_DEFAULT_LOCALE
 	return language
 
 def create_app(config_class=Config):
@@ -39,14 +37,13 @@ def create_app(config_class=Config):
 	app.config.from_object(Config)
 	app.static_folder = Config.STATIC_FOLDER_LOCATION
 	app.template_folder = Config.TEMPLATE_FOLDER_LOCATION
+
 	if Config.USE_FLASK_CORS:
 		CORS(app, supports_credentials=True)
-	
-	print(app.config['SECRET_KEY'])
-
+  
 	db.init_app(app)
 	login_manager.init_app(app)
-	babel.init_app(app)
+	babel.init_app(app, locale_selector=get_locale)
 	csrf.init_app(app)
 	cache.init_app(app)
 
