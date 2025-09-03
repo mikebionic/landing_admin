@@ -25,6 +25,11 @@ A Python Flask web application with admin panel, REST API, and multi-language su
 
 ---
 
+```
+! If images are local, change url to:
+"file_path": "/static/web/assets/img/ugurly_yol/worker1.png"
+```
+
 ## Quick Start with Docker
 
 The fastest way to get started:
