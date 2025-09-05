@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="parallax one page" />
+	<meta name="keyword"
+		content="agency, business, corporate, creative, freelancer, interior, joomla template, K2 Blog, minimal, modern, multipurpose, personal, portfolio, responsive, simple" />
+	<title>{{ page.note if 'home_page' in data else 'Ugurly Ýol' }}</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='web/assets/img/ugurly_yol/ugurly_yol_logo.png') }}" type="image/x-icon" />
+	<link rel="icon" href="{{ url_for('static', filename='web/assets/img/ugurly_yol/ugurly_yol_logo.png') }}" type="image/x-icon" />
+	
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	
+	<style>
+		/* Modern CSS Reset and Base Styles */
+		*, *::before, *::after {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		:root {
+			--primary-color: #6366f1;
+			--primary-dark: #4f46e5;
+			--text-primary: #1f2937;
+			--text-secondary: #6b7280;
+			--text-light: #9ca3af;
+			--bg-primary: #ffffff;
+			--bg-secondary: #f9fafb;
+			--bg-dark: #111827;
+			--border-color: #e5e7eb;
+			--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+			--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+			--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+			--shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+			--transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		body {
+			font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+			line-height: 1.6;
+			color: var(--text-primary);
+			background: var(--bg-primary);
+			overflow-x: hidden;
+		}
+
+		/* Dark theme */
+		.v-dark-head {
+			--text-primary: #f9fafb;
+			--text-secondary: #d1d5db;
+			--text-light: #9ca3af;
+			--bg-primary: #111827;
+			--bg-secondary: #1f2937;
+			--border-color: #374151;
+		}
+
+		/* Loading Screen */
+		.preloader {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			z-index: 9999;
+			transition: var(--transition);
+		}
+
+		.preloader .percent {
+			font-size: 3rem;
+			font-weight: 700;
+			color: white;
+			margin-bottom: 1rem;
+		}
+
+		.loading-text {
+			color: rgba(255, 255, 255, 0.8);
+			font-size: 0.875rem;
+			letter-spacing: 2px;
+			margin-bottom: 2rem;
+		}
+
+		.preloader-bar {
+			width: 200px;
+			height: 3px;
+			background: rgba(255, 255, 255, 0.2);
+			border-radius: 2px;
+			overflow: hidden;
+			margin-bottom: 2rem;
+		}
+
+		.preloader-progress {
+			height: 100%;
+			background: white;
+			width: 0%;
+			transition: width 0.3s ease;
+			border-radius: 2px;
+		}
+
+		.preloader .title {
+			font-size: 2.5rem;
+			font-weight: 300;
+			color: white;
+			text-align: center;
+		}
+
+		/* Header */
+		.site-header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 1000;
+			padding: 1rem 0;
+			background: rgba(255, 255, 255, 0.95);
+			backdrop-filter: blur(10px);
+			border-bottom: 1px solid var(--border-color);
+			transition: var(--transition);
+		}
+
+		.extend-container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 2rem;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.main-logo img {
+			height: 40px;
+			width: auto;
+		}
+
+		.change_lang {
+			display: flex;
+			gap: 1rem;
+			list-style: none;
+		}
+
+		.change_lang a {
+			padding: 0.5rem 1rem;
+			text-decoration: none;
+			color: var(--text-secondary);
+			border-radius: 6px;
+			transition: var(--transition);
+			font-weight: 500;
+		}
+
+		.change_lang a:hover {
+			background: var(--bg-secondary);
+			color: var(--primary-color);
+		}
+
+		/* Navigation Menu */
+		.accent-menu {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background: rgba(0, 0, 0, 0.95);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: 0;
+			visibility: hidden;
+			transition: var(--transition);
+			z-index: 2000;
+		}
+
+		.form-box {
+			background: white;
+			padding: 3rem;
+			border-radius: 16px;
+			box-shadow: var(--shadow-xl);
+			max-width: 400px;
+			width: 90%;
+			position: relative;
+		}
+
+		.line {
+			position: absolute;
+			background: var(--primary-color);
+		}
+
+		.line-top, .line-bottom {
+			left: 0;
+			right: 0;
+			height: 2px;
+		}
+
+		.line-top { top: 0; }
+		.line-bottom { bottom: 0; }
+
+		.line-left, .line-right {
+			top: 0;
+			bottom: 0;
+			width: 2px;
+		}
+
+		.line-left { left: 0; }
+		.line-right { right: 0; }
+
+		/* Main Content */
+		.main-root {
+			padding-top: 80px;
+		}
+
+		/* Hero Section */
+		.main-slider {
+			min-height: 100vh;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+		}
+
+		.slide-item {
+			position: relative;
+			width: 100%;
+			height: 100vh;
+		}
+
+		.image-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-position: center;
+		}
+
+		.image-bg::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.4);
+		}
+
+		.slide-content {
+			position: relative;
+			z-index: 10;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			text-align: center;
+			color: white;
+		}
+
+		.slide-content .content {
+			max-width: 800px;
+			padding: 0 2rem;
+		}
+
+		.slide-content .title {
+			font-size: clamp(2.5rem, 8vw, 4rem);
+			font-weight: 700;
+			margin-bottom: 1.5rem;
+			line-height: 1.2;
+		}
+
+		.slide-content .description {
+			font-size: 1.25rem;
+			opacity: 0.9;
+			max-width: 570px;
+			margin: 0 auto;
+		}
+
+		/* Sections */
+		section {
+			padding: 5rem 0;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 2rem;
+		}
+
+		.section-title {
+			font-size: clamp(2rem, 5vw, 3rem);
+			font-weight: 700;
+			margin-bottom: 1rem;
+			line-height: 1.2;
+		}
+
+		.sub-heading {
+			font-size: 0.875rem;
+			font-weight: 600;
+			color: var(--primary-color);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin-bottom: 0.5rem;
+		}
+
+		/* Grid System */
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 -1rem;
+		}
+
+		.col-lg-6 {
+			flex: 0 0 50%;
+			padding: 0 1rem;
+		}
+
+		.col-lg-4, .col-md-6 {
+			flex: 0 0 33.333%;
+			padding: 0 1rem;
+		}
+
+		.col-lg-8 {
+			flex: 0 0 66.666%;
+			padding: 0 1rem;
+		}
+
+		@media (max-width: 768px) {
+			.col-lg-6, .col-lg-4, .col-lg-8, .col-md-6 {
+				flex: 0 0 100%;
+				margin-bottom: 2rem;
+			}
+		}
+
+		/* About Section */
+		.about-section {
+			background: var(--bg-secondary);
+		}
+
+		.box-info {
+			padding: 3rem;
+		}
+
+		.img-container {
+			height: 500px;
+			border-radius: 16px;
+			overflow: hidden;
+			box-shadow: var(--shadow-lg);
+		}
+
+		.img-container img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		/* Services */
+		.services-item {
+			margin-bottom: 2rem;
+		}
+
+		.services-item-inner {
+			background: white;
+			padding: 2rem;
+			border-radius: 16px;
+			box-shadow: var(--shadow-md);
+			transition: var(--transition);
+			position: relative;
+			height: 100%;
+		}
+
+		.services-item-inner:hover {
+			transform: translateY(-8px);
+			box-shadow: var(--shadow-xl);
+		}
+
+		.services-content .icon {
+			width: 60px;
+			height: 60px;
+			margin-bottom: 1.5rem;
+		}
+
+		.services-content .icon svg {
+			width: 100%;
+			height: 100%;
+			fill: var(--primary-color);
+		}
+
+		.title-block {
+			font-size: 1.25rem;
+			font-weight: 600;
+			margin-bottom: 1rem;
+		}
+
+		/* Portfolio */
+		.work-item {
+			margin-bottom: 2rem;
+			border-radius: 16px;
+			overflow: hidden;
+			box-shadow: var(--shadow-md);
+			transition: var(--transition);
+		}
+
+		.work-item:hover {
+			transform: translateY(-8px);
+			box-shadow: var(--shadow-xl);
+		}
+
+		.box-img {
+			height: 300px;
+			overflow: hidden;
+		}
+
+		.box-img img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: var(--transition);
+		}
+
+		.work-item:hover .box-img img {
+			transform: scale(1.1);
+		}
+
+		.box-content {
+			padding: 1.5rem;
+			background: white;
+		}
+
+		/* Team */
+		.team-item-wapper {
+			background: white;
+			border-radius: 16px;
+			padding: 2rem;
+			box-shadow: var(--shadow-md);
+			transition: var(--transition);
+		}
+
+		.team-item-wapper:hover {
+			transform: translateY(-8px);
+			box-shadow: var(--shadow-xl);
+		}
+
+		.team-item .box-img {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			overflow: hidden;
+			margin-right: 1rem;
+		}
+
+		/* Contact Form */
+		.form-group {
+			margin-bottom: 1.5rem;
+		}
+
+		.entry-box label {
+			display: block;
+			margin-bottom: 0.5rem;
+			font-weight: 500;
+			color: var(--text-primary);
+		}
+
+		.entry-box input,
+		.entry-box textarea {
+			width: 100%;
+			padding: 0.75rem 1rem;
+			border: 2px solid var(--border-color);
+			border-radius: 8px;
+			font-size: 1rem;
+			transition: var(--transition);
+			background: white;
+		}
+
+		.entry-box input:focus,
+		.entry-box textarea:focus {
+			outline: none;
+			border-color: var(--primary-color);
+			box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+		}
+
+		.dsn-button {
+			background: var(--primary-color);
+			color: white;
+			padding: 0.75rem 2rem;
+			border: none;
+			border-radius: 8px;
+			font-weight: 600;
+			cursor: pointer;
+			transition: var(--transition);
+			font-size: 1rem;
+		}
+
+		.dsn-button:hover {
+			background: var(--primary-dark);
+			transform: translateY(-2px);
+			box-shadow: var(--shadow-lg);
+		}
+
+		/* Footer */
+		.footer {
+			background: var(--bg-dark);
+			color: white;
+			padding: 2rem 0;
+			text-align: center;
+		}
+
+		.footer a {
+			color: var(--primary-color);
+			text-decoration: none;
+		}
+
+		.footer a:hover {
+			text-decoration: underline;
+		}
+
+		/* Utility Classes */
+		.d-flex { display: flex; }
+		.align-items-center { align-items: center; }
+		.justify-content-center { justify-content: center; }
+		.justify-content-between { justify-content: space-between; }
+		.text-center { text-align: center; }
+		.text-left { text-align: left; }
+		.text-right { text-align: right; }
+		.mb-15 { margin-bottom: 0.9375rem; }
+		.mb-20 { margin-bottom: 1.25rem; }
+		.mb-30 { margin-bottom: 1.875rem; }
+		.mb-70 { margin-bottom: 4.375rem; }
+		.mt-15 { margin-top: 0.9375rem; }
+		.mt-20 { margin-top: 1.25rem; }
+		.p-relative { position: relative; }
+		.p-absolute { position: absolute; }
+		.w-100 { width: 100%; }
+		.h-100 { height: 100%; }
+		.over-hidden { overflow: hidden; }
+
+		/* Grid layouts for modern design */
+		.d-grid {
+			display: grid;
+			gap: 2rem;
+		}
+
+		.grid-md-2 {
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		}
+
+		.grid-lg-3 {
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		}
+
+		/* Modern video styling */
+		video {
+			border-radius: 16px;
+			box-shadow: var(--shadow-lg);
+		}
+
+		/* Accordion */
+		.accordion__item {
+			border-bottom: 1px solid var(--border-color);
+			padding: 1rem 0;
+		}
+
+		.accordion__question {
+			cursor: pointer;
+			font-weight: 600;
+			transition: var(--transition);
+		}
+
+		.accordion__question:hover {
+			color: var(--primary-color);
+		}
+
+		.accordion__answer {
+			padding-top: 1rem;
+			color: var(--text-secondary);
+		}
+
+		/* Smooth scrolling */
+		html {
+			scroll-behavior: smooth;
+		}
+
+		/* Loading animation */
+		@keyframes fadeIn {
+			from { opacity: 0; transform: translateY(20px); }
+			to { opacity: 1; transform: translateY(0); }
+		}
+
+		.fade-in {
+			animation: fadeIn 0.6s ease-out;
+		}
+
+		/* Hide preloader after loading */
+		.loaded .preloader {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		/* Responsive design improvements */
+		@media (max-width: 768px) {
+			.extend-container {
+				padding: 0 1rem;
+			}
+			
+			.form-box {
+				padding: 2rem;
+			}
+			
+			.box-info {
+				padding: 2rem;
+			}
+			
+			section {
+				padding: 3rem 0;
+			}
+		}
+	</style>
+</head>
+
+<body class="v-light">
+
+	<!-- Loading Page -->
+	<div class="preloader">
+		<span class="percent">0</span>
+		<span class="loading-text text-uppercase">{{_('Loading')}} ...</span>
+		<div class="preloader-bar">
+			<div class="preloader-progress"></div>
+		</div>
+
+		<h1 class="title">
+			{% for page in data %}
+			{% if page.page_name == 'home_page' %}
+			<span>{{ page.note }}</span>
+			{% endif %}
+			{% endfor %}
+		</h1>
+	</div>
+
+	<!-- Header -->
+	<div class="site-header">
+		<div class="extend-container">
+			<div class="inner-header">
+				<div class="main-logo">
+					<a href="#home">
+						<img class="light-logo" style="max-height: 40px;" loading="lazy"
+							src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+							data-dsn-src="{{ url_for('static', filename='web/assets/img/ugurly_yol/ugurly_yol_logo.png') }}" alt="" />
+					</a>
+				</div>
+			</div>
+
+			<ul class="change_lang">
+				<li><a href="/set_language/en">EN</a></li>
+				<li><a href="/set_language/ru">RU</a></li>
+				<li><a href="/set_language/tk">TK</a></li>
+			</ul>
+
+			<!-- Navigation Menu (Hidden by default) -->
+			<nav class="accent-menu">
+				<div class="container-content">
+					<div class="form-box">
+						<div class="line line-top"></div>
+						<div class="line line-bottom"></div>
+						<div class="line line-left"></div>
+						<div class="line line-right"></div>
+
+						<div class="mb-30 text-center">
+							<p class="sub-heading mb-15">
+								<span>{{_('Stay connected')}}</span>
+							</p>
+							<h2 class="section-title">{{_('Login')}}</h2>
+						</div>
+
+						<form id="contact-form" class="form">
+							<div class="input__wrap">
+								<div class="form-group">
+									<div class="entry-box">
+										<label>{{_('Your name')}} *</label>
+										<input id="form_name" type="text" name="name"
+											placeholder="{{_('Type your name')}}" required="required" />
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="entry-box">
+										<label>{{_('Your E-Mail')}} *</label>
+										<input id="form_email" type="email" name="email"
+											placeholder="{{_('Type your Email Address')}}" required="required" />
+									</div>
+								</div>
+
+								<div class="text-right">
+									<input type="submit" value="{{_('Login')}}"
+										class="dsn-button">
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+
+	<main class="main-root">
+		<div class="main-content">
+			<div class="wrapper">
+
+				{% for page in data %}
+
+				{% if page.page_name == 'home_page' %}
+				<!-- Hero Section -->
+				<header id="home" class="main-slider">
+					<div class="content-slider">
+						<div class="slide-inner">
+							{% if page.images %}
+							{% for image in page.images %}
+							<div class="slide-item">
+								<div class="image-bg" style="background-image: url('{{image.file_path}}')"></div>
+								<div class="slide-content">
+									<div class="content fade-in">
+										<div class="metas">
+											<span>{{ image.note }}</span>
+										</div>
+										<h1 class="title">{{image.title or 'Welcome'}}</h1>
+										<hr style="width: 60px; height: 3px; background: var(--primary-color); border: none; margin: 2rem auto;" />
+										<p class="description">{{image.desc or 'Discover amazing experiences with us'}}</p>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+							{% endif %}
+						</div>
+					</div>
+				</header>
+				{% endif %}
+
+				{% if page.page_name == 'media' %}
+				<section id="media" class="section-margin">
+					<div class="container text-center">
+						<video width="90%" height="auto" muted controls>
+							<source src="../../static/web/assets/media/ugurly.webm" type="video/webm">
+						</video>
+					</div>
+				</section>
+				{% endif %}
+
+				{% if page.page_name == 'advantages' %}
+				<!-- About Section -->
+				<section id="about" class="about-section">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="box-info">
+									<h2 class="section-title mb-30">
+										{{page.title or 'About Us'}}
+									</h2>
+									<h6 class="sub-heading mb-30">{{page.label}}</h6>
+									<p class="mb-20">{{page.desc or 'We are passionate about delivering excellence'}}</p>
+									<div class="toHtml">{{page.html or ''}}</div>
+								</div>
+							</div>
+
+							<div class="col-lg-6">
+								{% if page.images %}
+								<div class="img-container">
+									<img src="{{page.images[0].file_path}}" alt="{{page.images[0].title}}" loading="lazy">
+								</div>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</section>
+				{% endif %}
+
+				{% if page.page_name == 'portfolio' %}
+				<section id="portfolio" class="section-margin">
+					<div class="container">
+						<div class="text-center mb-70">
+							<p class="sub-heading mb-15">{{page.label or 'Our Work'}}</p>
+							<h2 class="section-title">{{page.title or 'Our Portfolio'}}</h2>
+						</div>
+
+						<div class="filtering-t mb-70 text-center">
+							<div class="filtering-wrap">
+								<div class="filtering">
+									<button type="button" data-filter="*" class="dsn-button" style="margin: 0 0.5rem;">All</button>
+									{% for category in page.categories %}
+									<button type="button" data-filter=".portfolio-{{category.id}}" class="dsn-button" style="margin: 0 0.5rem;">{{category.label}}</button>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+
+						<div class="work-inner d-grid grid-md-2">
+							{% for image in page.images %}
+							<div class="work-item portfolio-{{image.category_id or ''}}">
+								<div class="box-img">
+									<img src="{{image.file_path}}" alt="{{image.name or image.title}}" loading="lazy">
+								</div>
+								<div class="box-content">
+									<h5 class="sub-heading">{{ image.category_name or 'Category' }}</h5>
+									<h4 class="title-block">{{ image.title or 'Project Title' }}</h4>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</section>
+				{% endif %}
+
+				{% if page.page_name == 'services' %}
+				<!-- Services Section -->
+				<section id="services" class="section-margin">
+					<div class="container">
+						<div class="text-center mb-70">
+							<p class="sub-heading mb-15">{{page.label or 'Our Services'}}</p>
+							<h2 class="section-title">{{page.title or 'What We Do'}}</h2>
+						</div>
+
+						<div class="d-grid grid-lg-3">
+							{% for collection in page.collections[:6] %}
+							<div class="services-item">
+								<div class="services-item-inner">
+									<div class="line line-top"></div>
+									<div class="line line-bottom"></div>
+									<div class="line line-left"></div>
+									<div class="line line-right"></div>
+
+									<div class="services-content">
+										<div class="icon">
+											<svg enable-background="new 0 0 300 300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+												<circle cx="150" cy="150" r="100" fill="currentColor"/>
+											</svg>
+										</div>
+										<div class="service-description">
+											<h4 class="title-block">{{collection.title or 'Service Title'}}</h4>
+											<p>{{collection.desc or 'Service description goes here'}}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</section>
+				{% endif %}
+
+				{% if page.page_name == 'with_banner' %}
+				<div class="box-seat section-margin">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-lg-6">
+								{% for image in page.images %}
+								<div class="img-container">
+									<img src="{{image.file_path}}" alt="Banner" loading="lazy">
+								</div>
+								{% endfor %}
+							</div>
+							<div class="col-lg-6">
+								<div class="pro-text">
+									<p class="sub-heading mb-15">{{page.label or 'Our Story'}}</p>
+									<h2 class="section-title">{{page.title or 'Banner Title'}}</h2>
+									<p class="mb-20">{{page.desc or 'Banner description'}}</p>
+									{% if page.note %}
+									<p class="sub-heading">{{page.note}}</p>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+
+				{% if page.page_name == 'work' %}
+				<section id="work" class="section-margin">
+					<div class="container">
+						<div class="text-center mb-70">
+							<p class="sub-heading mb-15">{{page.label or 'Our Work'}}</p>
+							<h2 class="section-title">{{page.title or 'Latest Projects'}}</h2>
+						</div>
+
+						<div class="d-grid grid-md-2">
+							{% for image in page.images %}
+							<div class="work-item">
+								<div class="box-img">
+									<img src="{{image.file_path}}" alt="{{image.title or image.label}}" loading="lazy">
+								</div>
+								<div class="box-content">
+									<div class="sub-heading">{{image.label}}</div>
+									<h4 class="title-block">{{image.title}}</h4>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</section>
+				{% endif %}
+
+				{% if page.page_name == 'feedback' %}
+				<section id="testimonials" class="section-margin" style="background: var(--bg-secondary);">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-4">
+								<h2 class="section-title">{{page.title or 'Testimonials'}}</h2>
+							</div>
+							<div class="col-lg-8">
+								<div class="d-grid grid-md-2">
+									{% for image in page.images %}
+									<div class="testimonial-item" style="background: white; padding: 2rem; border-radius: 16px; box-shadow: var(--shadow-md);">
+										<div class="d-flex align-items-center mb-20">
+											<div class="box-img" style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-right: 1rem;">
+												<img src="{{image.file_path}}" alt="{{image.name}}" loading="lazy">
+											</div>
+											<div class="box-text">
+												<h4 class="title-block mb-5">{{image.name or 'Client Name'}}</h4>
+												<h5 class="sub-heading">{{image.label or 'Position'}}</h5>
+											</div>
+										</div>
+										<p>{{image.desc or 'Testimonial text goes here'}}</p>
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				{% endif %}
+
+				{% if page.page_name == 'purpose' %}
+				<div class="box-gallery-vertical section-margin">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6">
+								{% if page.images %}
+								<div class="img-container">
+									<img src="{{page.images[0].file_path}}" alt="Purpose" loading="lazy">
+								</div>
+								{% endif %}
+							</div>
+							<div class="col-lg-6">
+								<div class="box-info">
+									<p class="sub-heading mb-15">{{page.label or 'Our Purpose'}}</p>
+									<h2 class="section-title">{{page.title or 'Why We Do What We Do'}}</h2>
+									
+									<div class="accordion">
+										{% for collection in page.collections %}
+										<div class="accordion__item">
+											<div class="accordion__question">
+												<span class="number" style="margin-right: 1rem; color: var(--primary-color);">{{loop.index}}</span>
+												<h4 class="title-block">{{collection.title or 'Purpose Item'}}</h4>
+											</div>
+											<div class="accordion__answer">
+												<p>{{collection.desc or 'Purpose description'}}</p>
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+
+				{% if page.page_name == 'posts' %}
+				<section id="blog" class="section-margin">
+					<div class="container">
+						<div class="text-center mb-70">
+							<p class="sub-heading mb-15">{{page.label or 'Our Blog'}}</p>
+							<h2 class="section-title">{{page.title or 'Latest Posts'}}</h2>
+						</div>
+
+						<div class="d-grid grid-md-2">
+							{% for image in page.images %}
+							<div class="blog-item" style="background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-md); transition: var(--transition);">
+								<div class="box-img" style="height: 200px;">
+									<img src="{{image.file_path}}" alt="{{image.title}}" loading="lazy">
+								</div>
+								<div class="box-content" style="padding: 1.5rem;">
+									<div class="box-meta" style="margin-bottom: 1rem;">
+										<span class="sub-heading">{{image.note}}</span>
+									</div>
+									<h4 class="title-block mb-15">{{image.title or 'Blog Title'}}</h4>
+									<p>{{image.desc or 'Blog excerpt goes here'}}</p>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</section>
+				{% endif %}
+
+				{% if page.page_name == 'resume' %}
+				<section id="resume" class="section-margin" style="background: var(--bg-secondary);">
+					<div class="container">
+						<div class="text-center mb-70">
+							<p class="sub-heading mb-15">{{page.label or 'Resume'}}</p>
+							<h2 class="section-title">{{page.title or 'Experience & Education'}}</h2>
+						</div>
+
+						<div class="row">
+							{% for category in page.categories %}
+							<div class="col-lg-6">
+								<div class="resume-box">
+									<h3 class="title-block mb-30">{{category.title or 'Category'}}</h3>
+									{% for collection in category.collections %}
+									<div class="item-resume-box" style="margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: var(--shadow-sm);">
+										<h4 class="title-block mb-15">{{collection.title or 'Title'}}</h4>
+										{% if collection.desc %}
+										<p>{{collection.desc}}</p>
+										{% endif %}
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</section>
+				{% endif %}
+				
+				{% if page.page_name == 'team' %}
+				<section id="team" class="section-margin">
+					<div class="container">
+						<div class="text-center mb-70">
+							<p class="sub-heading mb-15">{{page.label or 'Our Team'}}</p>
+							<h2 class="section-title">{{page.title or 'Meet the Team'}}</h2>
+						</div>
+						
+						<div class="d-grid grid-lg-3">
+							{% for image in page.images %}
+							<div class="team-item">
+								<div class="team-item-wapper">
+									<div class="item-content d-flex align-items-center">
+										<div class="box-img">
+											<img src="{{image.file_path}}" alt="{{image.name}}" loading="lazy">
+										</div>
+										<div class="box-text">
+											<h4 class="title-block mb-5">{{image.name or 'Team Member'}}</h4>
+											<h5 class="sub-heading">{{image.label or 'Position'}}</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</section>
+				{% endif %}
+				
+				{% if page.page_name == 'footer_portfolio' %}
+				<section class="work-section section-margin" style="background: var(--bg-dark); color: white;">
+					<div class="container">
+						<div class="d-grid grid-lg-3">
+							{% for image in page.images %}
+							<div class="work-item">
+								<div class="box-img">
+									<img src="{{image.file_path}}" alt="{{image.title}}" loading="lazy">
+								</div>
+								<div class="box-content" style="background: var(--bg-dark); color: white;">
+									<div class="sub-heading">{{image.label}}</div>
+									<h4 class="title-block">{{image.title or 'Project'}}</h4>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</section>
+				{% endif %}
+
+				{% if page.page_name == 'our_clients' %}
+				<section id="clients" class="section-margin">
+					<div class="container">
+						<div class="text-center mb-70">
+							<p class="sub-heading mb-15">{{page.label or 'Our Clients'}}</p>
+							<h2 class="section-title">{{page.title or 'Trusted By'}}</h2>
+						</div>
+						
+						<div class="wrapper-client" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; align-items: center;">
+							{% for image in page.images %}
+							<div class="logo-box" style="text-align: center;">
+								<div class="logo-box-inner" style="padding: 1rem; background: white; border-radius: 12px; box-shadow: var(--shadow-sm); transition: var(--transition);">
+									<img src="{{image.file_path}}" alt="Client Logo" loading="lazy" style="max-height: 60px; width: auto; opacity: 0.7; transition: var(--transition);">
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</section>
+				{% endif %}
+
+				{% if page.page_name == 'contact' %}
+				<section id="contact" class="section-margin" style="background: var(--bg-secondary);">
+					<div class="container">
+						<div class="contact-container">
+							<div class="row align-items-center">
+								<div class="col-lg-7">
+									<div class="form-box">
+										<div class="line line-top"></div>
+										<div class="line line-bottom"></div>
+										<div class="line line-left"></div>
+										<div class="line line-right"></div>
+
+										<div class="mb-30 text-center">
+											<p class="sub-heading mb-15">{{ page.label or 'Get In Touch' }}</p>
+											<h2 class="section-title">{{ page.title or 'Contact Us' }}</h2>
+										</div>
+										
+										<form id="contact-form" class="form" method="post" action="mailto:{{page.contacts[0].mail if page.contacts else ''}}?subject=Contact us">
+											<div class="input__wrap">
+												<div class="form-group">
+													<div class="entry-box">
+														<label>{{_('Your name')}} *</label>
+														<input id="form_name" type="text" placeholder="{{_('Type your name')}}" required="required" />
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="entry-box">
+														<label>{{_('Your E-Mail')}} *</label>
+														<input id="form_email" type="email" placeholder="{{_('Type your Email Address')}}" required="required" />
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="entry-box">
+														<label>{{_('Message')}}</label>
+														<textarea id="form_message" class="form-control" placeholder="{{_('Tell us about you')}}" required="required" rows="5"></textarea>
+													</div>
+												</div>
+
+												<div class="text-right">
+													<input type="submit" value="{{_('Send Message')}}" class="dsn-button">
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+
+								<div class="col-lg-5">
+									<div class="box-info-contact" style="padding: 2rem;">
+										<ul style="list-style: none;">
+											{% if page.contacts %}
+											<li style="margin-bottom: 2rem;">
+												<h5 class="title-block mb-15">{{page.note or 'Contact Information'}}</h5>
+												{% if page.contacts[0].phone_number %}
+												<p><a href="tel:{{page.contacts[0].phone_number}}" style="color: var(--text-primary); text-decoration: none;">{{ page.contacts[0].phone_number }}</a></p>
+												{% endif %}
+												{% if page.contacts[0].work_phone_number %}
+												<p><a href="tel:{{page.contacts[0].work_phone_number}}" style="color: var(--text-primary); text-decoration: none;">{{ page.contacts[0].work_phone_number }}</a></p>
+												{% endif %}
+												{% if page.contacts[0].mail %}
+												<p><a href="mailto:{{page.contacts[0].mail}}" style="color: var(--primary-color); text-decoration: none;">{{page.contacts[0].mail}}</a></p>
+												{% endif %}
+											</li>
+											<li style="margin-bottom: 2rem;">
+												{% if page.contacts[0].address %}
+												<p>{{page.contacts[0].address}}</p>
+												{% endif %}
+												{% if page.contacts[0].address_1 %}
+												<p>{{page.contacts[0].address_1}}</p>
+												{% endif %}
+											</li>
+											<li>
+												{% if page.contacts[0].social_1 %}
+												<div style="margin-bottom: 0.5rem;">
+													<a href="{{page.contacts[0].social_1}}" target="_blank" rel="nofollow" style="color: var(--primary-color); text-decoration: none;">{{page.contacts[0].social_1_name or 'Social Media'}}</a>
+												</div>
+												{% endif %}
+												{% if page.contacts[0].social_2 %}
+												<div style="margin-bottom: 0.5rem;">
+													<a href="{{page.contacts[0].social_2}}" target="_blank" rel="nofollow" style="color: var(--primary-color); text-decoration: none;">{{page.contacts[0].social_2_name or 'Social Media'}}</a>
+												</div>
+												{% endif %}
+											</li>
+											{% endif %}
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				{% endif %}
+
+				{% endfor %}
+			</div>
+		</div>
+	</main>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-container">
+				<div class="text-center">
+					<h5>2022 © Made with <span style="color: var(--primary-color);">♥</span> by
+						<a href="https://saphasap.com" target="_blank" rel="nofollow">Sap Hasap.</a>
+					</h5>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- JavaScript -->
+	<script>
+		// Simple loading animation
+		document.addEventListener('DOMContentLoaded', function() {
+			let progress = 0;
+			const progressBar = document.querySelector('.preloader-progress');
+			const percentText = document.querySelector('.percent');
+			
+			const interval = setInterval(() => {
+				progress += Math.random() * 15;
+				if (progress > 100) {
+					progress = 100;
+					clearInterval(interval);
+					
+					setTimeout(() => {
+						document.body.classList.add('loaded');
+					}, 500);
+				}
+				
+				progressBar.style.width = progress + '%';
+				percentText.textContent = Math.floor(progress);
+			}, 100);
+		});
+
+		// Smooth scrolling for navigation
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+				const target = document.querySelector(this.getAttribute('href'));
+				if (target) {
+					target.scrollIntoView({
+						behavior: 'smooth'
+					});
+				}
+			});
+		});
+
+		// Header background on scroll
+		window.addEventListener('scroll', function() {
+			const header = document.querySelector('.site-header');
+			if (window.scrollY > 50) {
+				header.style.background = 'rgba(255, 255, 255, 0.98)';
+				header.style.boxShadow = 'var(--shadow-sm)';
+			} else {
+				header.style.background = 'rgba(255, 255, 255, 0.95)';
+				header.style.boxShadow = 'none';
+			}
+		});
+
+		// Simple portfolio filter
+		document.querySelectorAll('[data-filter]').forEach(button => {
+			button.addEventListener('click', function() {
+				const filter = this.getAttribute('data-filter');
+				const items = document.querySelectorAll('.work-item');
+				
+				// Update active button
+				document.querySelectorAll('[data-filter]').forEach(btn => {
+					btn.style.background = 'var(--bg-secondary)';
+					btn.style.color = 'var(--text-primary)';
+				});
+				this.style.background = 'var(--primary-color)';
+				this.style.color = 'white';
+				
+				// Filter items
+				items.forEach(item => {
+					if (filter === '*' || item.classList.contains(filter.replace('.', ''))) {
+						item.style.display = 'block';
+					} else {
+						item.style.display = 'none';
+					}
+				});
+			});
+		});
+
+		// Simple accordion
+		document.querySelectorAll('.accordion__question').forEach(question => {
+			question.addEventListener('click', function() {
+				const answer = this.nextElementSibling;
+				const isOpen = answer.style.display === 'block';
+				
+				// Close all answers
+				document.querySelectorAll('.accordion__answer').forEach(ans => {
+					ans.style.display = 'none';
+				});
+				
+				// Open clicked answer if it wasn't open
+				if (!isOpen) {
+					answer.style.display = 'block';
+				}
+			});
+		});
+
+		// Convert HTML content
+		document.querySelectorAll('.toHtml').forEach(function(element) {
+			element.innerHTML = element.textContent;
+		});
+
+		// Add fade-in animation on scroll
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		};
+
+		const observer = new IntersectionObserver(function(entries) {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('fade-in');
+				}
+			});
+		}, observerOptions);
+
+		// Observe all sections
+		document.querySelectorAll('section').forEach(section => {
+			observer.observe(section);
+		});
+	</script>
+
+</body>
+</html>

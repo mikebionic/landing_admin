@@ -24,6 +24,5 @@
 
 **/profile/
 **/app.migration*
-**/main/static/web/**
 
 flask_session/**
