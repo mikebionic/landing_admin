@@ -466,7 +466,7 @@
 		{
 			"id": 4,
 			"page_id": 6,
-			"file_path": "/static/web/assets/img/project/project5/1.jpg",
+			"file_path": "https://images.pexels.com/photos/2489/street-building-construction-industry.jpg",
 			"title_tk": "Ýol bejerişi",
 			"label_tk": "Gurluşyk",
 			"title_ru": "Починка дорог",
@@ -477,7 +477,7 @@
 		{
 			"id": 5,
 			"page_id": 6,
-			"file_path": "/static/web/assets/img/project/project3/1.jpg",
+			"file_path": "https://images.pexels.com/photos/2566850/pexels-photo-2566850.jpeg",
 			"title_tk": "Ýeriň taýýarlygy",
 			"label_tk": "Taýýarlyk",
 			"title_ru": "Подготовка местности",
@@ -488,7 +488,7 @@
 		{
 			"id": 6,
 			"page_id": 6,
-			"file_path": "/static/web/assets/img/project/project6/1.jpg",
+			"file_path": "https://images.pexels.com/photos/1188532/pexels-photo-1188532.jpeg",
 			"title_tk": "Topragyň gazmagy",
 			"label_tk": "Taýýarlyk",
 			"title_ru": "Работы по раскопке",
@@ -499,7 +499,7 @@
 		{
 			"id": 7,
 			"page_id": 6,
-			"file_path": "/static/web/assets/img/project/project2/1.jpg",
+			"file_path": "https://images.pexels.com/photos/356871/pexels-photo-356871.jpeg",
 			"title_tk": "Döwrebap binalar gurluşygy",
 			"label_tk": "Gurluşyk",
 			"title_ru": "Постройка современных зданий",
@@ -510,7 +510,7 @@
 		{
 			"id": 8,
 			"page_id": 6,
-			"file_path": "/static/web/assets/img/project/project4/1.jpg",
+			"file_path": "https://images.pexels.com/photos/448828/pexels-photo-448828.jpeg",
 			"title_tk": "Gurluşyk prosesi",
 			"label_tk": "Gurluşyk",
 			"title_ru": "Процесс постройки",
@@ -521,7 +521,7 @@
 
 		{
 			"id": 9,
-			"file_path": "/static/web/assets/img/team/2.jpg",
+			"file_path": "https://images.pexels.com/photos/31499725/pexels-photo-31499725.jpeg",
 			"page_id": 7,
 			"name_tk": "Myrat Babamyradov",
 			"label_tk": "Envato Customer",
@@ -535,7 +535,7 @@
 		},
 		{
 			"id": 10,
-			"file_path": "/static/web/assets/img/team/1.jpg",
+			"file_path": "https://images.pexels.com/photos/12357625/pexels-photo-12357625.jpeg",
 			"page_id": 7,
 			"name_tk": "Muhammetnur Ataniyazow",
 			"label_tk": "Marketing Manager",
@@ -549,7 +549,7 @@
 		},
 		{
 			"id": 11,
-			"file_path": "/static/web/assets/img/team/3.jpg",
+			"file_path": "https://images.pexels.com/photos/4571558/pexels-photo-4571558.jpeg",
 			"page_id": 7,
 			"name_tk": "Geldi Geldiyew",
 			"label_tk": "Web Designer",
@@ -563,7 +563,7 @@
 		},
 		{
 			"id": 12,
-			"file_path": "/static/web/assets/img/team/3.jpg",
+			"file_path": "https://images.pexels.com/photos/4571558/pexels-photo-4571558.jpeg",
 			"page_id": 7,
 			"name_tk": "Myrat Babamyradov",
 			"label_tk": "Envato Customer",
@@ -579,12 +579,12 @@
 		{
 			"id": 13,
 			"collection_id": 23,
-			"file_path": "/static/web/assets/img/blog/1.jpg"
+			"file_path": "https://images.pexels.com/photos/1197095/pexels-photo-1197095.jpeg"
 		},
 		{
 			"id": 14,
 			"collection_id": 24,
-			"file_path": "/static/web/assets/img/blog/2.jpg"
+			"file_path": "https://images.pexels.com/photos/227729/pexels-photo-227729.jpeg"
 		},
 		{
 			"id": 15,
@@ -601,7 +601,7 @@
 			"label_en": "Lifestyle",
 			"note_en": "Dsn Grid",
 			"desc_en": "Whoever said “It’s not about the destination. It’s the journey” never flew on a long ..",
-			"file_path": "/static/web/assets/img/blog/3.jpg"
+			"file_path": "https://images.pexels.com/photos/14823463/pexels-photo-14823463.jpeg"
 		},
 
 		{
@@ -619,7 +619,7 @@
 			"label_en": "Travel",
 			"note_en": "Dsn Grid",
 			"desc_en": "Whoever said “It’s not about the destination. It’s the journey” never flew on a long ..",
-			"file_path": "/static/web/assets/img/blog/1.jpg"
+			"file_path": "https://images.pexels.com/photos/1197095/pexels-photo-1197095.jpeg"
 		},
 
 		{
@@ -629,7 +629,7 @@
 			"title_tk": "Gelejeki proyektler",
 			"title_ru": "Будущие проекты",
 			"title_en": "Gelejeki proyektler",
-			"file_path": "/static/web/assets/img/project/project2/1.jpg"
+			"file_path": "https://images.pexels.com/photos/356871/pexels-photo-356871.jpeg"
 		},
 
 		{
@@ -639,7 +639,7 @@
 			"title_tk": "Gelejeki proyektler",
 			"title_ru": "Будущие проекты",
 			"title_en": "Gelejeki proyektler",
-			"file_path": "/static/web/assets/img/project/project4/1.jpg"
+			"file_path": "https://images.pexels.com/photos/448828/pexels-photo-448828.jpeg"
 		},
 
 		{
@@ -649,7 +649,7 @@
 			"title_tk": "Iş prosesi",
 			"title_ru": "Процесс работы",
 			"title_en": "Iş prosesi",
-			"file_path": "/static/web/assets/img/project/project3/1.jpg"
+			"file_path": "https://images.pexels.com/photos/2566850/pexels-photo-2566850.jpeg"
 		},
 
 		{
@@ -659,7 +659,7 @@
 			"title_tk": "Howpsyzlyk",
 			"title_ru": "Безопасность",
 			"title_en": "Howpsyzlyk",
-			"file_path": "/static/web/assets/img/project/project5/1.jpg"
+			"file_path": "https://images.pexels.com/photos/2489/street-building-construction-industry.jpg"
 		},
 
 		{
@@ -669,19 +669,19 @@
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Подготовка земли",
 			"title_en": "Land preparation",
-			"file_path": "/static/web/assets/img/project/project6/1.jpg"
+			"file_path": "https://images.pexels.com/photos/1188532/pexels-photo-1188532.jpeg"
 		},
 
 		{
 			"id": 22,
 			"page_id": 8,
-			"file_path": "/static/web/assets/img/about-intro.jpg"
+			"file_path": "https://images.pexels.com/photos/227729/pexels-photo-227729.jpeg"
 		},
 
 		{
 			"id": 23,
 			"page_id": 1,
-			"file_path": "/static/web/assets/img/ugurly_yol/banner1.png",
+			"file_path": "https://images.pexels.com/photos/2489/street-building-construction-industry.jpg",
 			"title_en": "We're building the roads to the future",
 			"title_ru": "Мы строим дороги в будущее",
 			"title_tk": "Biz gelejege ýol gurýarys",
@@ -695,7 +695,7 @@
 		{
 			"id": 24,
 			"page_id": 1,
-			"file_path": "/static/web/assets/img/project/project5/1.jpg",
+			"file_path": "https://images.pexels.com/photos/2489/street-building-construction-industry.jpg",
 			"desc_en": "Working on whole preparation work course",
 			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
 			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
@@ -709,7 +709,7 @@
 		{
 			"id": 25,
 			"page_id": 1,
-			"file_path": "/static/web/assets/img/project/project3/1.jpg",
+			"file_path": "https://images.pexels.com/photos/2566850/pexels-photo-2566850.jpeg",
 			"desc_en": "Working on whole preparation work course",
 			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
 			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
@@ -723,7 +723,7 @@
 		{
 			"id": 26,
 			"page_id": 1,
-			"file_path": "/static/web/assets/img/project/project4/1.jpg",
+			"file_path": "https://images.pexels.com/photos/448828/pexels-photo-448828.jpeg",
 			"desc_en": "Working on whole preparation work course",
 			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
 			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
@@ -737,7 +737,7 @@
 		{
 			"id": 27,
 			"page_id": 1,
-			"file_path": "/static/web/assets/img/project/project6/1.jpg",
+			"file_path": "https://images.pexels.com/photos/1188532/pexels-photo-1188532.jpeg",
 			"desc_en": "Working on whole preparation work course",
 			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
 			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
@@ -751,7 +751,7 @@
 		{
 			"id": 28,
 			"page_id": 1,
-			"file_path": "/static/web/assets/img/project/project2/1.jpg",
+			"file_path": "https://images.pexels.com/photos/356871/pexels-photo-356871.jpeg",
 			"desc_en": "Working on whole preparation work course",
 			"desc_ru": "Выполняем полный комплекс работ по подготовке территории к строительству, производству земляных работ, строительству и реконструкции автомобильных дорог",
 			"desc_tk": "Taýýarlygyň doly işlerini ýerine ýetirýaris",
@@ -766,7 +766,7 @@
 		{
 			"id": 29,
 			"page_id": 2,
-			"file_path": "/static/web/assets/img/about-intro.jpg",
+			"file_path": "https://images.pexels.com/photos/227729/pexels-photo-227729.jpeg",
 			"title_ru": "25 Лет опыта",
 			"label_ru": "Следуем и повышаем стандарты качества, а также экономим бюджеты заказчиков",
 			"title_en": "25 Years of experience",
@@ -790,25 +790,25 @@
 			"label_en": "Health",
 			"note_en": "Dsn Grid",
 			"desc_en": "Whoever said “It’s not about the destination. It’s the journey” never flew on a long ..",
-			"file_path": "/static/web/assets/img/blog/2.jpg"
+			"file_path": "https://images.pexels.com/photos/227729/pexels-photo-227729.jpeg"
 		},
 
 		{
 			"id": 31,
 			"page_id": 8,
-			"file_path": "/static/web/assets/img/ugurly_yol/resources.png"
+			"file_path": "https://images.pexels.com/photos/1188532/pexels-photo-1188532.jpeg"
 		},
 
 		{
 			"id": 32,
 			"page_id": 8,
-			"file_path": "/static/web/assets/img/ugurly_yol/resources.png"
+			"file_path": "https://images.pexels.com/photos/1188532/pexels-photo-1188532.jpeg"
 		},
 
 		{
 			"id": 33,
 			"page_id": 8,
-			"file_path": "/static/web/assets/img/ugurly_yol/resources.png"
+			"file_path": "https://images.pexels.com/photos/1188532/pexels-photo-1188532.jpeg"
 		},
 
 		{
@@ -818,7 +818,7 @@
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Строительство автомагистралей и шоссе",
 			"title_en": "Land preparation",
-			"file_path": "/static/web/assets/img/ugurly_yol/engine1.png"
+			"file_path": "https://images.pexels.com/photos/2489/street-building-construction-industry.jpg"
 		},
 		{
 			"id": 42,
@@ -827,7 +827,7 @@
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Услуги по аренде техники с экипажем",
 			"title_en": "Land preparation",
-			"file_path": "/static/web/assets/img/ugurly_yol/engine2.png"
+			"file_path": "https://images.pexels.com/photos/2566850/pexels-photo-2566850.jpeg"
 		},
 		{
 			"id": 43,
@@ -836,7 +836,7 @@
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Строительство гидротехнических сооружений и мостов",
 			"title_en": "Land preparation",
-			"file_path": "/static/web/assets/img/ugurly_yol/land.png"
+			"file_path": "https://images.pexels.com/photos/2457827/pexels-photo-2457827.jpeg"
 		},
 		{
 			"id": 44,
@@ -845,7 +845,7 @@
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Строительство линий электропередач и телекомумуникаций",
 			"title_en": "Land preparation",
-			"file_path": "/static/web/assets/img/ugurly_yol/electricity.png"
+			"file_path": "https://images.pexels.com/photos/2457827/pexels-photo-2457827.jpeg"
 		},
 		{
 			"id": 45,
@@ -854,7 +854,7 @@
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Строительство жилых, промышленных и общественных зданий",
 			"title_en": "Land preparation",
-			"file_path": "/static/web/assets/img/ugurly_yol/houses.png"
+			"file_path": "https://images.pexels.com/photos/3360711/pexels-photo-3360711.jpeg"
 		},
 		{
 			"id": 46,
@@ -863,7 +863,7 @@
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Подготовка строительного участка",
 			"title_en": "Land preparation",
-			"file_path": "/static/web/assets/img/ugurly_yol/worker1.png"
+			"file_path": "https://images.pexels.com/photos/15583204/pexels-photo-15583204.jpeg"
 		},
 		{
 			"id": 47,
@@ -872,7 +872,7 @@
 			"title_tk": "Ýeriň taýýarlygy",
 			"title_ru": "Грузоперевозка стройматериалов, ГСМ и оборудования",
 			"title_en": "Land preparation",
-			"file_path": "/static/web/assets/img/ugurly_yol/engine3.png"
+			"file_path": "https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg"
 		},
 
 		{
@@ -884,7 +884,7 @@
 			"title_ru": "Строительство автомагистралей и шоссе",
 			"label_en": "Строительство",
 			"title_en": "Строительство автомагистралей и шоссе",
-			"file_path": "/static/web/assets/img/ugurly_yol/engine1.png"
+			"file_path": "https://images.pexels.com/photos/2489/street-building-construction-industry.jpg"
 		},
 		{
 			"id": 52,
@@ -895,7 +895,7 @@
 			"title_ru": "Услуги по аренде техники с экипажем",
 			"label_en": "Услуги",
 			"title_en": "Услуги по аренде техники с экипажем",
-			"file_path": "/static/web/assets/img/ugurly_yol/engine2.png"
+			"file_path": "https://images.pexels.com/photos/2566850/pexels-photo-2566850.jpeg"
 		},
 		{
 			"id": 53,
@@ -906,7 +906,7 @@
 			"title_ru": "Строительство гидротехнических сооружений и мостов",
 			"label_en": "Строительство",
 			"title_en": "Строительство гидротехнических сооружений и мостов",
-			"file_path": "/static/web/assets/img/ugurly_yol/land.png"
+			"file_path": "https://www.pexels.com/photo/serene-bridge-over-a-calm-reservoir-landscape-33705241/"
 		},
 		{
 			"id": 54,
@@ -917,7 +917,7 @@
 			"title_ru": "Строительство линий электропередач и телекомумуникаций",
 			"label_en": "Строительство",
 			"title_en": "Строительство линий электропередач и телекомумуникаций",
-			"file_path": "/static/web/assets/img/ugurly_yol/electricity.png"
+			"file_path": "https://images.pexels.com/photos/2457827/pexels-photo-2457827.jpeg"
 		},
 		{
 			"id": 55,
@@ -928,7 +928,7 @@
 			"title_ru": "Строительство жилых, промышленных и общественных зданий",
 			"label_en": "Строительство",
 			"title_en": "Строительство жилых, промышленных и общественных зданий",
-			"file_path": "/static/web/assets/img/ugurly_yol/houses.png"
+			"file_path": "https://images.pexels.com/photos/3360711/pexels-photo-3360711.jpeg"
 		},
 		{
 			"id": 56,
@@ -939,7 +939,7 @@
 			"title_ru": "Подготовка строительного участка",
 			"label_en": "Подготовка",
 			"title_en": "Подготовка строительного участка",
-			"file_path": "/static/web/assets/img/ugurly_yol/worker1.png"
+			"file_path": "https://images.pexels.com/photos/15583204/pexels-photo-15583204.jpeg"
 		},
 		{
 			"id": 57,
@@ -950,57 +950,57 @@
 			"title_ru": "Грузоперевозка стройматериалов, ГСМ и оборудования",
 			"label_en": "Грузоперевозка",
 			"title_en": "Грузоперевозка стройматериалов, ГСМ и оборудования",
-			"file_path": "/static/web/assets/img/ugurly_yol/engine3.png"
+			"file_path": "https://images.pexels.com/photos/1078884/pexels-photo-1078884.jpeg"
 		},
 		{
 			"id": 58,
 			"page_id": 13,
-			"file_path": "/static/web/assets/img/logo/1.png"
+			"file_path": "https://images.pexels.com/photos/224924/pexels-photo-224924.jpeg"
 		},
 		{
 			"id": 59,
 			"page_id": 13,
-			"file_path": "/static/web/assets/img/logo/2.png"
+			"file_path": "https://images.pexels.com/photos/224924/pexels-photo-224924.jpeg"
 		},
 		{
 			"id": 60,
 			"page_id": 13,
-			"file_path": "/static/web/assets/img/logo/3.png"
+			"file_path": "https://images.pexels.com/photos/224924/pexels-photo-224924.jpeg"
 		},
 		{
 			"id": 61,
 			"page_id": 13,
-			"file_path": "/static/web/assets/img/logo/4.png"
+			"file_path": "https://images.pexels.com/photos/224924/pexels-photo-224924.jpeg"
 		},
 		{
 			"id": 62,
 			"page_id": 13,
-			"file_path": "/static/web/assets/img/logo/5.png"
+			"file_path": "https://images.pexels.com/photos/224924/pexels-photo-224924.jpeg"
 		},
 		{
 			"id": 63,
 			"page_id": 13,
-			"file_path": "/static/web/assets/img/logo/6.png"
+			"file_path": "https://images.pexels.com/photos/224924/pexels-photo-224924.jpeg"
 		},
 		{
 			"id": 64,
 			"page_id": 13,
-			"file_path": "/static/web/assets/img/logo/1.png"
+			"file_path": "https://images.pexels.com/photos/224924/pexels-photo-224924.jpeg"
 		},
 		{
 			"id": 65,
 			"page_id": 13,
-			"file_path": "/static/web/assets/img/logo/2.png"
+			"file_path": "https://images.pexels.com/photos/224924/pexels-photo-224924.jpeg"
 		},
 		{
 			"id": 66,
 			"page_id": 5,
-			"file_path": "/static/web/assets/img/project/project3/2.jpg"
+			"file_path": "https://images.pexels.com/photos/220996/pexels-photo-220996.jpeg"
 		},
 		{
 			"id": 67,
 			"page_id": 11,
-			"file_path": "/static/web/assets/img/team/1.jpg",
+			"file_path": "https://images.pexels.com/photos/12357625/pexels-photo-12357625.jpeg",
 			"name_tk": "Myrat Babamyradov",
 			"label_tk": "Envato Customer",
 			"name_en": "Myrat Babamyradov",
@@ -1011,7 +1011,7 @@
 		{
 			"id": 68,
 			"page_id": 11,
-			"file_path": "/static/web/assets/img/team/2.jpg",
+			"file_path": "https://images.pexels.com/photos/31499725/pexels-photo-31499725.jpeg",
 			"name_tk": "Geldi Geldiyew",
 			"label_tk": "Web designer",
 			"name_en": "Geldi Geldiyew",
@@ -1022,7 +1022,7 @@
 		{
 			"id": 69,
 			"page_id": 11,
-			"file_path": "/static/web/assets/img/team/3.jpg",
+			"file_path": "https://images.pexels.com/photos/4571558/pexels-photo-4571558.jpeg",
 			"name_tk": "Muhammetnur Ataniyazow",
 			"label_tk": "Marketing manager",
 			"name_en": "Muhammetnur Ataniyazow",
@@ -1033,7 +1033,7 @@
 		{
 			"id": 70,
 			"page_id": 11,
-			"file_path": "/static/web/assets/img/team/1.jpg",
+			"file_path": "https://images.pexels.com/photos/12357625/pexels-photo-12357625.jpeg",
 			"name_tk": "Myrat Babamyradov",
 			"label_tk": "Envato Customer",
 			"name_en": "Myrat Babamyradov",
@@ -1044,7 +1044,7 @@
 		{
 			"id": 71,
 			"page_id": 11,
-			"file_path": "/static/web/assets/img/team/2.jpg",
+			"file_path": "https://images.pexels.com/photos/31499725/pexels-photo-31499725.jpeg",
 			"name_tk": "Geldi Geldiyew",
 			"label_tk": "Web designer",
 			"name_en": "Geldi Geldiyew",
@@ -1055,7 +1055,7 @@
 		{
 			"id": 72,
 			"page_id": 11,
-			"file_path": "/static/web/assets/img/team/3.jpg",
+			"file_path": "https://images.pexels.com/photos/4571558/pexels-photo-4571558.jpeg",
 			"name_tk": "Muhammetnur Ataniyazow",
 			"label_tk": "Marketing manager",
 			"name_en": "Muhammetnur Ataniyazow",
